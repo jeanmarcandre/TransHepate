@@ -8,19 +8,16 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
 {
-    /**
-     * @Route("/main", name="main")
-     */
-    public function index(): Response
+    #[Route('/', name:'app_home')]
+    public function home(): Response
     {
 
         // Cette page appellera la vue template/main/index.html.twig
-        return $this->render('main/index.html.twig');
+        return $this->render('main/home.html.twig', ['controller_name' => 'Accueil']);
     }
 
-    /**
-     * @Route("/contact", name="contact")
-     */
+
+    #[Route('/contact', name:'app_contact')]
     public function contact(): Response
     {
 
