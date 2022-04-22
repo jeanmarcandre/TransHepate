@@ -18,10 +18,10 @@
 
 </head>
 
-    <body>
+
         {# HEADER #}
-        <div class="text-align">
-            <div class="container mb-4">
+        <div class="nav pt-2 pb-2">
+            <div class="container">
                 <h6 class="text-uppercase  text-white">  fédération régionale des malades et transplantés hépatiques</h6>
                 <h6 class="text-uppercase  text-white">  Région Bourgogne Franche Comtée</h6>
             </div>
@@ -29,7 +29,9 @@
 
         <nav class="navbar navbar-expand-lg bg-white">
             <div class="container-fluid">
-                <a class="navbar-brand text-black" href="{{ path('app_main_home') }}">Navbar</a>
+                <a href="{{ path('app_main_home') }}">
+                <img id="logoimg" src="{{ asset('build/images/logoimg.jpg') }}" alt="TRANSHEPATE" style="height:50px; width: 200px;">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -80,6 +82,8 @@
                 </div>
             </div>
         </nav>
+
+    <body>
 
         {# BLOCK PRINCIPAL #}
 

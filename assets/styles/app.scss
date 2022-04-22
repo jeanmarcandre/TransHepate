@@ -7,7 +7,7 @@
 @import "../../node_modules/bootswatch/dist/cosmo/bootswatch";
 
 body {
-  background-color: #085960;
+  background-color: #11494C;
 }
 
 /* MON SCSS */
@@ -15,7 +15,9 @@ body {
 .navbar .navbar-extend {
   color: rgb(6, 165, 168)!important;
 }
-
+ .nav {
+   background-color: #178E94;
+ }
 
 body {
   font-size: 1rem!important;
