@@ -6,18 +6,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/', name: 'app_main_')]
 class MainController extends AbstractController
 {
-    #[Route('/', name:'app_home')]
+    #[Route(path:'/', name:'home')]
     public function home(): Response
     {
 
         // Cette page appellera la vue template/main/index.html.twig
-        return $this->render('main/home.html.twig', ['controller_name' => 'Accueil']);
+        return $this->render('main/home.html.twig');
     }
 
 
-    #[Route('/contact', name:'app_contact')]
+    #[Route(path: '/contact', name:'contact')]
     public function contact(): Response
     {
 
