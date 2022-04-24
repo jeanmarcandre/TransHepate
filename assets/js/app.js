@@ -16,3 +16,9 @@ require('bootstrap');
 
 // Chargement de la partie JF de Fontawesome
 require('@fortawesome/fontawesome-free/js/all.js');
+
+// MON JS
+$(document).ready(function() {
+
+});
+

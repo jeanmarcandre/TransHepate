@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content"width=device-width, initial-scale=1">
 
     <title>{% block title %}TransHépate {% endblock %}</title>
 
@@ -16,100 +17,122 @@
         {{ encore_entry_script_tags('app') }}
     {% endblock %}>
 
+    <style type="text/css">
+        ul {opacity: 1; display: none;}
+        .bs-example {margin: auto; width: 25%;}
+        .dropdown:hover .dropdown-menu {display: block;}
+        a:hover {background-color: #178E94;}
+    </style>
+
 </head>
 
+    <body class="d-flex flex-column h-100">
 
         {# HEADER #}
-        <div class="nav pt-2 pb-2">
-            <div class="container">
-                <h6 class="text-uppercase  text-white">  fédération régionale des malades et transplantés hépatiques</h6>
-                <h6 class="text-uppercase  text-white">  Région Bourgogne Franche Comtée</h6>
-            </div>
-        </div>
+        <header>
+            <nav class="entete navbar navbar-expand-lg">
+                {# <div class="nav pt-2 pb-2"> #}
+                    <div class="container">
+                        <h6 class="text-uppercase  text-white">  fédération régionale des malades et transplantés hépatiques</h6>
+                        <h6 class="text-uppercase  text-white">  Région Bourgogne Franche Comtée</h6>
+                    </div>
+                {# </div> #}
+            </nav>
 
-        <nav class="navbar navbar-expand-lg bg-white">
-            <div class="container-fluid">
-                <a href="{{ path('app_main_home') }}">
-                <img id="logoimg" src="{{ asset('build/images/logoimg.jpg') }}" alt="TRANSHEPATE" style="height:50px; width: 200px;">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <nav class="navbar navbar-expand-lg bg-white">
+                <div class="container-fluid">
+                    <a href="{{ path('app_main_home') }}">
+                    <img id="logoimg" src="{{ asset('build/images/logoimg.jpg') }}" alt="TRANSHEPATE" style="height:50px; width: 200px; margin-left: 30px;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="container fluid collapse navbar-collapse text-uppercase" id="navbarColor01">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Qui sommes-nous</a>
-                            <div class="dropdown-menu bg-success">
-                                <a class="dropdown-item" href="https://www.transhepate.org/" target="_blank">La fédération</a>
-                                <a class="dropdown-item" href="#">Notre association régionale</a>
-                                <a class="dropdown-item" href="#">Nos associations régionales</a>
-                            </div>
-                        </li>
+                    <div class="container fluid collapse navbar-collapse text-uppercase" id="navbarColor01">
+                        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Qui sommes-nous</a>
+                                <div class="dropdown-menu bg-success">
+                                    <a class="hover dropdown-item" href="https://www.transhepate.org/" target="_blank">La fédération</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Notre association régionale</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Nos associations régionales</a>
+                                </div>
+                            </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">La greffe hépatique</a>
-                            <div class="dropdown-menu bg-success">
-                                <a class="dropdown-item" href="#">Le bilan pré-greffe</a>
-                                <a class="dropdown-item" href="#">L'attente de la greffe</a>
-                                <a class="dropdown-item" href="#">Le jour de la greffe</a>
-                                <a class="dropdown-item" href="#">Le suivi après la greffe</a>
-                                <a class="dropdown-item" href="#">Les traitements immunosuppresseurs</a>
-                            </div>
-                        </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">La greffe hépatique</a>
+                                <div class="dropdown-menu bg-success">
+                                    <a class="dropdown-item" href="#">Le bilan pré-greffe</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">L'attente de la greffe</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Le jour de la greffe</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Le suivi après la greffe</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Les traitements immunosuppresseurs</a>
+                                </div>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-black" href="#">CENTRES DE GREFFE</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="#">CENTRES DE GREFFE</a>
+                            </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nous soutenir</a>
-                            <div class="dropdown-menu bg-success">
-                                <a class="dropdown-item" href="#">J'adhère à TransHépate</a>
-                                <a class="dropdown-item" href="#">Pourquoi je fait un don</a>
-                                <a class="dropdown-item" href="#">Je veut devenir bénévole</a>
-                            </div>
-                        </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nous soutenir</a>
+                                <div class="dropdown-menu bg-success" id="mouseover">
+                                    <a class="dropdown-item" href="#">J'adhère à TransHépate</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Pourquoi je fait un don</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Je veut devenir bénévole</a>
+                                </div>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-black" href="{{ path('app_main_contact') }}">Nous contacter</a>
-                        </li>
-                    </ul>
-                    {# <form class="d-flex">
-                        <input class="form-control me-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form> #}
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="{{ path('app_main_contact') }}">Nous contacter</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">TranHépate Blog</a>
+                                <div class="dropdown-menu bg-success" id="mouseover">
+                                    <a class="dropdown-item" href="#">Acceuil</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Inscription</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+            </nav>
+
+        </header>
+
+        {# MAIN #}
+        <main class="flex-shrink-0">
+            <div class="container">
+
+                {# BLOCK PRINCIPAL #}
+                {% block body %}{% endblock %}
+
             </div>
-        </nav>
-
-    <body>
-
-        {# BLOCK PRINCIPAL #}
-
-
-            {% block body %}
-                {# <style>
-                    .exemple-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-                    .exemple-wrapper code { background: #f5f5f5; padding: 2px; }
-                </style>
-
-                <div class="exemple-wrapper">
-
-                <h6>{{ fédération_régionale_des_malades_et_transplantés_hépatiques }}</h6>
-
-                </div> #}
-
-            {% endblock %}
+        </main>
 
 
         {# FOOTER #}
 
-        {# <footer class="footer mt-auto py-2 bg-dark">
-            <div class="container">
-                <span class="text-muted">Ceci est le footer</span>
-            </div>
-        </footer> #}
+        <footer class="footer mt-auto py-1 bg-light">
+            {# <div style="height:30vh;width:150px;border: 1px solid silver;" class="row align-items-center">
+                <div class="container fluid navbar-collapse text-uppercase"> #}
+                    <li style="height:5vh; width:1000px; margin-left:50px;" class="row align-items-center">
+                            <a class="btn btn-outline-success text-uppercase col-3" href="https://www.service-public.fr/particuliers/vosdroits/F183" target="_blank">Lois sur le don d'organes</a>
+                            <p style="margin-left: 500px;" class="row align-items-center col-3">&copy; Copyright 2022</p>
+                    </li>
+                {# </div>
+            </div> #}
+        </footer>
 
     </body>
 
