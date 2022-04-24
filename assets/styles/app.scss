@@ -24,116 +24,116 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/bootswatch/dist/cosmo/bootswatch";
 
-body {
-  background-color: #178E94;
-}
+// body {
+//   background-color: #178E94;
+// }
 
 /* MON SCSS */
 
-.dropdown-menu {
-  background-color: rgb(9, 90, 9);
-}
+// .dropdown-menu {
+//   background-color: rgb(9, 90, 9);
+// }
 
-.entete {
-  background-color: #178E94;
-}
+// .entete {
+//   background-color: #178E94;
+// }
 
-.navbar .navbar-extend {
-  color: rgb(6, 165, 168)!important;
-}
+// .navbar .navbar-extend {
+//   color: rgb(6, 165, 168)!important;
+// }
 
-.nav {
-  background-color: #178E94;
-}
+// .nav {
+//   background-color: #178E94;
+// }
 
-body {
-  font-size: 1rem!important;
-}
+// body {
+//   font-size: 1rem!important;
+// }
 
-.text-muted {
-  font-size: 0.8rem!important;
-}
+// .text-muted {
+//   font-size: 0.8rem!important;
+// }
 
-main {
-  padding: 60px 10px 0;
-}
+// main {
+//   padding: 60px 10px 0;
+// }
 
-header nav.navbar {
-  opacity: 0.90!important;
-}
+// header nav.navbar {
+//   opacity: 0.90!important;
+// }
 
-.dropdown-menu-dark {
-  background-color: darkgreen!important;
-}
+// .dropdown-menu-dark {
+//   background-color: darkgreen!important;
+// }
 
-.text-title-h1, a.text-title-h2:hover  {
-  color: navbar-dark-hover-color!important;
-}
+// .text-title-h1, a.text-title-h2:hover  {
+//   color: navbar-dark-hover-color!important;
+// }
 
-.text-title-h2, a.text-title-h1:hover, label {
-  color: #bff!important;
-}
+// .text-title-h2, a.text-title-h1:hover, label {
+//   color: #bff!important;
+// }
 
-.bg-post {
-  background-color: post-bg!important;
-}
+// .bg-post {
+//   background-color: post-bg!important;
+// }
 
-li.nav-item {
-  margin: 0 8px 0 8px!important;
-}
+// li.nav-item {
+//   margin: 0 8px 0 8px!important;
+// }
 
-.card {
-  border-radius: 11px!important;
-  box-shadow: rgba(0, 0, 0, 0.23) 0px 4px 8px, rgba(0, 0, 0, 0.33) 0px 4px 8px!important;
-}
+// .card {
+//   border-radius: 11px!important;
+//   box-shadow: rgba(0, 0, 0, 0.23) 0px 4px 8px, rgba(0, 0, 0, 0.33) 0px 4px 8px!important;
+// }
 
-.card-header:first-child {
-  border-radius: 11px 11px 0 0 !important;
-}
+// .card-header:first-child {
+//   border-radius: 11px 11px 0 0 !important;
+// }
 
-.card-footer:last-child {
-  border-radius: 0 0 11px 11px!important;
-}
+// .card-footer:last-child {
+//   border-radius: 0 0 11px 11px!important;
+// }
 
-label {
-  margin-bottom: 10px!important;
-  text-transform: uppercase!important;
-  font-weight: bold!important;
-  font-size: 1rem!important;
-}
+// label {
+//   margin-bottom: 10px!important;
+//   text-transform: uppercase!important;
+//   font-weight: bold!important;
+//   font-size: 1rem!important;
+//  }
 
 /*--------------------  MESSAGES D'ALERTES --------------------*/
 
-#messages {
-    position: absolute;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-    top: 62px;
-    right: 0;
-    left: 0;
-    z-index: 1020;
-    opacity: 0.75;
-}
+// #messages {
+//     position: absolute;
+//     text-transform: uppercase;
+//     font-weight: bold;
+//     text-align: center;
+//     top: 62px;
+//     right: 0;
+//     left: 0;
+//     z-index: 1020;
+//     opacity: 0.75;
+// }
 
 /*------------------------ PAGINATION -------------------------*/
 
- .page-item.active .page-link {
-    background-color: dark!important;
-}
+//  .page-item.active .page-link {
+//     background-color: dark!important;
+// }
 
- .page-item .page-link {
-    background-color: post-bg!important;
-    border-color: dark!important;
-}
+//  .page-item .page-link {
+//     background-color: post-bg!important;
+//     border-color: dark!important;
+// }
 
-.page-item .page-link:hover {
-    background-color: dark!important;
-}
+// .page-item .page-link:hover {
+//     background-color: dark!important;
+// }
 
-.page-item .page-link:focus, .page-item .page-link.focus {
-  box-shadow: none!important;
-}
+// .page-item .page-link:focus, .page-item .page-link.focus {
+//   box-shadow: none!important;
+// }
 
 /*---------------------------- CKEDITOR  ---------------------------*/
 
