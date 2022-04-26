@@ -32,9 +32,9 @@ class MainController extends AbstractController
     public function blog(PostRepository $postRepository): Response
     {
         $posts = $postRepository->findAll();
-        dump($posts);
+
         // Cette page appellera la vue template/main/blog.html.twig
-        // return $this->render('main/blog.html.twig');
+        return $this->render('main/blog.html.twig');
     }
 
     #[Route(path: '/creer_un_article', name:'new_post')]
