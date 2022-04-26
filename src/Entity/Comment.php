@@ -2,22 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\PostRepository;
+use App\Repository\CommentRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: PostRepository::class)]
-class Post
+#[ORM\Entity(repositoryClass: CommentRepository::class)]
+class Comment
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    private $id_post;
-
-    #[ORM\Column(type: 'string', length: 100)]
-    private $title;
-
-    #[ORM\Column(type: 'string', length: 255)]
-    private $slug;
+    private $id_comment;
 
     #[ORM\Column(type: 'text')]
     private $content;
@@ -30,31 +24,7 @@ class Post
 
     public function getId(): ?int
     {
-        return $this->id_post;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(string $title): self
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
-
-        return $this;
+        return $this->id_comment;
     }
 
     public function getContent(): ?string

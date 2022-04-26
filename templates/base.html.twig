@@ -23,6 +23,8 @@
         .dropdown:hover .dropdown-menu {display: block;}
         a:hover {background-color: #178E94;}
         span .navbar {color: black;}
+        .dropdown-item:hover { background-color: green; }
+        .nav-item .dropdown:hover { background-color: green; }
     </style>
 
 </head>
@@ -53,7 +55,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Qui sommes-nous</a>
                                 <div class="dropdown-menu bg-success">
-                                    <a class="hover dropdown-item" href="https://www.transhepate.org/" target="_blank">La fédération</a>
+                                    <a class="dropdown-item" href="https://www.transhepate.org/" target="_blank">La fédération</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Notre association régionale</a>
                                     <div class="dropdown-divider"></div>
@@ -64,15 +66,15 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">La greffe hépatique</a>
                                 <div class="dropdown-menu bg-success">
-                                    <a class="dropdown-item" href="#">Le bilan pré-greffe</a>
+                                    <a class="dropdown-item" href="https://www.centre-hepato-biliaire.org/transplantation-greffe-foie/bilan-pre-greffe.html" target="_blank">Le bilan pré-greffe</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">L'attente de la greffe</a>
+                                    <a class="dropdown-item" href="https://www.centre-hepato-biliaire.org/transplantation-greffe-foie/liste-attente-greffe.html" target="_blank">L'attente de la greffe</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Le jour de la greffe</a>
+                                    <a class="dropdown-item" href="https://www.centre-hepato-biliaire.org/transplantation-greffe-foie/jour-de-la-greffe.html" target="_blank">Le jour de la greffe</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Le suivi après la greffe</a>
+                                    <a class="dropdown-item" href="https://www.centre-hepato-biliaire.org/transplantation-greffe-foie/suivi-medical-post-greffe.html" target="_blank">Le suivi après la greffe</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Les traitements immunosuppresseurs</a>
+                                    <a class="dropdown-item" href="https://www.transhepate.org/les-traitements-immunosuppresseurs/" target="_blank">Les traitements immunosuppresseurs</a>
                                 </div>
                             </li>
 
@@ -82,7 +84,7 @@
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nous soutenir</a>
-                                <div class="dropdown-menu bg-success" id="mouseover">
+                                <div class="dropdown-menu bg-success">
                                     <a class="dropdown-item" href="#">J'adhère à TransHépate</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Pourquoi je fait un don</a>
@@ -96,9 +98,12 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">TranHépate Blog</a>
+                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="true" aria-expanded="false">TranHépate Blog</a>
                                 <div class="dropdown-menu bg-success" id="mouseover">
-                                    <a class="dropdown-item" href="#">Acceuil</a>
+                                <a class="dropdown-item" href="{{ path('app_main_blog') }}">Acceuil</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ path('app_main_new_post') }}">Nouvel publication</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Inscription</a>
                                 </div>
@@ -111,8 +116,18 @@
         </header>
 
         {# MAIN #}
-        <main class="flex-shrink-0">
-            <div class="container">
+        <main class="container-fluid flex-shrink-0">
+
+            {# Container pour les messages flash #}
+            <div id="messages" class="container p-0 m-0 mx-auto">
+                <div class="row p-0 m-0">
+                    {% for label, messages in app.flashes %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ label }} col-12" role="alert">{{ message }}</div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
 
                 {# BLOCK PRINCIPAL #}
                 {% block body %}{% endblock %}
@@ -123,12 +138,12 @@
 
         {# FOOTER #}
 
-        <footer class="footer mt-auto py-1 bg-light">
-            <div class="container fluid">
-                <li style="height:5vh; width:1000px; margin-left:50px;" class="row align-items-center">
-                    <p style="margin-left: 50px;" class="row align-items-center col-3">&copy; Copyright 2022</p>
-                    <a class="btn btn-outline-success text-uppercase col-3" href="https://www.service-public.fr/particuliers/vosdroits/F183" target="_blank">Lois sur le don d'organes</a>
-                    <img id="logomonin" src="{{ asset('build/images/Logo Monin 2.PNG') }}" alt="logo" style="height:50px; width: 200px; margin-left: 30px;">
+        <footer class="footer mt-auto py-1 bg-white">
+            <div>
+                <li style="height:5vh; width:1000px; margin-left:50px;" class="row align-center">
+                    <p style="margin-left: 50px;" class="row align-items-center col-3 text-warning">&copy; Copyright 2022</p>
+                    <img class="row align-center" id="logomonin" src="{{ asset('build/images/Logo Monin 2.PNG') }}" alt="logo" style="height:50px; width: 200px; margin-right: 150px;">
+                    <a class="btn btn-outline-warning text-uppercase col-3" href="https://www.service-public.fr/particuliers/vosdroits/F183" target="_blank">le don d'organes</a>
                 </li>
             </div>
         </footer>

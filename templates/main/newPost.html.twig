@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'un article{% endblock %}
+
+{% block body %}
+
+    <div class="container-lg">
+
+        <h3 class="text-light">Création d'un nouvel article</h3>
+
+        <div>
+            {# {{ form(form_post) }} #}
+            {{ form_start(form_post) }}
+                {# <button type="submit">Nouvelle Publication</button> #}
+            {{ form_end(form_post) }}
+        </div>
+
+    </div>
+
+{% endblock %}

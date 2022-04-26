@@ -18,33 +18,35 @@
 // $border-radius-sm: 3px !default;
 
 
+
+
 /* IMPORTS */
 @import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
 @import "../../node_modules/bootswatch/dist/cosmo/variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/bootswatch/dist/cosmo/bootswatch";
 
-// body {
-//   background-color: #178E94;
-// }
+body {
+  background-color: #11494C!important;
+}
 
 /* MON SCSS */
 
-// .dropdown-menu {
-//   background-color: rgb(9, 90, 9);
-// }
+.dropdown-menu {
+  background-color: rgb(9, 90, 9);
+}
 
-// .entete {
-//   background-color: #178E94;
-// }
+.entete {
+  background-color: #178E94;
+}
 
 // .navbar .navbar-extend {
 //   color: rgb(6, 165, 168)!important;
 // }
 
-// .nav {
-//   background-color: #178E94;
-// }
+.nav {
+  background-color: #178E94;
+}
 
 // body {
 //   font-size: 1rem!important;
@@ -104,17 +106,26 @@
 
 /*--------------------  MESSAGES D'ALERTES --------------------*/
 
-// #messages {
-//     position: absolute;
-//     text-transform: uppercase;
-//     font-weight: bold;
-//     text-align: center;
-//     top: 62px;
-//     right: 0;
-//     left: 0;
-//     z-index: 1020;
-//     opacity: 0.75;
-// }
+#messages {
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    top: 200px;
+    right: 0;
+    left: 0;
+    z-index: 920;
+    opacity: 0.75;
+}
+
+#messages .alert {
+  width: 100ww!important;
+  padding: 0.5rem 0.5rem!important;
+  margin-bottom: 0!important;
+  border: none!important;
+  border-radius: 0!important;
+}
+
 
 /*------------------------ PAGINATION -------------------------*/
 

@@ -1,9 +1,11 @@
 # Site internet régional TRANSHEPATE
 
 
+
 ## Création
 ```
-1/ Mise en place structure du site sous symfony
+Mise en place structure du site sous symfony
+git clone https://github.com/jeanmarcandre/TransHepate.git
 création du projet... "symfony new TransHepate --full"
 ```
 
