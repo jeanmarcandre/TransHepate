@@ -3,7 +3,18 @@
 {% block title %}BLOG{% endblock %}
 
 {% block body %}
+    <div class="container">
 
-    <h1>BLOG</h1>
+        <h1 class="text-light">Articles</h1>
 
+        {% for post in posts %}
+
+        <p class="text-light">{{ post.title }}</p>
+        <p class="text-light">{{ post.content }}</p>
+
+        <p class="text-light">{{ post.createdAt|date("d/m/Y") }}</p>
+
+        {% endfor %}
+
+    </div>
 {% endblock %}

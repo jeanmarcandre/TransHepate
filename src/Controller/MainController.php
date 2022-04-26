@@ -31,10 +31,10 @@ class MainController extends AbstractController
     #[Route(path: '/blog', name:'blog')]
     public function blog(PostRepository $postRepository): Response
     {
-        $posts = $postRepository->findAll();
-
         // Cette page appellera la vue template/main/blog.html.twig
-        return $this->render('main/blog.html.twig');
+        return $this->render('main/blog.html.twig', [
+            'posts' => $postRepository->findAll(),
+        ]);
     }
 
     #[Route(path: '/creer_un_article', name:'new_post')]
@@ -52,7 +52,7 @@ class MainController extends AbstractController
             $postRepository->add($post);
 
             $this->addFlash('success', 'Publication ajoutée');
-            return $this->redirectToRoute('app_main_home');
+            return $this->redirectToRoute('app_main_blog');
         }
 
         return $this->renderForm('main/newPost.html.twig', [
