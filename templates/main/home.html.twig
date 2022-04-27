@@ -4,6 +4,81 @@
 
 {% block body %}
 
-    <h1 class="text-light">ACCUEIL</h1>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('build/images/transhepate_boat.jpg') }}" class="d-block w-100" alt="boat">
+                <div class="carousel-caption d-none d-md-block  text-success bg-light w-50 opacity-75">
+                    <h3 class="text-light bg-success">La transquadra</h3>
+                    <h5>Un bateau pour promouvoir le don d'organes</h5>
+
+                </div>
+             </div>
+            <div class="carousel-item">
+                <img src="{{ asset('build/images/transhepate_mains.jpg') }}" class="d-block w-100" alt="mains">
+                <div class="carousel-caption d-none d-md-block text-success bg-light w-50 opacity-75">
+                    <h3 class="text-light bg-success">Transhépate</h3>
+                    <h4>-symbole de la greffe et du don d'organes-</h4>
+
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('build/images/transhepate_ruban_vert.jpg') }}" class="d-block w-100" alt="ruban_vert">
+                <div class="carousel-caption d-none d-md-block text-success bg-light w-50 opacity-75">
+                    <h3 class="text-light bg-success">Le ruban vert</h3>
+                    <h5>. Des transplantés au chevet des malades du foie depuis 35 ans</h5>
+
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev text-dark" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next text-dark" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <section class="content_section white_section bg_color1 text-light">
+        <div class="content row_spacer">
+            <div class="main_title centered upper">
+            <h2><span class="line"></span>Transhépate en chiffres</h2>
+        </div>
+        <div class="counter_a clearfix">
+            <div class="col-md-3">
+                <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="300">
+                    <span class="icon"><i class="fa fa-heart"></i></span>
+                    <span class="value" data-speed="4000" data-from="0" data-to="35">35</span>
+                    <span class="title">années d'existence</span>
+                </div>
+            </div>
+                <div class="col-md-3">
+                    <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="600">
+                        <span class="icon"><i class="fa fa-address-book"></i></span>
+                        <span class="value" data-speed="4000" data-from="0" data-to="1100">1100</span>
+                        <span class="title">Adhérents </span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="900">
+                        <span class='kyma_owl_p'><i class='fa fa-angle-left'></i></span>
+                        <span class="value" data-speed="4000" data-from="0" data-to="185">185</span>
+                        <span class="title">Bénévoles</span>
+                    </div>
+            </div>
+                <div class="col-md-3">
+                    <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="1200">
+                        <span class='kyma_owl_n'><i class='fa fa-angle-right'></i></span>
+                        <span class="value" data-speed="4000" data-from="0" data-to="12">12</span>
+                        <span class="title">Antennes régionales</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
+

@@ -17,12 +17,16 @@ require('bootstrap');
 // Chargement de la partie JF de Fontawesome
 require('@fortawesome/fontawesome-free/js/all.js');
 
+$(document).ready(function() {
+    $('[data-toggle="popover"]').popover();
+});
+
 // MON JS
 $(document).ready(function() {
 
     // Rend temporaire les div alerts (messages)
     if ($('div.alert')) {
-        $('div.alert').delay(3500).fadeOut(350, function() {
+        $('div.alert').delay(4000).fadeOut(350, function() {
             $('div.alert').remove();
         });
 

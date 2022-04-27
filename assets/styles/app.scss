@@ -17,6 +17,22 @@
 // $border-radius-lg: 5px !default;
 // $border-radius-sm: 3px !default;
 
+// $colors: (
+//   "blue":       $blue,
+//   "indigo":     $indigo,
+//   "purple":     $purple,
+//   "pink":       $pink,
+//   "red":        $red,
+//   "orange":     $orange,
+//   "yellow":     $yellow,
+//   "green":      $green,
+//   "teal":       $teal,
+//   "cyan":       $cyan,
+//   "white":      $white,
+//   "gray":       $gray-600,
+//   "gray-dark":  $gray-800
+// );
+
 
 
 
@@ -25,6 +41,10 @@
 @import "../../node_modules/bootswatch/dist/cosmo/variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/bootswatch/dist/cosmo/bootswatch";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
 
 body {
   background-color: #11494C!important;
@@ -44,8 +64,32 @@ body {
 //   color: rgb(6, 165, 168)!important;
 // }
 
+#kyma_owl_slider .kyma_owl_p:after,
+#kyma_owl_slider .kyma_owl_n:after {
+  background-color: #0b8b2e;
+  content: "";
+  display: block;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.5);
+  width: 100%;
+}
+
 .nav {
   background-color: #178E94;
+}
+
+.carousel-item.active, .carousel-item-next, .carousel-item-prev {
+  display: block;
+}
+
+.carousel-item {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
 }
 
 // body {
@@ -124,6 +168,21 @@ body {
   margin-bottom: 0!important;
   border: none!important;
   border-radius: 0!important;
+}
+
+.counter_a .counter .icon:after {
+  content: "";
+  display: block;
+  height: 65px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 65px;
+  opacity: 0;
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
 }
 
 
