@@ -37,6 +37,13 @@ class MainController extends AbstractController
         ]);
     }
 
+    #[Route(path: '/transhepatebfc', name:'transhepatebfc')]
+    public function transhepatebfc(PostRepository $postRepository): Response
+    {
+        // Cette page appellera la vue template/main/transhepatebfc.html.twig
+        return $this->render('main/transhepatebfc.html.twig');
+    }
+
     #[Route(path: '/creer_un_article', name:'new_post')]
     public function newPost(Request $request, PostRepository $postRepository): Response
     {

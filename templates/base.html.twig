@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content"width=device-width, initial-scale=1">
 
-    <title>{% block title %}TransHépate {% endblock %}</title>
+    <title>{% block title %}<img id="mini_logoimg" src="{{ asset('build/images/mini_logoimg.jpg') }}" alt="TRANSHEPATE"> {% endblock %}</title>
 
     {# BLOCK CSS #}
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
@@ -35,8 +35,8 @@
         <header>
             <nav class="entete navbar navbar-expand-lg">
                 <div class="container">
-                    <h6 class="text-uppercase  text-white">  fédération régionale des malades et transplantés hépatiques</h6>
-                    <h6 class="text-uppercase  text-white">  Région Bourgogne Franche Comtée</h6>
+                    <h6 class="fst-italic text-uppercase  text-white"><strong>  fédération régionale des malades et transplantés hépatiques</strong></h6>
+                    <h6 class="fst-italic text-uppercase  text-white"><strong>  Région Bourgogne Franche Comtée</strong></h6>
                 </div>
             </nav>
 
@@ -50,21 +50,21 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="container fluid collapse navbar-collapse text-uppercase" id="navbarColor01">
-                        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <div class="container fluid collapse navbar-collapse text-uppercase fst-italic" id="navbarColor01">
+                        <ul class="navbar-nav ms-auto mb-2 mb-md-2">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Qui sommes-nous</a>
+                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><strong>Qui sommes-nous</strong></a>
                                 <div class="dropdown-menu bg-success">
                                     <a class="dropdown-item" href="https://www.transhepate.org/" target="_blank">La fédération</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Notre association régionale</a>
+                                    <a class="dropdown-item" href="{{ path('app_main_transhepatebfc') }}">Notre association régionale</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="https://www.transhepate.org/nos-associations-regionales/" target="_blank">Nos associations régionales</a>
                                 </div>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">La greffe hépatique</a>
+                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><strong>La greffe hépatique</strong></a>
                                 <div class="dropdown-menu bg-success">
                                     <a class="dropdown-item" href="https://www.centre-hepato-biliaire.org/transplantation-greffe-foie/bilan-pre-greffe.html" target="_blank">Le bilan pré-greffe</a>
                                     <div class="dropdown-divider"></div>
@@ -79,11 +79,11 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="https://www.transhepate.org/les-centres-de-greffe/" target="_blank">CENTRES DE GREFFE</a>
+                                <a class="nav-link text-black" href="https://www.transhepate.org/les-centres-de-greffe/" target="_blank"><strong>CENTRES DE GREFFE</strong></a>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nous soutenir</a>
+                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><strong>Nous soutenir</strong></a>
                                 <div class="dropdown-menu bg-success">
                                     <a class="dropdown-item" href="https://www.transhepate.org/jadhere-a-transhepate/" target="_blank">J'adhère à TransHépate</a>
                                     <div class="dropdown-divider"></div>
@@ -94,12 +94,12 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="{{ path('app_main_contact') }}">Nous contacter</a>
+                                <a class="nav-link text-black" href="{{ path('app_main_contact') }}"><strong>Nous contacter</strong></a>
                             </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-haspopup="true" aria-expanded="false">TranHépate Blog</a>
+                                role="button" aria-haspopup="true" aria-expanded="false"><strong>TranHépate Blog</strong></a>
                                 <div class="dropdown-menu bg-success" id="mouseover">
                                 <a class="dropdown-item" href="{{ path('app_main_blog') }}">Acceuil</a>
                                     <div class="dropdown-divider"></div>
@@ -138,12 +138,12 @@
 
         {# FOOTER #}
 
-        <footer class="footer mt-auto py-1 bg-white">
-            {# <li style="height:5vh; width:1000px; margin-left:50px;" class="row align-center"> #}
+        <footer class="footer mt-auto py-1 bg-light">
+            <li style="height:5vh; width:1000px; margin-left:50px;" class="row align-center">
                 <div style="height:5vh; width:1000px; margin-left: 150px;" class="container fluid">
                     <div class="row align-center">
                         <div class="col-4">
-                            <p class="text-warning">&copy; Copyright 2022</p>
+                            <p class="text-warning">&copy; Transhépate 2022 - Mentions légales et RGPD</p>
                         </div>
                         {# <div class="col-4">
                             <img id="logomonin" src="{{ asset('build/images/Logo Monin 2.PNG') }}" alt="logo" style="height:50px; width: 200px;">
@@ -153,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-            {# </li> #}
+            </li>
         </footer>
 
     </body>

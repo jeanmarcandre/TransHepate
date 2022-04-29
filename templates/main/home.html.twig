@@ -4,79 +4,574 @@
 
 {% block body %}
 
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    {# CAROUSEL #}
+
+    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="{{ asset('build/images/transhepate_boat.jpg') }}" class="d-block w-100" alt="boat">
-                <div class="carousel-caption d-none d-md-block  text-success bg-light w-50 opacity-75">
-                    <h3 class="text-light bg-success">La transquadra</h3>
-                    <h5>Un bateau pour promouvoir le don d'organes</h5>
-
+                <div class="carousel-caption d-none d-md-block">
+                    <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">La transquadra</p></div>
+                    <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">*Un bateau pour promouvoir le don d'organes*</h5></div>
+                    <a href="http://preprod.transhepate-idf.fr/la-transquadra/" target="_blank" class="btn btn-primary btn-lg fst-italic" tabindex="-1" role="button" aria-disabled="true">En savoir plus...</a>
                 </div>
              </div>
             <div class="carousel-item">
                 <img src="{{ asset('build/images/transhepate_mains.jpg') }}" class="d-block w-100" alt="mains">
-                <div class="carousel-caption d-none d-md-block text-success bg-light w-50 opacity-75">
-                    <h3 class="text-light bg-success">Transhépate</h3>
-                    <h4>-symbole de la greffe et du don d'organes-</h4>
+                <div class="carousel-caption d-none d-md-block">
+                    <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">Transhépate</p></div>
+                    <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">-symbole de la greffe et du don d'organes-</h5></div>
 
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('build/images/transhepate_ruban_vert.jpg') }}" class="d-block w-100" alt="ruban_vert">
-                <div class="carousel-caption d-none d-md-block text-success bg-light w-50 opacity-75">
-                    <h3 class="text-light bg-success">Le ruban vert</h3>
-                    <h5>. Des transplantés au chevet des malades du foie depuis 35 ans</h5>
-
+                <div class="carousel-caption d-none d-md-block">
+                    <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">Le ruban vert</p></div>
+                    <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">. Des transplantés au chevet des malades du foie depuis 35 ans .</h5></div>
+                    <a href="http://preprod.transhepate-idf.fr/le-ruban-vert/" target="_blank" class="btn btn-primary btn-lg fst-italic" tabindex="-1" role="button" aria-disabled="true">En savoir plus...</a>
                 </div>
             </div>
         </div>
 
-        <button class="carousel-control-prev text-dark" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+            <span class="visually-no-hidden text-primary"><strong>Previous</strong></span>
         </button>
-        <button class="carousel-control-next text-dark" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="false"></span>
+            <span class="visually-no-hidden text-primary"><strong>Next</strong></span>
         </button>
+
+        <div class="owl-pagination">
+            <div class="owl-page active">
+                <span class="">
+                </span>
+            </div>
+            <div class="owl-page">
+                <span class="">
+                </span>
+            </div>
+            <div class="owl-page">
+                <span class="">
+                </span>
+            </div>
+        </div>
+
     </div>
 
-    <section class="content_section white_section bg_color1 text-light">
-        <div class="content row_spacer">
-            <div class="main_title centered upper">
-            <h2><span class="line"></span>Transhépate en chiffres</h2>
+    {# BANDEAU TRANSHEPATE EN CHIFFRES #}
+
+    <div class="card text-center text-light" style="background: #11494c;">
+        <div class="">
+            <h2 class="fs-5 text-uppercase fst-italic">
+                <span class="line"></span>
+                <strong>Transhépate en chiffres</strong>
+            </h2>
         </div>
-        <div class="counter_a clearfix">
-            <div class="col-md-3">
-                <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="300">
-                    <span class="icon"><i class="fa fa-heart"></i></span>
-                    <span class="value" data-speed="4000" data-from="0" data-to="35">35</span>
-                    <span class="title">années d'existence</span>
+    </div>
+    <div class="row text-light">
+        <div class="col-md-3">
+            <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="300">
+                <div class="card-body text-center" style="background: #11494c;">
+                    <span class="icon fs-2"><i class="fa fa-heart"></i class="::after"></span></br>
+                    <span class="value fs-4" data-speed="4000" data-from="0" data-to="35">35</span>
+                    <p class="card-text fs-5 fst-italic">années d'existence</p>
                 </div>
             </div>
-                <div class="col-md-3">
-                    <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="600">
-                        <span class="icon"><i class="fa fa-address-book"></i></span>
-                        <span class="value" data-speed="4000" data-from="0" data-to="1100">1100</span>
-                        <span class="title">Adhérents </span>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="900">
-                        <span class='kyma_owl_p'><i class='fa fa-angle-left'></i></span>
-                        <span class="value" data-speed="4000" data-from="0" data-to="185">185</span>
-                        <span class="title">Bénévoles</span>
-                    </div>
-            </div>
-                <div class="col-md-3">
-                    <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="1200">
-                        <span class='kyma_owl_n'><i class='fa fa-angle-right'></i></span>
-                        <span class="value" data-speed="4000" data-from="0" data-to="12">12</span>
-                        <span class="title">Antennes régionales</span>
-                    </div>
+        </div>
+        <div class="col-md-3">
+            <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="600">
+                <div class="card-body text-center" style="background: #11494c;">
+                    <span class="icon fs-2"><i class="fa fa-address-book"></i></span></br>
+                    <span class="value fs-4" data-speed="4000" data-from="0" data-to="1100">1100</span>
+                    <p class="card-text fs-5 fst-italic">Adhérents</p>
                 </div>
             </div>
+        </div>
+        <div class="col-md-3">
+            <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="300">
+                <div class="card-body text-center" style="background: #11494c;">
+                    <span class="icon fs-2"><i class="fa fa-hands-helping"></i></span></br>
+                    <span class="value fs-4" data-speed="4000" data-from="0" data-to="185">185</span>
+                    <p class="card-text fs-5 fst-italic">Bénévoles</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="300">
+                <div class="card-body text-center" style="background: #11494c;">
+                    <span class="kyma_owl_n fs-2"><i class="fa fa-map-marker"></i></span></br>
+                    <span class="value fs-4" data-speed="4000" data-from="0" data-to="12">12</span>
+                    <p class="card-text fs-5 fst-italic">Antennes régionales</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# LISTE DES ASSOCIATIONS REGIONALES #}
+
+    <section class="mt-auto py-1 bg-white">
+	    <div class="card text-center text-light" style="background: #fff;">
+            <div class="">
+                <h2 class="fs-5 text-uppercase fst-italic fw-bolder">
+                    <span class="line"></span>
+                        Nos associations régionales
+                    </h2>
+                </div>
+            </div>
+
+        {# <div class="normal_text_slider client_say_slider owl-carousel owl-theme" style="opacity: 0.5; display: block;">
+                <div class="owl-wrapper-outer autoHeight" style="height: 293px;">
+                    <div class="owl-wrapper text-dark" style="width: 11280px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(-1880px, 0px, 0px);">
+                        <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+                                <div class="centered">
+                                    <span class="client_img">
+                                        <span class="">
+                                            <a href="" target="_blank"><img width="170" height="170" src="https://www.transhepate.org/wp-content/uploads/2020/02/bo_img-e1583160820959.jpg" class="img-responsive wp-post-image" alt="TRANSHEPATE BRETAGNE OUEST"></a>
+                                        </span>
+                                    </span>
+                                </div class="">
+                                <span class="client_details">
+                                    <span class="name text-dark">TRANSHEPATE BRETAGNE OUEST</span>
+                                </span>
+                                <span class="desc">
+                                    <h6 style="text-align: center;">
+                                        <span style="color: #0b8b2e;">
+                                            <strong>Président : Daniel Cordier</strong>
+                                        </span><br>
+                                            <strong>Tél : 06 45 46 42 14</strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social :&nbsp;
+                                            <a style="color: #808080;">CHU Pontchaillou –&nbsp;2 rue Henri Le Guilloux&nbsp;35000 RENNES</a>
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+                                <div class="centered">
+                                    <span class="client_img">
+                                        <span>
+                                            <a href="" target="_blank"><img width="170" height="166" src="https://www.transhepate.org/wp-content/uploads/2020/02/idfreca-e1583160903560.jpg" class="img-responsive wp-post-image" alt=""></a>
+                                        </span>
+                                    </span>
+                                </div>
+                                <span class="client_details">
+                                    <span class="name">TRANSHEPATE ILE DE FRANCE</span>
+                                </span>
+                                <span class="desc">
+                                    <h6 style="text-align: center;">
+                                        <span style="color: #0b8b2e;">
+                                            <strong>Présidente :<a style="color: #0b8b2e;" href="mailto:transhepateidf@gmail.com">Anne-Marie WILMOTTE</a></strong>
+                                        </span><br>
+                                            <strong>Tél : 06 61 89 14 49 </strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social : 6, rue de l’Aubrac&nbsp;75012 PARIS
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#FFFFFF;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+
+                       <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+                                <div class="centered">
+                                    <span class="client_img">
+                                        <span>
+                                            <a href="" target="_blank">
+                                                <img width="170" height="165" src="https://www.transhepate.org/wp-content/uploads/2020/02/cpc_img-e1583160865698.jpg" class="img-responsive wp-post-image" alt="">
+                                            </a>
+                                        </span>
+                                    </span>
+                                </div>
+                                <span class="client_details">
+                                    <span class="name">TRANSHEPATE CENTRE POITOU CHARENTES</span>
+                                </span>
+                                <span class="desc">
+						            <h6 style="text-align: center;">
+                                        <span style="color: #0b8b2e;">
+                                            <strong>Présidente :&nbsp;Miki&nbsp;GOUDSMIT</strong>
+                                        </span><br>
+                                            <strong>Tél : 06 43 41 58 36 </strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social :&nbsp;Secrétariat du Professeur Salamé –&nbsp;CHRU Trousseau – Avenue de la République&nbsp;37000 TOURS
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#FFFFFF;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+					                </p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+					            <div class="centered">
+						            <span class="client_img">
+                                        <span>
+                                            <a href="" target="_blank">
+                                                <img width="167" height="170" src="https://www.transhepate.org/wp-content/uploads/2020/02/li_img.jpg" class="img-responsive wp-post-image" alt="">
+                                            </a>
+                                        </span>
+						            </span>
+					            </div>
+					            <span class="client_details">
+						            <span class="name">TRANSHEPATE LIMOUSIN</span>
+                                </span>
+                                <span class="desc">
+						            <h6 style="text-align: center;">
+                                        <span style="color: #0b8b2e;">
+                                            <strong>Président : <a style="color: #0b8b2e;" href="mailto:transhepatelimousin@orange.fr">Denis TOUCHET</a></strong>
+                                        </span><br>
+                                            <strong>Tél : 05 55 30 47 35</strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social :&nbsp;2, avenue Martin Luther King&nbsp;87042 LIMOGES Cedex
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#FFFFFF;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+				                    </p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+					            <div class="centered">
+						            <span class="client_img">
+                                        <span>
+                                            <a href="" target="_blank">
+                                                <img width="170" height="162" src="https://www.transhepate.org/wp-content/uploads/2020/02/ra_img-e1583160887692.jpg" class="img-responsive wp-post-image" alt="">
+                                            </a>
+                                        </span>
+						            </span>
+					            </div>
+					            <span class="client_details">
+						            <span class="name">TRANSHEPATE RHÔNE ALPES (RESURGENCE)</span>
+                                </span>
+					            <span class="desc">
+						            <h6 style="text-align: center;">
+                                        <span style="color: #0b8b2e;">
+                                            <strong>Présidente : <a style="color: #0b8b2e;" href="mailto:phthieb@orange.fr">Muriel TISSIER</a></strong>
+                                        </span><br>
+                                            <strong>Tél : 06 63 70 56 73 </strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social :&nbsp;Mairie du 4ème –&nbsp;133, Boulevard de la Croix Rousse&nbsp;69004 LYON
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#FFFFFF;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+					            <div class="centered">
+						            <span class="client_img">
+                                        <span>
+                                            <a href="" target="_blank">
+                                                <img width="170" height="165" src="https://www.transhepate.org/wp-content/uploads/2020/02/bfc_img.jpg" class="img-responsive wp-post-image" alt="">
+                                            </a>
+                                        </span>
+						            </span>
+					            </div>
+					            <span class="client_details">
+						            <span class="name">TRANSHEPATE BOURGOGNE FRANCHE COMTE</span>
+                                </span>
+                                <span class="desc">
+						            <h6 style="text-align: center;">
+                                        <span style="color: #0b8b2e;">
+                                            <strong>Président : <a style="color: #0b8b2e;" a href="mailto:armand.fages@bbox.fr">Armand FAGES</a></strong>
+                                        </span><br>
+                                            <strong>Tél : 03 81 50 47 79</strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social :&nbsp;CHU Besançon – 3, Boulevard Alexandre Fleming&nbsp;25000 BESANÇON
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#FFFFFF;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+					            <div class="centered">
+						            <span class="client_img">
+							            <span>
+								            <a href="" target="_blank">
+                                                <img width="170" height="167" src="https://www.transhepate.org/wp-content/uploads/2020/02/no_img-e1583160875430.jpg" class="img-responsive wp-post-image" alt="">
+                                            </a>
+							            </span>
+						            </span>
+					            </div>
+                                <span class="client_details">
+                                    <span class="name">TRANSHEPATE NORMANDIE</span>
+                                </span>
+                                <span class="desc">
+                                    <h6 style="text-align: center;">
+                                        <span style="color: #0b8b2e;"><strong>Président :
+                                            <a style="color: #0b8b2e;" href="mailto:transhepat@aol.com">&nbsp;Marc LEBLOND</a></strong>
+                                        </span><br>
+                                        <strong>Tél : 02 33 25 43 98</strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social :&nbsp;CHU Caen –&nbsp;Avenue de la Côte de Nacre&nbsp;14033 CAEN Cedex 9
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#FFFFFF;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+				                    </p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+					            <div class="centered">
+						            <span class="client_img">
+							            <span>
+								            <a href="" target="_blank">
+                                                <img width="170" height="168" src="https://www.transhepate.org/wp-content/uploads/2020/02/pacac_img-e1583160919994.jpg" class="img-responsive wp-post-image" alt="">
+                                            </a>
+							            </span>
+						            </span>
+					            </div>
+					            <span class="client_details">
+						            <span class="name">TRANSHEPATE PACAC</span>
+                                </span>
+                                <span class="desc">
+						            <h6 style="text-align: center;">
+                                        <span style="color: #0b8b2e;"><strong>Président :
+                                            <a style="color: #0b8b2e;" href="mailto:jean.acciaro@free.fr">Jean ACCIARO</a></strong>
+                                        </span><br>
+                                        <strong>Tél : 06 65 59 83 11</strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social : 111, Avenue Franklin Roosevelt&nbsp;13600 LA CIOTAT
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#FFFFFF;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+				                    </p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+					            <div class="centered">
+						            <span class="client_img">
+							            <span>
+								            <a href="" target="_blank">
+                                                <img width="170" height="166" src="https://www.transhepate.org/wp-content/uploads/2020/02/so_img-e1583160831890.jpg" class="img-responsive wp-post-image" alt="">
+                                            </a>
+							            </span>
+						            </span>
+					            </div>
+					            <span class="client_details">
+						            <span class="name">TRANSHEPATE SUD OUEST (AMATHSO)</span>
+                                </span>
+					            <span class="desc">
+						            <h6 style="text-align: center;">
+                                    <span style="color: #0b8b2e;"><strong>Président :
+                                        <strong><a style="color: #0b8b2e;" href="http://www.amathso.org/" target="_blank" rel="noopener noreferrer"> Michel DURIEUX</a></strong>
+                                    </span><br>
+                                    <strong>Tél :&nbsp;05 56 97 58 39</strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social : Hôpital Haut Lévêque – Espace associations –<br>
+                                            Avenue Magellan -33604 PESSAC
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#FFFFFF;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+				                    </p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+					            <div class="centered">
+						            <span class="client_img">
+							            <span>
+								            <a href="" target="_blank">
+                                                <img width="170" height="170" src="https://www.transhepate.org/wp-content/uploads/2020/02/mp_img-e1583160844383.jpg" class="img-responsive wp-post-image" alt="">
+                                            </a>
+							            </span>
+						            </span>
+					            </div>
+					            <span class="client_details">
+						            <span class="name">TRANSHEPATE OCCITANIE</span>
+                                </span>
+					            <span class="desc">
+                                    <h6 style="text-align: center;">
+                                        <span style="color: #0b8b2e;"><strong>Président :
+                                            <a style="color: #0b8b2e;">Christian VAUCELLE</a></strong>
+                                        </span><br>
+                                        <strong>Tél :&nbsp;06 65 19 41 57</strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social :&nbsp;St Sernin le Haut 11320 SAINT-PAULET
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#FFFFFF;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+                                    </p>
+				                </span>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+					            <div class="centered">
+						            <span class="client_img">
+							            <span>
+								            <a href="" target="_blank">
+                                                <img width="168" height="170" src="https://www.transhepate.org/wp-content/uploads/2020/02/hdf_img-e1583160782160.jpg" class="img-responsive wp-post-image" alt="">
+                                            </a>
+							            </span>
+						            </span>
+					            </div>
+					            <span class="client_details">
+						            <span class="name">TRANSHEPATE HAUTS DE FRANCE</span>
+                                </span>
+                                <span class="desc">
+						            <h6 style="text-align: center;">
+                                        <span style="color: #0b8b2e;"><strong>Président :
+                                            <a style="color: #0b8b2e;" href="mailto:transhepatehdf@gmail.com">Eric BULEUX-OSMANN </a></strong>
+                                        </span><br>
+                                        <strong>Tél : 06 50 13 90 38</strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social :&nbsp;Maison des Associations – 27, rue Jean Bart 59000
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#FFFFFF;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+				                    </p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 940px;">
+                            <div class="c_say">
+					            <div class="centered">
+						            <span class="client_img">
+							            <span>
+								            <a href="" target="_blank">
+                                                <img width="170" height="170" src="https://www.transhepate.org/wp-content/uploads/2020/02/tah_img-e1583160806860.jpg" class="img-responsive wp-post-image" alt="">
+                                            </a>
+							            </span>
+						            </span>
+					            </div>
+					            <span class="client_details">
+						            <span class="name">TRANSHEPATE TAHITI ET SES ILES</span>
+                                </span>
+					            <span class="desc">
+						            <h6 style="text-align: center;">
+                                        <span style="color: #0b8b2e;"><strong>Présidente :
+                                            <a style="color: #0b8b2e;" href="mailto:valerieyee@mail.pf">Valérie WONG</a></strong>
+                                        </span><br>
+                                        <strong>Tél : 87 70 04 94</strong>
+                                        <span style="color: #808080;"><br>
+                                            Siège social :&nbsp;BP 122290 – 98712 PAPAKA TAHITI
+                                        </span>
+                                    </h6>
+                                    <p style="text-align: center;">
+                                        <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" class="su-button su-button-style-soft" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
+                                            <span style="color:#FFFFFF;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                                <i class="sui sui-search" style="font-size:14px;color:#FFF"></i>
+                                                Voir toutes les associations régionales…
+                                            </span>
+                                        </a>
+				                    </p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="owl-controls clickable">
+                    <div class="owl-buttons">
+                        <div class="owl-prev">
+                            <span class="kyma_owl_p">
+                                <i class="fa fa-angle-left"></i>
+                            </span>
+                        </div>
+                        <div class="owl-next">
+                            <span class="kyma_owl_n">
+                                <i class="fa fa-angle-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div> #}
         </div>
     </section>
 
