@@ -51,14 +51,14 @@
                     </button>
 
                     <div class="container fluid collapse navbar-collapse text-uppercase fst-italic" id="navbarColor01">
-                        <ul class="navbar-nav ms-auto mb-2 mb-md-2">
+                        <ul class="navbar-nav mx-3 mb-2 mb-md-2">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><strong>Qui sommes-nous</strong></a>
                                 <div class="dropdown-menu bg-success">
                                     <a class="dropdown-item" href="https://www.transhepate.org/" target="_blank">La fédération</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ path('app_main_transhepatebfc') }}">Notre association régionale</a>
-                                    <div class="dropdown-divider"></div>
+                                    {# <a class="dropdown-item" href="{{ path('app_main_transhepatebfc') }}">Notre association régionale</a>
+                                    <div class="dropdown-divider"></div> #}
                                     <a class="dropdown-item" href="https://www.transhepate.org/nos-associations-regionales/" target="_blank">Nos associations régionales</a>
                                 </div>
                             </li>
@@ -94,7 +94,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="{{ path('app_main_contact') }}"><strong>Nous contacter</strong></a>
+                                <a class="nav-link text-black" href="{{ path('app_main_transhepatebfc') }}"><strong>Nous contacter</strong></a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -138,22 +138,22 @@
 
         {# FOOTER #}
 
-        <footer class="footer mt-auto py-1 bg-light">
-            <li style="height:5vh; width:1000px; margin-left:50px;" class="row align-center">
+        <footer class="footer px-5 py-2 mx-4">
+            <div style="height:5vh; width:1000px; margin-left:50px;" class="row align-center">
                 <div style="height:5vh; width:1000px; margin-left: 150px;" class="container fluid">
                     <div class="row align-center">
                         <div class="col-4">
                             <p class="text-warning">&copy; Transhépate 2022 - Mentions légales et RGPD</p>
                         </div>
-                        {# <div class="col-4">
+                        <div class="col-4">
                             <img id="logomonin" src="{{ asset('build/images/Logo Monin 2.PNG') }}" alt="logo" style="height:50px; width: 200px;">
-                        </div> #}
+                        </div>
                         <div class="col-4">
                             <a class="btn btn-outline-warning text-uppercase" href="https://www.service-public.fr/particuliers/vosdroits/F183" target="_blank">le don d'organes</a>
                         </div>
                     </div>
                 </div>
-            </li>
+            </div>
         </footer>
 
     </body>
