@@ -28,42 +28,10 @@ class MainController extends AbstractController
         return $this->render('main/contact.html.twig');
     }
 
-    #[Route(path: '/blog', name:'blog')]
-    public function blog(PostRepository $postRepository): Response
-    {
-        // Cette page appellera la vue template/main/blog.html.twig
-        return $this->render('main/blog.html.twig', [
-            'posts' => $postRepository->findAll(),
-        ]);
-    }
-
     #[Route(path: '/transhepatebfc', name:'transhepatebfc')]
     public function transhepatebfc(PostRepository $postRepository): Response
     {
         // Cette page appellera la vue template/main/transhepatebfc.html.twig
         return $this->render('main/transhepatebfc.html.twig');
-    }
-
-    #[Route(path: '/creer_un_article', name:'new_post')]
-    public function newPost(Request $request, PostRepository $postRepository): Response
-    {
-        $post = new Post();
-
-        $form = $this->createForm(PostFormType::class,$post);
-
-        $form->handleRequest($request);
-
-        /* gestion de la soumission du formulaire */
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $postRepository->add($post);
-
-            $this->addFlash('success', 'Publication ajoutée');
-            return $this->redirectToRoute('app_main_blog');
-        }
-
-        return $this->renderForm('main/newPost.html.twig', [
-            'form_post' => $form
-        ]);
     }
 }

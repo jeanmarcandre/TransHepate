@@ -29,7 +29,11 @@ class PostController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $postRepository->add($post);
+
+            $this->addFlash('success', 'Publication ajoutée');
+
             return $this->redirectToRoute('app_post_index');
         }
 
@@ -54,8 +58,12 @@ class PostController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $postRepository->add($post);
-            return $this->redirectToRoute('app_post_index', [], Response::HTTP_SEE_OTHER);
+
+            $this->addFlash('success', 'Publication bien modifiée');
+
+            return $this->redirectToRoute('app_post_index');
         }
 
         return $this->renderForm('post/edit.html.twig', [
@@ -67,10 +75,12 @@ class PostController extends AbstractController
     #[Route('/{id}', name: 'app_post_delete', methods: ['POST'])]
     public function delete(Request $request, Post $post, PostRepository $postRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$post->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('transhepate_blog'.$post->getId(), $request->request->get('_token'))) {
             $postRepository->remove($post);
+
+            $this->addFlash('success', 'Publication bien éffaçée');
         }
 
-        return $this->redirectToRoute('app_post_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_post_index');
     }
 }
