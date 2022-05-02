@@ -78,7 +78,7 @@ class PostController extends AbstractController
         if ($this->isCsrfTokenValid('transhepate_blog'.$post->getId(), $request->request->get('_token'))) {
             $postRepository->remove($post);
 
-            $this->addFlash('success', 'Publication bien éffaçée');
+            $this->addFlash('success', 'Publication supprimée');
         }
 
         return $this->redirectToRoute('app_post_index');

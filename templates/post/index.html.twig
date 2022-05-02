@@ -3,41 +3,47 @@
 {% block title %}Post index{% endblock %}
 
 {% block body %}
-    <h1 class="text-light">Liste des Post</h1>
 
-    <table class="table">
-        <thead class="text-light">
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Slug</th>
-                <th>Content</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody class="text-light">
-        {% for post in posts %}
-            <tr>
-                <td>{{ post.id }}</td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.slug }}</td>
-                <td>{{ post.content }}</td>
-                <td>{{ post.createdAt|date('d/m/Y H:i')  }}</td>
-                <td>{{ post.updatedAt ? post.updatedAt|date('d/m/Y H:i') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_post_show', {'id': post.id}) }}"  class="btn btn-success">show</a>
-                    <a href="{{ path('app_post_edit', {'id': post.id}) }}"  class="btn btn-warning">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="text-dark bg-light my-5 p-4 d-block w-100">
 
-    <a href="{{ path('app_post_new') }}" class="btn btn-success">Creer un nouvel article</a>
+        <h1 class="mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;"><strong>Liste des Articles</strong></h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Slug</th>
+                    <th>Content</th>
+                    <th>CreatedAt</th>
+                    <th>UpdatedAt</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td>{{ post.id }}</td>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.slug }}</td>
+                    <td>{{ post.content }}</td>
+                    <td>{{ post.createdAt|date('d/m/Y H:i')  }}</td>
+                    <td>{{ post.updatedAt ? post.updatedAt|date('d/m/Y H:i') : '' }}</td>
+                    <td>
+                        <a href="{{ path('app_post_show', {'id': post.id}) }}"  class="btn btn-success">Montrer</a>
+                        <a href="{{ path('app_post_edit', {'id': post.id}) }}"  class="btn btn-warning">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">Aucun article trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_post_new') }}" class="btn btn-success">Creer un nouvel article</a>
+
+    </div>
+
 {% endblock %}

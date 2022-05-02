@@ -114,6 +114,30 @@ ul li {
   text-decoration: none!important;
 }
 
+h5 div a:hover {
+  background-color: rgb(250, 231, 59)!important;
+}
+
+footer {
+  position: fixed!important;
+  bottom: 0!important;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+header {
+  // position: fixed!important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+div ul li .contact {
+  text-decoration: underline;
+}
+
 // .bg_gray {
 //   background: #f9fafc!important;
 //   border-bottom: 1px solid #eaebed!important;
