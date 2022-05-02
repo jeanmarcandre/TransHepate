@@ -9,7 +9,7 @@
     <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('build/images/transhepate_boat.jpg') }}" class="d-block w-100" alt="boat">
+                <img src="{{ asset('build/transhepate_boat.jpg') }}" class="d-block w-100" alt="boat">
                 <div class="carousel-caption d-none d-md-block">
                     <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">La transquadra</p></div>
                     <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">*Un bateau pour promouvoir le don d'organes*</h5></div>
@@ -17,7 +17,7 @@
                 </div>
              </div>
             <div class="carousel-item">
-                <img src="{{ asset('build/images/transhepate_mains.jpg') }}" class="d-block w-100" alt="mains">
+                <img src="{{ asset('build/transhepate_mains.jpg') }}" class="d-block w-100" alt="mains">
                 <div class="carousel-caption d-none d-md-block">
                     <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">Transhépate</p></div>
                     <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">-symbole de la greffe et du don d'organes-</h5></div>
@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('build/images/transhepate_ruban_vert.jpg') }}" class="d-block w-100" alt="ruban_vert">
+                <img src="{{ asset('build/transhepate_ruban_vert.jpg') }}" class="d-block w-100" alt="ruban_vert">
                 <div class="carousel-caption d-none d-md-block">
                     <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">Le ruban vert</p></div>
                     <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">. Des transplantés au chevet des malades du foie depuis 35 ans .</h5></div>
@@ -131,7 +131,7 @@
         </section>
 
         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
+            {# <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -144,33 +144,33 @@
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="9" aria-label="Slide 10"></button>
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="10" aria-label="Slide 11"></button>
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="11" aria-label="Slide 12"></button>
-            </div>
+            </div> #}
 
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="3000">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/bo_img-e1583160820959.jpg') }}" class="d-block w-10" alt="TRANSHEPATE BRETAGNE OUEST"></img>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE BRETAGNE OUEST</div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/bo_img-e1583160820959.jpg') }}" class="d-block w-10" alt="TRANSHEPATE BRETAGNE OUEST"></img>
+                                </div>
+                                {# <div class="client_details"> #}
+                                    <div class="text-color fs-5">TRANSHEPATE BRETAGNE OUEST</div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Président : Daniel Cordier</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 06 45 46 42 14</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social : CHU Pontchaillou - 2 rue Henri Le Guilloux 35000 RENNES
-                                        </div>
+                                    <strong>Tél : 06 45 46 42 14</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social : CHU Pontchaillou - 2 rue Henri Le Guilloux 35000 RENNES
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>
@@ -181,29 +181,29 @@
                 </div>
 
                 <div class="carousel-item" data-bs-interval="3000">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/idfreca-e1583160903560.jpg') }}" class="d-block w-10" alt="TRANSHEPATE ILE DE FRANCE"></img>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE ILE DE FRANCE </div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/idfreca-e1583160903560.jpg') }}" class="d-block w-10" alt="TRANSHEPATE ILE DE FRANCE"></img>
+                                </div>
+                                {# <div class="client_details"> #}
+                                <div class="text-color fs-5">TRANSHEPATE ILE DE FRANCE </div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Présidente : Anne-Marie WILMOTTE</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 06 61 89 14 49</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social : 6 rue de l'aubrac 75012 PARIS
-                                        </div>
+                                    <strong>Tél : 06 61 89 14 49</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social : 6 rue de l'aubrac 75012 PARIS
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>
@@ -214,30 +214,30 @@
                 </div>
 
                 <div class="carousel-item">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/cpc_img-e1583160865698.jpg') }}" class="d-block w-10" alt="TRANSHEPATE CENTRE POITOU CHARENTES"></img>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE CENTRE POITOU CHARENTES</div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/cpc_img-e1583160865698.jpg') }}" class="d-block w-10" alt="TRANSHEPATE CENTRE POITOU CHARENTES"></img>
+                                </div>
+                                {# <div class="client_details"> #}
+                                <div class="text-color fs-5">TRANSHEPATE CENTRE POITOU CHARENTES</div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Présidente : Miki GOUDSMIT</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 06 43 41 58 36</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social :
-                                            Secrétariat du Professeur Salamé - CHRU Trousseau - Avenue de la République 37000 TOURS
-                                        </div>
+                                    <strong>Tél : 06 43 41 58 36</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social :
+                                        Secrétariat du Professeur Salamé - CHRU Trousseau - Avenue de la République 37000 TOURS
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>
@@ -248,29 +248,29 @@
                 </div>
 
                 <div class="carousel-item">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/li_img.jpg') }}" class="d-block w-10" alt="TRANSHEPATE LIMOUSIN"></img>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE LIMOUSIN </div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/li_img.jpg') }}" class="d-block w-10" alt="TRANSHEPATE LIMOUSIN"></img>
+                                </div>
+                                {# <div class="client_details"> #}
+                                    <div class="text-color fs-5">TRANSHEPATE LIMOUSIN </div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Président : Denis TOUCHET</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 05 55 30 47 35</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social : 2 Avenue Martin Luther King 87042 LIMOGES Cedex
-                                        </div>
+                                    <strong>Tél : 05 55 30 47 35</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social : 2 Avenue Martin Luther King 87042 LIMOGES Cedex
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>
@@ -281,29 +281,29 @@
                 </div>
 
                 <div class="carousel-item">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/ra_img-e1583160887692.jpg') }}" class="d-block w-10" alt="TRANSHEPATE RHÔNE ALPES (RESURGENCE)"></img>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE RHÔNE ALPES (RESURGENCE) </div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/ra_img-e1583160887692.jpg') }}" class="d-block w-10" alt="TRANSHEPATE RHÔNE ALPES (RESURGENCE)"></img>
+                                </div>
+                                {# <div class="client_details"> #}
+                                    <div class="text-color fs-5">TRANSHEPATE RHÔNE ALPES (RESURGENCE) </div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Présidente : <a style="color: #0b8b2e;" href="mailto:phthieb@orange.fr"></a>Muriel TISSIER</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 06 63 70 56 73</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social : Mairie du 4ème - Boulevard de la Croix Rousse 69004 LYON
-                                        </div>
+                                    <strong>Tél : 06 63 70 56 73</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social : Mairie du 4ème - Boulevard de la Croix Rousse 69004 LYON
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>
@@ -314,29 +314,29 @@
                 </div>
 
                 <div class="carousel-item">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/bfc_img.jpg') }}" class="d-block w-10" alt="TRANSHEPATE BOURGOGNE FRANCHE COMTE"></img>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE BOURGOGNE FRANCHE COMTE</div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/bfc_img.jpg') }}" class="d-block w-10" alt="TRANSHEPATE BOURGOGNE FRANCHE COMTE"></img>
+                                </div>
+                                {# <div class="client_details"> #}
+                                    <div class="text-color fs-5">TRANSHEPATE BOURGOGNE FRANCHE COMTE</div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Président : <a style="color: #0b8b2e;" href="mailto:armand.fages@bbox.fr"></a>Armand FAGES</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 06 08 78 31 63</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social : CHU de Besançon - Maison des Familles</br>3 Boulevard Alexandre Fleming 25000 BESANÇON
-                                        </div>
+                                    <strong>Tél : 06 08 78 31 63</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social : CHU de Besançon - Maison des Familles</br>3 Boulevard Alexandre Fleming 25000 BESANÇON
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>
@@ -347,29 +347,29 @@
                 </div>
 
                 <div class="carousel-item">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/no_img-e1583160875430.jpg') }}" class="d-block w-10" alt="TRANSHEPATE NORMANDIE"></img>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE NORMANDIE</div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/no_img-e1583160875430.jpg') }}" class="d-block w-10" alt="TRANSHEPATE NORMANDIE"></img>
+                                </div>
+                                {# <div class="client_details"> #}
+                                    <div class="text-color fs-5">TRANSHEPATE NORMANDIE</div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Président : <a style="color: #0b8b2e;" href="mailto:transhepat@aol.com"></a>Marc LEBLOND</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 02 33 25 43 98</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social : CHU Caen - Avenue de la Côte de Nacre 14033 CAEN Cedex 9
-                                        </div>
+                                    <strong>Tél : 02 33 25 43 98</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social : CHU Caen - Avenue de la Côte de Nacre 14033 CAEN Cedex 9
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>
@@ -380,29 +380,29 @@
                 </div>
 
                 <div class="carousel-item">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/pacac_img-e1583160919994.jpg') }}" class="d-block w-10" alt="TRANSHEPATE PACAC"></img>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE PACAC</div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/pacac_img-e1583160919994.jpg') }}" class="d-block w-10" alt="TRANSHEPATE PACAC"></img>
+                                </div>
+                                {# <div class="client_details"> #}
+                                    <div class="text-color fs-5">TRANSHEPATE PACAC</div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Président : <a style="color: #0b8b2e;" href="mailto:jean.acciaro@free.fr"></a>Jean ACCIARO</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 06 65 59 83 11</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social : 111 Avenue Franklin Roosevelt 13600 LA CIOTAT
-                                        </div>
+                                    <strong>Tél : 06 65 59 83 11</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social : 111 Avenue Franklin Roosevelt 13600 LA CIOTAT
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>
@@ -413,29 +413,29 @@
                 </div>
 
                 <div class="carousel-item">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/so_img-e1583160831890.jpg') }}" class="d-block w-10" alt="TRANSHEPATE SUD OUEST (AMATHSO)"></img>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE SUD OUEST (AMATHSO)</div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/so_img-e1583160831890.jpg') }}" class="d-block w-10" alt="TRANSHEPATE SUD OUEST (AMATHSO)"></img>
+                                </div>
+                                {# <div class="client_details"> #}
+                                    <div class="text-color fs-5">TRANSHEPATE SUD OUEST (AMATHSO)</div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Président : <a style="color: #0b8b2e;" href="http://www.amathso.org/" target="_blank"></a>Michel DURIEUX</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 05 56 97 58 39</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social : Hôpital Haut Lévêque - Espace associations</br>Avenue Magellan 33604 PESSAC
-                                        </div>
+                                    <strong>Tél : 05 56 97 58 39</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social : Hôpital Haut Lévêque - Espace associations</br>Avenue Magellan 33604 PESSAC
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>
@@ -446,29 +446,29 @@
                 </div>
 
                 <div class="carousel-item">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/mp_img-e1583160844383.jpg') }}" class="d-block w-10" alt="TRANSHEPATE OCCITANIE"></img>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE OCCITANIE</div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/mp_img-e1583160844383.jpg') }}" class="d-block w-10" alt="TRANSHEPATE OCCITANIE"></img>
+                                </div>
+                                {# <div class="client_details"> #}
+                                    <div class="text-color fs-5">TRANSHEPATE OCCITANIE</div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Président : <a style="color: #0b8b2e;" href="" target="_blank"></a>Christian VAUCELLE</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 06 65 19 41 57</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social : St Sernin le Haut 11320 SAINT-PAULET
-                                        </div>
+                                    <strong>Tél : 06 65 19 41 57</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social : St Sernin le Haut 11320 SAINT-PAULET
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>
@@ -479,29 +479,29 @@
                 </div>
 
                 <div class="carousel-item">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/hdf_img-e1583160782160.jpg') }}" class="d-block w-10" alt="TRANSHEPATE HAUTS DE FRANCE"></a>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE HAUTS DE FRANCE</div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/hdf_img-e1583160782160.jpg') }}" class="d-block w-10" alt="TRANSHEPATE HAUTS DE FRANCE"></a>
+                                </div>
+                                {# <div class="client_details"> #}
+                                    <div class="text-color fs-5">TRANSHEPATE HAUTS DE FRANCE</div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Président : <a style="color: #0b8b2e;" href="mailto:transhepatehdf@gmail.com" target="_blank"></a>Eric BULEUX-OSMANN</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 06 50 13 90 38</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social : Maison des Associations - 27 ruer Jean Bart 59000 LILLE
-                                        </div>
+                                    <strong>Tél : 06 50 13 90 38</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social : Maison des Associations - 27 ruer Jean Bart 59000 LILLE
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>
@@ -512,29 +512,29 @@
                 </div>
 
                 <div class="carousel-item">
-                    <div class="owl-wrapper-outer autoheight" style="height: 286px">
+                    <div class="owl-wrapper-outer autoheight" style="height: 480px">
                         <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
-                            <div class="img">
-                                <img src="{{ asset('build/images/tah_img-e1583160806860.jpg') }}" class="d-block w-10" alt="TRANSHEPATE TAHITI ET SES ILES"></img>
-                            </div>
-                            <div class="client_details">
-                                <div class="text-color fs-5">TRANSHEPATE TAHITI ET SES ILES</div>
-                            </div>
                             <div class="carousel-caption d-none d-md-block">
+                                <div class="img">
+                                    <img src="{{ asset('build/tah_img-e1583160806860.jpg') }}" class="d-block w-10" alt="TRANSHEPATE TAHITI ET SES ILES"></img>
+                                </div>
+                                {# <div class="client_details"> #}
+                                    <div class="text-color fs-5">TRANSHEPATE TAHITI ET SES ILES</div>
+                                {# </div> #}
                                 <h5 style="text-align: center;">
                                     <div style="color: #0b8b2e;">
                                         <strong>Présidente : <a style="color: #0b8b2e;" href="mailto:valerieyee@mail.pf"></a>Valérie WONG</strong>
                                     </div><br>
                                 </h5>
                                 <div>
-                                        <strong>Tél : 87 70 04 94</strong>
-                                        <div style="color: #808080;"><br>
-                                            Siège social : BP 122290 - 98712 PAPAKA TAHITI
-                                        </div>
+                                    <strong>Tél : 87 70 04 94</strong>
+                                    <div style="color: #808080;"><br>
+                                        Siège social : BP 122290 - 98712 PAPAKA TAHITI
+                                    </div>
                                 </div>
                                 <p style="text-align: center;">
                                     <a href="http://preprod.transhepate-idf.fr/nos-associations-regionales/" target="_blank" style="color:#FFFFFF;background-color:#229296;border-color:#1c7578;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px" target="_self">
-                                        <div style="color:#000;padding:6px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
+                                        <div style="color:#000;padding:8px 18px;font-size:14px;line-height:21px;border-color:#65b3b6;border-radius:34px;-moz-border-radius:34px;-webkit-border-radius:34px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none">
                                             <i class="m-3 p-3" style="font-size:1.5rem;color:#FFF">Voir toutes les associations régionales…</i>
                                         </div>
                                     </a>

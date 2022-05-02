@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content"width=device-width, initial-scale=1">
 
-    <title>{% block title %}<img id="mini_logoimg" src="{{ asset('build/images/mini_logoimg.jpg') }}" alt="TRANSHEPATE"> {% endblock %}</title>
+    <title>{% block title %}<img id="mini_logoimg" src="{{ asset('build/mini_logoimg.jpg') }}" alt="TRANSHEPATE"> {% endblock %}</title>
 
     {# BLOCK CSS #}
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
@@ -43,7 +43,7 @@
             <nav class="navbar navbar-expand-lg bg-white">
                 <div class="container-fluid">
                     <a href="{{ path('app_main_home') }}">
-                    <img id="logoimg" src="{{ asset('build/images/logoimg.jpg') }}" alt="TRANSHEPATE" style="height:50px; width: 200px; margin-left: 30px;">
+                    <img id="logoimg" src="{{ asset('build/logoimg.jpg') }}" alt="TRANSHEPATE" style="height:50px; width: 200px; margin-left: 30px;">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
                     aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,7 +101,7 @@
                                 <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#"
                                 role="button" aria-haspopup="true" aria-expanded="false"><strong>TranHépate Blog</strong></a>
                                 <div class="dropdown-menu bg-success" id="mouseover">
-                                <a class="dropdown-item" href="{{ path('app_main_blog') }}">Acceuil</a>
+                                <a class="dropdown-item" href="{{ path('app_main_blog') }}">Accueil</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ path('app_post_new') }}">Nouvel publication</a>
                                     <div class="dropdown-divider"></div>
@@ -146,7 +146,7 @@
                             <p class="text-warning">&copy; Transhépate 2022 - Mentions légales et RGPD</p>
                         </div>
                         <div class="col-4">
-                            <img id="logomonin" src="{{ asset('build/images/Logo Monin 2.PNG') }}" alt="logo" style="height:50px; width: 200px;">
+                            <img id="logomonin" src="{{ asset('build/Logo Monin 2.PNG') }}" alt="logo" style="height:50px; width: 200px;">
                         </div>
                         <div class="col-4">
                             <a class="btn btn-outline-warning text-uppercase" href="https://www.service-public.fr/particuliers/vosdroits/F183" target="_blank">le don d'organes</a>

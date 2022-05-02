@@ -3,12 +3,9 @@
 {% block title %}New Post{% endblock %}
 
 {% block body %}
-    <h1 class="text-light">Creation d'un nouvel article</h1>
+    <h1 class="text-light">Créer un nouvel article</h1>
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-        <button class="btn btn-warning">{{ button_label|default('Nouvelle Publication') }}</button>
-    {{ form_end(form) }}
+    {{ include('post/_form.html.twig', {'button_label': 'Nouvelle Publication'}) }}
 
     <a href="{{ path('app_post_index') }}" class="btn btn-success">Retour à la liste</a>
 {% endblock %}

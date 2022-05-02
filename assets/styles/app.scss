@@ -88,7 +88,16 @@ body {
 }
 
 .img {
-  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-block {
+  position: relative;
+  align-items: center;
 }
 
 .footer {
@@ -96,10 +105,13 @@ body {
 }
 
 .nav-item {
-  padding-left:20px;
-  padding-right:20px;
+  padding: auto;
   margin-left:20px;
   margin-right:20px;
+}
+
+ul li {
+  text-decoration: none!important;
 }
 
 // .bg_gray {
