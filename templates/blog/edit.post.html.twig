@@ -7,10 +7,11 @@
     <div class="text-dark bg-light my-5 p-4 d-block w-100">
     <h1 class="mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;"><strong>Modifier l'article</strong></h1>
 
-    {{ include('blog/_form.post.html.twig', {'button_label': 'Modifier cette Publication'}) }}
+    {{ include('blog/_form.html.twig', {'button_label': 'Modifier cette Publication'}) }}
 
     <a href="{{ path('app_blog_index') }}" class="btn btn-primary">Retour à la liste</a>
 
     {{ include('blog/_delete_form.post.html.twig') }}
+
     </div>
 {% endblock %}

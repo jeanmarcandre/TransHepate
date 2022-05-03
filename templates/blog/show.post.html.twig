@@ -15,10 +15,6 @@
                     <td>{{ post.title }}</td>
                 </tr>
                 <tr>
-                    <th>Slug</th>
-                    <td>{{ post.slug }}</td>
-                </tr>
-                <tr>
                     <th>Content</th>
                     <td>{{ post.content }}</td>
                 </tr>
@@ -35,7 +31,7 @@
 
         <a href="{{ path('app_blog_index') }}" class="btn btn-success">Retour à la liste</a>
 
-        <a href="{{ path('app_blog_edit_post', {'id': post.id}) }}"  class="btn btn-warning">Modifier</a>
+        <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}"  class="btn btn-warning">Modifier</a>
 
         {{ include('blog/_delete_form.post.html.twig') }}
 
