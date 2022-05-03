@@ -11,7 +11,6 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Title</th>
                     <th>Slug</th>
                     <th>Content</th>
@@ -23,15 +22,14 @@
             <tbody>
             {% for post in posts %}
                 <tr>
-                    <td>{{ post.id }}</td>
                     <td>{{ post.title }}</td>
                     <td>{{ post.slug }}</td>
                     <td>{{ post.content }}</td>
                     <td>{{ post.createdAt|date('d/m/Y H:i')  }}</td>
                     <td>{{ post.updatedAt ? post.updatedAt|date('d/m/Y H:i') : '' }}</td>
                     <td>
-                        <a href="{{ path('app_post_show', {'id': post.id}) }}"  class="btn btn-success">Montrer</a>
-                        <a href="{{ path('app_post_edit', {'id': post.id}) }}"  class="btn btn-warning">Modifier</a>
+                        <a href="{{ path('app_blog_show_post', {'id': post.id}) }}"  class="btn btn-success">Montrer</a>
+                        <a href="{{ path('app_blog_edit_post', {'id': post.id}) }}"  class="btn btn-warning">Modifier</a>
                     </td>
                 </tr>
             {% else %}
@@ -42,7 +40,7 @@
             </tbody>
         </table>
 
-        <a href="{{ path('app_post_new') }}" class="btn btn-success">Creer un nouvel article</a>
+        <a href="{{ path('app_blog_new_post') }}" class="btn btn-success">Creer un nouvel article</a>
 
     </div>
 

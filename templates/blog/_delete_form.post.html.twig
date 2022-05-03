@@ -1,7 +1,7 @@
 <form
 
     method="post"
-    action="{{ path('app_post_delete', {'id': post.id}) }}"
+    action="{{ path('app_blog_delete_post', {'id': post.id}) }}"
     onsubmit="return confirm('Ëtes vous sure de vouloir détruire cette Publication?');">
 
     <input type="hidden" name="_token" value="{{ csrf_token('transhepate_blog' ~ post.id) }}">

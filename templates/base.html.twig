@@ -29,8 +29,6 @@
 
 </head>
 
-    <body class="d-flex flex-column h-100">
-
         {# HEADER #}
         <header>
             <nav class="entete navbar navbar-expand-lg">
@@ -101,9 +99,9 @@
                                 <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#"
                                 role="button" aria-haspopup="true" aria-expanded="false"><strong>TranHépate Blog</strong></a>
                                 <div class="dropdown-menu bg-success" id="mouseover">
-                                <a class="dropdown-item" href="{{ path('app_post_index') }}">Accueil</a>
+                                <a class="dropdown-item" href="{{ path('app_blog_index') }}">Accueil</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ path('app_post_new') }}">Nouvel publication</a>
+                                    <a class="dropdown-item" href="{{ path('app_blog_new_post') }}">Nouvel publication</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Inscription</a>
                                 </div>
@@ -114,6 +112,8 @@
             </nav>
 
         </header>
+
+    <body>
 
         {# MAIN #}
         <main class="container-fluid flex-shrink-0">
