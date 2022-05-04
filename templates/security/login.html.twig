@@ -8,7 +8,7 @@
 
         <form method="post" class="text-dark bg-light my-5 p-4 d-block w-100">
         {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        <div id="loginMessages" class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
          {% endif %}
 
         {% if app.user %}
@@ -17,10 +17,10 @@
         </div>
         {% endif %}
 
-        <h1 class="mb-3 font-weight-normal mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;"><strong>Veuillez-vous connecter</strong></h1>
-        <label for="inputEmail">Email</label>
+        <h1 class="mb-3 font-weight-normal mx-auto fs-2 text-uppercase fst-italic" style="width: 500px;"><strong>Veuillez-vous connecter</strong></h1>
+        <label for="inputEmail" class="fs-4 fst-italic">Email</label>
         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-        <label for="inputPassword">Mot de passe</label>
+        <label for="inputPassword" class="fs-4 fst-italic">Mot de passe</label>
         <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
         <input type="hidden" name="_csrf_token"

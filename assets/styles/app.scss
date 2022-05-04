@@ -433,12 +433,12 @@ div ul li .contact {
 
 /*--------------------  MESSAGES D'ALERTES --------------------*/
 
-#messages {
+#messages, #loginMessages {
     position: absolute;
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
-    top: 200px;
+    top: 100px;
     right: 0;
     left: 0;
     z-index: 920;
