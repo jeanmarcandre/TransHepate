@@ -14,10 +14,7 @@ class PostFormType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('slug')
             ->add('content')
-            ->add('created_at')
-            ->add('updated_at')
             ->add('save', SubmitType::class, ['label' => 'Nouvelle Publication'])
         ;
     }
