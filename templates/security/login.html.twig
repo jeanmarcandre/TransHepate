@@ -4,7 +4,8 @@
 
 {% block body %}
 
-     <div class="container">
+     <div class="container px-5" style="width:600px;border-radius:25px;border:solid 20px #229296;">
+
 
         <form method="post" class="text-dark bg-light my-5 p-4 d-block w-100">
         {% if error %}
@@ -17,7 +18,7 @@
         </div>
         {% endif %}
 
-        <h1 class="mb-3 font-weight-normal mx-auto fs-2 text-uppercase fst-italic" style="width: 500px;"><strong>Veuillez-vous connecter</strong></h1>
+        <h1 class="mb-3 font-weight-normal mx-auto fs-2 text-uppercase fst-italic" style="width: 500px;color: rgb(9, 90, 9);"><strong>Veuillez-vous connecter</strong></h1>
         <label for="inputEmail" class="fs-4 fst-italic">Email</label>
         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
         <label for="inputPassword" class="fs-4 fst-italic">Mot de passe</label>
@@ -26,19 +27,20 @@
         <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}">
 
-            {#
-                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                See https://symfony.com/doc/current/security/remember_me.html
+
+                {# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                See https://symfony.com/doc/current/security/remember_me.html #}
 
                 <div class="checkbox mb-3">
                     <label>
                         <input type="checkbox" name="_remember_me"> Remember me
                     </label>
                 </div>
-            #}
+
 
             <button class="btn btn-primary mt-5" type="submit">Valider</button>
         </form>
+
 
      </div>
 
