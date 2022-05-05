@@ -101,9 +101,15 @@
                                 <div class="dropdown-menu bg-success" id="mouseover">
                                     <a class="dropdown-item" href="{{ path('app_blog_index') }}">Accueil</a>
                                         <div class="dropdown-divider"></div>
-                                    {# <a class="dropdown-item" href="{{ path('app_main_register') }}">Inscription</a>
-                                        <div class="dropdown-divider"></div> #}
-                                    <a class="dropdown-item" href="{{ path('app_main_login') }}">Connexion</a>
+                                    <a class="dropdown-item" href="{{ path('app_main_register') }}">Inscription</a>
+                                        <div class="dropdown-divider"></div>
+
+                                    {% if app.user %}
+                                        <a class="dropdown-item" href="{{ path('app_main_logout') }}">Déconnexion <i class="fas fa-sign-out-alt"></i></a>
+                                    {% else %}
+                                        <a class="dropdown-item" href="{{ path('app_main_login') }}">Connexion <i class="fas fa-sign-in-alt"></i></a>
+                                    {% endif %}
+
                                         <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ path('app_blog_new_post') }}">Nouvel publication</a>
                                 </div>
