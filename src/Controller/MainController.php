@@ -2,18 +2,19 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
-// Imports Login
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-// Imports Register
 use App\Entity\User;
-use App\Repository\UserRepository;
 use App\Form\RegistrationFormType;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use App\Repository\PostRepository;
+use App\Repository\UserRepository;
+// Imports Login
+use Symfony\Component\HttpFoundation\Request;
+// Imports Register
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 #[Route('/', name: 'app_main_')]
 class MainController extends AbstractController
@@ -63,7 +64,7 @@ class MainController extends AbstractController
     }
 
     #[Route('/inscription', name: 'register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserRepository $useRepository): Response
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserRepository $userRepository): Response
     {
         if ($this->getUser()) {
             $this->addFlash('warning', 'Vous êtes déjà inscrit');
