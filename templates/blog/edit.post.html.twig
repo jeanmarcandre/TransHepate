@@ -4,14 +4,19 @@
 
 {% block body %}
 
-    <div class="text-dark bg-light my-5 p-4 d-block w-100">
-    <h1 class="mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;"><strong>Modifier l'article</strong></h1>
+    <div class="container" style="width: 800px;border-radius:25px;border:solid 20px #229296;">
 
-    {{ include('blog/_form.html.twig', {'button_label': 'Modifier cette Publication'}) }}
+        <div class="text-dark bg-light my-5 p-4 d-block w-100">
 
-    <a href="{{ path('app_blog_index') }}" class="btn btn-primary">Retour à la liste</a>
+        <h1 class="mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;color:rgb(9, 90, 9);"><strong>Modifier l'article</strong></h1>
 
-    {{ include('blog/_delete_form.post.html.twig') }}
+        {{ include('blog/_form.html.twig', {'button_label': 'Modifier cette Publication'}) }}
+
+        <a href="{{ path('app_blog_index') }}" class="btn btn-primary">Retour à la liste</a>
+
+        {{ include('blog/_delete_form.post.html.twig') }}
+
+        </div>
 
     </div>
 {% endblock %}
