@@ -30,6 +30,8 @@ class BlogController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            // On affecte l'utilisateur connecté comme Auteur de la publication
+            $post->setAuthor($this->getUser());
             $postRepository->add($post);
 
             $this->addFlash('success', 'Publication ajoutée');

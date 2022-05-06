@@ -4,9 +4,13 @@
 
 {% block body %}
 
-    <div class="text-dark bg-light my-5 p-4 d-block w-100">
+    <div class="container px-5 mt-5"
+    style="width:1200px;border-radius:50px;border:solid 20px #229296;">
 
-        <h1 class="container mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;color:rgb(9, 90, 9);"><strong>Liste des Articles</strong></h1>
+        <div class="text-dark bg-light my-5 p-4 d-block w-100">
+
+        <h1 class="container mx-auto fs-2 text-uppercase fst-italic"
+        style="width: 400px;color:rgb(9, 90, 9);"><strong>Liste des Articles</strong></h1>
 
         <table class="table">
             <thead>
@@ -22,7 +26,7 @@
             {% for post in posts %}
                 <tr>
                     <td>{{ post.title }}</td>
-                    <td>{{ post.content }}</td>
+                    <td><textarea style="height: 100px;width: 350px">{{ post.content }}</textarea></td>
                     <td>{{ post.createdAt|date('d/m/Y H:i')  }}</td>
                     <td>{{ post.updatedAt ? post.updatedAt|date('d/m/Y H:i') : '' }}</td>
                     <td>
@@ -38,7 +42,7 @@
             </tbody>
         </table>
 
-        <a href="{{ path('app_blog_new_post') }}" class="btn btn-success">Creer un nouvel article</a>
+        <a href="{{ path('app_blog_new_post') }}" class="mx-4 px-5 py-2 text-light" style="font-size:1.15rem;background-color: #11494C;">Creer un nouvel article</a>
 
     </div>
 

@@ -84,7 +84,6 @@ class MainController extends AbstractController
                     )
             );
 
-
             $userRepository->add($user);
             $this->addFlash('success', 'Vous êtes bien inscrit');
 

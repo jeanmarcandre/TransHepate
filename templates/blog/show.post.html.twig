@@ -4,11 +4,13 @@
 
 {% block body %}
 
+    <div class="container px-5 mt-5" style="width:1000px;border-radius:25px;border:solid 20px #229296;">
+
     <div class="text-dark bg-light my-5 p-4 d-block w-100">
 
         <h1 class="mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;color:rgb(9, 90, 9);"><strong>Article</strong></h1>
 
-        <table class="table">
+        <table class="table" style="height: 300px; width: 800px;">
             <tbody class="text-dark ">
                 <tr>
                     <th>Title</th>
@@ -16,7 +18,7 @@
                 </tr>
                 <tr>
                     <th>Content</th>
-                    <td>{{ post.content }}</td>
+                    <td><textarea style="width:600px;">{{ post.content }}</textarea></td>
                 </tr>
                 <tr>
                     <th>CreatedAt</th>
@@ -29,11 +31,13 @@
             </tbody>
         </table>
 
-        <a href="{{ path('app_blog_index') }}" class="btn btn-success">Retour à la liste</a>
+        <a href="{{ path('app_blog_index') }}" class="m-4 px-2 py-1 text-light" style="font-size:1.6rem;background-color: rgb(9, 90, 9);">Retour à la liste</a></br>
 
-        <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}"  class="btn btn-warning">Modifier</a>
+        <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}"  class="mx-4 px-5 py-1 text-light" style="font-size:1.5rem;background-color:#11494C;">Modifier</a>
 
         {{ include('blog/_delete_form.post.html.twig') }}
+
+    </div>
 
     </div>
 

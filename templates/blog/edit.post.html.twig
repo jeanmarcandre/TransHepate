@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <div class="container" style="width: 800px;border-radius:25px;border:solid 20px #229296;">
+    <div class="container" style="width: 800px;height:600px;border-radius:25px;border:solid 20px #229296;">
 
         <div class="text-dark bg-light my-5 p-4 d-block w-100">
 
@@ -12,7 +12,7 @@
 
         {{ include('blog/_form.html.twig', {'button_label': 'Modifier cette Publication'}) }}
 
-        <a href="{{ path('app_blog_index') }}" class="btn btn-primary">Retour à la liste</a>
+        <a href="{{ path('app_blog_index') }}" class="m-3 px-4 py-1 text-light" style="font-size:1.46rem;background-color:#11494C;">Retour à la liste</a>
 
         {{ include('blog/_delete_form.post.html.twig') }}
 
