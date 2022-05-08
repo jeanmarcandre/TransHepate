@@ -84,6 +84,7 @@ class MainController extends AbstractController
                     )
             );
 
+            $user ->setRoles(['ROLE_USER']);
             $userRepository->add($user);
             $this->addFlash('success', 'Vous êtes bien inscrit');
 

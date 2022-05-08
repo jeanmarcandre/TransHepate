@@ -4,6 +4,39 @@
 
 {% block body %}
 
-    <h1 class="display-2 text-light fst-italic"><strong>CONTACT</strong></h1>
+<div class="container text-success fs-2 mt-5" style="border-radius:50px;border:solid 20px #229296;">
+    <div class="container mt-4">
+        <h1 class="fs-2 text-light fst-italic mx-auto" style="width: 550px;"><strong>NOUS CONTACTER</strong></h1>
+    </div>
+
+    <div class="container text-dark mx-4 my-4 px-4 py-4">
+        <div class="ms-5 pt-5 pb-3 w-75">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Nom et Prénom</span>
+                <input type="text" aria-label="First name" class="form-control">
+                <input type="text" aria-label="Last name" class="form-control">
+            </div>
+        </div>
+        <div class="ms-5 mt-auto py-3 w-75">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Email</span>
+                <input type="text" aria-label="Email" class="form-control">
+            </div>
+        </div>
+        <div class="ms-5 mt-auto py-3 w-75">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Objet</span>
+                <input type="text" aria-label="Object" class="form-control">
+            </div>
+        </div>
+        <div class="ms-5 mt-auto py-3 w-75">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Votre message</span>
+                <textarea class="w-100 h-75 p-1"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
