@@ -4,20 +4,20 @@
 
 {% block body %}
 
-    <div class="row mt-5 p-2">
+    <div class="container mt-5 p-2" style="border:solid 25px #229296;border-radius:50px;">
 
-        <div class="col-12 col-md-8 offset-md-2">
+        <div class="">
 
-            <div class="row">
-                <h2 class="col-12 text-light text-title-h2 text-center mb-4">Nos dernières publications</h2>
-            </div>
+            {# <div class=""> #}
+                <h2 class="text-light text-center mx-4">Nos dernières publications</h2>
+            {# </div> #}
 
             {###### Boucle pour parcourir toutes les publications à afficher ######}
             {% for post in posts %}
 
             {# {{ dump(posts) }} #}
 
-                <div class="row p-2">
+                <div class="p-2 mx-1 text-center">
                     <div class="col-12">
 
                     <div class="card my-3 bg-post">
@@ -50,6 +50,11 @@
                     <p class="col-12 text-center alert alert-warning">Aucune publication à afficher.</p>
                 </div>
         {% endfor %}
+
+        <a href="{{ path('app_blog_new_post') }}" class="mx-4 px-5 py-2 text-light" style="font-size:2rem;background-color: #11494C;">Creer un nouvel article</a>
+
+        </div>
+    </div>
 
 
     {# <div class="container px-5 mt-5"
@@ -90,9 +95,5 @@
             </tbody>
         </table> #}
 
-        <a href="{{ path('app_blog_new_post') }}" class="mx-4 px-5 py-2 text-light" style="font-size:1.15rem;background-color: #11494C;">Creer un nouvel article</a>
-
-        </div>
-    </div>
 
 {% endblock %}
