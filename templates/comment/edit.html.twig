@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Comment{% endblock %}
+
+{% block body %}
+
+    <div class="container-lg mt-5">
+
+        <div class="row top-25 w-100"  style="border:solid 25px #229296;border-radius:50px;">
+
+            <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
+
+                <div class="container bg-light mt-3">
+
+                    <h1 class="text-dark fs-2 fst-italic text-center"><strong>Modifier le commentaire</strong></h1>
+
+                    {{ include('comment/_form.html.twig', {'button_label': 'Update'}) }}
+
+                    <a href="{{ path('app_comment_index') }}">Retour à la liste</a>
+
+                    {{ include('comment/_delete_form.html.twig') }}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

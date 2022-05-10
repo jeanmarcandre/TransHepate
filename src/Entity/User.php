@@ -22,18 +22,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[Assert\NotBlank (message: 'L\'email est obligatoire')]
+    #[Assert\Email(message: 'L\'email {{ value }} n\'est pas valide')]
+    #[Assert\Type('string')]
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     private $email;
 
+    #[Assert\NotBlank (message: 'Le nom d\'utilisateur est obligatoire')]
+    #[Assert\Type('string')]
     #[ORM\Column(type: 'string', length: 25, unique: true)]
     private $username;
 
+    #[Assert\Type('string')]
     #[ORM\Column(type: 'string')]
     private $password;
 
+    #[Assert\Type('string')]
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $avatar;
 
+    #[Assert\Type('array')]
     #[ORM\Column(type: 'json')]
     private $roles = [];
 
@@ -89,7 +97,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        // $roles[] = 'ROLE_USER';
+        $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }
@@ -231,4 +239,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+        public function __toString(): string
+    {
+        return $this->getUsername();
+    }
+
 }

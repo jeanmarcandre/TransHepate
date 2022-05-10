@@ -4,44 +4,51 @@
 
 {% block body %}
 
-    <div class="container bg-light mt-5 text-center" style="width:1200px;border-radius:50px;border:solid 20px #229296;">
-        <div>
-            <h1 class="fs-1 fst-italic mx-auto" style="width: 550px; text-align: center;color:#11494C;"><strong>Association Transhépate de Bourgogne-Franche-Comtée</strong></h1>
-        </div>
+   <div class="container-xl mt-5">
+        <div class="row top-25 start-25 w-100"  style="border:solid 25px #229296;border-radius:50px;">
+            <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="text-align: center;border:solid 5px light;border-radius:25px;">
 
-        <div class="container px-5">
-            <div class="m-2 p-2" style="text-align: center">
-                <div class="">
-                    <ul class="list-group list-group-flush fs-5 text-uppercase text-dark text-wrap" style="list-style-type:none;">
-                        <div class="d-grid gap-2 col-3,5 mx-auto mb-4 mt-0">
-                            <a class="contact btn btn-success fs-4 fst-italic" href="{{ path('app_main_contact') }}" style="width:280px ;border: solid 4px #229296; border-radius:50px;"><strong>Nous contacter</strong></a>
+                <h1 class="fs-1 fst-italic text-center mt-1" style="width: 550px; color:#11494C;"><strong>Association Transhépate de Bourgogne-Franche-Comtée</strong></h1>
+
+                <div class="container px-5">
+                    <div class="m-2 p-2" style="text-align: center">
+                        <div class="">
+                            <ul class="list-group list-group-flush fs-5 text-uppercase text-dark text-wrap" style="list-style-type:none;">
+                                <div class="d-grid gap-2 col-3,5 mx-auto mb-4 mt-0">
+                                    <a class="contact btn btn-success fs-4 fst-italic" href="{{ path('app_main_contact') }}" style="width:280px ;border: solid 4px #229296; border-radius:50px;"><strong>Nous contacter</strong></a>
+                                </div>
+                                <li>Président : <p class="my-2 p-2 fs-4 fst-italic" style="color:#11494C;"><strong>Armand FAGES</strong></p></li>
+                                <li>
+                                    <div class="row my-2 mx-1" style="border: solid 5px #229296;border-radius:25px;">
+                                        <div class="col-6 border-end border-5">
+                                            Siège social :
+                                            <p class="my-2 p-2 fs-6 fst-italic" style="color:#11494C;"><strong>CHU de Besançon</br>Maison des Familles</br>3 Boulevard Alexandre Flemming</br>25000 Besançon</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            Siège de gestion :
+                                            <p class="my-2 p-2 fs-6 fst-italic" style="color:#11494C;"><strong>16, rue Marcel Sembat</br>21600 Longvic</strong></p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>Tél : <p class="my-2 p-2 fs-4 fst-italic" style="color:#11494C;"><strong>06 08 78 31 63</strong></p></li>
+                                <li>Email : <p class="my-2 p-2 fs-4 fst-italic" style="color:#11494C;"><strong>armand.fages@bbox.fr</strong></p></li>
+                                <li class="my-2 p-2 fs-4 fst-italic">Nos permanences :
+                                    <p class="fs-5 fst-italic-primary">
+                                        <textarea class="w-100 h-75"></textarea>
+                                    </p>
+                                </li>
+                                <li>Centre de greffe</br><a class="my-2 p-2 fs-3 fst-italic" style="color:#11494C;" href="https://www.chu-besancon.fr/offre-de-soins/les-services-et-activites/chirurgie-viscerale-digestive-et-cancerologique
+                                -unite-de-transplantation-hepatique/transplantation-hepatique.html" target="_blank"><strong>Chu de besançon</strong></a></li>
+                            </ul>
                         </div>
-                        <li>Président : <p class="my-2 p-2 fs-4 fst-italic" style="color:#11494C;"><strong>Armand FAGES</strong></p></li>
-                        <li>
-                            <div class="row my-2 mx-1" style="border: solid 5px #229296;border-radius:25px;">
-                                <div class="col-6 border-end border-5">
-                                    Siège social :
-                                    <p class="my-2 p-2 fs-6 fst-italic" style="color:#11494C;"><strong>CHU de Besançon</br>Maison des Familles</br>3 Boulevard Alexandre Flemming</br>25000 Besançon</strong></p>
-                                </div>
-                                <div class="col-6">
-                                    Siège de gestion :
-                                    <p class="my-2 p-2 fs-6 fst-italic" style="color:#11494C;"><strong>16, rue Marcel Sembat</br>21600 Longvic</strong></p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>Tél : <p class="my-2 p-2 fs-4 fst-italic" style="color:#11494C;"><strong>06 08 78 31 63</strong></p></li>
-                        <li>Email : <p class="my-2 p-2 fs-4 fst-italic" style="color:#11494C;"><strong>armand.fages@bbox.fr</strong></p></li>
-                        <li>Nos permanences :<p class="my-2 p-2 fs-6 fst-italic" style="color:#11494C;"><textarea></textarea></p></li>
-                        <li>Centre de greffe</br><a class="my-2 p-2 fs-3 fst-italic" style="color:#11494C;" href="https://www.chu-besancon.fr/offre-de-soins/les-services-et-activites/chirurgie-viscerale-digestive-et-cancerologique
-                        -unite-de-transplantation-hepatique/transplantation-hepatique.html" target="_blank"><strong>Chu de besançon</strong></a></li>
-                    </ul>
-                </div>
-            </div class="container">
-                <div>
-                    <img src="{{ asset('build/tous-ensemble.jpg') }}" class="img-fluid d-block w-100" alt="tous-ensemble">
-                </div>
-            <div>
+                    </div class="container">
+                        <div>
+                            <img src="{{ asset('build/tous-ensemble.jpg') }}" class="img-fluid d-block w-100" alt="tous-ensemble">
+                        </div>
+                    <div>
 
+                    </div>
+                </div>
             </div>
         </div>
     </div>

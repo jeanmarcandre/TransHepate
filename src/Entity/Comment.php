@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CommentRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -14,6 +15,14 @@ class Comment
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[Assert\NotBlank (message: 'Ce commentaire est vide !')]
+    #[Assert\Length(
+        min: 10,
+        max: 500,
+        minMessage: 'Le commentaire doit comporter au moins {{ limit }} caractères',
+        maxMessage: 'Le commentaire ne doit pas dépasser {{ limit }} caractères',
+    )]
+    #[Assert\Type('string')]
     #[ORM\Column(type: 'text')]
     private $content;
 
@@ -92,5 +101,10 @@ class Comment
         $this->author = $author;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->getAuthor().'/'.$this->getPost();
     }
 }

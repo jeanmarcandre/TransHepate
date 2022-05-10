@@ -8,13 +8,14 @@
 
         <div class="text-dark bg-light my-5 p-4 d-block w-100">
 
-        <h1 class="mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;color:rgb(9, 90, 9);"><strong>Modifier l'article</strong></h1>
+            <h1 class="mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;color:rgb(9, 90, 9);">
+            <strong>Modifier cette publication</strong></h1>
 
-        {{ include('blog/_form.html.twig', {'button_label': 'Modifier cette Publication'}) }}
+            {{ include('blog/_form.html.twig', {'button_label': 'Sauvegarder cette publicationn'}) }}
 
-        <a href="{{ path('app_blog_index') }}" class="m-3 px-4 py-1 text-light" style="font-size:1.46rem;background-color:#11494C;">Retour à la liste</a>
+            {{ include('blog/_delete_form.post.html.twig', {'button_label': 'Supprimer cette publication' ,'size': 'w-100 mb-4'}) }}
 
-        {{ include('blog/_delete_form.post.html.twig') }}
+            <a href="{{ path('app_blog_show_post', {'slug': post.slug}) }}" class="btn btn-outline-light w-100 mb-3">Annuler</a>
 
         </div>
 

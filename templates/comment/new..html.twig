@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Comment{% endblock %}
+
+{% block body %}
+
+    <div class="container-lg mt-5">
+
+        <div class="row top-25 w-100"  style="border:solid 25px #229296;border-radius:50px;">
+
+            <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
+
+                <div class="text-dark fs-2 fst-italic text-center mx-4">
+                    <h1><strong>Créez un bnouveau commentaire</strong></h1>
+                </div>
+
+                {{ include('comment/_form.html.twig') }}
+
+                <a href="{{ path('app_comment_index') }}">Retour à la liste</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

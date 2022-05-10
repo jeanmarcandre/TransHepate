@@ -2,34 +2,42 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
-use App\Form\UserType;
-use App\Form\ContactType;
-use Symfony\Component\Mime\Email;
-// Imports Login
-use App\Form\RegistrationFormType;
-// Imports Register
-use App\Repository\PostRepository;
-use App\Repository\UserRepository;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\MailerInterface;
-
-use Symfony\Component\HttpFoundation\Response;
-
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+// Imports Login
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+// Import Post
+use App\Repository\PostRepository;
+// Imports Register
+use App\Entity\User;
+use App\Repository\UserRepository;
+use App\Form\RegistrationFormType;
+use App\Form\ContactType;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
+// Import Google Recaptcha
+
+
+// PAGINATOR
+use App\Controller\MainController;
+// EMAIL
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+
 
 #[Route('/', name: 'app_main_')]
 class MainController extends AbstractController
 {
+
+    /***   ACCUEIL  ***/
     #[Route(path:'/', name:'home')]
-    public function home(): Response
+    public function home(PostRepository $postRepository): Response
     {
-        // Cette page appellera la vue template/main/index.html.twig
-        return $this->render('main/home.html.twig');
+        return $this->render('main/home.html.twig', [
+            'posts' => $postRepository->findBy([], ['createdAt' => 'desc'], $this->getParameter('app_home.post_number')),
+        ]);
     }
 
 
@@ -83,6 +91,7 @@ class MainController extends AbstractController
         return $this->render('main/transhepatebfc.html.twig');
     }
 
+    /****  CONNEXION  ****/
     #[Route(path: '/connexion', name: 'login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
@@ -126,7 +135,6 @@ class MainController extends AbstractController
                     )
             );
 
-            $user ->setRoles(['ROLE_USER']);
             $userRepository->add($user);
             $this->addFlash('success', 'Vous êtes bien inscrit');
 

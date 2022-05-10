@@ -11,7 +11,7 @@
             <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
 
                 {# <div class=""> #}
-                    <h2 class="text-dark text-center mx-4">Nos dernières publications</h2>
+                    <h2 class="text-dark fs-2 fst-italic text-center mx-4">Nos dernières publications</h2>
                 {# </div> #}
 
                 {# Affichage du nombre total de publications (attibut apporté par knp_paginator) #}
@@ -75,45 +75,5 @@
         </div>
 
     </div>
-
-
-    {# <div class="container px-5 mt-5"
-    style="width:1200px;border-radius:50px;border:solid 20px #229296;">
-
-        <div class="text-dark bg-light my-5 p-4 d-block w-100">
-
-        <h1 class="container mx-auto fs-2 text-uppercase fst-italic"
-        style="width: 400px;color:rgb(9, 90, 9);"><strong>Liste des Articles</strong></h1>
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Content</th>
-                    <th>CreatedAt</th>
-                    <th>UpdatedAt</th>
-                    <th>actions</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for post in posts %}
-                <tr>
-                    <td>{{ post.title }}</td>
-                    <td><textarea style="height: 100px;width: 350px">{{ post.content }}</textarea></td>
-                    <td>{{ post.createdAt|date('d/m/Y H:i')  }}</td>
-                    <td>{{ post.updatedAt ? post.updatedAt|date('d/m/Y H:i') : '' }}</td>
-                    <td>
-                        <a href="{{ path('app_blog_show_post', {'slug': post.slug}) }}"  class="btn btn-success">Voir plus</a>
-                        <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}"  class="btn btn-warning">Modifier</a>
-                    </td>
-                </tr> #}
-            {# {% else %}
-                <tr>
-                    <td colspan="7">Aucun article trouvé</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table> #}
-
 
 {% endblock %}
