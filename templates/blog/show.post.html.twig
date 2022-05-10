@@ -94,10 +94,10 @@
                     {% if app.user %}
                         <h2 class="h4 text-center text-title-h1 my-4">Ecrire un {% if post.comments|length %}nouveau{% else %}premier{% endif %} commentaire</h2>
                         {# Champ pour le commentaire #}
-                        {{ form_start(post) }}
-                            {{ form_widget(post) }}
+                        {{ form_start(form) }}
+                            {{ form_widget(form) }}
                             <button class="btn btn-outline-info w-100">{{ button_label|default('Commenter') }}</button>
-                        {{ form_end(post) }}
+                        {{ form_end(form) }}
                     {% else %}
                         <p class="text-center text-info mt-4">
                             Vous devez <a href="{{ path('app_main_login') }}" class="text-title-h1">vous connecter</a>pour laisser un commentaire.
