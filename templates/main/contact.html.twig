@@ -35,14 +35,16 @@
                         </div>
                     {# </div> #}
 
-                    <button class="btn btn-success fs-5 fst-italic w-50 my-4 ms-5 py-1" style="border:solid 5px #11494C; border-radius:25px;">Envoyer mon message</button>
+                    <a href="{{ path('app_main_home') }}" class="btn btn-success fs-5 fst-italic w-50 my-4 ms-5 py-1" style="border:solid 5px #11494C; border-radius:25px;"><strong>Envoyer mon message</strong></a>
 
+                </div>
+
+                <div>
+                    <img src="{{ asset('build/je lui doit la vie.jpg') }}" class="img-fluid d-block w-100" alt="boat">
                 </div>
             </div>
         </div>
     </div>
-
-        
 
 
     {{ form_end(form) }}

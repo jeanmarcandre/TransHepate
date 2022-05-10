@@ -1,47 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post index{% endblock %}
+{% block title %}Blog{% endblock %}
 
 {% block body %}
 
     <div class="container mt-5 p-2" style="border:solid 25px #229296;border-radius:50px;">
 
-        <div class="">
+        <div class="row mt-3">
 
             {# <div class=""> #}
                 <h2 class="text-light text-center mx-4">Nos dernières publications</h2>
             {# </div> #}
 
-            {###### Boucle pour parcourir toutes les publications à afficher ######}
-            {% for post in posts %}
+            {# Affichage du nombre total de publications (attibut apporté par knp_paginator) #}
+            <div class="col-12 ps-5">
+                <p class="text-left text-light">Nombre total d'articles : {{ posts|length }}</p>
+            </div>
 
-            {# {{ dump(posts) }} #}
+            {# S'il y a des publications, on affiche les publications à afficher #}
+
+            {### AFFICHAGE DES PUBLICATIONS ###}
+
+                {###### Boucle pour parcourir toutes les publications à afficher ######}
+                {% for post in posts %}
+
+                {# {{ dump(posts) }} #}
 
                 <div class="p-2 mx-1 text-center">
                     <div class="col-12">
 
-                    <div class="card my-3 bg-post">
-                        <div class="card-header">
-                            {# Titre de la publication, cliquable vers la page détaillée de celle-ci #}
-                            <a class="text-decoration-none texte-title-h1" href="{{ path('app_blog_show_post', {'slug': post.slug}) }}">
-                                <i class="fa-solid fa-xl fa-newspaper pe-4"></i>{{ post.title }}
-                            </a>
-                        </div>
+                        <div class="card my-3 bg-post">
+                            <div class="card-header">
+                                {# Titre de la publication, cliquable vers la page détaillée de celle-ci #}
+                                <a class="text-decoration-none texte-title-h1" href="{{ path('app_blog_show_post', {'slug': post.slug}) }}">
+                                    <i class="fa-solid fa-xl fa-newspaper pe-4"></i>{{ post.title }}
+                                </a>
+                            </div>
 
-                        <div class="card-body">
-                            {# Affichage du contenu de la publication, tronquée à 600 caractères, suivi de "..." et d'un lien "lire la suite" #}
-                            {{ post.content|slice(0, 100) }} ...
-                            <a class="text-decoration-none text-title-h2" href="{{ path('app_blog_show_post', {'slug': post.slug}) }}"> Lire la suite</a>
+                            <div class="card-body">
+                                {# Affichage du contenu de la publication, tronquée à 600 caractères, suivi de "..." et d'un lien "lire la suite" #}
+                                {{ post.content|slice(0, 100) }} ...
+                                <a class="text-decoration-none text-title-h2" href="{{ path('app_blog_show_post', {'slug': post.slug}) }}">
+                                Lire la suite</a>
 
-                        {# Date et auteur de la publication et de la modification si nécessaire #}
-                        <div class="card-footer text-muted py-2">
-                            Publié le <span class="text-warning">{{ post.createdAt|date('d/M/Y à H\\hi') }}</span> par <span class="text-title-h2">{{ post.author.username }}</span>
-                            {% if post.updatedAt %}
-                                et modifié le <span class="text-warning">{{ post.updatedAt|date('d/M/Y à H\\hi') }}</span>
-                            {% endif %}
+                            {# Date et auteur de la publication et de la modification si nécessaire #}
+                            <div class="card-footer text-muted py-2">
+                                Publié le <span class="text-warning">{{ post.createdAt|date('d/M/Y à H\\hi') }}</span> par <span class="text-title-h2">
+                                {{ post.author.username }}</span>
+                                {% if post.updatedAt %}
+                                    et modifié le <span class="text-warning">{{ post.updatedAt|date('d/M/Y à H\\hi') }}</span>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -51,7 +62,8 @@
                 </div>
         {% endfor %}
 
-        <a href="{{ path('app_blog_new_post') }}" class="mx-4 px-5 py-2 text-light" style="font-size:2rem;background-color: #11494C;">Creer un nouvel article</a>
+        <a href="{{ path('app_blog_new_post') }}" class="mx-4 px-5 py-2 text-light" style="font-size:2rem;background-color: #11494C;">
+        Creer un nouvel article</a>
 
         </div>
     </div>

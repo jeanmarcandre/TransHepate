@@ -145,12 +145,13 @@ h5 div a:hover {
 }
 
 footer {
-  position: fixed!important;
+  position: sticky!important;
   bottom: 0!important;
   max-height: 60px!important;
   left: 0;
   right: 0;
   width: 100vw;
+  z-index: 0;
 }
 
 header {
