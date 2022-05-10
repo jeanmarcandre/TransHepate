@@ -45,68 +45,68 @@
         </div>
     </div>
 
-        {# <a href="{{ path('app_blog_index') }}" class="m-4 px-2 py-1 text-light" style="font-size:1.6rem;background-color: rgb(9, 90, 9);">Retour à la liste</a></br>
+        <a href="{{ path('app_blog_index') }}" class="m-4 px-2 py-1 text-light" style="font-size:1.6rem;background-color: rgb(9, 90, 9);">Retour à la liste</a></br>
 
         <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}"  class="mx-4 px-5 py-1 text-light" style="font-size:1.5rem;background-color:#11494C;">Modifier</a>
 
-        {{ include('blog/_delete_form.post.html.twig') }} #}
+        {{ include('blog/_delete_form.post.html.twig') }}
 
         {### ESPACE POUR LES COMMENTAIRES ###}
-        {# <div class="row">
+        <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
                 <div class="bg-dark p-4 my-4">
 
                     {# Nombre de commentaire dans le titre H2 #}
-                    {# {% if post.comments|length %}
+                    {% if post.comments|length %}
                         <h2 class="h4 text-title-h2 text-center mb-3">Commentaires ({{ post.comments|length }})</h2>
-                    {% endif %} #}
+                    {% endif %}
 
                     {# Affichage de tous les commentaires en les parcourant avec une boucle #}
-                    {# {% for comment in post.comments %}
+                    {% for comment in post.comments %}
 
-                            <div class="card my-3 bg-post"> #}
+                            <div class="card my-3 bg-post">
 
                             {# Date et auteur du commentaire #}
-                            {# <div class="card-header text-muted">
+                            <div class="card-header text-muted">
                                 Ajouté par<span class="text-primary px-1">{{ comment.author.username }}</span>Le<span class="text-light ps-1">{{ comment.createdAt|date('d/m/Y à H\\hi') }}</span>
-                            </div> #}
+                            </div>
 
-                            {# Contenu du commentaire
+                            {# Contenu du commentaire #}
                             <div class="card-body">
                                 {{ comment.content }}
-                            </div> #}
+                            </div>
 
                             {# Si l'utilisateur est admin, Affichage de la suppression du commentaire #}
-                            {# {% if is_granted('ROLE_ADMIN') %}
+                            {% if is_granted('ROLE_ADMIN') %}
                                 <div class="card-footer d-flex d-row justify-content-end p-1">
                                     {{ include('blog/_delete_form.comment.html.twig') }}
                                 </div>
-                            {% endif %} #}
+                            {% endif %}
 
-                        {# </div> #}
+                        </div>
 
-                    {# {% else %}
+                    {% else %}
                         <p class="text-center text-uppercase alert alert-info">Aucun commentaire pour cette publication</p>
-                    {% endfor %} #}
+                    {% endfor %}
 
 
                     {# Si l'utilisateur est connecté, affichage de formulaire de création d'un nouveau commentaire #}
-                    {# {% if app.user %}
-                        <h2 class="h4 text-center text-title-h1 my-4">Ecrire un {% if post.comments|length %}nouveau{% else %}premier{% endif %} commentaire</h2> #}
+                    {% if app.user %}
+                        <h2 class="h4 text-center text-title-h1 my-4">Ecrire un {% if post.comments|length %}nouveau{% else %}premier{% endif %} commentaire</h2>
                         {# Champ pour le commentaire #}
-                        {# {{ form_start(form) }}
-                            {{ form_widget(form) }}
+                        {{ form_start(post) }}
+                            {{ form_widget(post) }}
                             <button class="btn btn-outline-info w-100">{{ button_label|default('Commenter') }}</button>
-                        {{ form_end(form) }} #}
-                    {# {% else %}
+                        {{ form_end(post) }}
+                    {% else %}
                         <p class="text-center text-info mt-4">
                             Vous devez <a href="{{ path('app_main_login') }}" class="text-title-h1">vous connecter</a>pour laisser un commentaire.
                         </p>
-                    {% endif %} #}
+                    {% endif %}
 
-                {# </div>
+                </div>
             </div>
-        </div> #}
+        </div>
 
         {# Lien pour retourner a la liste des articles #}
         <div class="row mt-2">
