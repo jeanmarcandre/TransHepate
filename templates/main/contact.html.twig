@@ -4,6 +4,126 @@
 
 {% block body %}
 
-    <h1 class="display-2 text-light fst-italic"><strong>CONTACT</strong></h1>
+    <div class="container-xl mt-5">
+        <div class="row position-absolute top-25 start-25 w-100"  style="border:solid 25px #229296;border-radius:50px;">
+            <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
+
+                <h1 class="fs-3 fst-italic text-center mt-1"><strong>Contactez-nous</strong></h1>
+
+                {{ form_start(form) }}
+
+                <div class="container">
+
+                    {# Affichage du champ Fullname #}
+                    {{ form_row(form.fullname) }}
+
+                    {# Affichage du champ eMail #}
+                    {{ form_row(form.email) }}
+
+                    {# Affichage du champ Message #}
+                    {{ form_row(form.message) }}
+
+                    {# Affichage du recaptcha
+                    <div id="container-g-recaptcha" class="row m-0 p-0">
+
+                        {# La clé publique est récupérée en paramètre dans le fichier config/packages/twig.yaml #}
+                        {# <div class="g-recaptcha col-6" data-sitekey="{{ google_recaptcha_site_key }}" data-theme="dark" data-size="normal"></div> #}
+
+                        <div class="col-6 pt-2">
+                            {# Affichage des erreurs générales du formulaire et donc du Google Recaptcha #}
+                            {{ form_errors(form) }}
+                        </div>
+                    {# </div> #}
+
+                    <a href="{{ path('app_main_home') }}" class="btn btn-success fs-5 fst-italic w-50 my-4 ms-5 py-1" style="border:solid 5px #11494C; border-radius:25px;"><strong>Envoyer mon message</strong></a>
+
+                </div>
+
+                <div>
+                    <img src="{{ asset('build/je lui doit la vie.jpg') }}" class="img-fluid d-block w-100" alt="boat">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{ form_end(form) }}
+
+{# <div class="container px-5 mt-5" style="width:1000px;border-radius:50px;border:solid 15px #229296;">
+
+        <div class="text-dark bg-light my-5 p-4 d-block w-100">
+        <h1 class="mb-3 font-weight-normal mx-auto fs-2 text-uppercase fst-italic text-center"
+         style="width: 500px;color: rgb(9, 90, 9);"><strong>Contactez-nous:</strong></h1>
+
+        {{ form_start(contactForm) }}
+
+            {{ form_row(contactForm.lastname) }}
+
+            {{ form_row(contactForm.nickname) }}
+
+            {{ form_row(contactForm.email) }}
+
+            {{ form_row(contactForm.username) }}
+
+            {{ form_row(contactForm.title) }}
+
+            {{ form_row(contactForm.content) }}
+
+
+            </div>
+
+        <button type="submit" class="mx-4 my-4 px-5 py-1 text-light" style="font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">Valider</button>
+
+        </div>
+
+
+
+            {# {{ form_row(contactForm.agreeTerms) }} #}
+
+        {# {{ form_end(contactForm) }}
+
+        </div>
+
+        <button type="submit" class="mx-4 my-4 px-5 py-1 text-light" style="font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">Valider</button>
+
+        </div> #}
+
+{# <div class="container text-success fs-4 mt-5" style="border-radius:50px;border:solid 20px #229296;">
+    <div class="container mt-4">
+        <h1 class="fs-2 text-light fst-italic mx-auto" style="width: 550px;"><strong>NOUS CONTACTER</strong></h1>
+    </div> #}
+
+    {# <div class="container text-dark mx-4 my-4 px-4 py-4">
+        <div class="ms-5 pt-5 pb-3 w-75">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Nom et Prénom</span>
+                <input type="text" aria-label="First name" class="form-control fs-3 text-primary">
+                <input type="text" aria-label="Last name" class="form-control fs-3 text-primary">
+            </div>
+        </div>
+        <div class="ms-5 mt-auto py-3 w-75">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Email</span>
+                <input type="text" aria-label="Email" class="form-control fs-3 text-primary">
+            </div>
+        </div>
+        <div class="ms-5 mt-auto py-3 w-75">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Objet</span>
+                <input type="text" aria-label="Object" class="form-control fs-3 text-primary">
+            </div>
+        </div>
+        <div class="ms-5 mt-auto py-3 w-75">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Votre message</span>
+                <textarea class="w-100 h-75 p-1 fs-3 text-primary"></textarea>
+            </div>
+        </div>
+        <div class="mt-4 px-4">
+            <a href="{{ path('app_main_home') }}" class="badge bg-success text-wrap px-4 py-2 fs-4 text-light" style="width: 12rem;border:solid 5px #229296;border-radius:50px;">Envoyer le message</a>
+        </div>
+    </div>
+</div>  #}
+
 
 {% endblock %}

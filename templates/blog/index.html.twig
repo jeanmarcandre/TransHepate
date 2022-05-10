@@ -1,12 +1,89 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post index{% endblock %}
+{% block title %}Blog{% endblock %}
 
 {% block body %}
 
-    <div class="text-dark bg-light my-5 p-4 d-block w-100">
+    <div class="container-lg mt-5">
 
-        <h1 class="container mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;color:rgb(9, 90, 9);"><strong>Liste des Articles</strong></h1>
+        <div class="row top-25 w-100"  style="border:solid 25px #229296;border-radius:50px;">
+
+            <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
+
+                {# <div class=""> #}
+                    <h2 class="text-dark text-center mx-4">Nos dernières publications</h2>
+                {# </div> #}
+
+                {# Affichage du nombre total de publications (attibut apporté par knp_paginator) #}
+                <div class="col-12 ps-5">
+                    <p class="text-left text-dark">Nombre total d'articles : {{ posts|length }}</p>
+                </div>
+
+                {# S'il y a des publications, on affiche les publications à afficher #}
+
+                {### AFFICHAGE DES PUBLICATIONS ###}
+
+                    {###### Boucle pour parcourir toutes les publications à afficher ######}
+                    {% for post in posts %}
+
+                    {# {{ dump(posts) }} #}
+
+                    <div class="text-left p-2 mx-3 text-center">
+                        <div class="col-12">
+
+                            <div class="my-5" style="background-color:rgb(200, 250, 250, 0.5);">
+                                <div class="">
+                                    {# Titre de la publication, cliquable vers la page détaillée de celle-ci #}
+                                    <a class="text-decoration-none texte-title-h1" href="{{ path('app_blog_show_post', {'slug': post.slug}) }}">
+                                        <i class="fa-solid fa-xl fa-newspaper pe-4"></i>{{ post.title }}
+                                    </a>
+                                </div>
+
+                                <div class="">
+                                    {# Affichage du contenu de la publication, tronquée à 600 caractères, suivi de "..." et d'un lien "lire la suite" #}
+                                    {{ post.content|slice(0, 100) }} ...
+                                    <a class="text-decoration-none text-title-h2" href="{{ path('app_blog_show_post', {'slug': post.slug}) }}">
+                                    Lire la suite</a>
+                                </div>
+
+                                {# Date et auteur de la publication et de la modification si nécessaire #}
+                                <div class="text-muted py-2">
+                                    Publié le <span class="text-warning">{{ post.createdAt|date('d/M/Y à H\\hi') }}</span> par <span class="text-title-h2">
+                                    {{ post.author.username }}</span>
+                                    {% if post.updatedAt %}
+                                        et modifié le <span class="text-warning">{{ post.updatedAt|date('d/M/Y à H\\hi') }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% else %}
+                        <div class="row">
+                            <p class="col-12 text-center alert alert-warning">Aucune publication à afficher.</p>
+                        </div>
+                {% endfor %}
+
+
+                <div class="container">
+                    <a href="{{ path('app_blog_new_post') }}" class="mx-4 px-5 py-2 text-light" style="font-size:2rem;background-color: #11494C;border:solid 5px dark;border-radius:25px;">
+                    Creer un nouvel article</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    {# <div class="container px-5 mt-5"
+    style="width:1200px;border-radius:50px;border:solid 20px #229296;">
+
+        <div class="text-dark bg-light my-5 p-4 d-block w-100">
+
+        <h1 class="container mx-auto fs-2 text-uppercase fst-italic"
+        style="width: 400px;color:rgb(9, 90, 9);"><strong>Liste des Articles</strong></h1>
 
         <table class="table">
             <thead>
@@ -22,24 +99,21 @@
             {% for post in posts %}
                 <tr>
                     <td>{{ post.title }}</td>
-                    <td>{{ post.content }}</td>
+                    <td><textarea style="height: 100px;width: 350px">{{ post.content }}</textarea></td>
                     <td>{{ post.createdAt|date('d/m/Y H:i')  }}</td>
                     <td>{{ post.updatedAt ? post.updatedAt|date('d/m/Y H:i') : '' }}</td>
                     <td>
                         <a href="{{ path('app_blog_show_post', {'slug': post.slug}) }}"  class="btn btn-success">Voir plus</a>
                         <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}"  class="btn btn-warning">Modifier</a>
                     </td>
-                </tr>
-            {% else %}
+                </tr> #}
+            {# {% else %}
                 <tr>
                     <td colspan="7">Aucun article trouvé</td>
                 </tr>
             {% endfor %}
             </tbody>
-        </table>
+        </table> #}
 
-        <a href="{{ path('app_blog_new_post') }}" class="btn btn-success">Creer un nouvel article</a>
-
-    </div>
 
 {% endblock %}

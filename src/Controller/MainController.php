@@ -3,13 +3,19 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\UserType;
+use App\Form\ContactType;
+use Symfony\Component\Mime\Email;
+// Imports Login
 use App\Form\RegistrationFormType;
+// Imports Register
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
-// Imports Login
 use Symfony\Component\HttpFoundation\Request;
-// Imports Register
+use Symfony\Component\Mailer\MailerInterface;
+
 use Symfony\Component\HttpFoundation\Response;
+
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,11 +33,47 @@ class MainController extends AbstractController
     }
 
 
-    #[Route(path: '/contact', name:'contact')]
-    public function contact(): Response
+    /****  FORMULAIRE DE CONTACT  ****/
+    #[Route(path: '/contact', name: 'contact')]
+    public function contact(Request $request, MailerInterface $mailer): Response
     {
-        // Cette page appellera la vue template/main/contact.html.twig
-        return $this->render('main/contact.html.twig');
+        $form = $this->createForm(UserType::class);
+        $form->handleRequest($request);
+
+        /****  Première vérification à la soummission du formulaire pour vérifier si le Google Recaptcha est correctement validé  ****/
+        if ($form->isSubmitted()) {
+
+
+            // Récupération des données dans le formulaire sous-forme de tableau
+            $contactFormData = $form->getData();
+
+            // Test sur le champ phone (optionnel)
+            // $phone = $contactFormData['phone'] ? $contactFormData['phone'] : 'non renseigné';
+
+            // Création du message (Email Text)
+            $email = new Email();
+                    $email
+                    ->from('jeanmarc.symfony@gmail.com')
+                    ->to('jean.marc.monin21@gmail.com')
+                    ->subject('vous avez reçu un email de Contact de ' . $contactFormData['fullname'])
+                    ->text('Son nom : ' . $contactFormData['fullname']
+                        . \PHP_EOL
+                        . 'Son adresse email : ' . $contactFormData['email']
+                        // . \PHP_EOL
+                        // . 'Son téléphone : ' . $phone
+                        . \PHP_EOL
+                        . 'Son message : ' . $contactFormData['message'], 'text/plain');
+
+            // Envoi de l'email
+            $mailer->send($email);
+
+            $this->addFlash('success', 'Votre message a bien été envoyé');
+
+            return $this->redirectToRoute('app_main_contact');
+            }
+
+        return $this->renderForm('main/contact.html.twig', [
+            'form' => $form]);
     }
 
     #[Route(path: '/transhepatebfc', name:'transhepatebfc')]
@@ -84,7 +126,7 @@ class MainController extends AbstractController
                     )
             );
 
-
+            $user ->setRoles(['ROLE_USER']);
             $userRepository->add($user);
             $this->addFlash('success', 'Vous êtes bien inscrit');
 

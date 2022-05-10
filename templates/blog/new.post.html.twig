@@ -4,14 +4,17 @@
 
 {% block body %}
 
+<div class="container px-5 mt-5" style="width:1000px;border-radius:25px;border:solid 20px #229296;">
+
     <div class="text-dark bg-light my-5 p-4 d-block w-100">
 
     <h1 class="mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;color:rgb(9, 90, 9);"><strong>Créer un nouvel article</strong></h1>
 
     {{ include('blog/_form.html.twig', {'button_label': 'Nouvelle Publication'}) }}
 
-    <a href="{{ path('app_blog_index') }}" class="btn btn-success">Retour à la liste</a>
+    <a href="{{ path('app_blog_index') }}" class="px-4 py-2 text-light" style="font-size:1.15rem;background-color: #11494C;">Retour à la liste</a>
 
     </div>
+</div>
 
 {% endblock %}

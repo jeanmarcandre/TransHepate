@@ -9,8 +9,8 @@
 
 // $body-bg: #0e1e2e !default;
 
-// $navbar-dark-color:       rgba(#fff, .90) !default;
-// $navbar-dark-hover-color: #ffb !default;
+$navbar-dark-color:       rgba(#fff, .90) !default;
+$navbar-dark-hover-color: #ffb !default;
 
 // // Components
 // $border-radius:    5px !default;
@@ -48,7 +48,16 @@
 
 body {
   background-color: #11494C!important;
+  overflow-x: hidden;
 }
+
+.textarea {
+  float: center!important;
+  height: auto!important;
+  background-color: #d3f6ae!important;
+  // overflow-x: hidden;
+}
+
 
 // body main {
 //   position: absolute;
@@ -128,26 +137,30 @@ body {
 
 ul li {
   text-decoration: none!important;
+  color: black!important;
 }
 
 h5 div a:hover {
-  background-color: rgb(250, 231, 59)!important;
+  background-color: rgb(59, 250, 215)!important;
 }
 
 footer {
   position: fixed!important;
   bottom: 0!important;
+  max-height: 60px!important;
   left: 0;
   right: 0;
-  width: 100%;
+  width: 100vw;
+  z-index: 0;
 }
 
 header {
-  // position: fixed!important;
+  position: sticky!important;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  width: 100vw;
+  z-index: 999;
 }
 
 div ul li .contact {
