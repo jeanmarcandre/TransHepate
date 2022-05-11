@@ -2,14 +2,24 @@
 
 namespace App\Controller;
 
+// ENTITY
 use App\Entity\Post;
+use App\Entity\Comment;
+// FORM
 use App\Form\PostType;
-use App\Controller\BlogController;
+use App\Form\CommentType;
+// REPOSITORY
 use App\Repository\PostRepository;
+use App\Repository\CommentRepository;
+// PAGINATOR
+use Knp\Component\Pager\PaginatorInterface;
+// CONTROLE DES ROLES
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/blog', name: 'app_blog_')]
 class BlogController extends AbstractController
@@ -49,11 +59,52 @@ class BlogController extends AbstractController
         ]);
     }
 
-    #[Route('/{slug}', name: 'show_post', methods: ['GET'])]
-    public function showPost(Post $post): Response
-    {
-        return $this->render('blog/show.post.html.twig', [
+    #[Route('/{slug}', name: 'show_post', methods: ['GET', 'POST'])]
+    public function showPost($slug, Request $request, CommentRepository $commentRepository, PostRepository $postRepository): Response
+    {   $post=$postRepository->findOneBySlug($slug);
+
+        // Si l'utilisateur n'est pas connecté, on envoie directement la vue sans le formulaire
+        // Pour optimiser le fonctionnement et la sécurité
+        if (!$this->getUser()) {
+            return $this->render('blog/show.post.html.twig', [
+                'post' => $post,
+            ]);
+        }
+
+        // Sinon on traite la vue avec le formulaire de commentaire et l'utilisateur connecté
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            // On renseigne les infos du commentaire (auteur et publication)
+            $comment
+               ->setAuthor($this->getUser())
+               ->setPost($post);
+
+            // Ou en utilisant le méthode présente dans Post (modifiée)
+            $post->addComment($comment, $this->getUser());
+
+            // On ajoute le commentaire en BDD
+            $commentRepository->add($comment);
+
+            // message Flash
+            $this->addFlash('success', 'merci pour votre commentaire');
+
+            //Option 1 en renvoyant la vue avec le slug du Post
+            return $this->redirectToRoute('app_blog_show_post', ['slug' => $post->getSlug()]);
+
+            // Option 2 en recréant les données Comment et Form
+            // unset($comment);
+            // unset($form);
+            // $comment = new Comment();
+            // $form = $this->createForm(CommentType::class, $comment);
+        }
+
+        return $this->renderForm('blog/show.post.html.twig', [
             'post' => $post,
+            'form' => $form,
         ]);
     }
 
@@ -89,4 +140,55 @@ class BlogController extends AbstractController
 
         return $this->redirectToRoute('app_blog_index');
     }
+
+    // #[IsGranted('ROLE_ADMIN')]
+    // #[Route('/admin/modifier/{slug}', name: 'edit_post', methods: ['GET', 'POST'])]
+    // public function editPost(Request $request, Post $post, PostRepository $postRepository): Response
+    // {
+    //     $form = $this->createForm(PostType::class, $post);
+    //     $form->handleRequest($request);
+
+    //     if ($form->isSubmitted() && $form->isValid()) {
+
+    //         $postRepository->add($post);
+
+    //         $this->addFlash('success', 'Publication bien modifiée');
+
+    //         return $this->redirectToRoute('app_blog_index');
+    //     }
+
+    //     return $this->renderForm('blog/edit.post.html.twig', [
+    //         'post' => $post,
+    //         'form' => $form,
+    //     ]);
+    // }
+
+    // #[IsGranted('ROLE_ADMIN')]
+    // #[Route('/admin/publication-suppression/{id}', name: 'delete_post', methods: ['POST'])]
+    // public function deletePost(Request $request, Post $post, PostRepository $postRepository): Response
+    // {
+    //     if ($this->isCsrfTokenValid('delete_post_blog'.$post->getId(), $request->request->get('_token'))) {
+    //         $postRepository->remove($post);
+    //         $this->addFlash('success', 'Publication bien effacée');
+    //     }
+
+    //     return $this->redirectToRoute('app_blog_index');
+    // }
+
+    /*********** Gestion des COMMENTS ***********/
+
+    // #[IsGranted('ROLE_ADMIN')]
+    // #[Route('/admin/commentaire-suppression/{id}', name: 'delete_comment', methods: ['POST'])]
+    // public function deleteComment(Request $request, Comment $comment, CommentRepository $commentRepository): Response
+    // {
+    //     if ($this->isCsrfTokenValid('delete_comment_blog'.$comment->getId(), $request->request->get('_token'))) {
+    //         $commentRepository->remove($comment);
+    //         $this->addFlash('success', 'Commentaire bien effacé');
+    //     }
+
+    //     // Redirection de l'utilisateur sur la page détaillée de l'article auquel est/était rattaché le commentaire
+    //     return $this->redirectToRoute('app_blog_show_post', [
+    //         'slug' => $comment->getPost()->getSlug(),
+    //     ]);
+    // }
 }

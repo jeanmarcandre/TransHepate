@@ -6,7 +6,10 @@ use App\Entity\Post;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+/* TYPES */
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class PostFormType extends AbstractType
 {
@@ -26,4 +29,5 @@ class PostFormType extends AbstractType
             'required' => false,
         ]);
     }
+
 }

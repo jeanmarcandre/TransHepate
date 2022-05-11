@@ -2,29 +2,30 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
-// Imports Login
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-// Import Post
-use App\Repository\PostRepository;
-// Imports Register
 use App\Entity\User;
-use App\Repository\UserRepository;
-use App\Form\RegistrationFormType;
+use App\Form\UserType;
 use App\Form\ContactType;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Component\Mime\Email;
+// Imports Login
+use App\Controller\MainController;
+// Import Post
+use App\Form\RegistrationFormType;
+// Imports Register
+use App\Repository\PostRepository;
+use App\Repository\UserRepository;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 // Import Google Recaptcha
 
 
 // PAGINATOR
-use App\Controller\MainController;
+use Symfony\Contracts\Translation\TranslatorInterface;
 // EMAIL
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 
 #[Route('/', name: 'app_main_')]
@@ -36,7 +37,7 @@ class MainController extends AbstractController
     public function home(PostRepository $postRepository): Response
     {
         return $this->render('main/home.html.twig', [
-            'posts' => $postRepository->findBy([], ['createdAt' => 'desc'], $this->getParameter('app_home.post_number')),
+            'posts' => $postRepository->findBy([], ['createdAt' => 'desc']),
         ]);
     }
 

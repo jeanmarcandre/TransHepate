@@ -45,10 +45,10 @@ class CommentRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return Comment[] Returns an array of Comment objects
-    //  */
-    /*
+    /**
+     * @return Comment[] Returns an array of Comment objects
+    */
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('c')
@@ -60,9 +60,9 @@ class CommentRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
 
-    /*
+
+
     public function findOneBySomeField($value): ?Comment
     {
         return $this->createQueryBuilder('c')
@@ -72,5 +72,5 @@ class CommentRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+
 }

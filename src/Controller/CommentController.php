@@ -77,6 +77,8 @@ class CommentController extends AbstractController
             $entityManager->flush();
         }
 
+        dump($author);
+
         return $this->redirectToRoute('app_comment_index', [], Response::HTTP_SEE_OTHER);
     }
 }

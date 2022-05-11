@@ -35,14 +35,14 @@
                     </div>
 
                     {# Si l'utilisateur a le role d'Admin, on affiche un menu avec un bouton permettant de supprimer/modifier la publication #}
-                    {% if is_granted('ROLE_ADMIN') %}
+                    {# {% if is_granted('ROLE_ADMIN') %}
                         <div class="card-footer d-flex d-row justify-content-evenly mt-3">
                             <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}" class="btn btn-outline-success pe-3">
                                 <i class="fas fa-edit me-1"></i>Modifier
                             </a>
                             {{ include('blog/_delete_form.post.html.twig') }}
                         </div>
-                    {% endif %}
+                    {% endif %} #}
                 </div>
 
             </div>
@@ -51,16 +51,18 @@
 
     </div>
 
+        <div class="mb-4 ms-4">
         <a href="{{ path('app_blog_index') }}" class="m-4 px-2 py-1 text-light" style="font-size:1.6rem;background-color: rgb(9, 90, 9);">Retour à la liste</a></br>
-
+        </div>
+        <div class="my-4 ms-4">
         <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}"  class="mx-4 px-5 py-1 text-light" style="font-size:1.5rem;background-color:#11494C;">Modifier</a>
-
+        </div>
         {{ include('blog/_delete_form.post.html.twig') }}
 
         {### ESPACE POUR LES COMMENTAIRES ###}
         <div class="row">
-            <div class="col-12 col-md-8 offset-md-2">
-                <div class="bg-dark p-4 my-4">
+            <div class="col-12 col-md-10 offset-md-1">
+                <div class="p-4 my-4" style="background-color:#11494C;">
 
                     {# Nombre de commentaire dans le titre H2 #}
                     {% if post.comments|length %}
@@ -87,11 +89,11 @@
                             </div>
 
                             {# Si l'utilisateur est admin, Affichage de la suppression du commentaire #}
-                            {% if is_granted('ROLE_ADMIN') %}
+                            {# {% if is_granted('ROLE_ADMIN') %}
                                 <div class="card-footer d-flex d-row justify-content-end p-1">
                                     {{ include('blog/_delete_form.comment.html.twig') }}
                                 </div>
-                            {% endif %}
+                            {% endif %} #}
 
                         </div>
 
@@ -102,12 +104,14 @@
 
                     {# Si l'utilisateur est connecté, affichage de formulaire de création d'un nouveau commentaire #}
                     {% if app.user %}
-                        <h2 class="h4 text-center text-title-h1 my-4">Ecrire un {% if post.comments|length %}nouveau{% else %}premier{% endif %} commentaire</h2>
+                        <h2 class="text-light text-center text-title-h1 my-4">Ecrire un {% if post.comments|length %}nouveau{% else %}premier{% endif %} commentaire</h2>
                         {# Champ pour le commentaire #}
+                        <div class="text-light">
                         {{ form_start(form) }}
                             {{ form_widget(form) }}
                             <button class="btn btn-outline-info w-100">{{ button_label|default('Commenter') }}</button>
                         {{ form_end(form) }}
+                        </div>
                     {% else %}
                         <p class="text-center text-info fs-4 mt-4">
                             Vous devez <a href="{{ path('app_main_login') }}" class="fs-4 fst-italic"> vous connecter </a>pour laisser un commentaire.

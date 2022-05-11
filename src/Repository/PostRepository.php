@@ -46,6 +46,16 @@ class PostRepository extends ServiceEntityRepository
         }
     }
 
+     // Count the total number of Posts
+     public function countNumberPosts(): ?int
+     {
+         return $this->createQueryBuilder('p')
+             ->select('COUNT(p.id)')
+             ->getQuery()
+             ->getSingleScalarResult()
+         ;
+     }
+
     // /**
     //  * @return Post[] Returns an array of Post objects
     //  */
