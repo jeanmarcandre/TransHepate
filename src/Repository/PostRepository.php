@@ -3,11 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Post;
-use Doctrine\ORM\ORMException;
-use App\Repository\PostRepository;
-use Doctrine\ORM\OptimisticLockException;
-use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method Post|null find($id, $lockMode = null, $lockVersion = null)
@@ -48,40 +47,24 @@ class PostRepository extends ServiceEntityRepository
 
      // Count the total number of Posts
      public function countNumberPosts(): ?int
-     {
-         return $this->createQueryBuilder('p')
+    {
+        return $this->createQueryBuilder('p')
              ->select('COUNT(p.id)')
              ->getQuery()
              ->getSingleScalarResult()
-         ;
-     }
+        ;
+    }
 
-    // /**
-    //  * @return Post[] Returns an array of Post objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    // Search Method in Post with Title and Content
+    public function findBySearch(string $search): array
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('p.title LIKE :search')
+            ->orWhere('p.content LIKE :search')
+            ->setParameter('search', '%'.addcslashes($search, '%_').'%')
+            ->orderBy('p.createdAt', 'DESC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Post
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

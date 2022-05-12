@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <div class="container bg-light mt-5" style="width:1000px;border-radius:50px;border:solid 15px #229296;">
+    <div class="container bg-light mt-5" style="width:1600px;border-radius:50px;border:solid 15px #229296;">
 
         <div class="text-dark bg-light my-5 p-4 d-block w-100">
 
@@ -29,20 +29,20 @@
 
                     <div class="card-body"><strong>
                         {# Affichage du contenu de la publication #}
-                        <div class="mb-2 fs-5">
+                        <div class="mb-2 fs-5 fst-italic">
                             {{ post.content }}
                         </div></strong>
                     </div>
 
                     {# Si l'utilisateur a le role d'Admin, on affiche un menu avec un bouton permettant de supprimer/modifier la publication #}
-                    {# {% if is_granted('ROLE_ADMIN') %}
+                    {% if is_granted('ROLE_ADMIN') %}
                         <div class="card-footer d-flex d-row justify-content-evenly mt-3">
                             <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}" class="btn btn-outline-success pe-3">
                                 <i class="fas fa-edit me-1"></i>Modifier
                             </a>
                             {{ include('blog/_delete_form.post.html.twig') }}
                         </div>
-                    {% endif %} #}
+                    {% endif %}
                 </div>
 
             </div>
@@ -51,11 +51,11 @@
 
     </div>
 
-        <div class="mb-4 ms-4">
-        <a href="{{ path('app_blog_index') }}" class="m-4 px-2 py-1 text-light" style="font-size:1.6rem;background-color: rgb(9, 90, 9);">Retour à la liste</a></br>
+        <div class="my-4">
+        <a href="{{ path('app_blog_index') }}" class="ms-5 px-5 py-1 text-light" style="font-size:1.3rem;background-color:#229296;border-radius:25px;border:solid 2px #11494C">Retour à la liste</a></br>
         </div>
-        <div class="my-4 ms-4">
-        <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}"  class="mx-4 px-5 py-1 text-light" style="font-size:1.5rem;background-color:#11494C;">Modifier</a>
+        <div class="my-4">
+        <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}"  class="ms-5 px-5 py-1 text-light" style="font-size:1.3rem;background-color:#229296;border-radius:25px;border:solid 2px #11494C">Modifier cet article</a>
         </div>
         {{ include('blog/_delete_form.post.html.twig') }}
 
@@ -89,11 +89,11 @@
                             </div>
 
                             {# Si l'utilisateur est admin, Affichage de la suppression du commentaire #}
-                            {# {% if is_granted('ROLE_ADMIN') %}
+                            {% if is_granted('ROLE_ADMIN') %}
                                 <div class="card-footer d-flex d-row justify-content-end p-1">
                                     {{ include('blog/_delete_form.comment.html.twig') }}
                                 </div>
-                            {% endif %} #}
+                            {% endif %}
 
                         </div>
 
@@ -109,7 +109,7 @@
                         <div class="text-light">
                         {{ form_start(form) }}
                             {{ form_widget(form) }}
-                            <button class="btn btn-outline-info w-100">{{ button_label|default('Commenter') }}</button>
+                            <button class="fs-4 text-dark btn btn-success w-25" style="background-color:lightgrey;border-radius:25px;"><strong>{{ button_label|default('Commenter') }}</strong></button>
                         {{ form_end(form) }}
                         </div>
                     {% else %}
@@ -123,10 +123,10 @@
         </div>
 
         {# Lien pour retourner a la liste des articles #}
-        <div class="row mt-2">
+        {# <div class="row mt-2">
             <p class="text-center col-12">
-                <a class="btn btn-outine-info" href="{{ path('app_blog_index') }}"Retpur à la liste des publications></a>
+                <a class="btn btn-outine-info" href="{{ path('app_blog_index') }}">Retour à la liste des publications</a>
             </p>
-        </div>
+        </div> #}
     </div>
 {% endblock %}

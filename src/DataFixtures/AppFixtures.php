@@ -14,9 +14,9 @@ use App\Entity\Comment;
 class AppFixtures extends Fixture
 {
     // configuration des constantes pour la création des éléments
-    private const MAX_USER = 47;
-    private const MAX_POST = 100;
-    private const MAX_COMMENT = 20;
+    // private const MAX_USER = 47;
+    // private const MAX_POST = 100;
+    // private const MAX_COMMENT = 20;
 
     private UserPasswordHasherInterface $hasher;
 
@@ -32,33 +32,33 @@ class AppFixtures extends Fixture
         $faker = Faker\Factory::create('fr_FR');
 
         // Création d'un compte ROLE_ADMIN
-        // $admin = new User();
-        // $admin
-        //     ->setEmail('a@a.fr')
-        //     ->setUserName('admin')
-        //     ->setPassword($this->hasher->hashPassword($admin, 'Password1*'))
-        //     ->setRoles(["ROLE_ADMIN"])
-        // ;
-        // // On persiste l'admin
-        // $manager->persist($admin);
-        // // On stocke l'admin dans un tableau pour l'attribuer aux publications
+        $admin = new User();
+        $admin
+            ->setEmail('a@a.fr')
+            ->setUserName('admin')
+            ->setPassword($this->hasher->hashPassword($admin, 'Password1*'))
+            ->setRoles(["ROLE_ADMIN"])
+        ;
+        // On persiste l'admin
+        $manager->persist($admin);
+        // On stocke l'admin dans un tableau pour l'attribuer aux publications
         // $user_post[] = $admin;
-        // // On stocke l'admin dans un tableau pour l'utiliser pour les commentaires
+        // On stocke l'admin dans un tableau pour l'utiliser pour les commentaires
         // $users[] = $admin;
 
         // Création d'un compte ROLE_BLOGGER
-        // $blogger = new User();
-        // $blogger
-        //     ->setEmail('b@b.fr')
-        //     ->setUserName('blogger')
-        //     ->setPassword($this->hasher->hashPassword($blogger, 'Password1*'))
-        //     ->setRoles(["ROLE_BLOGGER"])
-        // ;
-        // // On persiste le Blogger
-        // $manager->persist($blogger);
-        // // On stocke le blogger dans un tableau pour l'attribuer aux publications
+        $blogger = new User();
+        $blogger
+            ->setEmail('b@b.fr')
+            ->setUserName('blogger')
+            ->setPassword($this->hasher->hashPassword($blogger, 'Password1*'))
+            ->setRoles(["ROLE_BLOGGER"])
+        ;
+        // On persiste le Blogger
+        $manager->persist($blogger);
+        // On stocke le blogger dans un tableau pour l'attribuer aux publications
         // $user_post[] = $blogger;
-        // // On stocke le blogger dans un tableau pour l'utiliser pour les commentaires
+        // On stocke le blogger dans un tableau pour l'utiliser pour les commentaires
         // $users[] = $blogger;
 
         // Création d'un compte ROLE_USER
@@ -71,22 +71,34 @@ class AppFixtures extends Fixture
         // On persiste l'utilisateur
         $manager->persist($user);
 
-        // Création de MAX_USER comptes aléatoires ROLE_USER
-        for ($i=0; $i<self::MAX_USER; $i++) {
+        // creation de 10 compte aléatoires ROLE_USER
+        for($i=0; $i<10; $i++) {
             $user = new User();
             $user
                 ->setEmail( $faker->email )
-                ->setUserName( $faker->userName )
+                ->setUsername( $faker->userName )
                 ->setPassword($this->hasher->hashPassword($user, 'Password1*'))
             ;
-            // On persiste l'utilisateur
             $manager->persist($user);
-            // On stocke l'utilisateur dans un tableau pour l'utiliser pour les commentaires
-            $users[] = $user;
+
         }
 
-        // Création de MAX_POST Publications avec des données aléatoires et des commentaires (entre 0 et MAX_COMMENT par publication)
-        for ($i=0; $i<self::MAX_POST; $i++) {
+        // Création de MAX_USER comptes aléatoires ROLE_USER
+        // for ($i=0; $i<self::MAX_USER; $i++) {
+        //      $user = new User();
+        //      $user
+        //         ->setEmail( $faker->email )
+        //         ->setUserName( $faker->userName )
+        //         ->setPassword($this->hasher->hashPassword($user, 'Password1*'))
+        //     ;
+        //     // On persiste l'utilisateur
+        //     $manager->persist($user);
+        //     // On stocke l'utilisateur dans un tableau pour l'utiliser pour les commentaires
+        //     $users[] = $user;
+        // }
+
+        // Création de 50 Publications avec des données aléatoires et des commentaires (entre 0 et 10 par publication)
+        for ($i=0; $i<50; $i++) {
 
             // Création d'un Post
             $post = new Post();
@@ -94,13 +106,13 @@ class AppFixtures extends Fixture
             $post
                 ->setTitle( $faker->realText($maxNbChars = 100) )
                 ->setContent( $faker->realText($maxNbChars = 2000) )
-                ->setAuthor( $faker->randomElement($user_post) )
+                ->setAuthor( $admin )
             ;
             // On persiste la publication
             $manager->persist($post);
 
-            // Boucle de création des commentaires (entre 0 et MAX_COMMENT)
-            $rand = rand(0, self::MAX_COMMENT);
+            // Boucle de création des commentaires (entre 0 et 10)
+            $rand = rand(0, 10);
             for ($j=0; $j < $rand; $j++) {
                 // Création d'un commentaire
                 $comment = new Comment();
@@ -109,7 +121,7 @@ class AppFixtures extends Fixture
                     ->setContent( $faker->realText($maxNbChars = 500) )
                     ->setPost($post)
                     // On récupère aléatoirement un utilisateur dans le tableau précédent
-                    ->setAuthor( $faker->randomElement($users) )
+                    ->setAuthor( $admin)
                 ;
                 // On persiste le commentaire
                 $manager->persist($comment);
