@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <div class="container-lg mt-5">
+    <body class="container-lg mt-5">
 
         <div class="row top-25 w-100"  style="border:solid 25px #229296;border-radius:50px;">
 
@@ -16,15 +16,19 @@
 
                 {# Affichage du nombre total de publications (attibut apporté par knp_paginator) #}
                 <div class="col-12 ps-5">
-                    <p class="fs-5 text-left text-dark">Nombre total d'articles : {{ posts|length }}</p>
+                    <p class="fs-5 text-left text-dark">Nombre total d'articles : {{ posts_paginate.getTotalItemCount }}</p>
                 </div>
 
-                {# S'il y a des publications, on affiche les publications à afficher #}
-
+                {# S'il y a des publications, on affiche le menu de pagination #}
+                <div class="container">
+                    <div class="fs-6 fst-italic text-center mx-4">
+                        {{ knp_pagination_render(posts_paginate) }}
+                    </div>
+                </div>
                 {### AFFICHAGE DES PUBLICATIONS ###}
 
                     {###### Boucle pour parcourir toutes les publications à afficher ######}
-                    {% for post in posts %}
+                    {% for post in posts_paginate %}
 
                     {# {{ dump(posts) }} #}
 
@@ -74,6 +78,6 @@
 
         </div>
 
-    </div>
+    </body>
 
 {% endblock %}

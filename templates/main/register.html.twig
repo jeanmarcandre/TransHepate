@@ -6,7 +6,7 @@
 
     <div class="container px-5 mt-5" style="width:1000px;border-radius:50px;border:solid 15px #229296;">
 
-        <div class="text-dark bg-light my-5 p-4 d-block w-100">
+        <div class="text-dark bg-light my-5 p-4 d-block w-100" style="border:solid 5px #229296">
 
             <h1 class="mb-3 font-weight-normal mx-auto fs-2 text-uppercase fst-italic text-center"
             style="width: 500px;color: rgb(9, 90, 9);"><strong>Inscrivez-vous:</strong></h1>
@@ -23,20 +23,25 @@
 
         </div>
 
-        <button type="submit" class="mx-4 my-4 px-5 py-1 text-light" style="font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">Valider</button>
+            <button type="submit" class="mx-4 my-4 px-5 py-1 text-light fst-italic"
+                style="color:lightgrey;font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">
+                <strong>Valider</strong>
+            </button>
+            <a href="{{ path('app_blog_index') }}" class="mx-4 my-4 px-5 py-1 text-light fst-italic"
+                style="color:lightgrey;font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">
+                <strong>Retour à la liste</strong>
+            </a>
 
         </div>
-
-
 
             {# {{ form_row(registrationForm.agreeTerms) }} #}
 
         {{ form_end(registrationForm) }}
 
-        </div>
+        {# </div>
 
         <button type="submit" class="mx-4 my-4 px-5 py-1 text-light" style="font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">Valider</button>
 
-        </div>
+        </div> #}
 
 {% endblock %}

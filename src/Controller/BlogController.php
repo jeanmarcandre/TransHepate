@@ -4,9 +4,9 @@ namespace App\Controller;
 
 // ENTITY
 use App\Entity\Post;
-use App\Entity\Comment;
-// FORM
 use App\Form\PostType;
+// FORM
+use App\Entity\Comment;
 use App\Form\CommentType;
 // REPOSITORY
 use App\Repository\PostRepository;
@@ -21,6 +21,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 #[Route('/blog', name: 'app_blog_')]
 class BlogController extends AbstractController
 {
@@ -28,10 +29,20 @@ class BlogController extends AbstractController
     /***********  Gestion des POSTS  *************/
 
     #[Route('/', name: 'index', methods: ['GET'])]
-    public function indexBlog(PostRepository $postRepository, Request $request): Response
+    public function indexBlog(PostRepository $postRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        // Requète pour ordonner les publications (la plus récente en premier)
+        $data = $postRepository->findBy([], ['createdAt' => 'desc']);
+
+        // Récupération des publications paginées
+        $posts = $paginator->paginate(
+            $data, /* Requète de récupération des publications */
+            $request->query->getInt('page', 1), /*Numéro de la page demandée dans $request*/
+            6 /*Nombre de publications par pages*/
+        );
+
         return $this->render('blog/index.html.twig', [
-            'posts' => $postRepository->findAll(),
+            'posts_paginate' => $posts,
         ]);
     }
 

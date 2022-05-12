@@ -37,8 +37,8 @@
                     {# Si l'utilisateur a le role d'Admin, on affiche un menu avec un bouton permettant de supprimer/modifier la publication #}
                     {% if is_granted('ROLE_ADMIN') %}
                         <div class="card-footer d-flex d-row justify-content-evenly mt-3">
-                            <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}" class="btn btn-outline-success pe-3">
-                                <i class="fas fa-edit me-1"></i>Modifier
+                            <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}" class="ms-5 px-5 py-1 text-light" style="font-size:1.3rem;background-color:#229296;border-radius:25px;border:solid 2px #11494C">
+                                <i class="fas fa-edit me-1"></i>Modifier cet article
                             </a>
                             {{ include('blog/_delete_form.post.html.twig') }}
                         </div>
@@ -54,10 +54,10 @@
         <div class="my-4">
         <a href="{{ path('app_blog_index') }}" class="ms-5 px-5 py-1 text-light" style="font-size:1.3rem;background-color:#229296;border-radius:25px;border:solid 2px #11494C">Retour à la liste</a></br>
         </div>
-        <div class="my-4">
+        {# <div class="my-4">
         <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}"  class="ms-5 px-5 py-1 text-light" style="font-size:1.3rem;background-color:#229296;border-radius:25px;border:solid 2px #11494C">Modifier cet article</a>
         </div>
-        {{ include('blog/_delete_form.post.html.twig') }}
+        {{ include('blog/_delete_form.post.html.twig') }} #}
 
         {### ESPACE POUR LES COMMENTAIRES ###}
         <div class="row">
