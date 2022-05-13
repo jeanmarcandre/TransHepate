@@ -31,13 +31,19 @@ class BlogController extends AbstractController
     #[Route('/', name: 'index', methods: ['GET'])]
     public function indexBlog(PostRepository $postRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        // Récupération du numéro de la page demandée
+        $requestedPage = $request->query->getInt('page', 1);
+
+        // Vérification que le numéro est positif
+        if ($requestedPage < 1) { throw new NotFoundHttpException(); }
+
         // Requète pour ordonner les publications (la plus récente en premier)
         $data = $postRepository->findBy([], ['createdAt' => 'desc']);
 
         // Récupération des publications paginées
         $posts = $paginator->paginate(
             $data, /* Requète de récupération des publications */
-            $request->query->getInt('page', 1), /*Numéro de la page demandée dans $request*/
+            $requestedPage, /*Numéro de la page demandée dans $request*/
             6 /*Nombre de publications par pages*/
         );
 

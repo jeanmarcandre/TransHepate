@@ -5,14 +5,36 @@ namespace App\Controller;
 use App\Entity\Comment;
 use App\Form\CommentType;
 use App\Repository\CommentRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/comment')]
 class CommentController extends AbstractController
 {
+
+    #[Route('/', name: 'index', methods: ['GET'])]
+    public function indexComment(CommentRepository $commentRepository, PaginatorInterface $paginator, Request $request): Response
+    {
+        // Requète pour ordonner les commentaires (le plus récent en premier)
+        $data = $commentRepository->findBy([], ['createdAt' => 'desc']);
+
+        // Récupération des commentaires paginées
+        $comments = $paginator->paginate(
+            $data, /* Requète de récupération des commentaires */
+            $request->query->getInt('page', 1), /*Numéro de la page demandée dans $request*/
+            6 /*Nombre de commentaires par pages*/
+        );
+
+        dump($comments);
+
+        return $this->render('comment/index.html.twig', [
+            'comments_paginate' => $comments,
+        ]);
+    }
+
     #[Route('/', name: 'app_comment_index', methods: ['GET'])]
     public function index(EntityManagerInterface $entityManager): Response
     {

@@ -10,6 +10,18 @@
 
             <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
 
+                {# Affichage du nombre total de commentaires (attibut apporté par knp_paginator) #}
+                <div class="col-12 ps-5">
+                    <p class="fs-5 text-left fst-italic text-dark text-decoration-underline">Nombre total de commentaires : {{ comments_paginate.getTotalItemCount }}</p>
+                </div>
+
+                {# S'il y a des commentaires, on affiche le menu de pagination #}
+                <div class="container">
+                    <div class="fs-6 fst-italic text-center mx-4">
+                        {{ knp_pagination_render(comments_paginate) }}
+                    </div>
+                </div>
+
                 <div class="container bg-light mt-3">
 
                     <h1 class="text-dark fs-2 fst-italic text-center"><strong>Liste des commentaires</strong></h1>

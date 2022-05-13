@@ -20,9 +20,12 @@
                 </div>
 
                 {# S'il y a des publications, on affiche le menu de pagination #}
-                <div class="container">
-                    <div class="fs-6 fst-italic text-center mx-4">
-                        {{ knp_pagination_render(posts_paginate) }}
+
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="fs-6 fst-italic text-center mx-4 d-inline-block">
+                            {{ knp_pagination_render(posts_paginate) }}
+                        </div>
                     </div>
                 </div>
                 {### AFFICHAGE DES PUBLICATIONS ###}
@@ -56,6 +59,9 @@
                                     {{ post.author.username }}</span>
                                     {% if post.updatedAt %}
                                         et modifié le <span class="text-warning">{{ post.updatedAt|date('d/M/Y à H\\hi') }}</span>
+                                    {% endif %}
+                                    {% if post.comments|length %}
+                                        <div class="fs-6 text-muted text-center">({{ post.comments|length }}) commentaires</div>
                                     {% endif %}
                                 </div>
                             </div>

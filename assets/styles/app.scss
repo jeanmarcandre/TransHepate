@@ -145,7 +145,7 @@ h5 div a:hover {
 }
 
 footer {
-  position: sticky!important;
+  position: fixed!important;
   bottom: 20!important;
   max-height: 80px!important;
   left: 0;
@@ -491,8 +491,8 @@ div ul li .contact {
 
  .page-item .page-link {
     background-color: #b6e3e5!important;
-    border:solid 1px lightslategrey!important;
-    border-radius: 5px;
+    border:solid 2px lightslategrey!important;
+    border-radius: 10px;
     color: black;
     font-size: 16px;
     font-weight: bold;
