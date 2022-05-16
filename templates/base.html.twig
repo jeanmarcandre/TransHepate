@@ -31,13 +31,13 @@
 
         {# HEADER #}
         <header>
-            <nav class="entete navbar navbar-expand-lg">
-                <div class="container fluid w-100">
-                    <img id="ecusson-bfc" src="{{ asset('build/ecusson-bfc.jpeg') }}" alt="TRANSHEPATE" style="height:100px; width: 80px;">
-                    <span class="fs-5 fst-italic text-uppercase  text-white"><strong>  fédération régionale des malades et transplantés hépatiques</strong></span>
-                    <span class="fs-5 fst-italic text-uppercase  text-white"><strong>  Région Bourgogne Franche Comtée</strong></span>
+            <div class="entete container-xx">
+                <div class="grid">
+                    <img id="ecusson-bfc" src="{{ asset('build/ecusson-bfc2.jpeg') }}" alt="TRANSHEPATE" class="ms-5" style="height:120px; width: 120px;">
+                    <span class="fs-5 fst-italic text-uppercase text-white mx-5"><strong>  fédération régionale des malades et transplantés hépatiques</strong></span>
+                    <span class="fs-5 fst-italic text-uppercase text-white mx-5"><strong>  Région Bourgogne Franche Comtée</strong></span>
                 </div>
-            </nav>
+            </div>
 
             <nav class="navbar navbar-expand-lg bg-white">
                 <div class="container-fluid">
@@ -147,22 +147,39 @@
 
         {# FOOTER #}
 
-        <footer class=" container footer py-2 text-align-center">
-            {# <div style="height:5vh; width:1000px; margin-left:50px;" class="row align-center">
-                <div style="height:5vh; width:1000px; margin-left: 150px;" class="container fluid"> #}
+        {# <footer class=" container footer py-2 mt-5 text-align-center" style="max-width: 2800px">
+            <div style="height:5vh; width:1000px; margin-left:50px;" class="row align-center">
+                <div style="height:5vh; width:1000px; margin-left: 150px;" class="container fluid">
                     <div class="row align-center">
                         <div class="col-4 mx-5">
-                            <p class="text-warning">&copy; Transhépate.bfc 2022 - Mentions légales et RGPD</p>
+                            <p class="text-center text-warning">&copy; Transhépate.bfc 2022 - Mentions légales et RGPD</p>
                         </div>
                         {# <div class="col-4">
                             <img id="logomonin" src="{{ asset('build/Logo Monin 2.PNG') }}" alt="logo" style="height:50px; width: 200px;">
                         </div> #}
-                        <div class="col-4 mx-5">
+                        {# <div class="col-4 mx-5">
                             <a class="btn btn-outline-warning text-uppercase" href="https://www.service-public.fr/particuliers/vosdroits/F183" target="_blank">le don d'organes</a>
                         </div>
                     </div>
-                {# </div>
-            </div> #}
+                </div>
+            </div>
+        </footer>  #}
+
+        <footer class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="text-center text-warning">&copy; Transhépate.bfc 2022 - Mentions légales et RGPD</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <a class="btn btn-outline-warning text-uppercase" href="https://www.service-public.fr/particuliers/vosdroits/F183" target="_blank">le don d'organes</a>
+                    </div>
+                </div>
+            </div>
         </footer>
 
     </body>

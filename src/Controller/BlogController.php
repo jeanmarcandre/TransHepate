@@ -125,7 +125,7 @@ class BlogController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'delete_post', methods: ['POST'])]
+    #[Route('/delete_post/{id}', name: 'delete_post', methods: ['POST'])]
     public function deletePost(Request $request, Post $post, PostRepository $postRepository): Response
     {
         if ($this->isCsrfTokenValid('transhepate_blog'.$post->getId(), $request->request->get('_token'))) {
