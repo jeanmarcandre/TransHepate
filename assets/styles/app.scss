@@ -523,11 +523,11 @@ div ul li .contact {
 
 /*---------------------------- CKEDITOR  ---------------------------*/
 
-// .cke_chrome, .cke_1.cke_chrome {
-//     border-color: black!important;
-// }
+.cke_chrome, .cke_1.cke_chrome {
+    border-color: black!important;
+}
 
-// .cke_1 .cke_top {
-//     background-color: lightgrey!important;
-//     border-bottom-color: black!important;
-// }
+.cke_1 .cke_top {
+    background-color: #ced4da!important;
+    border-bottom-color: black!important;
+}

@@ -9,5 +9,5 @@ fos_ck_editor:
         general:
             language: fr       # Langue de l'éditeur
             toolbar: standard  # type de toolbar (basic / standard / full)
-            uicolor: "#5bc0de" # Couleur de fond de l'éditeur
+            uicolor: "#adb5bd" # Couleur de fond de l'éditeur
             height: 200px      # hauteur de l'éditeur
