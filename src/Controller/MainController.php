@@ -13,16 +13,17 @@ use App\Form\RegistrationFormType;
 // Imports Register
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
+use App\Repository\PermanencesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 // Import Google Recaptcha
 
 
 // PAGINATOR
-use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Component\Routing\Annotation\Route;
 // EMAIL
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -40,6 +41,13 @@ class MainController extends AbstractController
             'posts' => $postRepository->findBy([], ['createdAt' => 'desc']),
         ]);
     }
+
+    // /*** PERMANENCES ***/
+    // #[Route(path:'/permanences', name:'permanences')]
+    // public function permanences(Request $request, PermanencesRepository $PermanencesRepository): Response
+    // {
+    //     return $this->render('permanence/permanences.html.twig');
+    // }
 
 
     /****  FORMULAIRE DE CONTACT  ****/
@@ -86,10 +94,14 @@ class MainController extends AbstractController
     }
 
     #[Route(path: '/transhepatebfc', name:'transhepatebfc')]
-    public function transhepatebfc(PostRepository $postRepository): Response
+    public function transhepatebfc(PostRepository $postRepository, PermanencesRepository $permanencesRepository): Response
     {
+        $permanences = $permanencesRepository->findAll();
+        dd($permanences);
         // Cette page appellera la vue template/main/transhepatebfc.html.twig
-        return $this->render('main/transhepatebfc.html.twig');
+        return $this->render('main/transhepatebfc.html.twig',[
+            'resultPermanences'=>$permanences,
+        ]);
     }
 
     /****  CONNEXION  ****/
@@ -146,6 +158,35 @@ class MainController extends AbstractController
 
         return $this->renderForm('main/register.html.twig', [
             'registrationForm' => $form,
+        ]);
+    }
+
+    /****  RECHERCHE  ****/
+    #[Route(path: '/recherche', name: 'search', methods: ['GET'])]
+    public function search(Request $request, PostRepository $postRepository, PaginatorInterface $paginator): Response 
+    {
+        // Récupération du numéro de la page demangée
+        $requestedPage = $request->query->getInt('page', 1);
+
+        // Vérification que le numéro est positif
+        if ($requestedPage < 1) { throw new NotFoundHttpException(); }
+
+        // On récupère le contenu du champ de recherche
+        $search = $request->query->get('search', '');
+
+        // Utilisation de la méthode présente dans le repository pour rechercher l'élément (dans le titre et le contenu)
+        $posts = $postRepository->findBySearch($search);
+
+        // Récupération des publications paginées
+        $posts_paginate = $paginator->paginate(
+            $posts, // Requête de récupération des publications
+            $requestedPage, // Numéro de la page demandée dans $request
+            $this->getParameter('app_search.post_number') // Nombre de publications par page (dans les paramètres)
+        );
+
+        // Réponse -> envoyer une page contenant les éléments à afficher
+        return $this->render('blog/search.post.html.twig', [
+            'posts' => $posts_paginate,
         ]);
     }
 }

@@ -1,0 +1,30 @@
+{# {% extends 'base.html.twig' %} #}
+
+{% block title %}Permanences{% endblock %}
+
+{% block body %}
+
+<div class="container-xl">
+
+    <div class="mt-5 ms-5"  style="border:solid 5px #229296;border-radius:10px;">
+
+        <div class="col-12 col-lg-12 bg-light px-lg-5" style="border:solid 5px light;border-radius:25px;">
+
+            <h1 class="fs-2 ps-5 text-uppercase fst-italic" style="width: 400px;color:rgb(9, 90, 9);"><strong>Nos Permanences :</strong></h1>
+
+            {{ include('permanence/_form.html.twig') }}
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container m-5">
+
+    <a class="text-decoration-none px-4 ms-4 px-5 py-1 text-light fs-3 fst-italic" style="background-color:#229296;border-radius:25px;border:solid 3px #11494C" 
+    href="{{ path('app_main_transhepatebfc') }}"><strong>Retour sur la page contact</strong></a>
+
+</div>
+
+{% endblock %}

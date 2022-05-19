@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ADMIN/{% block titleAdmin %}{% endblock %}{% endblock %}
+
+{# BLOCK CSS #}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('admin') }}
+{% endblock %}
+
+{# BLOCK JS #}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('admin') }}
+{% endblock %}
+
+{% block body %}
+
+{####  MENU D'ADMINISTRATION  ####}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0">
+  <div class="container-lg">
+
+    <a class="navbar-brand text-title-h1" href="{{ path('app_admin_home') }}"><i class="fa-solid fa-gear pe-2"></i>Administration</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar" aria-controls="adminNavbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="adminNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_admin_user_index') }}"><i class="fa-solid fa-users-gear pe-2"></i>Utilisateurs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa-regular fa-paste pe-2"></i>Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa-regular fa-comments pe-2"></i>Commentaires</a>
+        </li>
+      </ul>
+
+{#       <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> #}
+    </div>
+  </div>
+</nav>
+
+{####  BLOCK PRINCIPAL ADMINISTRATION  ####}
+<div id="main-admin"class="container-fluid px-2 px-lg-5">
+
+    {% block admin %}{% endblock %}
+
+</div>
+
+{% endblock %}

@@ -16,12 +16,32 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom')
-            ->add('prenom')
-            ->add('email')
-            ->add('objet')
-            ->add('textarea')
+        ->add('email')
+        ->add('username')
+        ->add('roles', ChoiceType::class, [
+            'label' => 'Modifier le rôle de l\'utilisateur',
+            'placeholder' => false,
+            'required' => true,
+            'multiple' => false,
+            'expanded' => true,
+            'choices'  => [
+                'ADMIN' => 'ROLE_ADMIN',
+                'USER' => 'ROLE_USER'
+            ],
+        ])
         ;
+
+        $builder->get('roles')
+            ->addModelTransformer(new CallbackTransformer(
+                function ($rolesArray) {
+                    // transform the array(json) to a string
+                    return implode(', ', $rolesArray);
+                },
+                function ($rolesString) {
+                    // transform the string back to an array(json)
+                    return explode(', ', $rolesString);
+                }
+        ));
     }
 
     public function configureOptions(OptionsResolver $resolver): void
@@ -31,19 +51,19 @@ class UserType extends AbstractType
         ]);
     }
 
-    public function index(Request $request): Response
-{
-    $user = new User();
+//     public function index(Request $request): Response
+// {
+//     $user = new User();
 
-    $form = $this->createForm(UserType::class, $user);
+//     $form = $this->createForm(UserType::class, $user);
 
-    $form->handleRaquest($request);
-    if ($form->isSuubmitted() && $form->isValid()){
-        dump($user);die;
-    }
+//     $form->handleRaquest($request);
+//     if ($form->isSuubmitted() && $form->isValid()){
+//         dump($user);die;
+//     }
 
-    return $this->render('default/index.html.twig', [
-        'form' => $form->createView()
-    ]);
-}
+//     return $this->render('default/index.html.twig', [
+//         'form' => $form->createView()
+//     ]);
+// }
 }

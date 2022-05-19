@@ -13,18 +13,6 @@
                 <p class="h5 col-12 text-center">par <span class="text-title-h3 fst-italic">{{ post.author.username }}</strong></span></p>
             </div>
 
-            {# Affichage du nombre total de commentaires (attibut apporté par knp_paginator) #}
-                {# <div class="col-12 ps-5">
-                    <p class="fs-5 text-left fst-italic text-dark text-decoration-underline">Nombre total de commentaires : {{ comments_paginate.getTotalItemCount }}</p>
-                </div>
-
-                {# S'il y a des commentaires, on affiche le menu de pagination #}
-                {# <div class="container">
-                    <div class="fs-6 fst-italic text-center mx-4">
-                        {{ knp_pagination_render(comments_paginate) }} #}
-                    {# </div>
-                </div> #}
-
             {### AFFICHAGE DE LA PUBLICATION ###}
             <div class="row text-dark bg-light my-2 p-4">
                 <div class="text-dark">
@@ -66,10 +54,6 @@
         <div class="my-4">
         <a href="{{ path('app_blog_index') }}" class="ms-5 px-5 py-1 text-light" style="font-size:1.3rem;background-color:#229296;border-radius:25px;border:solid 2px #11494C">Retour à la liste</a></br>
         </div>
-        {# <div class="my-4">
-        <a href="{{ path('app_blog_edit_post', {'slug': post.slug}) }}"  class="ms-5 px-5 py-1 text-light" style="font-size:1.3rem;background-color:#229296;border-radius:25px;border:solid 2px #11494C">Modifier cet article</a>
-        </div>
-        {{ include('blog/_delete_form.post.html.twig') }} #}
 
         {### ESPACE POUR LES COMMENTAIRES ###}
         <div class="row">

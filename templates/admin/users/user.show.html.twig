@@ -1,0 +1,46 @@
+{% extends 'admin/base.admin.html.twig' %}
+
+{% block titleAdmin %}{{ user.username }}{% endblock %}
+
+{% block admin %}
+
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ user.updatedAt ? user.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% for comment in user.comments %}
+
+        {{ dump(comment.content) }}
+
+    {% endfor %}
+
+
+    <a href="{{ path('app_admin_user_index') }}">back to list</a>
+
+    <a href="{{ path('app_admin_edit', {'id': user.id}) }}">edit</a>
+
+    {{ include('admin/_delete_form.html.twig') }}
+{% endblock %}

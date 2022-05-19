@@ -2,6 +2,14 @@
 
 {% block title %}Contact{% endblock %}
 
+{# {% block stylesheets %} #}
+	 {# inclus le block CSS commun #}
+	 {#{{ parent() }} #}
+	 {# Insertion du fichier JS dans le block stylesheets #}
+	 {# La documentation de Recaptcha préconise en effet d'intégrer ce fichier JS dans le head
+	 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}#}
+
 {% block body %}
 
     <div class="container-xl mt-5">

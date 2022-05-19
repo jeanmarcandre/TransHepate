@@ -30,10 +30,11 @@
 </head>
 
         {# HEADER #}
-        <header>
-            <div class="entete container-xx">
+    <header>
+        <div class="container-xx">
+            <div class="entete navbar navbar-expand-lg">
                 <div class="grid">
-                    <img id="ecusson-bfc" src="{{ asset('build/ecusson-bfc2.jpeg') }}" alt="TRANSHEPATE" class="ms-5" style="height:120px; width: 120px;">
+                    <img id="ecusson-bfc" src="{{ asset('build/ecusson-bfc2.jpeg') }}" alt="TRANSHEPATE" class="mx-5" style="height:120px; width: 120px;">
                     <span class="fs-5 fst-italic text-uppercase text-white mx-5"><strong>  fédération régionale des malades et transplantés hépatiques</strong></span>
                     <span class="fs-5 fst-italic text-uppercase text-white mx-5"><strong>  Région Bourgogne Franche Comtée</strong></span>
                 </div>
@@ -92,9 +93,21 @@
                                 </div>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link text-black" href="{{ path('app_main_transhepatebfc') }}"><strong>Nous contacter</strong></a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="true" aria-expanded="false"><strong>Contact</strong></a>
+                                <div class="dropdown-menu bg-success" id="mouseover">
+                                    <a class="dropdown-item" href="{{ path('app_main_transhepatebfc') }}">Nous contacter</a>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                    <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{{ path('app_admin_permanences') }}">Nos permanences</a>
+                                    {% endif %}
+                                </div>
                             </li>
+
+                            {# <li class="nav-item">
+                                <a class="nav-link text-black" href="{{ path('app_main_transhepatebfc') }}"><strong>Nous contacter</strong></a>
+                            </li> #}
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#"
@@ -119,8 +132,8 @@
                     </div>
                 </div>
             </nav>
-
-        </header>
+        </div>
+    </header>
 
     <body>
 

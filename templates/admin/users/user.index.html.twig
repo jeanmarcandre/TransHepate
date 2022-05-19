@@ -1,0 +1,72 @@
+{% extends 'admin/base.admin.html.twig' %}
+
+{% block titleAdmin %}Utilisateurs{% endblock %}
+
+{% block admin %}
+<div class="container-lg">
+
+{# Affichage du nombre total (attribut apporté par knp_paginator) #}
+<div class="col-12 my-4 ps-5">
+    <p class="text-left text-muted text-title-h1">Nombre total d'utilisateurs de notre blog : {{ users.getTotalItemCount }}</p>
+</div>
+
+<table class="table table-hover table-responsive-lg text-center my-4">
+
+    <thead>
+        <tr class="bg-dark text-title-h1">
+            <th {% if users.isSorted('utilisateurs.username') %} class="sorted" {% endif %}>
+                {{ knp_pagination_sortable(users, 'NOM D\'UTILISATEUR', 'utilisateurs.username') }}
+            </th>
+            <th {% if users.isSorted('utilisateurs.email') %} class="sorted" {% endif %}>
+                {{ knp_pagination_sortable(users, 'EMAIL', 'utilisateurs.email') }}
+            </th>
+            <th {% if users.isSorted('utilisateurs.createdAt') %} class="sorted" {% endif %}>
+                {{ knp_pagination_sortable(users, 'Inscrit depuis le ...', 'utilisateurs.createdAt') }}
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for user in users %}
+
+        {# On affiche pas le compte Admin connecté pour qu'il ne puisse pas modifier son compte par accident (uniquement dans profil) #}
+        {% if app.user != user %}
+        <tr data-href="{{ path('app_admin_show', {'id': user.id}) }}">
+
+            {#  Affichage du pseudonyme de l'utilisateur suivant son rôle #}
+            {% set user_role = user.getRoles %}
+            {% if "ROLE_ADMIN" in user_role %}
+                <td class="text-danger fw-bold"><i class="fa-solid fa-user-shield pe-2"></i>{{ user.username|upper }}</td>
+            {% elseif "ROLE_BLOGGER" in user_role %}
+                <td class="text-success fw-bold"><i class="fa-solid fa-pen-clip pe-2"></i>{{ user.username|upper }}</td>
+            {% else %}
+                <td class="text-title-h2">{{ user.username|upper }}</td>
+            {% endif %}
+
+            <td>{{ user.email }}</td>
+            <td class="text-muted">{{ user.createdAt|format_datetime('full', 'short', locale='fr')|capitalize }}</td>
+
+        </tr>
+        {% endif %}
+
+    {% else %}
+        <tr>
+            <td colspan="9">Aucun Utilisateur</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+
+{# On affiche le menu de pagination #}
+<div class="row mt-5 mb-4">
+    <div class="col-12 text-center">
+        <div class="d-inline-block">
+            {{ knp_pagination_render(users) }}
+        </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock %}
