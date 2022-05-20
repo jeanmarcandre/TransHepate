@@ -2,6 +2,14 @@
 
 {% block title %}Inscription{% endblock %}
 
+{% block stylesheets %}
+     {# inclus le block CSS commun #}
+     {# {{ parent() }} #}
+     {# Insertion du fichier JS dans le block stylesheets #}
+     {# La documentation de Recaptcha préconise en effet d'intégrer ce fichier JS dans le head #}
+     {# <script src="https://www.google.com/recaptcha/api.js" async defer></script> #}
+{% endblock %}
+
 {% block body %}
 
     <div class="container px-5 mt-5" style="width:1000px;border-radius:50px;border:solid 15px #229296;">
@@ -38,10 +46,12 @@
 
         {{ form_end(registrationForm) }}
 
-        {# </div>
+    </div>
+
+        <div>
 
         <button type="submit" class="mx-4 my-4 px-5 py-1 text-light" style="font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">Valider</button>
 
-        </div> #}
+        </div>
 
 {% endblock %}

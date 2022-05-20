@@ -5,24 +5,29 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Form\ContactType;
-use Symfony\Component\Mime\Email;
+use App\Entity\Permanences;
 // Imports Login
-use App\Controller\MainController;
+
 // Import Post
-use App\Form\RegistrationFormType;
+use App\Form\PermanencesType;
 // Imports Register
+use Symfony\Component\Mime\Email;
+use App\Controller\MainController;
+use App\Form\RegistrationFormType;
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
-use App\Repository\PermanencesRepository;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\HttpFoundation\Response;
 // Import Google Recaptcha
 
 
 // PAGINATOR
-use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
 // EMAIL
+use App\Repository\PermanencesRepository;
+use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -41,13 +46,6 @@ class MainController extends AbstractController
             'posts' => $postRepository->findBy([], ['createdAt' => 'desc']),
         ]);
     }
-
-    // /*** PERMANENCES ***/
-    // #[Route(path:'/permanences', name:'permanences')]
-    // public function permanences(Request $request, PermanencesRepository $PermanencesRepository): Response
-    // {
-    //     return $this->render('permanence/permanences.html.twig');
-    // }
 
 
     /****  FORMULAIRE DE CONTACT  ****/
@@ -96,11 +94,11 @@ class MainController extends AbstractController
     #[Route(path: '/transhepatebfc', name:'transhepatebfc')]
     public function transhepatebfc(PostRepository $postRepository, PermanencesRepository $permanencesRepository): Response
     {
-        $permanences = $permanencesRepository->findAll();
-        dd($permanences);
+        $tableaupermanences = $permanencesRepository->find(1)->getContent();
+
         // Cette page appellera la vue template/main/transhepatebfc.html.twig
         return $this->render('main/transhepatebfc.html.twig',[
-            'resultPermanences'=>$permanences,
+            'tableau'=>$tableaupermanences
         ]);
     }
 
@@ -127,7 +125,7 @@ class MainController extends AbstractController
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 
-    #[Route('/inscription', name: 'register')]
+    #[Route(path: '/inscription', name: 'register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserRepository $userRepository): Response
     {
         if ($this->getUser()) {
@@ -187,6 +185,34 @@ class MainController extends AbstractController
         // Réponse -> envoyer une page contenant les éléments à afficher
         return $this->render('blog/search.post.html.twig', [
             'posts' => $posts_paginate,
+        ]);
+    }
+
+    #[Route('/new-permanences', name: 'permanences', methods: ['GET', 'POST'])]
+    public function new(Request $request, PermanencesRepository $permanencesRepository, ManagerRegistry $doctrine): Response
+    {
+        if($permanencesRepository->find(1)){
+            $permanences = $permanencesRepository->find(1);
+
+        }
+        else{$permanences = new Permanences();}
+
+        $form = $this->createForm(PermanencesType::class, $permanences);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $permanences->setContent($form->get('content')->getData());
+            // dd($permanences);
+            $entityManager = $doctrine->getManager();
+            $entityManager->persist($permanences);
+            $entityManager->flush();
+            // $permanencesRepository->add($permanences);
+            // dd($permanences);
+            return $this->redirectToRoute('app_main_transhepatebfc', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('main/permanences.html.twig', [
+            'form' => $form,
         ]);
     }
 }

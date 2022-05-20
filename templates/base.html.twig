@@ -100,7 +100,7 @@
                                     <a class="dropdown-item" href="{{ path('app_main_transhepatebfc') }}">Nous contacter</a>
                                     {% if is_granted('ROLE_ADMIN') %}
                                     <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{ path('app_admin_permanences') }}">Nos permanences</a>
+                                        <a class="dropdown-item" href="{{ path('app_main_permanences') }}">Nos permanences</a>
                                     {% endif %}
                                 </div>
                             </li>
@@ -111,7 +111,7 @@
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-haspopup="true" aria-expanded="false"><strong>TranHépate Blog</strong></a>
+                                role="button" aria-haspopup="true" aria-expanded="false"><strong>TransHépate Blog</strong></a>
                                 <div class="dropdown-menu bg-success" id="mouseover">
                                     <a class="dropdown-item" href="{{ path('app_blog_index') }}">Accueil</a>
                                         <div class="dropdown-divider"></div>

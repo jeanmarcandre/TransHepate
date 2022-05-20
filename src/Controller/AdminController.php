@@ -6,20 +6,17 @@ use App\Entity\Post;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Entity\Comment;
-use App\Entity\Permanences;
-use App\Form\PermanencesType;
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
 use App\Repository\CommentRepository;
-use App\Repository\PermanencesRepository;
-use Knp\Component\Pager\PaginatorInterface;
-use Symfony\Component\HttpFoundation\Request;
-// CONTROLE DES ROLES
-use Symfony\Component\HttpFoundation\Response;
-// PAGINATOR
-use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+// CONTROLE DES ROLES
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+// PAGINATOR
+use Knp\Component\Pager\PaginatorInterface;
 
 #[IsGranted('ROLE_ADMIN')]
 #[Route('/administration', name: 'app_admin_')]
@@ -29,17 +26,15 @@ class AdminController extends AbstractController
     private UserRepository $userRepo;
     private PostRepository $postRepo;
     private CommentRepository $commentRepo;
-    private PermanencesRepository $permanencesRepo;
 
     public function __construct(UserRepository $userRepository,
                                 PostRepository $postRepository,
-                                CommentRepository $commentRepository,
-                                PermanencesRepository $permanencesRepository)
+                                CommentRepository $commentRepository)
     {
         $this->userRepo = $userRepository;
         $this->postRepo = $postRepository;
         $this->commentRepo = $commentRepository;
-        $this->permanencesRepo = $permanencesRepository;
+
     }
 
     #[Route('/', name: 'home')]
@@ -62,7 +57,7 @@ class AdminController extends AbstractController
 
         $users_query = $this->userRepo->findAllOrderedQuery($this->getParameter('app_admin.user_number'));
 
-        $users_paginate = $paginator->paginate( $users_query, $requestedPage, $this->getParameter('app_admin.user_number') );        
+        $users_paginate = $paginator->paginate( $users_query, $requestedPage, $this->getParameter('app_admin.user_number') );
 
         return $this->render('admin/users/user.index.html.twig', [
             'users' => $users_paginate,
@@ -105,21 +100,4 @@ class AdminController extends AbstractController
         return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    #[Route('/permanences', name: 'permanences', methods: ['GET', 'POST'])]
-    public function permanences(Request $request): Response
-    {
-        $permanences = new Permanences();
-        $form = $this->createForm(PermanencesType::class, $permanences);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->permanencesRepo->add($permanences);
-
-            return $this->redirectToRoute('app_main_transhepatebfc', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('permanence/permanences.html.twig', [
-            'form' => $form,
-        ]);
-    }
 }
