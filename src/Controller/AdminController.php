@@ -40,7 +40,7 @@ class AdminController extends AbstractController
     #[Route('/', name: 'home')]
     public function home(): Response
     {
-        return $this->render('admin/home.admin.html.twig', [
+        return $this->render('admin/home.html.twig', [
             'Nb_Users' => $this->userRepo->countNumberUsers(),
             'Nb_Posts' => $this->postRepo->countNumberPosts(),
             'Nb_Comments' => $this->commentRepo->countNumberComments(),

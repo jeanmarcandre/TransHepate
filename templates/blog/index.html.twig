@@ -10,13 +10,23 @@
 
             <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
 
-                {# <div class=""> #}
+                <div class="">
                     <h2 class="text-dark fs-2 fst-italic text-center mx-4"><strong>Nos dernières publications</strong></h2>
-                {# </div> #}
+                </div>
 
                 {# Affichage du nombre total de publications (attibut apporté par knp_paginator) #}
                 <div class="col-12 ps-5">
-                    <p class="fs-5 text-left fst-italic text-dark text-decoration-underline">Nombre total d'articles : {{ posts_paginate.getTotalItemCount }}</p>
+                    <p class="fs-5 text-left fst-italic text-dark">Nombre total d'articles : {{ posts_paginate.getTotalItemCount }}</p>
+                </div>
+
+                {# Formulaire de recherche #}
+                <div class="container">
+                    <div class="col-12 text-center">
+                        <form class="d-flex" method="GET" action="{{ path('app_main_search') }}">
+                            <input class="form-control me-2" name="search" type="search" placeholder="Trouver une publication" aria-label="Search">
+                            <button class="btn btn-sm btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
                 </div>
 
                 {# S'il y a des publications, on affiche le menu de pagination #}
@@ -30,18 +40,52 @@
                 </div>
                 {### AFFICHAGE DES PUBLICATIONS ###}
 
-                    <div class="row m-0 p-0">
+                <div class="row m-0 p-0">
 
-            {% for post in posts_paginate %}
+                    {% for post in posts_paginate %}
 
-                {# Boucle d'affichage des Posts #}
-                {{ include('blog/_posts.view.html.twig') }}
+                        {# Boucle d'affichage des Posts #}
+                        {{ include('blog/_posts.view.html.twig') }}
 
-            {% else %}
-                <p class="col-12 text-center alert alert-warning">Aucune publication à afficher</p>
-            {% endfor %}
+                    {% else %}
+                        <p class="col-12 text-center alert alert-warning">Aucune publication à afficher</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {# Menu de Droite #}
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item">
+
+                {% if app.user %}
+                  <li class="nav-item dropdown">
+                      <a  class="nav-link dropdown-toggle text-capitalize" 
+                          href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          {% if is_granted('ROLE_ADMIN') %}
+                            <i class="fa-solid fa-lg fa-user-shield pe-2"></i>
+                          {% else %}
+                            <i class="fa-regular fa-lg fa-user pe-2"></i>
+                          {% endif %}
+                          {{ app.user.username }}
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3" aria-labelledby="navbarDarkDropdownMenuLink">
+                      {# Menu de l'interface d'administration #}
+                      {% if is_granted('ROLE_ADMIN') %}
+                        <li><a class="dropdown-item mb-2" href="{{ path('app_admin_home') }}"><i class="fa-solid fa-lg fa-gears pe-3"></i>Administration</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                      {% endif %}
+                        <li><a class="dropdown-item mb-2" href="#"><i class="fa-solid fa-lg fa-house-user pe-3"></i>Mon profil</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{ path('app_main_logout') }}"><i class="fas fa-lg fa-sign-out-alt pe-3"></i>Me déconnecter</a></li>
+                      </ul>
+                  </li>
+                {% else %}
+                  <a class="nav-link" href="{{ path('app_main_login') }}"><i class="fas fa-lg fa-sign-in-alt pe-2"></i>Connexion</a>
+                {% endif %}
+
+              </li>
+            </ul>
+
         </div>
-
     </div>
-</div>
 {% endblock %}

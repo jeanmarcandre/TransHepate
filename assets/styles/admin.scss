@@ -1,0 +1,30 @@
+/* IMPORTS */
+$table-hover-bg-factor: .20;
+$table-hover-bg: rgba(#bff, $table-hover-bg-factor);
+
+@import "app.scss";
+
+/*----------------------------- ADMIN  -----------------------------*/
+
+#main-admin {
+  padding: 40px 0 0!important;
+}
+
+#main-admin thead th.sorted a, #main-admin thead th a.sortable {
+  text-decoration: none!important;
+  color: #ffb!important;
+}
+
+#main-admin tr[data-href]:hover {
+  cursor: pointer;
+}
+
+.list-group-item {
+  background-color: white!important;
+  padding: 20px!important;
+}
+
+.list-group-item .badge {
+  font-size: 0.9rem!important;
+  padding: 10px!important;
+}

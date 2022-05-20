@@ -125,18 +125,6 @@ class BlogController extends AbstractController
         ]);
     }
 
-    #[Route('/delete_post/{id}', name: 'delete_post', methods: ['POST'])]
-    public function deletePost(Request $request, Post $post, PostRepository $postRepository): Response
-    {
-        if ($this->isCsrfTokenValid('transhepate_blog'.$post->getId(), $request->request->get('_token'))) {
-            $postRepository->remove($post);
-
-            $this->addFlash('success', 'Publication supprimée');
-        }
-
-        return $this->redirectToRoute('app_blog_index');
-    }
-
     #[IsGranted('ROLE_ADMIN')]
     #[Route('/admin/modifier/{slug}', name: 'edit_post', methods: ['GET', 'POST'])]
     public function editPost(Request $request, Post $post, PostRepository $postRepository): Response
@@ -157,6 +145,18 @@ class BlogController extends AbstractController
             'post' => $post,
             'form' => $form,
         ]);
+    }
+
+    #[IsGranted('ROLE_ADMIN')]
+    #[Route('/admin/publication-suppression/{id}', name: 'delete_post', methods: ['POST'])]
+    public function deletePost(Request $request, Post $post, PostRepository $postRepository): Response
+    {
+        if ($this->isCsrfTokenValid('delete_post_blog'.$post->getId(), $request->request->get('_token'))) {
+            $postRepository->remove($post);
+            $this->addFlash('success', 'Publication bien effacée');
+        }
+
+        return $this->redirectToRoute('app_blog_index');
     }
 
     /*********** Gestion des COMMENTS ***********/

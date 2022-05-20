@@ -52,19 +52,4 @@ class UserType extends AbstractType
         ]);
     }
 
-//     public function index(Request $request): Response
-// {
-//     $user = new User();
-
-//     $form = $this->createForm(UserType::class, $user);
-
-//     $form->handleRaquest($request);
-//     if ($form->isSuubmitted() && $form->isValid()){
-//         dump($user);die;
-//     }
-
-//     return $this->render('default/index.html.twig', [
-//         'form' => $form->createView()
-//     ]);
-// }
 }

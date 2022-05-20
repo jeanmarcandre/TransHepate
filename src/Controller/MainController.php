@@ -161,7 +161,7 @@ class MainController extends AbstractController
 
     /****  RECHERCHE  ****/
     #[Route(path: '/recherche', name: 'search', methods: ['GET'])]
-    public function search(Request $request, PostRepository $postRepository, PaginatorInterface $paginator): Response 
+    public function search(Request $request, PostRepository $postRepository, PaginatorInterface $paginator): Response
     {
         // Récupération du numéro de la page demangée
         $requestedPage = $request->query->getInt('page', 1);
