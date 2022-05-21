@@ -17,7 +17,7 @@
 
             <div class="mb-2">
                 {# Affichage du contenu de la publication, tronqué à 700 caractères, suivi de "..." et d'un lien "lire la suite" #}
-                {{ post.content|slice(0, 700) }}  ...
+                {{ post.content|slice(0, 700)|raw }}  ...
                 <a class="text-decoration-none text-title-h2" href="{{ path('app_blog_show_post', {'slug': post.slug}) }}"> Lire la suite</a>
             </div>
         </div>

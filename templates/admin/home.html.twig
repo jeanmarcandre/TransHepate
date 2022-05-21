@@ -6,27 +6,32 @@
 
 <h1 class="text-title-h1 h2 text-center mt-5">Statistiques de notre Blog</h1>
 
-<div class="container-lg">
-    <div class="row">
+{# <div class="container-lg"> #}
+<div class="container mb-5">
+  <div class="mt-5"  style="border:solid 25px #229296;border-radius:50px;">
+    <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
+      <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
 
-            <ul class="list-group mt-4 p-4">
-              <li class="list-group-item d-flex justify-content-between align-items-center text-title-h2">
-                Nombre d'utilisateurs enregistrés :
-                <span class="badge bg-success">{{ Nb_Users }}</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center text-title-h2">
-                Nombre total de publications :
-                <span class="badge bg-success">{{ Nb_Posts }}</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center text-title-h2">
-                Nombre total de commentaires :
-                <span class="badge bg-success">{{ Nb_Comments }}</span>
-              </li>
-            </ul>
+          <ul class="list-group mt-4 p-4">
+            <li class="list-group-item d-flex justify-content-between align-items-center text-title-h2">
+              Nombre d'utilisateurs enregistrés :
+              <span class="badge bg-success">{{ Nb_Users }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center text-title-h2">
+              Nombre total de publications :
+              <span class="badge bg-success">{{ Nb_Posts }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center text-title-h2">
+              Nombre total de commentaires :
+              <span class="badge bg-success">{{ Nb_Comments }}</span>
+            </li>
+          </ul>
 
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
 {% endblock %}
