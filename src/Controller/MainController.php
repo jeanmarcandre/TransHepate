@@ -103,6 +103,17 @@ class MainController extends AbstractController
         ]);
     }
 
+    /**** MENTIONS LEGALES ****/
+    #[Route(path: '/mentions_legales', name:'mentions_legales')]
+    public function mentions_legales(PostRepository $postRepository): Response
+    {
+
+        // Cette page appellera la vue template/main/mentions_legales.html.twig
+        return $this->render('main/mentions_legales.html.twig',[
+            // 'tableau'=>$tableaupermanences
+        ]);
+    }
+
     /****  CONNEXION  ****/
     #[Route(path: '/connexion', name: 'login')]
     public function login(AuthenticationUtils $authenticationUtils): Response

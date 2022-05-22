@@ -11,16 +11,23 @@
             <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
 
                 <div class="">
-                    <h2 class="text-dark fs-2 fst-italic text-center mx-4"><strong>Nos dernières publications</strong></h2>
+                    <h2 class="text-dark fs-2 fst-italic text-center mx-4"><strong>Nos dernièrs articles</strong></h2>
                 </div>
 
                 {# Affichage du nombre total de publications (attibut apporté par knp_paginator) #}
-                <div class="col-12 ps-5">
-                    <p class="fs-5 text-left fst-italic text-dark">Nombre total d'articles : {{ posts_paginate.getTotalItemCount }}</p>
+
+                <div>
+                    <div class="col-12 ps-5">
+                        <p class="fs-5 text-left fst-italic text-dark">Nombre total d'articles : {{ posts_paginate.getTotalItemCount }}</p>
+                    </div>
+                    <div class="col-12 ps-5 mb-3 right">
+                        <a class="fs-5 my-4 px-3 py-1 text-light fst-italic text-decoration-none" style="background-color:#229296;border:solid 2px #229296;border-radius:25px;"
+                        href="{{ path('app_blog_new_post') }}">Créer un nouvel article</a>
+                    </div>
                 </div>
 
                 {# Formulaire de recherche #}
-                <div class="container">
+                <div class="container-sm">
                     <div class="col-12 text-center">
                         <form class="d-flex" method="GET" action="{{ path('app_main_search') }}">
                             <input class="form-control me-2" name="search" type="search" placeholder="Trouver une publication" aria-label="Search">
@@ -59,7 +66,7 @@
 
                 {% if app.user %}
                   <li class="nav-item dropdown">
-                      <a  class="nav-link dropdown-toggle text-capitalize" 
+                      <a  class="nav-link dropdown-toggle text-capitalize"
                           href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           {% if is_granted('ROLE_ADMIN') %}
                             <i class="fa-solid fa-lg fa-user-shield pe-2"></i>

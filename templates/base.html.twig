@@ -48,7 +48,8 @@
                     <img id="logoimg" src="{{ asset('build/logoimg.jpg') }}" alt="TRANSHEPATE" style="height:50px; width: 200px; margin-left: 50px;">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
-                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
+                    <i class="bi bi-list"><strong>menu</strong></i>
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -59,8 +60,6 @@
                                 <div class="dropdown-menu bg-success">
                                     <a class="dropdown-item" href="https://www.transhepate.org/" target="_blank">La fédération</a>
                                     <div class="dropdown-divider"></div>
-                                    {# <a class="dropdown-item" href="{{ path('app_main_transhepatebfc') }}">Notre association régionale</a>
-                                    <div class="dropdown-divider"></div> #}
                                     <a class="dropdown-item" href="https://www.transhepate.org/nos-associations-regionales/" target="_blank">Nos associations régionales</a>
                                 </div>
                             </li>
@@ -165,8 +164,9 @@
         <footer class="row">
             <div class="col-sm-6">
                 <div class="card">
-                    <div class="card-body">
-                        <p class="text-center text-warning">&copy; Transhépate.bfc 2022 - Mentions légales et RGPD</p>
+                    <div class="card-body text-center">
+                        <a class="text-center text-warning" href="{{ path('app_main_mentions_legales') }}">&copy; Transhépate.bfc 2022 - Mentions légales et RGPD</a>
+                        {# <p class="text-center text-warning">&copy; Transhépate.bfc 2022 - Mentions légales et RGPD</p> #}
                     </div>
                 </div>
             </div>
