@@ -194,11 +194,16 @@ div .text-decoration-none:hover {
   height: 65px;
   line-height: 65px;
   width: 65px;
-  top: 0;
 }
 
 .icon-circle {
   background-color: rgb(24, 42, 30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
 }
 
 .icon-circle:hover {
@@ -206,44 +211,6 @@ div .text-decoration-none:hover {
   color: #11494C;
   transition: all 0.2s ease;
 }
-
-.icon_boxes_con.style1.circle.just_icon_border.solid_icon:not(.radius5) .service_box > .icon:before, .icon_boxes_con.style2.solid_icon .service_box > .icon:before {
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  left: 50%;
-  top: 50%;
-  opacity: 0;
-  -webkit-transform: translateY(-50%) translateX(-50%) scale(1.2);
-  -moz-transform: translateY(-50%) translateX(-50%) scale(1.2);
-  -ms-transform: translateY(-50%) translateX(-50%) scale(1.2);
-  -o-transform: translateY(-50%) translateX(-50%) scale(1.2);
-  transform: translateY(-50%) translateX(-50%) scale(1.2);
-}
-
-// .content, .container {
-//   margin: 0 auto;
-//   max-width: 1170px;
-//   position: relative;
-//   width: 100%;
-// }
-
-// .container {
-//   padding-right: 15px;
-//   padding-left: 15px;
-//   margin-right: auto;
-//   margin-left: auto;
-// }
-// html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
-//   margin: 0;
-//   padding: 0;
-//   border: 0;
-//   vertical-align: baseline;
-//   background: transparent;
-// }
 
 .icon_boxes_con.style2.solid_icon .service_box .icon {
   background: #fff!important;

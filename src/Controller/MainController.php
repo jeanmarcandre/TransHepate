@@ -22,10 +22,13 @@ use App\Repository\UserRepository;
 // PAGINATOR
 use Doctrine\ORM\EntityManagerInterface;
 // EMAIL
+use Symfony\Bridge\Twig\TemplatedEmail;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
+
 use App\Repository\PermanencesRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -92,6 +95,7 @@ class MainController extends AbstractController
             'form' => $form]);
     }
 
+    /**** PAGE CONTACT ****/
     #[Route(path: '/transhepatebfc', name:'transhepatebfc')]
     public function transhepatebfc(PostRepository $postRepository, PermanencesRepository $permanencesRepository): Response
     {
@@ -200,6 +204,7 @@ class MainController extends AbstractController
         ]);
     }
 
+    /**** TABLEAU DES PERMANENCES (ADMIN) ****/
     #[Route('/new-permanences', name: 'permanences', methods: ['GET', 'POST'])]
     public function new(Request $request, PermanencesRepository $permanencesRepository, ManagerRegistry $doctrine): Response
     {
