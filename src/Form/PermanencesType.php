@@ -17,6 +17,7 @@ class PermanencesType extends AbstractType
                 'label' => '',
                 'purify_html' => true,
                 'help' => '',
+                'required' => true
         ])
         ;
     }

@@ -11,7 +11,6 @@ use App\Entity\Permanences;
 // Import Post
 use App\Form\PermanencesType;
 // Imports Register
-use Symfony\Component\Mime\Email;
 use App\Controller\MainController;
 use App\Form\RegistrationFormType;
 use App\Repository\PostRepository;
@@ -22,12 +21,12 @@ use App\Repository\UserRepository;
 // PAGINATOR
 use Doctrine\ORM\EntityManagerInterface;
 // EMAIL
-use Symfony\Bridge\Twig\TemplatedEmail;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Address;
 
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use App\Repository\PermanencesRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -35,7 +34,6 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Knp\Component\Pager\PaginatorInterface;
 
 
 #[Route('/', name: 'app_main_')]
@@ -53,47 +51,54 @@ class MainController extends AbstractController
 
 
     /****  FORMULAIRE DE CONTACT  ****/
-    #[Route(path: '/contact', name: 'contact')]
-    public function contact(Request $request, MailerInterface $mailer): Response
-    {
-        $form = $this->createForm(UserType::class);
-        $form->handleRequest($request);
+    // #[Route(path: '/contact', name: 'contact')]
+    // public function contact(Request $request, MailerInterface $mailer): Response
+    // {
+    //     $form = $this->createForm(UserType::class);
+    //     $form->handleRequest($request);
 
-        /****  Première vérification à la soummission du formulaire pour vérifier si le Google Recaptcha est correctement validé  ****/
-        if ($form->isSubmitted()) {
+    //     /****  Première vérification à la soummission du formulaire pour vérifier si le Google Recaptcha est correctement validé  ****/
+    //     if ($form->isSubmitted() && $form->isValid()) {
 
 
-            // Récupération des données dans le formulaire sous-forme de tableau
-            $contactFormData = $form->getData();
+    //         // Récupération des données dans le formulaire sous-forme de tableau
+    //         $contact = $form->getData();
 
-            // Test sur le champ phone (optionnel)
-            // $phone = $contactFormData['phone'] ? $contactFormData['phone'] : 'non renseigné';
+    //         $manager->persist($contact);
+    //         $manager->flush();
 
-            // Création du message (Email Text)
-            $email = new Email();
-                    $email
-                    ->from('jeanmarc.symfony@gmail.com')
-                    ->to('jean.marc.monin21@gmail.com')
-                    ->subject('vous avez reçu un email de Contact de ' . $contactFormData['fullname'])
-                    ->text('Son nom : ' . $contactFormData['fullname']
-                        . \PHP_EOL
-                        . 'Son adresse email : ' . $contactFormData['email']
-                        // . \PHP_EOL
-                        // . 'Son téléphone : ' . $phone
-                        . \PHP_EOL
-                        . 'Son message : ' . $contactFormData['message'], 'text/plain');
+    //         // Test sur le champ phone (optionnel)
+    //         // $phone = $contactFormData['phone'] ? $contactFormData['phone'] : 'non renseigné';
 
-            // Envoi de l'email
-            $mailer->send($email);
+    //         // Création du message (Email Text)
+    //         $email = (new Email());
+    //                 $email
+    //                 ->from($contact->get('email')->getData())
+    //                 ->to('contact.transhepate.bfc@gmail.com')
+    //                 // ->from('jeanmarc.symfony@gmail.com')
+    //                 // ->to('jean.marc.monin21@gmail.com')
+    //                 ->subject('vous avez reçu un email de Contact de ' . $contactFormData['fullname'])
+    //                 ->htmlTemplate('emails/contact.html.twig')
+    //                 ->text('Son nom : ' . $contactFormData['fullname']
+    //                     . \PHP_EOL
+    //                     . 'Son adresse email : ' . $contactFormData['email']
+    //                     // . \PHP_EOL
+    //                     // . 'Son téléphone : ' . $phone
+    //                     . \PHP_EOL
+    //                     . 'Son message : ' . $contactFormData['message'], 'text/plain')
+    //                 ->html('<p>See Twig integration for better HTML integration!</p>');
 
-            $this->addFlash('success', 'Votre message a bien été envoyé');
+    //         // Envoi de l'email
+    //         $mailer->send($email);
 
-            return $this->redirectToRoute('app_main_contact');
-            }
+    //         $this->addFlash('success', 'Votre message a bien été envoyé');
 
-        return $this->renderForm('main/contact.html.twig', [
-            'form' => $form]);
-    }
+    //         return $this->redirectToRoute('app_main_transhepatebfc');
+    //         }
+
+    //     return $this->renderForm('main/contact.html.twig', [
+    //         'form' => $form]);
+    // }
 
     /**** PAGE CONTACT ****/
     #[Route(path: '/transhepatebfc', name:'transhepatebfc')]

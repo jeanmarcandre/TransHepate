@@ -24,13 +24,13 @@
                 <div class="container">
 
                     {# Affichage du champ Fullname #}
-                    {{ form_row(form.fullname) }}
+                    {{ form_row(form.name) }}
 
                     {# Affichage du champ eMail #}
                     {{ form_row(form.email) }}
 
                     {# Affichage du champ Message #}
-                    {{ form_row(form.message) }}
+                    {{ form_row(form.content) }}
 
                     {# Affichage du recaptcha
                     <div id="container-g-recaptcha" class="row m-0 p-0">
@@ -47,7 +47,7 @@
                     <div>
                         <p class="ms-5 ps-5 fs-5 text-muted">"j'ai lu et accepte la politique de confidentialité de ce site"</p></br>
                         <p class="ms-5 ps-5 fs-5 fst-italic text-muted">Seules les données déposées volontairement par l'internaute
-                            via le formulaire de contact seron conservées pendant 3 mois et sont uniquement destinées au traitement
+                            via le formulaire de contact seront conservées pendant 3 mois et sont uniquement destinées au traitement
                             des demandes formulées. Ces données ne seront jamais communiquées à des tiers et sont accessibles
                             uniquement par le président et les bénévoles habilités.
                             Conformément à la loi "informatique et libertés", vous disposez d’un droit d’accès,
@@ -57,8 +57,8 @@
                         </p>
                     </div>
                     <div class="mt-2">
-                        <a href="{{ path('app_main_home') }}" class="btn btn-success fs-5 fst-italic my-4 ms-5 py-1" 
-                        style="border:solid 3px #11494C; border-radius:25px;"><strong>Envoyer mon message</strong></a>
+                        <button class="btn btn-success fs-5 fst-italic my-4 ms-5 py-1"
+                        style="border:solid 3px #11494C; border-radius:25px;"><strong>Envoyer mon message</strong></button>
                         <p class="">
                             <a class="text-decoration-none ms-5 px-5 py-1 text-light fs-5 fst-italic" style="background-color:#229296;border-radius:25px;border:solid 3px #11494C" 
                             href="{{ path('app_main_transhepatebfc') }}"><strong>Retour à la page contact</strong></a>

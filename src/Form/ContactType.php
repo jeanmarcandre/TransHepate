@@ -2,15 +2,15 @@
 
 namespace App\Form;
 
-use App\Form\UserType;
+use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilderInterface;
 /* TYPES */
+use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\NotBlank;
 /* CONSTRAINTS */
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -18,12 +18,12 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 
-class UserType extends AbstractType
+class ContactType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('fullname', TextType::class, [
+            ->add('name', TextType::class, [
                 'label' => 'Votre nom complet *',
                 'help' => 'entre 5 et 70 caractères maximum',
                 'constraints' => [
@@ -41,11 +41,10 @@ class UserType extends AbstractType
                 'label' => 'Votre email  *',
                 'constraints' => [
                     new NotBlank(['message' => 'Merci de renseigner votre adresse email']),
-                    new Email(['message' => 'L\'adresse email {{ value }} n\'est pas une adresse valide']),
                 ],
             ])
 
-            ->add('message', TextareaType::class, [
+            ->add('content', TextareaType::class, [
                 'attr' => ['rows' => 8, 'maxlength' => 2000],
                 'label' => 'Le contenu de votre message *',
                 'help' => 'entre 10 et 2000 caractères maximum',
@@ -65,6 +64,7 @@ class UserType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
+            'data_class' => Contact::class,
             'required' => false,
         ]);
     }

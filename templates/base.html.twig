@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content"width=device-width, initial-scale=1">
 
-    <title>{% block title %}<img id="mini_logoimg" src="{{ asset('build/mini_logoimg.jpg') }}" alt="TRANSHEPATE"> {% endblock %}</title>
+    <title>{% block title %}<img id="favicon" src="{{ asset('public/build/favicon.ico') }}" alt="TRANSHEPATE"> {% endblock %}</title>
 
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" type="image/ico" href="/build/favicon_1.ico" />
 
     {# BLOCK CSS #}
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
@@ -163,16 +163,16 @@
 
         <footer class="row">
             <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body text-center">
+                <div>
+                    <div class="card-body" style="text-align:center">
                         <a class="text-center text-warning" href="{{ path('app_main_mentions_legales') }}">&copy; Transhépate.bfc 2022 - Mentions légales et RGPD</a>
                         {# <p class="text-center text-warning">&copy; Transhépate.bfc 2022 - Mentions légales et RGPD</p> #}
                     </div>
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
+                <div>
+                    <div class="card-body" style="text-align:center">
                         <a class="btn btn-outline-warning text-uppercase" href="https://www.service-public.fr/particuliers/vosdroits/F183" target="_blank">le don d'organes</a>
                     </div>
                 </div>
