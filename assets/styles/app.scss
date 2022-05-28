@@ -345,6 +345,16 @@ div ul li .contact {
   box-shadow: none!important;
 }
 
+/*---------------------------- CAPTCHA  ---------------------------*/
+
+#container-g-recaptcha .g-recaptcha {
+  transform: scale(0.65)!important;
+  -webkit-transform: scale(0.65)!important;
+  transform-origin: 0 0!important;
+  -webkit-transform-origin: 0 0!important;
+  overflow:hidden /* contexte de formatage */
+}
+
 /*---------------------------- CKEDITOR  ---------------------------*/
 
 .cke_chrome, .cke_1.cke_chrome {

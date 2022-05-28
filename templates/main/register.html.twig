@@ -29,6 +29,19 @@
                 label: 'Mot de passe'
             }) }}
 
+            {# Affichage du recaptcha #}
+                <div id="container-g-recaptcha" class="row m-0 p-0">
+
+                    {# La clé publique est récupérée en paramètre dans le fichier config/packages/twig.yaml #}
+                    <div class="g-recaptcha col-6" data-sitekey="{{ google_recaptcha_site_key }}" data-theme="dark" data-size="normal"></div>
+
+                	<div class="col-6 pt-2">
+						{# Affichage des erreurs générales du formulaire et donc du Google Recaptcha #}
+						{{ form_errors(registrationForm) }}
+                	</div>
+
+                </div>
+
         </div>
 
             <button type="submit" class="mx-4 my-4 px-5 py-1 text-light fst-italic"

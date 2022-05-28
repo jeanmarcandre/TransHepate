@@ -9,6 +9,8 @@ use App\Form\ContactType;
 use Symfony\Component\Mime\Email;
 use App\Controller\ContactController;
 use App\Repository\ContactRepository;
+use App\Recaptcha\RecaptchaValidator;
+use Symfony\Component\Form\FormError;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
@@ -22,7 +24,7 @@ class ContactController extends AbstractController
 
     /****  FORMULAIRE DE CONTACT  ****/
     #[Route('/contact', name: 'contact', methods: ['GET', 'POST'])]
-    public function contact(Request $request, ContactRepository $contactRepository, MailerInterface $mailer, ManagerRegistry $doctrine): Response
+    public function contact(Request $request, ContactRepository $contactRepository, MailerInterface $mailer, ManagerRegistry $doctrine, RecaptchaValidator $recaptcha): Response
     {
 
 

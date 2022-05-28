@@ -3,11 +3,25 @@
 {% block title %}Edit User{% endblock %}
 
 {% block body %}
-    <h1>Edit User</h1>
 
-    {{ include('admin/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="container">
 
-    <a href="{{ path('app_admin_index') }}">back to list</a>
+        <div class="mt-5"  style="border:solid 25px #229296;border-radius:50px;">
 
-    {{ include('admin/_delete_form.html.twig') }}
+            <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
+
+                <h1>Edit User</h1>
+
+                {{ include('admin/_form.html.twig', {'button_label': 'Update'}) }}
+
+                <a href="{{ path('app_admin_user_index') }}">back to list</a>
+
+                {{ include('admin/_delete_form.html.twig') }}
+
+            </div>
+
+        </div>
+
+    </div>
+
 {% endblock %}
