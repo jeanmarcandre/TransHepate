@@ -3,36 +3,31 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\UserType;
-use App\Form\ContactType;
+
 use App\Entity\Permanences;
 // Imports Login
 
 // Import Post
 use App\Form\PermanencesType;
 // Imports Register
-use App\Controller\MainController;
 use App\Form\RegistrationFormType;
 use App\Repository\PostRepository;
-use App\Repository\UserRepository;
 // Import Google Recaptcha
+use App\Repository\UserRepository;
 use App\Recaptcha\RecaptchaValidator;
-use Symfony\Component\Form\FormError;
 
 // PAGINATOR
-use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Form\FormError;
 // EMAIL
 
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use App\Repository\PermanencesRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
@@ -50,60 +45,9 @@ class MainController extends AbstractController
         ]);
     }
 
-
-    /****  FORMULAIRE DE CONTACT  ****/
-    // #[Route(path: '/contact', name: 'contact')]
-    // public function contact(Request $request, MailerInterface $mailer): Response
-    // {
-    //     $form = $this->createForm(UserType::class);
-    //     $form->handleRequest($request);
-
-    //     /****  Première vérification à la soummission du formulaire pour vérifier si le Google Recaptcha est correctement validé  ****/
-    //     if ($form->isSubmitted() && $form->isValid()) {
-
-
-    //         // Récupération des données dans le formulaire sous-forme de tableau
-    //         $contact = $form->getData();
-
-    //         $manager->persist($contact);
-    //         $manager->flush();
-
-    //         // Test sur le champ phone (optionnel)
-    //         // $phone = $contactFormData['phone'] ? $contactFormData['phone'] : 'non renseigné';
-
-    //         // Création du message (Email Text)
-    //         $email = (new Email());
-    //                 $email
-    //                 ->from($contact->get('email')->getData())
-    //                 ->to('contact.transhepate.bfc@gmail.com')
-    //                 // ->from('jeanmarc.symfony@gmail.com')
-    //                 // ->to('jean.marc.monin21@gmail.com')
-    //                 ->subject('vous avez reçu un email de Contact de ' . $contactFormData['fullname'])
-    //                 ->htmlTemplate('emails/contact.html.twig')
-    //                 ->text('Son nom : ' . $contactFormData['fullname']
-    //                     . \PHP_EOL
-    //                     . 'Son adresse email : ' . $contactFormData['email']
-    //                     // . \PHP_EOL
-    //                     // . 'Son téléphone : ' . $phone
-    //                     . \PHP_EOL
-    //                     . 'Son message : ' . $contactFormData['message'], 'text/plain')
-    //                 ->html('<p>See Twig integration for better HTML integration!</p>');
-
-    //         // Envoi de l'email
-    //         $mailer->send($email);
-
-    //         $this->addFlash('success', 'Votre message a bien été envoyé');
-
-    //         return $this->redirectToRoute('app_main_transhepatebfc');
-    //         }
-
-    //     return $this->renderForm('main/contact.html.twig', [
-    //         'form' => $form]);
-    // }
-
     /**** PAGE CONTACT ****/
     #[Route(path: '/transhepatebfc', name:'transhepatebfc')]
-    public function transhepatebfc(PostRepository $postRepository, PermanencesRepository $permanencesRepository): Response
+    public function transhepatebfc(PermanencesRepository $permanencesRepository): Response
     {
         $tableaupermanences = $permanencesRepository->find(1)->getContent();
 
@@ -115,7 +59,7 @@ class MainController extends AbstractController
 
     /**** MENTIONS LEGALES ****/
     #[Route(path: '/mentions_legales', name:'mentions_legales')]
-    public function mentions_legales(PostRepository $postRepository): Response
+    public function mentions_legales(): Response
     {
 
         // Cette page appellera la vue template/main/mentions_legales.html.twig
@@ -164,11 +108,11 @@ class MainController extends AbstractController
         if ($form->isSubmitted()) {
 
             $recaptchaResponse = $request->request->get('g-recaptcha-response', null);
+            // dd ($recaptchaResponse);
+            // if ($recaptchaResponse == null || !$recaptcha->verify( $recaptchaResponse, $request->server->get('REMOTE_ADDR') )){
 
-            if ($recaptchaResponse == null || !$recaptcha->verify( $recaptchaResponse, $request->server->get('REMOTE_ADDR') )){
-
-                $form->addError(new FormError('Le Captcha doit être validé !'));
-            }
+            //     $form->addError(new FormError('Le Captcha doit être validé !'));
+            // }
 
             if( $form->isValid()) {
 

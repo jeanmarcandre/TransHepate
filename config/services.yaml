@@ -11,7 +11,6 @@ parameters:
     app_admin.user_number:  '%env(ADMIN_USER_NUMBER)%'                    # Nombre d'utilisateurs paginés par page sur l'administration
     google_recaptcha.site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'         # Récupération de la clé publique Google Recaptcha depuis le fichier .env
     google_recaptcha.private_key: '%env(GOOGLE_RECAPTCHA_PRIVATE_KEY)%'   # Récupération de la clé privée Google Recaptcha depuis le fichier .env
-    google_recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'
 
 services:
     # default configuration for services in *this* file

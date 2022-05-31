@@ -52,9 +52,9 @@ class ContactController extends AbstractController
             $email = (new Email());
                     $email
                     ->from($contact->getEmail())
-                    ->to('contact.transhepate.bfc@gmail.com')
+                    // ->to('contact.transhepate.bfc@gmail.com')
                     // ->from('jeanmarc.symfony@gmail.com')
-                    // ->to('jean.marc.monin21@gmail.com')
+                    ->to('jean.marc.monin21@gmail.com')
                     ->subject('vous avez reçu un email de Contact de ' . $contact->getName())
 
                     ->text('Son nom : ' . $contact->getName()

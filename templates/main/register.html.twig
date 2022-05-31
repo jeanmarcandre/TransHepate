@@ -3,7 +3,7 @@
 {% block title %}Inscription{% endblock %}
 
 {% block stylesheets %}
-     {# inclus le block CSS commun #} #}
+     {# inclus le block CSS commun #}
      {{ parent() }}
      {# Insertion du fichier JS dans le block stylesheets #}
      {# La documentation de Recaptcha préconise en effet d'intégrer ce fichier JS dans le head #}
@@ -14,20 +14,23 @@
 
     <div class="container px-5 mt-5" style="width:1000px;border-radius:50px;border:solid 15px #229296;">
 
-        <div class="text-dark bg-light my-5 p-4 d-block w-100" style="border:solid 5px #229296">
+        <div class="text-dark bg-light mt-5 p-4 d-block w-100" style="border-radius:25px;border:solid 5px #229296">
 
             <h1 class="mb-3 font-weight-normal mx-auto fs-2 text-uppercase fst-italic text-center"
             style="width: 500px;color: rgb(9, 90, 9);"><strong>Inscrivez-vous:</strong></h1>
 
-            {{ form_start(registrationForm) }}
+            <div class="fs-6" style="color: rgb(9, 90, 9);"><strong>
 
-            {{ form_row(registrationForm.email) }}
+                {{ form_start(registrationForm) }}
 
-            {{ form_row(registrationForm.username) }}
+                {{ form_row(registrationForm.email) }}
 
-            {{ form_row(registrationForm.plainPassword, {
-                label: 'Mot de passe'
-            }) }}
+                {{ form_row(registrationForm.username) }}
+
+                {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe'}) }}</strong>
+
+            </div>
 
             {# Affichage du recaptcha #}
                 <div id="container-g-recaptcha" class="row m-0 p-0">
@@ -44,7 +47,7 @@
 
         </div>
 
-            <button type="submit" class="mx-4 my-4 px-5 py-1 text-light fst-italic"
+            <button type="submit" class="mx-4 my-1 px-5 py-1 text-light fst-italic"
                 style="color:lightgrey;font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">
                 <strong>Valider</strong>
             </button>
