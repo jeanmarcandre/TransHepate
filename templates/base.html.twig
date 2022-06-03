@@ -131,9 +131,13 @@
                                     {% else %}
                                         <a class="dropdown-item" href="{{ path('app_main_login') }}">Connexion <i class="fas fa-sign-in-alt"></i></a>
                                     {% endif %}
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                    <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{{ path('app_admin_home') }}">Tableau d'administration</a>
+                                    {% endif %}
 
-                                        <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ path('app_blog_new_post') }}">Nouvelle publication</a>
+                                        {# <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ path('app_blog_new_post') }}">Nouvelle publication</a> #}
                                 </div>
                             </li>
                         </ul>

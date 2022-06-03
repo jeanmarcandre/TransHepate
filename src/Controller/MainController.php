@@ -45,6 +45,15 @@ class MainController extends AbstractController
         ]);
     }
 
+    #[Route('/utilisateurs', name: 'user_show', methods: ['GET'])]
+    public function show(): Response
+    {
+        $user = $this->getUser();
+        return $this->render('admin/users/user.show.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
     /**** PAGE CONTACT ****/
     #[Route(path: '/transhepatebfc', name:'transhepatebfc')]
     public function transhepatebfc(PermanencesRepository $permanencesRepository): Response

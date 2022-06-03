@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Comment;
 use App\Form\CommentType;
 use App\Repository\CommentRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,7 +29,7 @@ class CommentController extends AbstractController
             6 /*Nombre de commentaires par pages*/
         );
 
-        dump($comments);
+        // dump($comments);
 
         return $this->render('comment/index.html.twig', [
             'comments_paginate' => $comments,
@@ -48,7 +49,7 @@ class CommentController extends AbstractController
     }
 
     #[Route('/new', name: 'app_comment_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, CommentRepository $commentRepository): Response
     {
         $comment = new Comment();
         $form = $this->createForm(CommentType::class, $comment);
@@ -99,7 +100,7 @@ class CommentController extends AbstractController
             $entityManager->flush();
         }
 
-        dump($author);
+        // dump($author);
 
         return $this->redirectToRoute('app_comment_index', [], Response::HTTP_SEE_OTHER);
     }

@@ -9,14 +9,15 @@ use App\Entity\Comment;
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
 use App\Repository\CommentRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 // CONTROLE DES ROLES
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 // PAGINATOR
-use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 #[IsGranted('ROLE_ADMIN')]
 #[Route('/administration', name: 'app_admin_')]
@@ -63,7 +64,6 @@ class AdminController extends AbstractController
             'users' => $users_paginate,
         ]);
     }
-
 
     #[Route('/utilisateurs/{id}', name: 'show', methods: ['GET'])]
     public function show(User $user): Response

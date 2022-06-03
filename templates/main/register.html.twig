@@ -45,6 +45,24 @@
 
                 </div>
 
+            {# <div>
+                <p class="ms-5 ps-5 fs-5 text-muted">"j'ai lu et accepte la politique de confidentialité de ce site"</p></br>
+                <p class="ms-5 ps-5 fs-5 fst-italic text-muted">Seules les données déposées volontairement par l'internaute
+                    via le formulaire d'inscription seront conservées pendant 3 mois et sont uniquement destinées au traitement
+                    des demandes formulées. Ces données ne seront jamais communiquées à des tiers et sont accessibles
+                    uniquement par le président et les bénévoles habilités.
+                    Conformément à la loi "informatique et libertés", vous disposez d’un droit d’accès,
+                    de modification et/ou de suppression des données vous concernant à tout moment.
+                    Pour exercer ce droit d'accès, adresser un courrier recommandé à l'attention du président :
+                    Transhépate Bourgogne-Franche-Comté, 16 rue Marcel Sembat 21600 LONGVIC  / cf. Mentions légales et RGPD
+                </p>
+
+                {{ form_row(registrationForm.agreeTerms) }}
+
+                {{ form_end(registrationForm) }}
+
+            </div> #}
+
         </div>
 
             <button type="submit" class="mx-4 my-1 px-5 py-1 text-light fst-italic"
@@ -57,10 +75,6 @@
             </a>
 
         </div>
-
-            {# {{ form_row(registrationForm.agreeTerms) }} #}
-
-        {{ form_end(registrationForm) }}
 
     </div>
 

@@ -78,14 +78,10 @@
         </div>
 
     <section class="bandeau row col-12">
-        <div>
-            <div class="card text-center text-light" style="background: #11494c;">
-                <div class="">
-                    <h2 class="fs-1 text-uppercase fst-italic">
-                        <span class="line"></span>
-                        <strong>Transhépate en chiffres</strong>
-                    </h2>
-                </div>
+
+        <div class="title_banner upper centered mb-0" style="background: #11494c;">
+            <div class="container-lg text-light text-center text-uppercase fst-italic">
+                <h2><strong>Transhépate en chiffres</strong></h2>
             </div>
         </div>
 
@@ -133,16 +129,11 @@
 
     <section class="bg_light">
         <div class="content row_spacer">
-            <section class="mt-auto py-1 bg-white">
-                <div class="card text-center text-dark" style="background: #fff;">
-                    <div class="text-align-center">
-                        <h2 class="fs-1 text-uppercase fst-italic">
-                            {# <span class="line"></span> #}
-                            <strong>Nos associations régionales</strong>
-                        </h2>
-                    </div>
+            <div class="title_banner upper centered bg-white mb-0">
+                <div class="container-lg text-dark text-center text-uppercase fst-italic">
+                    <h2><strong>Nos associations régionales</strong></h2>
                 </div>
-            </section>
+            </div>
 
             <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
 
@@ -560,7 +551,7 @@
 
            {# NOS MISSIONS #}
 
-<section id="features_section" class="content_section white_section bg-color1">
+<section id="features_section" class="mb-5 content_section white_section bg-color1">
     <div class="title_banner upper centered">
         <div class="container-lg text-light text-center fst-italic">
             <h2>NOS MISSIONS</h2>
@@ -642,5 +633,30 @@
         </div>
     </div>
 </section>
+
+{# <section class="content_section bg_gray">
+
+    <div class="container">
+        <div class="title_banner upper centered">
+            <div class="container-lg text-dark text-center fst-italic">
+                <h2><strong>NOS BROCHURES</strong></h2>
+            </div>
+        <div class="icon_boxes">
+            <div class="col-md-3">
+                <div class="service_box">
+                    <span class="icon icon1">
+                        <a href="http//preprod.transhepate-idf.fr/wp-content/uploads/2018/11/Guide-du-futur-
+                        transplanté.pdf" target="_blank">
+                        <img width="70" height="100" src="{{ asset('build/Guide-du-futur-transplanté-211x300.jpg') }}" class="img-responsive wp-post-image">
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    </div>
+</section> #}
 {% endblock %}
 

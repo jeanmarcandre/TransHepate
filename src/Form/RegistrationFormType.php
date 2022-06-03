@@ -62,16 +62,16 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Le mot de passe doit obligatoirement contenir les éléments suivant : 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial',
                     ],)
                 ],
-            ]);
+            ])
 
-            // ->add('agreeTerms', CheckboxType::class, [
-            //     'mapped' => false,
-            //     'constraints' => [
-            //         new IsTrue([
-            //             'message' => 'You should agree to our terms.',
-            //         ]),
-            //     ],
-            // ])
+            ->add('agreeTerms', CheckboxType::class, [
+                'mapped' => false,
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'You should agree to our terms.',
+                    ]),
+                ],
+            ]);
         ;
     }
 
