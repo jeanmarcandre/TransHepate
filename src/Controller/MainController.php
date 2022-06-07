@@ -73,7 +73,7 @@ class MainController extends AbstractController
 
         // Cette page appellera la vue template/main/mentions_legales.html.twig
         return $this->render('main/mentions_legales.html.twig',[
-            // 'tableau'=>$tableaupermanences
+
         ]);
     }
 

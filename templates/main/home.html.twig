@@ -62,23 +62,26 @@
 
         </div>
 
-        <div class="card mb-" style="background-color: #11494C; max-width: 2800px;">
+        <div class="card" style="background-color: #84d8e1;">
             <div class="row g-0">
                 <div class="col-md-4 pe-5">
                     <img id="tournesol" src="{{ asset('build/tournesol.jpg') }}" class="img-fluid rounded-start" alt="TRANSHEPATE" style="height:360px; width: 480px;">
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body fs-3 fst-italic text-uppercase  text-white mx-5">
-                        <p class="card-text mt-5"><strong>Ne restez pas seul avec vos questions</p>
-                        <p class="card-text mt-5">Vos doutes vos peurs</p>
-                        <p class="card-text mt-5">Nous pouvons peut-être vous aider</strong></p>
+                    <div class="card-body fst-italic text-uppercase mx-5" style="color:#11494C;">
+                        <h2 class="card-text mt-5"><strong>Ne restez pas seul avec vos questions</strong></h2>
+                        <h2 class="card-text mt-5"><strong>Vos doutes vos peurs</strong></h2>
+                        <h2 class="card-text mt-5"><strong>Nous pouvons peut-être vous aider</strong></h2>
                     </div>
                 </div>
             </div>
         </div>
 
-    <section class="bandeau row col-12">
+<section class="content_section bg_gray">
+    {# <div class="bg-light m-1 my-3 p-1"></div> #}
+</section>
 
+    <section class="bandeau row col-12">
         <div class="title_banner upper centered mb-0" style="background: #11494c;">
             <div class="container-lg text-light text-center text-uppercase fst-italic">
                 <h2><strong>Transhépate en chiffres</strong></h2>
@@ -634,29 +637,30 @@
     </div>
 </section>
 
-{# <section class="content_section bg_gray">
+<section class="content_section bg_gray">
+    <iframe id="haWidget" allowtransparency="true" scrolling="auto" src="https://www.helloasso.com/associations/association-transhepate-bourgogne-franche-comte/formulaires/1/widget"
+    style="width:100%;height:750px;border:none;" onload="window.scroll(0, this.offsetTop)"></iframe>
 
-    <div class="container">
-        <div class="title_banner upper centered">
+    <div class="container-xx">
+        <div class="title_banner upper centered" style="background-color: #84d8e1;">
             <div class="container-lg text-dark text-center fst-italic">
-                <h2><strong>NOS BROCHURES</strong></h2>
+                <h2><strong>BROCHURE</strong></h2>
             </div>
-        <div class="icon_boxes">
-            <div class="col-md-3">
+        <div class="container-lg centered">
+            <div class="col-md-12">
                 <div class="service_box">
                     <span class="icon icon1">
                         <a href="http//preprod.transhepate-idf.fr/wp-content/uploads/2018/11/Guide-du-futur-
                         transplanté.pdf" target="_blank">
-                        <img width="70" height="100" src="{{ asset('build/Guide-du-futur-transplanté-211x300.jpg') }}" class="img-responsive wp-post-image">
+                        <img width="200" height="300" src="{{ asset('build/Vivre-lattente-de-la-greffe-en-toute-sérénité-1-223x300.jpg') }}" class="img-responsive wp-post-image">
                     </span>
                 </div>
             </div>
+            {# <div class="col-md-3"></div>
             <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
+            <div class="col-md-3"></div> #}
         </div>
     </div>
-    </div>
-</section> #}
+</section>
 {% endblock %}
 

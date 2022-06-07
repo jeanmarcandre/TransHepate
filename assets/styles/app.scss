@@ -59,6 +59,10 @@ body {
   // overflow-x: hidden;
 }
 
+.img-fluid {
+  box-shadow: 0 0 12px 12px #73e0ed inset;
+}
+
 
 body main {
   position: relative;
@@ -69,7 +73,7 @@ body main {
   font-size: 0.75rem;
   line-height: 1;
   background-color: white;
-  border: 1px solid #178E94;
+  border: 1px solid #73e0ed;
   transition: box-shadow 0.15s ease-in-out;
 }
 
