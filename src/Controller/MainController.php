@@ -14,7 +14,7 @@ use App\Form\RegistrationFormType;
 use App\Repository\PostRepository;
 // Import Google Recaptcha
 use App\Repository\UserRepository;
-use App\Recaptcha\RecaptchaValidator;
+// use App\Recaptcha\RecaptchaValidator;
 
 // PAGINATOR
 use Symfony\Component\Form\FormError;
@@ -103,7 +103,7 @@ class MainController extends AbstractController
     /****  INSCRIPTION  ****/
     #[Route(path: '/inscription', name: 'register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher,
-                             UserRepository $userRepository, RecaptchaValidator $recaptcha): Response
+                             UserRepository $userRepository): Response
     {
         if ($this->getUser()) {
             $this->addFlash('warning', 'Vous êtes déjà inscrit');
@@ -116,7 +116,7 @@ class MainController extends AbstractController
 
         if ($form->isSubmitted()) {
 
-            $recaptchaResponse = $request->request->get('g-recaptcha-response', null);
+            // $recaptchaResponse = $request->request->get('g-recaptcha-response', null);
             // dd ($recaptchaResponse);
             // if ($recaptchaResponse == null || !$recaptcha->verify( $recaptchaResponse, $request->server->get('REMOTE_ADDR') )){
 

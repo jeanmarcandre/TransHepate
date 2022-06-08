@@ -1,8 +1,22 @@
-{# templates/product/new.html.twig #}
-<h1>Adding a new product</h1>
+{% extends 'base.html.twig' %}
 
-{{ form_start(form) }}
-    {# ... #}
+{% block title %}Assoc-Transhépate.BFC{% endblock %}
 
-    {{ form_row(form.brochure) }}
-{{ form_end(form) }}
+{% block body %}
+
+    <div class="container-xx text-center text-light fs-2 fst-italic">
+
+        <h1><strong>Ajouter une nouvelle brochure</strong></h1>
+
+    </div>
+    <div class="container">
+        {{ form_start(form) }}
+            {# ... #}
+
+            {{ form_row(form.brochure) }}
+            {{ include('admin/_form.html.twig') }}
+
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

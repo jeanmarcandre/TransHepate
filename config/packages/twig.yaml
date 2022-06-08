@@ -6,7 +6,7 @@ twig:
         # Récupération du nom du site dans le fichier services.yaml
         site_name: '%app.site_name%'
         # Récupération de la clé publique Google Recaptcha depuis le fichier services.yaml
-        google_recaptcha_site_key: '%google_recaptcha.site_key%'
+#         google_recaptcha_site_key: '%google_recaptcha.site_key%'
 
 when@test:
     twig:

@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use Symfony\Component\Mime\Email;
-use App\Recaptcha\RecaptchaValidator;
+// use App\Recaptcha\RecaptchaValidator;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
@@ -19,7 +19,7 @@ class ContactController extends AbstractController
 
     /****  FORMULAIRE DE CONTACT  ****/
     #[Route('/contact', name: 'contact', methods: ['GET', 'POST'])]
-    public function contact(Request $request, MailerInterface $mailer, ManagerRegistry $doctrine, RecaptchaValidator $recaptcha): Response
+    public function contact(Request $request, MailerInterface $mailer, ManagerRegistry $doctrine): Response
     {
 
 

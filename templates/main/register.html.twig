@@ -14,7 +14,7 @@
 
     <div class="container px-5 mt-5" style="width:1000px;border-radius:50px;border:solid 15px #229296;">
 
-        <div class="text-dark bg-light mt-5 p-4 d-block w-100" style="border-radius:25px;border:solid 5px #229296">
+        <div class="text-dark bg-light my-5 p-4 d-block w-100" style="border-radius:25px;border:solid 15px #229296">
 
             <h1 class="mb-3 font-weight-normal mx-auto fs-2 text-uppercase fst-italic text-center"
             style="width: 500px;color: rgb(9, 90, 9);"><strong>Inscrivez-vous:</strong></h1>
@@ -23,56 +23,26 @@
 
                 {{ form_start(registrationForm) }}
 
-                {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.email) }}
 
-                {{ form_row(registrationForm.username) }}
+                    {{ form_row(registrationForm.username) }}
 
-                {{ form_row(registrationForm.plainPassword, {
-                label: 'Mot de passe'}) }}</strong>
+                    {{ form_row(registrationForm.plainPassword, {
+                    label: 'Mot de passe'}) }}</strong>
+
+                    <button type="submit" class="mx-4 my-3 px-3 text-light fst-italic"
+                    style="color:lightgrey;font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">
+                    <strong>Valider</strong>
+                    </button>
+
+                {{ form_end(registrationForm) }}
+
+                <a href="{{ path('app_blog_index') }}" class="text-decoration-none mx-4 my-4 px-2 py-1 text-light fst-italic"
+                    style="color:lightgrey;font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">
+                    <strong>Retour à la liste</strong>
+                </a>
 
             </div>
-
-            {# Affichage du recaptcha #}
-                <div id="container-g-recaptcha" class="row m-0 p-0">
-
-                    {# La clé publique est récupérée en paramètre dans le fichier config/packages/twig.yaml #}
-                    <div class="g-recaptcha col-6" data-sitekey="{{ google_recaptcha_site_key }}" data-theme="dark" data-size="normal"></div>
-
-                	<div class="col-6 pt-2">
-						{# Affichage des erreurs générales du formulaire et donc du Google Recaptcha #}
-						{{ form_errors(registrationForm) }}
-                	</div>
-
-                </div>
-
-             {# <div>
-                {# <p class="ms-5 ps-5 fs-5 text-muted">"j'ai lu et accepte la politique de confidentialité de ce site"</p></br>
-                <p class="ms-5 ps-5 fs-5 fst-italic text-muted">Seules les données déposées volontairement par l'internaute
-                    via le formulaire d'inscription seront conservées pendant 3 mois et sont uniquement destinées au traitement
-                    des demandes formulées. Ces données ne seront jamais communiquées à des tiers et sont accessibles
-                    uniquement par le président et les bénévoles habilités.
-                    Conformément à la loi "informatique et libertés", vous disposez d’un droit d’accès,
-                    de modification et/ou de suppression des données vous concernant à tout moment.
-                    Pour exercer ce droit d'accès, adresser un courrier recommandé à l'attention du président :
-                    Transhépate Bourgogne-Franche-Comté, 16 rue Marcel Sembat 21600 LONGVIC  / cf. Mentions légales et RGPD
-                </p> #}
-
-                {# {{ form_row(registrationForm.agreeTerms) }}
-
-                {{ form_end(registrationForm) }} #}
-
-            {# </div> #}
-
-        </div>
-
-            <button type="submit" class="mx-4 my-1 px-5 py-1 text-light fst-italic"
-                style="color:lightgrey;font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">
-                <strong>Valider</strong>
-            </button>
-            <a href="{{ path('app_blog_index') }}" class="mx-4 my-4 px-5 py-1 text-light fst-italic"
-                style="color:lightgrey;font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">
-                <strong>Retour à la liste</strong>
-            </a>
 
         </div>
 

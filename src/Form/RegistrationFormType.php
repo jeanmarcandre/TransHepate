@@ -5,18 +5,18 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Regex;
 /* CONSTRAINTS */
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\Regex;
 /* TYPES */
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 
 class RegistrationFormType extends AbstractType
@@ -44,12 +44,12 @@ class RegistrationFormType extends AbstractType
                 'invalid_message' => 'Les mots de passe doivent être identiques !',
                 'options' => ['attr' => ['class' => 'password-field']],
                 'first_options' => ['label' => 'Renseignez un mot de passe *',
-                                    'help' => '8 caractères minimum: 1 majuscule, 1 minuscule 1 chiffre et 1 caractère spécial',],
+                                    'help' => '8 caractères minimum: 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial',],
                 'second_options' => ['label' => 'Confirmez votre mot de passe *',
                                      'help' => 'Répétez ici votre mot de passe',],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Le pot de passe est obligatoire',
+                        'message' => 'Le mot de passe est obligatoire',
                     ]),
                     new Length([
                         'min' => 8,

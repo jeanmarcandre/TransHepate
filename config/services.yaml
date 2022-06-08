@@ -9,8 +9,8 @@ parameters:
     app_blog.post_number: '%env(BLOG_POST_NUMBER)%'                       # Nombre de publications paginées par page sur le blog
     app_search.post_number: '%env(SEARCH_POST_NUMBER)%'                   # Nombre de publications paginées par page sur la recherche dans le blog
     app_admin.user_number:  '%env(ADMIN_USER_NUMBER)%'                    # Nombre d'utilisateurs paginés par page sur l'administration
-    google_recaptcha.site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'         # Récupération de la clé publique Google Recaptcha depuis le fichier .env
-    google_recaptcha.private_key: '%env(GOOGLE_RECAPTCHA_PRIVATE_KEY)%'   # Récupération de la clé privée Google Recaptcha depuis le fichier .env
+    # google_recaptcha.site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'         # Récupération de la clé publique Google Recaptcha depuis le fichier .env
+    # google_recaptcha.private_key: '%env(GOOGLE_RECAPTCHA_PRIVATE_KEY)%'   # Récupération de la clé privée Google Recaptcha depuis le fichier .env
     brochures_directory: '%kernel.project_dir%/public/uploads/brochures'
 
 services:

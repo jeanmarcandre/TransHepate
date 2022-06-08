@@ -9,9 +9,9 @@
 
 <div class="container">
 
-    <div class="mt-5"  style="border:solid 25px #229296;border-radius:50px;">
+    <div class="" style="border:solid 25px #229296;border-radius:50px;">
 
-        <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
+        <div class="col-12 col-lg-12 bg-light" style="border:solid 5px light;border-radius:25px;">
 
             <div class="col-12 my-4 ps-5">
                 <p class="fs-3 fst-italic text-center text-dark text-title-h1"><strong>Nombre total d'utilisateurs de notre blog : {{ users.getTotalItemCount }}</strong></p>
@@ -20,7 +20,7 @@
             <table class="table table-hover table-responsive-lg text-center my-4">
 
                 <thead>
-                    <tr class="bg-dark text-title-h1">
+                    <tr class="bg-dark text-title-h2">
                         <th {% if users.isSorted('utilisateurs.username') %} class="sorted" {% endif %}>
                             {{ knp_pagination_sortable(users, 'NOM D\'UTILISATEUR', 'utilisateurs.username') }}
                         </th>
@@ -66,7 +66,7 @@
             </table>
 
             {# On affiche le menu de pagination #}
-            <div class="row mt-5 mb-4">
+            <div class="row mt-4 mb-4">
                 <div class="col-12 text-center">
                     <div class="d-inline-block">
                         {{ knp_pagination_render(users) }}

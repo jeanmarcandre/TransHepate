@@ -6,7 +6,7 @@
 
     {# CAROUSEL #}
 
-    <div class="">
+    <div>
         <div id="carouselExampleControls" class="page-wrap carousel slide carousel-fade mt-5" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -62,23 +62,25 @@
 
         </div>
 
-        <div class="card" style="background-color: #84d8e1;">
-            <div class="row g-0">
-                <div class="col-md-4 pe-5">
-                    <img id="tournesol" src="{{ asset('build/tournesol.jpg') }}" class="img-fluid rounded-start" alt="TRANSHEPATE" style="height:360px; width: 480px;">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body fst-italic text-uppercase mx-5" style="color:#11494C;">
-                        <h2 class="card-text mt-5"><strong>Ne restez pas seul avec vos questions</strong></h2>
-                        <h2 class="card-text mt-5"><strong>Vos doutes vos peurs</strong></h2>
-                        <h2 class="card-text mt-5"><strong>Nous pouvons peut-être vous aider</strong></h2>
-                    </div>
+    </div>
+
+    <div class="card" style="background-color: #84d8e1;">
+        <div class="row g-0">
+            <div class="col-md-4 pe-5">
+                <img id="tournesol" src="{{ asset('build/tournesol.jpg') }}" class="img-fluid rounded-start" alt="TRANSHEPATE" style="height:360px; width: 480px;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body fst-italic text-uppercase mx-5" style="color:#11494C;">
+                    <h2 class="card-text mt-5"><strong>Ne restez pas seul avec vos questions</strong></h2>
+                    <h2 class="card-text mt-5"><strong>Vos doutes vos peurs</strong></h2>
+                    <h2 class="card-text mt-5"><strong>Nous pouvons peut-être vous aider</strong></h2>
                 </div>
             </div>
         </div>
+    </div>
 
-<section class="content_section bg_gray">
-    {# <div class="bg-light m-1 my-3 p-1"></div> #}
+<section class="content_section">
+    <div class="m-1 my-3 p-1"></div>
 </section>
 
     <section class="bandeau row col-12">
@@ -637,12 +639,14 @@
     </div>
 </section>
 
-<section class="content_section bg_gray">
-    <iframe id="haWidget" allowtransparency="true" scrolling="auto" src="https://www.helloasso.com/associations/association-transhepate-bourgogne-franche-comte/formulaires/1/widget"
-    style="width:100%;height:750px;border:none;" onload="window.scroll(0, this.offsetTop)"></iframe>
+<section class="content_section">
+    <div style="background-color: #84d8e1;">
+        <iframe id="haWidget" allowtransparency="true" scrolling="auto" src="https://www.helloasso.com/associations/association-transhepate-bourgogne-franche-comte/formulaires/1/widget"
+        style="width:100%;height:750px;border:none;" onload="window.scroll(0, this.offsetTop)"></iframe>
+    </div>
 
-    <div class="container-xx">
-        <div class="title_banner upper centered" style="background-color: #84d8e1;">
+    <div>
+        <div class="title_banner upper centered" style="background-color: #3bb3c0;">
             <div class="container-lg text-dark text-center fst-italic">
                 <h2><strong>BROCHURE</strong></h2>
             </div>
@@ -650,8 +654,7 @@
             <div class="col-md-12">
                 <div class="service_box">
                     <span class="icon icon1">
-                        <a href="http//preprod.transhepate-idf.fr/wp-content/uploads/2018/11/Guide-du-futur-
-                        transplanté.pdf" target="_blank">
+                        <a href="{{ asset('build/Brochure-transhepate.bfc.pdf') }}" target="_blank">
                         <img width="200" height="300" src="{{ asset('build/Vivre-lattente-de-la-greffe-en-toute-sérénité-1-223x300.jpg') }}" class="img-responsive wp-post-image">
                     </span>
                 </div>
