@@ -4,7 +4,7 @@
     action="{{ path('app_blog_delete_post', {'id': post.id}) }}"
     onsubmit="return confirm('Ëtes vous sure de vouloir détruire cette Publication?');">
 
-    <input type="hidden" name="_token" value="{{ csrf_token('transhepate_blog' ~ post.id) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete_post_blog' ~ post.id) }}">
 
     <button class="ms-5 px-5 py-1 text-light" style="font-size:1.15rem;background-color: orangered;border-radius:25px;">Supprimer cet article</button>
 
