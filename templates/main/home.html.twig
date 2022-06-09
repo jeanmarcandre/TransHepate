@@ -4,65 +4,69 @@
 
 {% block body %}
 
-    {# CAROUSEL #}
+            {# CAROUSEL #}
 
     <div>
-        <div id="carouselExampleControls" class="page-wrap carousel slide carousel-fade mt-5" data-bs-ride="carousel" data-bs-interval="3000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('build/transhepate_boat.jpg') }}" class="d-block w-100" alt="boat">
-                    <div class="carousel-caption d-none d-md-block">
-                        <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">La transquadra</p></div>
-                        <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">*Un bateau pour promouvoir le don d'organes*</h5></div>
-                        <a href="http://preprod.transhepate-idf.fr/la-transquadra/" target="_blank" class="btn btn-primary btn-lg fst-italic" tabindex="-1" role="button" aria-disabled="true">En savoir plus...</a>
+        <div>
+            <div id="carouselExampleControls" class="page-wrap carousel slide carousel-fade mt-5" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{ asset('build/transhepate_boat.jpg') }}" class="d-block w-100" alt="boat">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">La transquadra</p></div>
+                            <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">*Un bateau pour promouvoir le don d'organes*</h5></div>
+                            <a href="http://preprod.transhepate-idf.fr/la-transquadra/" target="_blank" class="btn btn-primary btn-lg fst-italic" tabindex="-1" role="button" aria-disabled="true">En savoir plus...</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ asset('build/transhepate_mains.jpg') }}" class="d-block w-100" alt="mains">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">Transhépate</p></div>
+                            <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">-symbole de la greffe et du don d'organes-</h5></div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ asset('build/transhepate_ruban_vert.jpg') }}" class="d-block w-100" alt="ruban_vert">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">Le ruban vert</p></div>
+                            <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">. Des transplantés au chevet des malades du foie depuis 35 ans .</h5></div>
+                            <a href="http://preprod.transhepate-idf.fr/le-ruban-vert/" target="_blank" class="btn btn-primary btn-lg fst-italic" tabindex="-1" role="button" aria-disabled="true">En savoir plus...</a>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('build/transhepate_mains.jpg') }}" class="d-block w-100" alt="mains">
-                    <div class="carousel-caption d-none d-md-block">
-                        <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">Transhépate</p></div>
-                        <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">-symbole de la greffe et du don d'organes-</h5></div>
 
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+                    <span class="visually-no-hidden text-primary"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="false"></span>
+                    <span class="visually-no-hidden text-primary"></span>
+                </button>
+
+                <div class="owl-pagination">
+                    <div class="owl-page active">
+                        <span class="">
+                        </span>
+                    </div>
+                    <div class="owl-page">
+                        <span class="">
+                        </span>
+                    </div>
+                    <div class="owl-page">
+                        <span class="">
+                        </span>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('build/transhepate_ruban_vert.jpg') }}" class="d-block w-100" alt="ruban_vert">
-                    <div class="carousel-caption d-none d-md-block">
-                        <div><p class="fs-2 fst-italic badge bg-success text-wrap text-uppercase">Le ruban vert</p></div>
-                        <div><h5 class="fs-5 fst-italic badge bg-primary text-wrap text-uppercase">. Des transplantés au chevet des malades du foie depuis 35 ans .</h5></div>
-                        <a href="http://preprod.transhepate-idf.fr/le-ruban-vert/" target="_blank" class="btn btn-primary btn-lg fst-italic" tabindex="-1" role="button" aria-disabled="true">En savoir plus...</a>
-                    </div>
-                </div>
-            </div>
 
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="false"></span>
-                <span class="visually-no-hidden text-primary"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="false"></span>
-                <span class="visually-no-hidden text-primary"></span>
-            </button>
-
-            <div class="owl-pagination">
-                <div class="owl-page active">
-                    <span class="">
-                    </span>
-                </div>
-                <div class="owl-page">
-                    <span class="">
-                    </span>
-                </div>
-                <div class="owl-page">
-                    <span class="">
-                    </span>
-                </div>
             </div>
 
         </div>
-
     </div>
+
+            {# BANDEAU TOURNESOL #}
 
     <div class="card" style="background-color: #84d8e1;">
         <div class="row g-0">
@@ -79,9 +83,7 @@
         </div>
     </div>
 
-<section class="content_section">
-    <div class="m-1 my-3 p-1"></div>
-</section>
+            {# TRANSHEPATE EN CHIFFRES #}
 
     <section class="bandeau row col-12">
         <div class="title_banner upper centered mb-0" style="background: #11494c;">
@@ -130,7 +132,8 @@
         </div>
     </section>
 
-        {# LISTE DES ASSOCIATIONS REGIONALES #}
+
+            {# LISTE DES ASSOCIATIONS REGIONALES #}
 
     <section class="bg_light">
         <div class="content row_spacer">
@@ -552,118 +555,158 @@
             </div>
         </div>
     </section>
-</div>
 
-           {# NOS MISSIONS #}
+            {# NOS MISSIONS #}
 
-<section id="features_section" class="mb-5 content_section white_section bg-color1">
-    <div class="title_banner upper centered">
-        <div class="container-lg text-light text-center fst-italic">
-            <h2>NOS MISSIONS</h2>
-        </div>
-    </div>
-    <div class="container icons_spacer">
-        <div class="row icon_boxes_con style2 upper_title solid_icon clearfix">
-            <div class="col-md-4 mb-4 px-5 pb-5">
-                <div class="service_box">
-                    <card class="icon-circle py-3 px-2 ps-3 pe-1">
-                        <i class="fa-solid fa-lg fa-lightbulb pe-3" style="height:32px; width:22px;"></i>
-                    </card>
-                    <div class="service_box_con text-light" style="background:#11494c;">
-                        <H6 class="mt-4"><strong>FAIRE PRENDRE CONSCIENCE</strong></H6>
-                        <span class="desc">De l'importance du don d'organes, en liaison avec d'autres associations ou organismes
-                                             poursuivant le même but afin de réduire sensiblement les refus.
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4 px-5 pb-5">
-                <div class="service_box">
-                    <card class="icon-circle py-3 px-2 ps-3 pe-1" style="border:solid 1px #11494C;border-radius:50px;">
-                        <i class="fa-solid fa-lg fa-comments pe-3" style="height:32px; width:22px;"></i>
-                    </card>
-                    <div class="service_box_con text-light" style="background:#11494c;">
-                        <H6 class="mt-4"><strong>SOUTENIR, ECHANGER ET ECOUTER</strong></H6>
-                        <p class="desc">Apporter un soutien aux transplantés, futurs transplantés et insuffisants
-                                             hépatiques ainsi qu'a leurs proches.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4 px-5 pb-5">
-                <div class="service_box">
-                   <card class="icon-circle py-3 px-2 ps-3 pe-1" style="border:solid 1px #11494C;border-radius:50px;">
-                        <i class="fa-solid fa-lg fa-bell pe-3" style="height:32px; width:22px;"></i>
-                    </card>
-                    <div class="service_box_con text-light" style="background:#11494c;">
-                    <H6 class="mt-4"><strong>SENSIBILISER L'OPINION</strong></H6>
-                    <p class="desc">Aux risques de l'insuffisance hépatique grave et à la solution apportée par la
-                                         transplantation du foie comme ultime recours.</p>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4 px-5">
-                <div class="service_box">
-                    <card class="icon-circle py-3 px-2 ps-3 pe-1" style="border:solid 1px #11494C;border-radius:50px;">
-                        <i class="fa-solid fa-lg fa-hands-helping pe-3" style="height:32px; width:22px;"></i>
-                    </card>
-                    <div class="service_box_con text-light" style="background:#11494c;">
-                        <H6 class="mt-4"><strong>SOUTENIR ET AIDER LA RECHERCHE</strong></H6>
-                        <p class="desc">Sur les pathologies hépatique et les problèmes liés à la greffe de foie.
-                                             Nous soutenons la recherche essentiellement à l'aide des dons versés à Transhépate.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4 px-5">
-                <div class="service_box">
-                    <card class="icon-circle py-3 px-2 ps-3 pe-1" style="border:solid 1px #11494C;border-radius:50px;">
-                        <i class="fa-solid fa-lg fa-bullhorn pe-3" style="height:32px; width:22px;"></i>
-                    </card>
-                    <div class="service_box_con text-light" style="background:#11494c;">
-                        <H6 class="mt-4"><strong>TEMOIGNER</strong></H6>
-                        <p class="desc">Par notre vécu de personnes transplantées, de la qualité de vie que procure une greffe hépatique.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4 px-5">
-                <div class="service_box">
-                    <card class="icon-circle py-3 px-2 ps-3 pe-1" style="border:solid 1px #11494C;border-radius:50px;">
-                        <i class="fa-solid fa-lg fa-user-nurse pe-3" style="height:32px; width:22px;"></i>
-                    </card>
-                    <div class="service_box_con text-light" style="background:#11494c;">
-                        <H6 class="mt-4"><strong>ASSURER UNE DIFFUSION</strong></H6>
-                        <p class="desc">Aussi large que possible d'une information sur toutes les maladies hépatiques sévères.</p>
-                    </div>
-                </div>
+    <section id="features_section" class="mb-5 content_section white_section bg-color1">
+        <div class="title_banner upper centered">
+            <div class="container-lg text-light text-center fst-italic">
+                <h2>NOS MISSIONS</h2>
             </div>
         </div>
-    </div>
-</section>
+        <div class="container icons_spacer">
+            <div class="row icon_boxes_con style2 upper_title solid_icon clearfix">
+                <div class="col-md-4 mb-4 px-5 pb-5">
+                    <div class="service_box">
+                        <card class="icon-circle py-3 px-2 ps-3 pe-1">
+                            <i class="fa-solid fa-lg fa-lightbulb pe-3" style="height:32px; width:22px;"></i>
+                        </card>
+                        <div class="service_box_con text-light" style="background:#11494c;">
+                            <H6 class="mt-4"><strong>FAIRE PRENDRE CONSCIENCE</strong></H6>
+                            <span class="desc">De l'importance du don d'organes, en liaison avec d'autres associations ou organismes
+                                                poursuivant le même but afin de réduire sensiblement les refus.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 px-5 pb-5">
+                    <div class="service_box">
+                        <card class="icon-circle py-3 px-2 ps-3 pe-1" style="border:solid 1px #11494C;border-radius:50px;">
+                            <i class="fa-solid fa-lg fa-comments pe-3" style="height:32px; width:22px;"></i>
+                        </card>
+                        <div class="service_box_con text-light" style="background:#11494c;">
+                            <H6 class="mt-4"><strong>SOUTENIR, ECHANGER ET ECOUTER</strong></H6>
+                            <p class="desc">Apporter un soutien aux transplantés, futurs transplantés et insuffisants
+                                                hépatiques ainsi qu'a leurs proches.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 px-5 pb-5">
+                    <div class="service_box">
+                    <card class="icon-circle py-3 px-2 ps-3 pe-1" style="border:solid 1px #11494C;border-radius:50px;">
+                            <i class="fa-solid fa-lg fa-bell pe-3" style="height:32px; width:22px;"></i>
+                        </card>
+                        <div class="service_box_con text-light" style="background:#11494c;">
+                        <H6 class="mt-4"><strong>SENSIBILISER L'OPINION</strong></H6>
+                        <p class="desc">Aux risques de l'insuffisance hépatique grave et à la solution apportée par la
+                                            transplantation du foie comme ultime recours.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 px-5">
+                    <div class="service_box">
+                        <card class="icon-circle py-3 px-2 ps-3 pe-1" style="border:solid 1px #11494C;border-radius:50px;">
+                            <i class="fa-solid fa-lg fa-hands-helping pe-3" style="height:32px; width:22px;"></i>
+                        </card>
+                        <div class="service_box_con text-light" style="background:#11494c;">
+                            <H6 class="mt-4"><strong>SOUTENIR ET AIDER LA RECHERCHE</strong></H6>
+                            <p class="desc">Sur les pathologies hépatique et les problèmes liés à la greffe de foie.
+                                                Nous soutenons la recherche essentiellement à l'aide des dons versés à Transhépate.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 px-5">
+                    <div class="service_box">
+                        <card class="icon-circle py-3 px-2 ps-3 pe-1" style="border:solid 1px #11494C;border-radius:50px;">
+                            <i class="fa-solid fa-lg fa-bullhorn pe-3" style="height:32px; width:22px;"></i>
+                        </card>
+                        <div class="service_box_con text-light" style="background:#11494c;">
+                            <H6 class="mt-4"><strong>TEMOIGNER</strong></H6>
+                            <p class="desc">Par notre vécu de personnes transplantées, de la qualité de vie que procure une greffe hépatique.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 px-5">
+                    <div class="service_box">
+                        <card class="icon-circle py-3 px-2 ps-3 pe-1" style="border:solid 1px #11494C;border-radius:50px;">
+                            <i class="fa-solid fa-lg fa-user-nurse pe-3" style="height:32px; width:22px;"></i>
+                        </card>
+                        <div class="service_box_con text-light" style="background:#11494c;">
+                            <H6 class="mt-4"><strong>ASSURER UNE DIFFUSION</strong></H6>
+                            <p class="desc">Aussi large que possible d'une information sur toutes les maladies hépatiques sévères.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="content_section">
-    <div style="background-color: #84d8e1;">
-        <iframe id="haWidget" allowtransparency="true" scrolling="auto" src="https://www.helloasso.com/associations/association-transhepate-bourgogne-franche-comte/formulaires/1/widget"
-        style="width:100%;height:750px;border:none;" onload="window.scroll(0, this.offsetTop)"></iframe>
-    </div>
+            {# FAIRE UN DON #}
+
+    <section>
+        <div style="background-color: #0b8b2e;">
+            <p class="text-light fs-2 text-uppercase text-center"><strong>Faire un don à transhépate bfc</p>
+            <p class="text-light fs-6 text-uppercase text-center">Aidez-nous à soutenir la recherche sur les pathologies hépatiques et les problèmes liés à la greffe du foie !</strong></p>
+            <div class="d-grid gap-2 col-2 mx-auto">
+                <a class="btn btn-light text-uppercase px-4 my-3" type="button" style="color: #0b8b2e;border-radius:10px;" href="{{ path('app_main_helloasso') }}"><strong>Je donne</strong></a>
+            </div>
+        </div>
+    </section>
+
+            {# NOS BROCHURES #}
 
     <div>
-        <div class="title_banner upper centered" style="background-color: #3bb3c0;">
-            <div class="container-lg text-dark text-center fst-italic">
-                <h2><strong>BROCHURE</strong></h2>
-            </div>
-        <div class="container-lg centered">
-            <div class="col-md-12">
-                <div class="service_box">
-                    <span class="icon icon1">
-                        <a href="{{ asset('build/Brochure-transhepate.bfc.pdf') }}" target="_blank">
-                        <img width="200" height="300" src="{{ asset('build/Vivre-lattente-de-la-greffe-en-toute-sérénité-1-223x300.jpg') }}" class="img-responsive wp-post-image">
-                    </span>
+        <div class="container-xx" style="background-color: #3bb3c0;">
+            <p class="mb-4 fs-2 fst-italic text-dark text-center text-uppercase"><strong>Nos brochures</strong></p>
+            <div class="d-flex flex-row">
+                <div class="col-sm-3">
+                    <div class="card m-5 p-3" style="border:solid 1px white; border-radius:25px;">
+                        <div class="card-body" style="background-color:#b0e8af;border-radius:25px;">
+                            <a href="{{ asset('build/Guide-du-futur-transplanté.pdf') }}" target="_blank">
+                            <img width="150" height="200" src="{{ asset('build/Guide-du-futur-transplanté-211x300.jpg') }}" class="img-responsive wp-post-image"></a>
+                            <p class="text-dark fs-5 fst-italic"><strong>Le guide du futur transplanté</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card m-5 p-3" style="border:solid 1px white; border-radius:25px;">
+                        <div class="card-body" style="background-color:#b0e8af;border-radius:25px;">
+                            <a href="{{ asset('build/Brochure-transhepate.bfc.pdf') }}" target="_blank">
+                            <img width="150" height="200" src="{{ asset('build/Vivre-lattente-de-la-greffe-en-toute-sérénité-1-223x300.jpg') }}" class="img-responsive wp-post-image"></a>
+                            <p class="text-dark fs-5 fst-italic"><strong>Attendre la greffe en toute sérénité</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card m-5 p-3" style="border:solid 1px white; border-radius:25px;">
+                        <div class="card-body" style="background-color:#b0e8af;border-radius:25px;">
+                            <a href="{{ asset('build/La-greffe-vue-par-les-enfants.pdf') }}" target="_blank">
+                            <img width="150" height="200" src="{{ asset('build/outilspedagogiques_vdef-1-184x300.jpg') }}" class="img-responsive wp-post-image"></a>
+                            <p class="text-dark fs-5 fst-italic"><strong>Le don d'organe expliqué aux enfants</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card m-5 p-3" style="border:solid 1px white; border-radius:25px;">
+                        <div class="card-body" style="background-color:#b0e8af;border-radius:25px;">
+                            <a href="{{ asset('build/attente-greffe.pdf') }}" target="_blank">
+                            <img width="150" height="200" src="{{ asset('build/attente-greffe-1-207x300.jpg') }}" class="img-responsive wp-post-image"></a>
+                            <p class="text-dark fs-5 fst-italic"><strong>La greffe vécue par les proches</strong></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            {# <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3"></div> #}
         </div>
     </div>
-</section>
+
+            {# NOS ACTIONS #}
+
+    <div style="background-color: #0b8b2e;">
+        <p class="text-light fs-2 fst-italic text-uppercase text-center"><strong>Nos actions</p>
+        <div class="d-grid gap-2 col-2 mx-auto">
+            <a class="btn btn-light text-uppercase px-4 my-3" type="button" style="color: #0b8b2e;border-radius:10px;" href="{{ path('app_main_nos_actions') }}"><strong>Visite</strong></a>
+        </div>
+    </div>
+
 {% endblock %}
 

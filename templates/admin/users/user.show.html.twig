@@ -4,28 +4,26 @@
 
 {% block admin %}
 
-<div class="container-xx" style="background-color:#11494C;">
+<div class="container" style="background-color:#11494C;">
 
-    <div class="container">
+        <div class="my-5" style="border:solid 25px #229296;border-radius:50px;">
 
-        <div class="mt-5" style="border:solid 25px #229296;border-radius:50px;">
+            <div class="bg-light px-lg-5" style="border:solid 15px light;border-radius:25px;">
 
-            <div class="col-12 col-lg-12 bg-light px-lg-5" style="border:solid 15px light;border-radius:25px;">
+                <p class="text-decoration-underline fs-1 fst-italic" style="color:#11494C;"><strong>Utilisateur</strong></p>
 
-                <p class="text-dark fs-1 fst-italic"><strong>Utilisateur</strong></p>
-
-                <table class="table fs-5 fst-italic text-dark">
+                <table class="table fs-5 fst-italic" style="color:#11494C;">
                     <tbody>
                         <tr>
-                            <th>Email</th>
+                            <th>Email : </th>
                             <td>{{ user.email }}</td>
                         </tr>
                         <tr>
-                            <th>Username</th>
+                            <th>Nom :</th>
                             <td>{{ user.username }}</td>
                         </tr>
                         <tr>
-                            <th>Roles</th>
+                            <th>Roles :</th>
                             {% if (user.roles|json_encode == '["ROLE_USER"]') %}
                             <td>utilisateur</td>
                             {% else %}
@@ -33,15 +31,20 @@
                             {% endif %}
                         </tr>
                         <tr>
-                            <th>CreatedAt</th>
+                            <th>Créé-le :</th>
                             <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                         </tr>
                         <tr>
-                            <th>UpdatedAt</th>
+                            <th>Modifié-le :</th>
                             <td>{{ user.updatedAt ? user.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                         </tr>
                     </tbody>
                 </table>
+
+                <div class="container-lg text-center">
+                    <a href="{{ path('app_blog_index') }}" class="text-uppercase px-4 py-1 m-5 text-light fst-italic fs-4
+                    text-decoration-none" style="background-color:#178E94;border:3px solid #11494C;border-radius:25px;"><strong>retour à l'accueil</strong></a>
+                </div>
 
                 {% for comment in user.comments %}
 
@@ -64,6 +67,6 @@
             </div>
 
         </div>
-    </div>
+
 </div>
 {% endblock %}

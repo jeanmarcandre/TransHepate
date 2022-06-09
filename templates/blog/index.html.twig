@@ -45,27 +45,14 @@
                         </div>
                     </div>
                 </div>
-                {### AFFICHAGE DES PUBLICATIONS ###}
 
-                <div class="row m-0 p-0">
-
-                    {% for post in posts_paginate %}
-
-                        {# Boucle d'affichage des Posts #}
-                        {{ include('blog/_posts.view.html.twig') }}
-
-                    {% else %}
-                        <p class="col-12 text-center alert alert-warning">Aucune publication à afficher</p>
-                    {% endfor %}
-                </div>
-            </div>
-
-            {# Menu de Droite #}
-            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
               <li class="nav-item">
 
+                {### MENU DE DROITE ###}
+
                 {% if app.user %}
-                  <li class="nav-item dropdown">
+                  <li class="container nav-item dropdown">
                       <a  class="nav-link dropdown-toggle text-capitalize"
                           href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           {% if is_granted('ROLE_ADMIN') %}
@@ -93,6 +80,20 @@
               </li>
             </ul>
 
+                {### AFFICHAGE DES PUBLICATIONS ###}
+
+                <div class="row m-0 p-0">
+
+                    {% for post in posts_paginate %}
+
+                        {# Boucle d'affichage des Posts #}
+                        {{ include('blog/_posts.view.html.twig') }}
+
+                    {% else %}
+                        <p class="col-12 text-center alert alert-warning">Aucune publication à afficher</p>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -77,6 +77,28 @@ class MainController extends AbstractController
         ]);
     }
 
+    /**** HELLOASSO ****/
+    #[Route(path: '/helloasso', name:'helloasso')]
+    public function helloasso(): Response
+    {
+
+        // Cette page appellera la vue template/main/helloasso.html.twig
+        return $this->render('main/helloasso.html.twig',[
+
+        ]);
+    }
+
+    /**** NOS ACTIONS ****/
+    #[Route(path: '/nos_actions', name:'nos_actions')]
+    public function nos_actions(): Response
+    {
+
+        // Cette page appellera la vue template/main/nos_actions.html.twig
+        return $this->render('main/nos_actions.html.twig',[
+
+        ]);
+    }
+
     /****  CONNEXION  ****/
     #[Route(path: '/connexion', name: 'login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
