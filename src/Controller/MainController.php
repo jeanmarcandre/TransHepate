@@ -88,6 +88,17 @@ class MainController extends AbstractController
         ]);
     }
 
+    /**** ADHESIONS ****/
+    #[Route(path: '/adhesion', name:'adhesion')]
+    public function adhesion(): Response
+    {
+
+        // Cette page appellera la vue template/main/adhesion.html.twig
+        return $this->render('main/adhesion.html.twig',[
+
+        ]);
+    }
+
     /**** NOS ACTIONS ****/
     #[Route(path: '/nos_actions', name:'nos_actions')]
     public function nos_actions(): Response

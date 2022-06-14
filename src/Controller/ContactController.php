@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use Symfony\Component\Mime\Email;
+use Symfony\Component\Mime\Address;
 // use App\Recaptcha\RecaptchaValidator;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
@@ -47,9 +48,9 @@ class ContactController extends AbstractController
             $email = (new Email());
                     $email
                     ->from($contact->getEmail())
-                    // ->to('contact.transhepate.bfc@gmail.com')
-                    // ->from('jeanmarc.symfony@gmail.com')
-                    ->to('jean.marc.monin21@gmail.com')
+                    ->to('contact.transhepate.bfc@gmail.com')
+                    ->from('jeanmarc.symfony@gmail.com')
+                    // ->to('jean.marc.monin21@gmail.com')
                     ->subject('vous avez reçu un email de Contact de ' . $contact->getName())
 
                     ->text('Son nom : ' . $contact->getName()

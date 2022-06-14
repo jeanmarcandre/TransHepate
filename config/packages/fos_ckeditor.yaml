@@ -6,9 +6,17 @@ twig:
 
 fos_ck_editor:
     configs:
+        main_config:
+            toolbar:
+                - { name: "styles", items: ['Bold', 'Italic', 'Underline', 'Strike', 'Blockquote',
+                 '-', 'Link', '-', 'RemoveFormat', '-', 'NumberedList', 'BulletedList', '-',
+                  'Outdent', 'Indent', '-', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+                  'JustifyBlock', '-', 'Image', 'Table', '-', 'Styles', 'Format','Font','FontSize',
+                  '-', 'TextColor', 'BGColor', 'Source'] }
+
         general:
             language: fr       # Langue de l'éditeur
-            toolbar: full  # type de toolbar (basic / standard / full)
+            toolbar: standard  # type de toolbar (basic / standard / full)
             uicolor: "#adb5bd" # Couleur de fond de l'éditeur
             height: 300px      # hauteur de l'éditeur
             width: 800px    # largeur de l'éditeur
