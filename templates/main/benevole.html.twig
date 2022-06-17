@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bénévolat{% endblock %}
+
+{% block body %}
+<div style="border:solid 25px #229296;border-radius:50px;" class="container bg-light mt-5">
+    <div class="mt-5 text-center">
+        <span class="fs-2 px-3 py-3 fst-italic"
+            style="color:rgb(0,137,45);border:solid 5px #229296;border-radius:25px;">
+            Je deviens bénévole à <img id="logoimg" src="{{ asset('build/logoimg.jpg') }}" class="px-2 py-1" style="height:60px; width: 240px;">
+        </span>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-8 fs-3" style="color:#229296;">
+                En 2022, Transhépate compte <strong>185 bénévoles</strong></br></br>
+                <p class="text-dark fs-6">
+                    <strong>Les bénévoles interviennent essentiellement dans les hôpitaux transplanteurs</strong>
+                    dans lesquels, chaque semaine ils assurent une permanence. Ils reçoivent et visitent des patients
+                    transplantés et en attente de greffe, afin de:
+                </p>
+                <ol style="list-style-type:circle;">
+                    <li class="text-dark fs-6">
+                        <strong>Apporter un soutien,</strong> notamment moral et psychologique aux transplantés et futurs transplantés
+                        ainsi qu'a leurts proches, en favorisant leur rencontre avec d'autres transplantés.
+                    </li>
+                    <li class="text-dark fs-6">
+                        <strong>Offrir une écoute attentive et bienveillante.</strong>
+                    </li>
+                    <li class="text-dark fs-6">
+                        <strong>Répondre aux questionnements</strong> de la période qui précède la greffe
+                        mais aussi celle qui se situe après la transplantation.
+                    </li>
+                    <li class="text-dark fs-6">
+                        <strong>Témoigner,</strong> par notre vécu, de la qualité que procure une greffe hépatique.
+                    </li>
+                    <li class="text-dark fs-6">
+                        <strong>Favoriser le contact</strong> entre les familles et les <strong>équipes médicales.</strong>
+                    </li>
+                </ol>
+            <p class="text-dark fs-6">
+                Mais, la tache des bénévoles ne s'arrête pas à leur action dans les hôpitaux auprès des malades...
+                mais aussi participent aux différentes tâches administratives (Secrétariat, Trésorerie,
+                Communication,) participent aux différents événements, représentent Transhépate dans les diverses
+                instances de santé et les permanences dans les hôpitaux...
+
+                Afin d’être en mesure de répondre toujours mieux à la demande des patients, de renforcer ses liens
+                avec les adhérents, de développer et enrichir sa communication, d’affirmer notre présence dans
+                toutes les instances de santé et de défense des usagers…
+                <span class="text-success"><strong>Transhépate recherche des bénévoles susceptibles de participer
+                 de diverses façons dans tous les secteurs d'activités de l'association.</strong></span> notamment:
+            </p>
+                <ol style="list-style-type:circle;">
+                    <li class="text-dark fs-6">Devenir membre du conseil d'administration.</li>
+                    <li class="text-dark fs-6">Effectuer diverses tâches du bureau (secrétariat, comptabilité, informatique...</li>
+                    <li class="text-dark fs-6">Apporter ses compétences en communication, animation, création d'évenements.</li>
+                    <li class="text-dark fs-6">Ecrire des articles pour la revue Hépat'Infos.</li>
+                    <li class="text-dark fs-6">Rechercher des financements.</li>
+                    <li class="text-dark fs-6">Contribuer à la cause du don d'organe et de la greffe hépatique.</li>
+                    <li class="text-dark fs-6">Participer à des formations.</li>
+                </ol>
+            <p class="fs-3" style="color:#229296;">Les formations</p>
+            <p class="text-dark fs-6">Plusieurs bénévoles de Transhépate ont déjà eu accès à une formation dispensée par France
+            Assos Santé sur le thème de l’Education Thérapeutique du Patient (ETP) dont l’objectif est de
+            permettre à un patient (ou groupe de patients et/ou familles) atteint d'une maladie chronique
+            de gérer le traitement de sa maladie, tout en maintenant ou en améliorant sa qualité de vie.</br>
+            Enfin, Transhépate a mis en place une <strong>formation à l’écoute et à la relation d’aide.</strong></p>
+            <p class="fs-3" style="color:#229296;">S'engager à transhépate</p>
+            <p class="text-dark fs-6">D’abord, il est nécessaire d’être au clair avec soi-même, en gardant
+            à l’esprit qu’il ne s’agit pas de réponse à ses besoins, mais à ceux des autres. Le bénévolat
+            auprès des patients nécessite en effet des qualités d’écoute, d’empathie et de maîtrise de ses
+            émotions.<br>
+            <strong>Tout bénévole accueilli et intégré dans l'association Transhépate se voit remettre une charte
+            qui définit les engagements réciproques entre le Président de l'association Transhépate, ou 
+            son représentant, et le bénévole.</strong></p>
+        </div>
+            <div class="col-sm-4 fs-4" style="color:#229296;">
+                <strong>Rejoignez notre équipe de bénévoles, transhépate recherche des bénévoles!</strong></br></br>
+                <p class="text-success fs-4"><strong>Vous souhaitez rejoindre nos bénévoles, toute compétence sera la bienvenue!</strong></p></br>
+                <p class="text-dark fs-5 fst-italic">
+                    <strong>Contacter:</strong></br>
+                    Armand Fages</br>
+                    06 08 78 31 63</br>
+                    <a class="text-success">armand.fages@bbox.fr</a>
+                </p>
+
+                <p class="text-dark fs-4 text-decoration-underline">Adhérer à transhépate</p>
+                <section class="content-section">
+                    <div class="text-light">
+                        <iframe id="haWidget" allowtransparency="true"
+                        src="https://www.helloasso.com/associations/association-transhepate-bourgogne-franche-comte/adhesions/j-hadere-a-transhepate/widget-bouton"
+                        style="width: 100%; height: 70px; border: solid 5px #229296; border-radius:25px;background-color:rgb(0,137,45);">
+                        </iframe>
+                    </div>
+                </section>
+                <div class="card m-5 p-1" style="border:solid 5px white; border-radius:25px;">
+                    {# <div class="card-body" style="background-color:rgb(0,137,45);border-radius:15px;"> #}
+                        <a href="{{ asset('build/Charte-du-Benevole-Transhepate.pdf') }}" target="_blank">
+                        <img width="150" height="200" src="{{ asset('build/Benevolat.png') }}" class="img-responsive wp-post-image"></a>
+                        <p class="text-dark fs-6 fst-italic text-center bg-white p-1 mt-3" style="border-radius:20px;">Télécharger le PDF</p>
+                    {# </div> #}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

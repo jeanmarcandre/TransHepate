@@ -99,6 +99,17 @@ class MainController extends AbstractController
         ]);
     }
 
+    /**** ADHESIONS ****/
+    #[Route(path: '/benevole', name:'benevole')]
+    public function benevole(): Response
+    {
+
+        // Cette page appellera la vue template/main/benevolen.html.twig
+        return $this->render('main/benevole.html.twig',[
+
+        ]);
+    }
+
     /**** NOS ACTIONS ****/
     #[Route(path: '/nos_actions', name:'nos_actions')]
     public function nos_actions(): Response

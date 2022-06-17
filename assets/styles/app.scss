@@ -145,7 +145,6 @@ body main {
 }
 
 ul li {
-  text-decoration: none!important;
   color: black!important;
 }
 
@@ -252,9 +251,9 @@ header {
   z-index: 999;
 }
 
-div ul li .contact {
-  text-decoration: underline;
-}
+// div ul li .contact {
+//   text-decoration: underline;
+// }
 
 .bg_gray {
   background: #f9fafc!important;

@@ -52,11 +52,11 @@
             <nav class="navbar navbar-expand-lg"style="background-color:rgb(140, 230, 254);">
                 <div class="container-fluid">
                     <a href="{{ path('app_main_home') }}">
-                    <img id="logoimg" src="{{ asset('build/logoimg.jpg') }}" alt="TRANSHEPATE" class="px-2 py-1" style="border-radius:15px;height:50px; width: 200px; margin-left: 50px;">
+                    <img id="logoimg" src="{{ asset('build/logoimg.jpg') }}" alt="TRANSHEPATE" class="px-2 py-1" style="border-radius:15px;height:60px; width: 280px; margin-left: 50px;">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
                     aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
-                    <i class="bi bi-list"><strong>menu</strong></i>
+                    <i class="fa fa-list"><strong>menu</strong></i>
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -96,9 +96,11 @@
                                 <div class="dropdown-menu bg-success">
                                     <a class="dropdown-item" href="{{ path('app_main_adhesion') }}">J'adhère à TransHépate</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="http://www.transhepate.org/donner/" target="_blank">Pourquoi je fait un don</a>
+                                    <a class="dropdown-item" href="{{ path('app_main_helloasso') }}">Je fait un don</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="https://www.transhepate.org/appel-aux-benevoles/" target="_blank">Je veut devenir bénévole</a>
+                                    {# <a class="dropdown-item" href="http://www.transhepate.org/donner/" target="_blank">Pourquoi je fait un don</a>
+                                    <div class="dropdown-divider"></div> #}
+                                    <a class="dropdown-item" href="{{ path('app_main_benevole') }}">Je veut devenir bénévole</a>
                                 </div>
                             </li>
 
