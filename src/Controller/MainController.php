@@ -4,22 +4,24 @@ namespace App\Controller;
 
 use App\Entity\User;
 
-use App\Entity\Permanences;
 // Imports Login
 
 // Import Post
-use App\Form\PermanencesType;
+use App\Entity\Actions;
+use App\Entity\Permanences;
 // Imports Register
+use App\Form\PermanencesType;
+use App\Form\ActionsType;
 use App\Form\RegistrationFormType;
-use App\Repository\PostRepository;
 // Import Google Recaptcha
-use App\Repository\UserRepository;
+use App\Repository\PostRepository;
 // use App\Recaptcha\RecaptchaValidator;
 
 // PAGINATOR
-use Symfony\Component\Form\FormError;
+use App\Repository\UserRepository;
 // EMAIL
-
+use App\Repository\ActionsRepository;
+use Symfony\Component\Form\FormError;
 use App\Repository\PermanencesRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;
@@ -37,7 +39,7 @@ class MainController extends AbstractController
 {
 
     /***   ACCUEIL  ***/
-    #[Route(path:'/', name:'home')]
+    #[Route(path: '/', name: 'home')]
     public function home(PostRepository $postRepository): Response
     {
         return $this->render('main/home.html.twig', [
@@ -55,71 +57,61 @@ class MainController extends AbstractController
     }
 
     /**** PAGE CONTACT ****/
-    #[Route(path: '/transhepatebfc', name:'transhepatebfc')]
+    #[Route(path: '/transhepatebfc', name: 'transhepatebfc')]
     public function transhepatebfc(PermanencesRepository $permanencesRepository): Response
     {
         $tableaupermanences = $permanencesRepository->find(1)->getContent();
 
         // Cette page appellera la vue template/main/transhepatebfc.html.twig
-        return $this->render('main/transhepatebfc.html.twig',[
-            'tableau'=>$tableaupermanences
+        return $this->render('main/transhepatebfc.html.twig', [
+            'tableau' => $tableaupermanences
         ]);
     }
 
     /**** MENTIONS LEGALES ****/
-    #[Route(path: '/mentions_legales', name:'mentions_legales')]
+    #[Route(path: '/mentions_legales', name: 'mentions_legales')]
     public function mentions_legales(): Response
     {
 
         // Cette page appellera la vue template/main/mentions_legales.html.twig
-        return $this->render('main/mentions_legales.html.twig',[
-
-        ]);
+        return $this->render('main/mentions_legales.html.twig', []);
     }
 
     /**** HELLOASSO ****/
-    #[Route(path: '/helloasso', name:'helloasso')]
+    #[Route(path: '/helloasso', name: 'helloasso')]
     public function helloasso(): Response
     {
 
         // Cette page appellera la vue template/main/helloasso.html.twig
-        return $this->render('main/helloasso.html.twig',[
-
-        ]);
+        return $this->render('main/helloasso.html.twig', []);
     }
 
     /**** ADHESIONS ****/
-    #[Route(path: '/adhesion', name:'adhesion')]
+    #[Route(path: '/adhesion', name: 'adhesion')]
     public function adhesion(): Response
     {
 
         // Cette page appellera la vue template/main/adhesion.html.twig
-        return $this->render('main/adhesion.html.twig',[
-
-        ]);
+        return $this->render('main/adhesion.html.twig', []);
     }
 
     /**** ADHESIONS ****/
-    #[Route(path: '/benevole', name:'benevole')]
+    #[Route(path: '/benevole', name: 'benevole')]
     public function benevole(): Response
     {
 
         // Cette page appellera la vue template/main/benevolen.html.twig
-        return $this->render('main/benevole.html.twig',[
-
-        ]);
+        return $this->render('main/benevole.html.twig', []);
     }
 
     /**** NOS ACTIONS ****/
-    #[Route(path: '/nos_actions', name:'nos_actions')]
-    public function nos_actions(): Response
-    {
+    // #[Route(path: '/actions', name: 'actions')]
+    // public function actions(): Response
+    // {
 
-        // Cette page appellera la vue template/main/nos_actions.html.twig
-        return $this->render('main/nos_actions.html.twig',[
-
-        ]);
-    }
+    //     // Cette page appellera la vue template/main/nos_actions.html.twig
+    //     return $this->render('main/actions.html.twig', []);
+    // }
 
     /****  CONNEXION  ****/
     #[Route(path: '/connexion', name: 'login')]
@@ -146,9 +138,11 @@ class MainController extends AbstractController
 
     /****  INSCRIPTION  ****/
     #[Route(path: '/inscription', name: 'register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher,
-                             UserRepository $userRepository): Response
-    {
+    public function register(
+        Request $request,
+        UserPasswordHasherInterface $userPasswordHasher,
+        UserRepository $userRepository
+    ): Response {
         if ($this->getUser()) {
             $this->addFlash('warning', 'Vous êtes déjà inscrit');
             return $this->redirectToRoute('app_main_home');
@@ -167,14 +161,14 @@ class MainController extends AbstractController
             //     $form->addError(new FormError('Le Captcha doit être validé !'));
             // }
 
-            if( $form->isValid()) {
+            if ($form->isValid()) {
 
                 // encode the plain password
                 $user->setPassword(
                     $userPasswordHasher->hashPassword(
-                            $user,
-                            $form->get('plainPassword')->getData()
-                        )
+                        $user,
+                        $form->get('plainPassword')->getData()
+                    )
                 );
 
                 $userRepository->add($user);
@@ -199,7 +193,9 @@ class MainController extends AbstractController
         $requestedPage = $request->query->getInt('page', 1);
 
         // Vérification que le numéro est positif
-        if ($requestedPage < 1) { throw new NotFoundHttpException(); }
+        if ($requestedPage < 1) {
+            throw new NotFoundHttpException();
+        }
 
         // On récupère le contenu du champ de recherche
         $search = $request->query->get('search', '');
@@ -224,11 +220,11 @@ class MainController extends AbstractController
     #[Route('/new-permanences', name: 'permanences', methods: ['GET', 'POST'])]
     public function new(Request $request, PermanencesRepository $permanencesRepository, ManagerRegistry $doctrine): Response
     {
-        if($permanencesRepository->find(1)){
+        if ($permanencesRepository->find(1)) {
             $permanences = $permanencesRepository->find(1);
-
+        } else {
+            $permanences = new Permanences();
         }
-        else{$permanences = new Permanences();}
 
         $form = $this->createForm(PermanencesType::class, $permanences);
         $form->handleRequest($request);
@@ -245,6 +241,35 @@ class MainController extends AbstractController
         }
 
         return $this->renderForm('main/permanences.html.twig', [
+            'form' => $form,
+        ]);
+    }
+
+    /**** TABLEAU DES ACTIONS (ADMIN) ****/
+    #[Route('/actions', name: 'actions', methods: ['GET', 'POST'])]
+    public function Actions(Request $request, ActionsRepository $actionsRepository, ManagerRegistry $doctrine): Response
+    {
+        if ($actionsRepository->find(1)) {
+            $actions = $actionsRepository->find(1);
+        } else {
+            $actions = new Actions();
+        }
+
+        $form = $this->createForm(ActionsType::class, $actions);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $actions->setContent($form->get('content')->getData());
+            // dd($actions);
+            $entityManager = $doctrine->getManager();
+            $entityManager->persist($actions);
+            $entityManager->flush();
+            // $actionsRepository->add($actions);
+            // dd($actions);
+            return $this->redirectToRoute('app_main_home', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('main/actions.html.twig', [
             'form' => $form,
         ]);
     }
