@@ -40,10 +40,16 @@ class MainController extends AbstractController
 
     /***   ACCUEIL  ***/
     #[Route(path: '/', name: 'home')]
-    public function home(PostRepository $postRepository): Response
+    public function home(PostRepository $postRepository, ActionsRepository $actionsRepository): Response
     {
+            $affichageactions = $actionsRepository->find(1)->getContent();
+            // dd ($affichageactions);
+            // Cette page appellera la vue template/main/nos_actions.html.twig
+
+
         return $this->render('main/home.html.twig', [
             'posts' => $postRepository->findBy([], ['createdAt' => 'desc']),
+            'affichage' => $affichageactions
         ]);
     }
 
@@ -67,6 +73,9 @@ class MainController extends AbstractController
             'tableau' => $tableaupermanences
         ]);
     }
+
+
+
 
     /**** MENTIONS LEGALES ****/
     #[Route(path: '/mentions_legales', name: 'mentions_legales')]
@@ -95,7 +104,7 @@ class MainController extends AbstractController
         return $this->render('main/adhesion.html.twig', []);
     }
 
-    /**** ADHESIONS ****/
+    /**** BENEVOLAT ****/
     #[Route(path: '/benevole', name: 'benevole')]
     public function benevole(): Response
     {
@@ -103,15 +112,6 @@ class MainController extends AbstractController
         // Cette page appellera la vue template/main/benevolen.html.twig
         return $this->render('main/benevole.html.twig', []);
     }
-
-    /**** NOS ACTIONS ****/
-    // #[Route(path: '/actions', name: 'actions')]
-    // public function actions(): Response
-    // {
-
-    //     // Cette page appellera la vue template/main/nos_actions.html.twig
-    //     return $this->render('main/actions.html.twig', []);
-    // }
 
     /****  CONNEXION  ****/
     #[Route(path: '/connexion', name: 'login')]

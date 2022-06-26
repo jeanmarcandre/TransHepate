@@ -13,6 +13,9 @@ class Actions
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[ORM\Column(type: 'text')]
+    private $content;
+
     public function getId(): ?int
     {
         return $this->id;

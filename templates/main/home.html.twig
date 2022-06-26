@@ -117,7 +117,7 @@
     <div class="bg_light">
         <div class="content row_spacer">
             <div class="title_banner upper centered bg-white mb-0">
-                <p class="text-dark fst-italic fs-2 text-uppercase text-center">
+                <p class="fst-italic fs-2 text-uppercase text-center" style="color:#11494C;">
             <span class="line">
                 <i class="fa-solid fa-people-group"></i>
             </span>
@@ -628,9 +628,8 @@
 
             {# FAIRE UN DON #}
 
-    <div id="features_section" class="content_section white_section">
-        <div class="title_banner upper centered" style="background-color: rgb(0,137,45);">
-            <p class="text-light fst-italic fs-2 text-uppercase text-center">
+        <div style="background-color: rgb(0,137,45);">
+            <p class="text-light pt-4 fst-italic fs-2 text-uppercase text-center">
             <span class="line">
                 <i class="fa-solid fa-hand-holding-dollar"></i>
             </span>
@@ -638,16 +637,15 @@
             </p>
             <p class="text-light fst-italic fs-5 text-center">Aidez-nous à soutenir la recherche sur les pathologies hépatiques et les problèmes liés à la greffe du foie !</p>
             <div class="d-grid gap-2 col-1 mx-auto">
-                <a class="btn btn-light fs-5 fst-italic text-uppercase px-4 my-3" type="button" style="color: #0b8b2e;border-radius:10px;font-weight: bold;" href="{{ path('app_main_helloasso') }}">Je donne</a>
+                <a class="btn btn-outline-success text-light fs-5 fst-italic text-uppercase my-4" type="button" style="color: #0b8b2e;border-radius:15px;font-weight: bold;" href="{{ path('app_main_helloasso') }}">Je donne</a>
             </div>
         </div>
-    </div>
 
             {# NOS BROCHURES #}
 
     <div>
         <div class="text-center" style="background-color: #3bb3c0;">
-            <div class="fs-2 fst-italic text-dark text-center text-uppercase">
+            <div class="fs-2 pt-4 fst-italic text-center text-uppercase" style="color:#11494C;">
                 <i class="fa-solid fa-book-open"></i>
                 <strong>Nos brochures</strong>
             </div>
@@ -692,22 +690,75 @@
         </div>
     </div>
 
-            {# NOS ACTIONS #}
+            {# ADHERER #}
 
-    <div id="features_section" class="content_section white_section bg-color1">
-        <div class="title_banner upper centered" style="background-color: rgb(0,137,45);">
-            <p class="text-light fs-2 fst-italic text-uppercase text-center" id="blog-heading">
-                <span class="line">
-                <i class="fa fa-edit">...</i>
-                </span>
+        <div style="background-color: rgb(0,137,45);">
+            <p class="text-light pt-4 fs-2 fst-italic text-uppercase text-center" id="blog-heading">
+                <i class="fa fa-edit"></i>
                 <strong>Adhésion à transhépate bfc</strong>
             </p>
             <div class="d-grid gap-2 col-1 mx-auto">
-                <a class="btn btn-light fst-italic fs-5 text-uppercase px-4 my-3" type="button" style="color: rgb(0,137,45);border-radius:10px;font-weight: bold;" href="{{ path('app_main_adhesion') }}">J'adhère</a>
+                <a class="btn btn-outline-success text-light fst-italic fs-5 text-uppercase my-4" type="button" style="color: rgb(0,137,45);border-radius:10px;font-weight: bold;" href="{{ path('app_main_adhesion') }}">J'adhère</a>
+            </div>
+        </div>
+
+            {# NOS ACTIONS #}
+
+    {# <div id="" class="">
+        <div class="" style="background-color:  #3bb3c0;">
+        <p class="fs-2 text-dark fst-italic text-uppercase text-center"><strong>Nos Actions</strong></p>
+        <div>
+            <div class="text-lowercase">
+                {{ affichage|raw }}
+            </div>
+        </div>
+    </div> #}
+
+    <div style="background-color:#3bb3c0;">
+        <p class="fs-2 fst-italic pt-4 text-uppercase text-center" style="color:#11494C;"><strong>Nos Actions</strong></p>
+
+        <div class="card-group text-dark fs-5 fst-italic">
+            <div class="card mx-5 bg-light" style="border:solid 5px #11494C;border-radius:25px 25px 0 0;">
+                <img width="80" height="300" src="{{ asset('build/attente-greffe-1-207x300.jpg') }}" class="card-img-top" style="border-bottom:solid 1px #11494C;border-radius:20px 20px 0 0;" alt="...">
+                <div class="card-body">
+                    <div class="text-lowercase">
+                        {{ affichage|raw }}
+                    </div>
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            </div>
+            <div class="card mx-5 bg-light" style="border:solid 5px #11494C;border-radius:25px 25px 0 0;">
+                <img width="80" height="250" src="{{ asset('build/tournesol.jpg') }}" class="card-img-top" style="border-bottom:solid 1px #11494C;border-radius:20px 20px 0 0;" alt="...">
+                <a href="{{ asset('build/Guide-du-futur-transplanté2.pdf') }}"></a>
+                <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+            <div class="card mx-5 bg-light" style="border:solid 5px #11494C;border-radius:25px 25px 0 0;">
+                <img width="80" height="200" src="{{ asset('build/bann3.jpg') }}" class="card-img-top" style="border-bottom:solid 1px #11494C;border-radius:20px 20px 0 0;" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+                {# DEVENIR BENEVOLE #}
+
+        <div style="background-color: rgb(0,137,45);">
+            <p class="text-light fs-2 pt-4 fst-italic text-uppercase text-center" id="blog-heading">
+                <i class="fa fa-edit"></i>
+                <strong>Devenez Bénévole à transhépate bfc</strong>
+            </p>
+            <div class="d-grid gap-2 col-1 mx-auto">
+                <a class="btn btn-outline-success text-light fst-italic fs-5 text-uppercase my-4" type="button" style="color: rgb(0,137,45);border-radius:10px;font-weight: bold;" href="{{ path('app_main_benevole') }}">Je deviens bénévole</a>
+            </div>
+        </div>
+
 
 {% endblock %}
 

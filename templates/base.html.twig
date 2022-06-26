@@ -120,12 +120,10 @@
 									<strong>Nous soutenir</strong>
 								</a>
 								<div class="dropdown-menu bg-success">
-									<a class="dropdown-item" href="{{ path('app_main_adhesion') }}">J'adhère à TransHépate</a>
-									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="{{ path('app_main_helloasso') }}">Je fait un don</a>
 									<div class="dropdown-divider"></div>
-									{# <a class="dropdown-item" href="http://www.transhepate.org/donner/" target="_blank">Pourquoi je fait un don</a>
-									                                    <div class="dropdown-divider"></div> #}
+									<a class="dropdown-item" href="{{ path('app_main_adhesion') }}">J'adhère à TransHépate</a>
+									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="{{ path('app_main_benevole') }}">Je veut devenir bénévole</a>
 								</div>
 							</li>
@@ -167,6 +165,10 @@
 									{% if is_granted('ROLE_ADMIN') %}
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="{{ path('app_main_actions') }}">Nos Actions</a>
+									{% endif %}
+									{% if is_granted('ROLE_ADMIN') %}
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="{{ path('app_product_new') }}">Nos Brochures</a>
 									{% endif %}
 								</div>
 							</li>
