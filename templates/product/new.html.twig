@@ -4,19 +4,35 @@
 
 {% block body %}
 
-    <div class="container-xx text-center text-light fs-2 fst-italic">
+    <div class="container-xl">
 
-        <h1><strong>Ajouter une nouvelle brochure</strong></h1>
+		<div class="m-5" style="border:solid 25px #229296;border-radius:50px;">
 
-    </div>
-    <div class="container">
-        {{ form_start(form) }}
-            {# ... #}
+			<div class="col-12 col-lg-12 bg-light px-lg-5" style="border:solid 25px light;border-radius:25px;">
+				<div class="text-center fs-2 fst-italic" style="width: 800px;color:#11494C;">
+					<p class="">
+						<strong>Ajouter une nouvelle brochure</strong>
+					</p>
+				</div>
 
-            {{ form_row(form.brochure) }}
-            {{ include('admin/_form.html.twig') }}
+                {{ form_start(form) }}
+                    {# ... #}
 
-        {{ form_end(form) }}
-    </div>
+                    {{ form_row(form.brochure) }}
+                    {{ include('admin/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+
+                {{ form_end(form) }}
+
+			</div>
+
+		</div>
+
+        <div class="m-5">
+            <a class="text-decoration-none text-light fs-4 fst-italic py-2 px-3 m-5" style="border:solid 2px #73e0ed;background-color:#229296;border-radius:25px;" href="{{ path('app_main_home') }}">
+                <strong>Retour à l'accueil</strong>
+            </a>
+        </div>
+
+	</div>
 
 {% endblock %}

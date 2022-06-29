@@ -21,7 +21,7 @@ use App\Repository\PostRepository;
 use App\Repository\UserRepository;
 // EMAIL
 use App\Repository\ActionsRepository;
-use Symfony\Component\Form\FormError;
+// use Symfony\Component\Form\FormError;
 use App\Repository\PermanencesRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;

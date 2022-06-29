@@ -12,22 +12,20 @@
 			<div class="col-12 col-lg-12 bg-light px-lg-5" style="border:solid 25px light;border-radius:25px;">
 				<div class="text-center fs-2 fst-italic" style="width: 800px;color:rgb(9, 90, 9);">
 					<p class="">
-						<strong>Nos Actions:</strong>
+						<strong>Nos Actions</strong>
 					</p>
 				</div>
 
 				{{ include('main/_form.html.twig', {'button_label': 'Envoyer'}) }}
 
-				<div>
-
-					<a class="text-decoration-none text-light fs-4 fst-italic p-4" style="background-color:#229296;border-radius:25px;" href="{{ path('app_main_home') }}">
-						<strong>Retour sur la page d'accueil</strong>
-					</a>
-
-				</div>
-
 			</div>
 
+		</div>
+
+		<div class="m-5">
+			<a class="text-decoration-none text-light fs-4 fst-italic py-2 px-3 m-5" style="border:solid 2px #73e0ed;background-color:#229296;border-radius:25px;" href="{{ path('app_main_home') }}">
+				<strong>Retour à l'accueil</strong>
+			</a>
 		</div>
 
 	</div>
