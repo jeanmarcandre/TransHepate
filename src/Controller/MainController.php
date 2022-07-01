@@ -23,6 +23,7 @@ use App\Repository\UserRepository;
 use App\Repository\ActionsRepository;
 // use Symfony\Component\Form\FormError;
 use App\Repository\PermanencesRepository;
+use App\Repository\ProductRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,16 +41,19 @@ class MainController extends AbstractController
 
     /***   ACCUEIL  ***/
     #[Route(path: '/', name: 'home')]
-    public function home(PostRepository $postRepository, ActionsRepository $actionsRepository): Response
+    public function home(PostRepository $postRepository, ProductRepository $productRepository, ActionsRepository $actionsRepository): Response
     {
             $affichageactions = $actionsRepository->find(1)->getContent();
             // dd ($affichageactions);
             // Cette page appellera la vue template/main/nos_actions.html.twig
+            $product = $productRepository->findAll();
+            $lastProduct = array_slice($product,count($product)-3);
 
 
         return $this->render('main/home.html.twig', [
             'posts' => $postRepository->findBy([], ['createdAt' => 'desc']),
-            'affichage' => $affichageactions
+            'affichage' => $affichageactions,
+            'products' => $lastProduct
         ]);
     }
 

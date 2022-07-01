@@ -29,7 +29,7 @@ class ProductType extends AbstractType
                 // in the associated entity, so you can use the PHP constraint classes
                 'constraints' => [
                     new File([
-                        'maxSize' => '2048k',
+                        'maxSize' => '4096k',
                         'mimeTypes' => [
                             'application/pdf',
                             'application/x-pdf',

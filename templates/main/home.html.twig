@@ -681,34 +681,29 @@
 
     <div style="background-color:#3bb3c0;">
         <p class="fs-2 fst-italic pt-4 text-uppercase text-center" style="color:#11494C;"><strong>Nos Actions</strong></p>
-
-        <div class="card-group text-dark fs-5 fst-italic">
-            <div class="card mx-5 bg-light" style="border:solid 5px #11494C;border-radius:25px 25px 0 0;">
-                <img width="80" height="300" src="..." class="card-img-top" style="border-bottom:solid 1px #11494C;border-radius:20px 20px 0 0;" alt="...">
-                <div class="card-body">
-                    <div class="text-lowercase">
+        {% for product in products %}
+        <div class="container text-dark fs-5 fst-italic">
+            <div class="mx-5 bg-light" style="border:solid 5px #11494C;">
+                {# <img width="80" height="300" src="{{ asset('build/champ_fleuri.jpg') }}" class="card-img-top" style="border-bottom:solid 1px #11494C;border-radius:20px 20px 0 0;" alt="..."> #}
+                <div class="w-100 h-100">
+                    <div class="text-center  w-100 h-100" style="background-color:#11494C;">
                         {{ affichage|raw }}
+
                         {# <a href="{{ asset('uploads/brochures/' ~ product.brochureFilename) }}">View brochure</a> #}
+                        <iframe id="inlineFrameExample"
+                            {# title="Inline Frame Example" #}
+                            width="900"
+                            height="1500"
+                            src="{{ asset('uploads/brochures/' ~ product.brochureFilename) }}">
+                        </iframe>
+
                     </div>
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            </div>
-            <div class="card mx-5 bg-light" style="border:solid 5px #11494C;border-radius:25px 25px 0 0;">
-                <img width="80" height="250" src="{{ asset('build/tournesol.jpg') }}" class="card-img-top" style="border-bottom:solid 1px #11494C;border-radius:20px 20px 0 0;" alt="...">
-                <a href="{{ asset('build/Guide-du-futur-transplanté2.pdf') }}"></a>
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    {# <h5 class="card-title">Card title</h5> #}
+                    {# <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> #}
                 </div>
             </div>
-            <div class="card mx-5 bg-light" style="border:solid 5px #11494C;border-radius:25px 25px 0 0;">
-                <img width="80" height="200" src="{{ asset('build/bann3.jpg') }}" class="card-img-top" style="border-bottom:solid 1px #11494C;border-radius:20px 20px 0 0;" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                </div>
-            </div>
+
+            {% endfor %}
         </div>
     </div>
 </div>
