@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Assoc-Transhépate.BFC{% endblock %}
+{% block title %}Ajout Brochures PDF{% endblock %}
 
 {% block body %}
 
@@ -15,13 +15,17 @@
 					</p>
 				</div>
 
-                {{ form_start(form) }}
-                    {# ... #}
+                {% if is_granted('ROLE_ADMIN') %}
+                    {{ form_start(form) }}
+                        {# ... #}
 
-                    {{ form_row(form.brochure) }}
-                    {{ include('admin/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
-
-                {{ form_end(form) }}
+                        {{ form_row(form.brochure) }}
+                        {{ include('admin/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+                            {# <div class="card-footer d-flex d-row justify-content-end p-1">
+                                {{ include('product/_delete_form_product.html.twig') }}
+                            </div> #}
+                    {{ form_end(form) }}
+                {% endif %}
 
 			</div>
 

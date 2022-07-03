@@ -69,7 +69,7 @@
 			<nav class="navbar navbar-expand-lg" style="background-color:rgb(140, 230, 254);">
 				<div class="container-fluid">
 					<a href="{{ path('app_main_home') }}">
-						<img id="logoimg" src="{{ asset('build/logoimg.jpg') }}" alt="TRANSHEPATE" class="px-2 py-1" style="border-radius:15px;height:60px; width: 280px; margin-left: 50px;">
+						<img id="logoimg" src="{{ asset('build/logoimg.jpg') }}" alt="TRANSHEPATE" class="px-2 py-1 opacity-50" style="border-radius:15px;height:60px; width: 280px; margin-left: 50px;">
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
 						<i class="fa fa-list">
@@ -84,9 +84,9 @@
 								<a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 									<strong>Qui sommes-nous</strong>
 								</a>
-								<div class="dropdown-menu bg-success">
+								<div class="dropdown-menu">
 									<a class="dropdown-item" href="https://www.transhepate.org/" target="_blank">La fédération</a>
-									<div class="dropdown-divider"></div>
+									{# <div class="dropdown-divider"></div> #}
 									<a class="dropdown-item" href="https://www.transhepate.org/nos-associations-regionales/" target="_blank">Nos associations régionales</a>
 								</div>
 							</li>
@@ -95,15 +95,15 @@
 								<a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 									<strong>La greffe hépatique</strong>
 								</a>
-								<div class="dropdown-menu bg-success">
+								<div class="dropdown-menu">
 									<a class="dropdown-item" href="https://www.centre-hepato-biliaire.org/transplantation-greffe-foie/bilan-pre-greffe.html" target="_blank">Le bilan pré-greffe</a>
-									<div class="dropdown-divider"></div>
+									{# <div class="dropdown-divider"></div> #}
 									<a class="dropdown-item" href="https://www.centre-hepato-biliaire.org/transplantation-greffe-foie/liste-attente-greffe.html" target="_blank">L'attente de la greffe</a>
-									<div class="dropdown-divider"></div>
+									{# <div class="dropdown-divider"></div> #}
 									<a class="dropdown-item" href="https://www.centre-hepato-biliaire.org/transplantation-greffe-foie/jour-de-la-greffe.html" target="_blank">Le jour de la greffe</a>
-									<div class="dropdown-divider"></div>
+									{# <div class="dropdown-divider"></div> #}
 									<a class="dropdown-item" href="https://www.centre-hepato-biliaire.org/transplantation-greffe-foie/suivi-medical-post-greffe.html" target="_blank">Le suivi après la greffe</a>
-									<div class="dropdown-divider"></div>
+									{# <div class="dropdown-divider"></div> #}
 									<a class="dropdown-item" href="https://www.transhepate.org/les-traitements-immunosuppresseurs/" target="_blank">Les traitements immunosuppresseurs</a>
 								</div>
 							</li>
@@ -119,11 +119,11 @@
 								<a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 									<strong>Nous soutenir</strong>
 								</a>
-								<div class="dropdown-menu bg-success">
+								<div class="dropdown-menu">
 									<a class="dropdown-item" href="{{ path('app_main_helloasso') }}">Je fait un don</a>
-									<div class="dropdown-divider"></div>
+									{# <div class="dropdown-divider"></div> #}
 									<a class="dropdown-item" href="{{ path('app_main_adhesion') }}">J'adhère à TransHépate</a>
-									<div class="dropdown-divider"></div>
+									{# <div class="dropdown-divider"></div> #}
 									<a class="dropdown-item" href="{{ path('app_main_benevole') }}">Je veut devenir bénévole</a>
 								</div>
 							</li>
@@ -132,10 +132,10 @@
 								<a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 									<strong>Contact</strong>
 								</a>
-								<div class="dropdown-menu bg-success" id="mouseover">
+								<div class="dropdown-menu" id="mouseover">
 									<a class="dropdown-item" href="{{ path('app_main_transhepatebfc') }}">Nous contacter</a>
 									{% if is_granted('ROLE_ADMIN') %}
-										<div class="dropdown-divider"></div>
+										{# <div class="dropdown-divider"></div> #}
 										<a class="dropdown-item" href="{{ path('app_main_permanences') }}">Nos permanences</a>
 									{% endif %}
 								</div>
@@ -145,9 +145,9 @@
 								<a class="nav-link dropdown-toggle text-black" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 									<strong>TransHépate Blog</strong>
 								</a>
-								<div class="dropdown-menu bg-success" id="mouseover">
+								<div class="dropdown-menu" id="mouseover">
 									<a class="dropdown-item" href="{{ path('app_blog_index') }}">Accueil</a>
-									<div class="dropdown-divider"></div>
+									{# <div class="dropdown-divider"></div> #}
 
 									{% if app.user %}
 										<a class="dropdown-item" href="{{ path('app_main_logout') }}">Déconnexion
@@ -159,15 +159,15 @@
 										</a>
 									{% endif %}
 									{% if is_granted('ROLE_ADMIN') %}
-										<div class="dropdown-divider"></div>
+										{# <div class="dropdown-divider"></div> #}
 										<a class="dropdown-item" href="{{ path('app_admin_home') }}">Tableau d'administration</a>
 									{% endif %}
 									{% if is_granted('ROLE_ADMIN') %}
-										<div class="dropdown-divider"></div>
+										{# <div class="dropdown-divider"></div> #}
 										<a class="dropdown-item" href="{{ path('app_main_actions') }}">Nos Actions</a>
 									{% endif %}
 									{% if is_granted('ROLE_ADMIN') %}
-										<div class="dropdown-divider"></div>
+										{# <div class="dropdown-divider"></div> #}
 										<a class="dropdown-item" href="{{ path('app_product_new') }}">Nos Brochures</a>
 									{% endif %}
 								</div>

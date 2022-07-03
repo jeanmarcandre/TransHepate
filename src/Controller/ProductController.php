@@ -6,6 +6,7 @@ use App\Entity\Product;
 use App\Form\ProductType;
 use App\Service\FileUploader;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -45,5 +46,15 @@ class ProductController extends AbstractController
         ]);
 
         return $this->redirectToRoute('app_main_home');
+    }
+
+    #[Route('/{id}', name: 'app_product_delete', methods: ['POST'])]
+    public function delete(Request $request, product $product, EntityManagerInterface $entityManager): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$product->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($product);
+            $entityManager->flush();
+        }
+        return $this->redirectToRoute('app_main_home', [], Response::HTTP_SEE_OTHER);
     }
 }
