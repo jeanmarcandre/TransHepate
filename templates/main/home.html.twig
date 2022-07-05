@@ -688,28 +688,29 @@
             {% for product in products %}
             <div class="text-dark fs-5 fst-italic">
                 <div class="">
+                    <div>
+                        <div class="">
+                            <div class="text-center mx-auto" style=";">
+                                {# {{ affichage|raw }} #}
 
-                    <div class="opacity-75">
-                        <div class="text-center mx-auto" style=";">
-                            {# {{ affichage|raw }} #}
-
-                            {# <a href="{{ asset('uploads/brochures/' ~ product.brochureFilename) }}">View brochure</a> #}
-                            <iframe id="inlineFrameExample"
-                                {# title="Inline Frame Example" #}
-                                width="1200"
-                                height="1800"
-                                src="{{ asset('uploads/brochures/' ~ product.brochureFilename) }}">
-                                {% if is_granted('ROLE_ADMIN') %}
-                                    <div class="card-footer d-flex d-row justify-content-end p-1">
-                                        {{ include('product/_delete_form_product.html.twig') }}
-                                    </div>
-                                {% endif %}
-                            </iframe>
+                                {# <a href="{{ asset('uploads/brochures/' ~ product.brochureFilename) }}">View brochure</a> #}
+                                <iframe id="inlineFrameExample"
+                                    {# title="Inline Frame Example" #}
+                                    width="900"
+                                    height="1200"
+                                    src="{{ asset('uploads/brochures/' ~ product.brochureFilename) }}">
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <div class="card-footer d-flex d-row justify-content-end p-1">
+                                            {{ include('product/_delete_form_product.html.twig') }}
+                                        </div>
+                                    {% endif %}
+                                </iframe>
 
 
+                            </div>
+                            {# <h5 class="card-title">Card title</h5> #}
+                            {# <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> #}
                         </div>
-                        {# <h5 class="card-title">Card title</h5> #}
-                        {# <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> #}
                     </div>
                 </div>
             </div>

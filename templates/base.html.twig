@@ -13,13 +13,13 @@
 
 		{# BLOCK CSS #}
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-			{% block stylesheets %}
-		{{ encore_entry_link_tags('app') }}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
 
 		{# BLOCK JS #}
-			{% block javascripts %}
-		{{ encore_entry_script_tags('app') }}
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 
 			<style type="text/css"> ul {
@@ -45,7 +45,7 @@
 			.nav-item .dropdown:hover {
 				background-color: green;
 			}
-		</style>
+			</style>
 
 	</head>
 
@@ -162,10 +162,10 @@
 										{# <div class="dropdown-divider"></div> #}
 										<a class="dropdown-item" href="{{ path('app_admin_home') }}">Tableau d'administration</a>
 									{% endif %}
-									{% if is_granted('ROLE_ADMIN') %}
+									{# {% if is_granted('ROLE_ADMIN') %}
 										{# <div class="dropdown-divider"></div> #}
-										<a class="dropdown-item" href="{{ path('app_main_actions') }}">Nos Actions</a>
-									{% endif %}
+										{# <a class="dropdown-item" href="{{ path('app_main_actions') }}">Nos Actions</a> #}
+									{# {% endif %} #}
 									{% if is_granted('ROLE_ADMIN') %}
 										{# <div class="dropdown-divider"></div> #}
 										<a class="dropdown-item" href="{{ path('app_product_new') }}">Nos Brochures</a>
