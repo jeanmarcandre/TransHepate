@@ -63,9 +63,14 @@ body {
   box-shadow: 0 0 12px 12px #73e0ed inset;
 }
 
+.green {
+  opacity:.8;
+}
+
 #inlineFrameExample{
   border-radius: 50px;
   border: solid 25px (rgb(0,137,45));
+  opacity:.8;
 }
 
 body main {
@@ -394,4 +399,97 @@ header {
 .cke_1 .cke_top {
     background-color: #ced4da!important;
     border-bottom-color: black!important;
+}
+
+/*---------------------------TEST----------------------------*/
+
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #11494c;
+}
+
+.glass {
+  width: 12rem;
+  height: 28rem;
+  border: 0.15rem solid #000;
+  border-radius: 0 0 10% 10%;
+  padding: 1rem;
+  position: relative;
+}
+
+.drink {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(142deg, rgba(255, 242, 0) 30%, rgba(255, 0, 47) 70%);
+  opacity:.8;
+  border-radius: 0 0 10% 10%;
+}
+
+.straw {
+  width: 0.9rem;
+  height: 5rem;
+  background: #fff200;
+  position: absolute;
+  top: -4rem;
+  right: 3rem;
+  transform: rotate(10deg);
+}
+
+.straw:before, .straw:after {
+  content: "";
+  position: absolute;
+  background-color: #fff200;
+  width: 0.9rem;
+}
+
+.straw:before {
+  height: 6rem;
+  top: -5.5rem;
+  left: 1.5rem;
+  transform: rotate(30deg);
+}
+
+.straw:after {
+  height: 10rem;
+  top: -4.75rem;
+  left: -1.5rem;
+}
+
+.ice {
+  width: 4rem;
+  height: 4rem;
+  background: #fff;
+  opacity: 40%;
+  border-radius: 30%;
+  transform: rotate(250deg);
+  position: relative;
+  margin-top: 14rem;
+  margin-left: -3.9rem;
+  box-shadow: 6.5rem 6rem #fff;
+}
+
+.ice:before, .ice:after {
+  content: "";
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  background: #fff;
+  border-radius: 30%;
+}
+
+.ice:before {
+  transform: rotate(30deg);
+  top: 1.5rem;
+  left: 6rem;
+}
+
+.ice:after {
+  transform: rotate(230deg);
+  top: 4.5rem;
+  left: 2rem;
 }

@@ -603,7 +603,7 @@
 
             {# FAIRE UN DON #}
 
-        <div style="background-color: rgb(0,137,45);">
+        <div style="background-color: rgb(0,137,45);" class="green">
             <p class="text-light pt-4 fst-italic fs-2 text-uppercase text-center">
             <span class="line">
                 <i class="fa-solid fa-hand-holding-dollar"></i>
@@ -667,7 +667,7 @@
 
             {# ADHERER #}
 
-        <div style="background-color: rgb(0,137,45);">
+        <div style="background-color: rgb(0,137,45);" class="green">
             <p class="text-light pt-4 fs-2 fst-italic text-uppercase text-center" id="blog-heading">
                 <i class="fa fa-edit"></i>
                 <strong>Adhésion à transhépate bfc</strong>
@@ -679,13 +679,16 @@
 
             {# NOS ACTIONS #}
 
-<div class="container my-5">
-    <p class="fs-2 fst-italic text-uppercase text-center" style="color:white ;"><strong>Nos Actions</strong></p>
+    <div class="mt-5 text-center">
+        <span class="fs-2 px-3 py-3 fst-italic bg-light"
+            style="color:rgb(0,137,45);border:solid 5px rgb(0,137,45);border-radius:25px;">
+            <strong>Nos Actions</strong>
+        </span>
+    </div>
+    {% for product in products %}
     <div>
-
         <div class="my-5 mx-auto" style="border-radius:25px;">
 
-            {% for product in products %}
             <div class="text-dark fs-5 fst-italic">
                 <div class="">
                     <div>
@@ -714,17 +717,15 @@
                     </div>
                 </div>
             </div>
-
-            {% endfor %}
-
         </div>
     </div>
+     {% endfor %}
 </div>
 
 
                 {# DEVENIR BENEVOLE #}
 
-        <div style="background-color: rgb(0,137,45);">
+        <div style="background-color: rgb(0,137,45);" class="green">
             <p class="text-light fs-2 pt-4 fst-italic text-uppercase text-center" id="blog-heading">
                 <i class="fa fa-handshake-angle"></i>
                 <strong>Devenez Bénévole à transhépate bfc</strong>
@@ -733,6 +734,15 @@
                 <a class="btn btn-outline-success text-light fst-italic fs-5 text-uppercase my-4" type="button" style="color: rgb(0,137,45);border-radius:10px;font-weight: bold;" href="{{ path('app_main_benevole') }}">Je deviens bénévole</a>
             </div>
         </div>
+
+    <div class="cont">
+        <div class="glass">
+            <div class="drink">
+                <div class="straw" />
+                <div class="ice" />
+            </div>
+        </div>
+    </div>
 
 
 

@@ -4,16 +4,17 @@
 
 {% block body %}
 
+    <div class="container text-center mt-5 bg-#229296" style="width: 600px;border:solid 5px #229296;border-radius:50px;">
+        <p class="text-center fs-2 fst-italic text-uppercase py-2" style="color:white;">
+            <strong>Ajouter une nouvelle brochure</strong>
+        </p>
+    </div>
+
     <div class="container-xl">
 
 		<div class="m-5" style="border:solid 25px #229296;border-radius:50px;">
 
-			<div class="col-12 col-lg-12 bg-light px-lg-5" style="border:solid 25px light;border-radius:25px;">
-				<div class="text-center fs-2 fst-italic" style="width: 800px;color:#11494C;">
-					<p class="">
-						<strong>Ajouter une nouvelle brochure</strong>
-					</p>
-				</div>
+			<div class="col-12 col-lg-12 bg-light px-lg-5" style="height:350px;border:solid 25px light;border-radius:25px;">
 
                 {% if is_granted('ROLE_ADMIN') %}
                     {{ form_start(form) }}

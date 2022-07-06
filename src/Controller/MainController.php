@@ -47,7 +47,7 @@ class MainController extends AbstractController
             // dd ($affichageactions);
             // Cette page appellera la vue template/main/nos_actions.html.twig
             $product = $productRepository->findAll();
-            $lastProduct = array_slice($product,count($product)-3);
+            $lastProduct = array_slice($product,count($product)-10);
 
 
         return $this->render('main/home.html.twig', [
@@ -113,7 +113,7 @@ class MainController extends AbstractController
     public function benevole(): Response
     {
 
-        // Cette page appellera la vue template/main/benevolen.html.twig
+        // Cette page appellera la vue template/main/benevole.html.twig
         return $this->render('main/benevole.html.twig', []);
     }
 
