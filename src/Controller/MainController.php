@@ -43,16 +43,16 @@ class MainController extends AbstractController
     #[Route(path: '/', name: 'home')]
     public function home(PostRepository $postRepository, ProductRepository $productRepository, ActionsRepository $actionsRepository): Response
     {
-            $affichageactions = $actionsRepository->find(1)->getContent();
+            // $affichageactions = $actionsRepository->find()->getContent();
             // dd ($affichageactions);
             // Cette page appellera la vue template/main/nos_actions.html.twig
             $product = $productRepository->findAll();
-            $lastProduct = array_slice($product,count($product)-10);
+            $lastProduct = array_slice($product,count($product)-2);
 
 
         return $this->render('main/home.html.twig', [
             'posts' => $postRepository->findBy([], ['createdAt' => 'desc']),
-            'affichage' => $affichageactions,
+            // 'affichage' => $affichageactions,
             'products' => $lastProduct
         ]);
     }

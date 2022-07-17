@@ -5,15 +5,16 @@ namespace App\Controller;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+#[Route('/', name: 'app_emails')]
 class MailerController extends AbstractController
 {
     /**
      * @Route("/email")
      */
-    public function sendEmail(MailerInterface $mailer): Response
+    public function sendEmail(MailerInterface $mailer): Void
     {
         $email = (new Email())
             ->from('hello@example.com')
@@ -30,4 +31,13 @@ class MailerController extends AbstractController
 
         // ...
     }
+
+     /**** INSCRIPTION ****/
+     #[Route(path: '/register', name: 'register')]
+     public function register(): Response
+     {
+ 
+         // Cette page appellera la vue template/main/adhesion.html.twig
+         return $this->render('emails/register.html.twig', []);
+     }
 }

@@ -13,7 +13,7 @@
 /node_modules/
 /public/build/
 /public/Brochures/
-/public/uploads/*.pdf
+/public/uploads/
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###

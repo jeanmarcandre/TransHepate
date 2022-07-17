@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TRANSHEPATE BOURGOGNE FRANCHE-COMTEE{% endblock %}
+
+{% block body %}
+
+    <div class="container-xl text-center text-light fs-2 fst-italic text-uppercase mt-5" style="width: 800px;">
+        <p class="fs-1">
+            <strong>Validation de votre compte</strong>
+        </p>
+    </div>
+
+	<div class="container-xl">
+
+		<div class="m-5" style="border:solid 25px #229296;border-radius:50px;">
+
+			<div class="col-12 col-lg-12 bg-light px-lg-5" style="border:solid 25px light;border-radius:25px;">
+
+                <div class="container-sm text-dark text-center">
+                    <h1>activez votre compte</h1>
+                    <p class="fs-3">Bonjour {{ app.user.username }},</p>
+                    <p class="fs-4 text-success">Votre inscription sur le site Transhépate.bfc est à valider en cliquant sur le lien ci-dessous :</p>
+                    <p class="fs-3"><a href="">Envoyez moi un lien de confirmation!</a></p>
+                    <p class="fs-4 text-muted">Ce lien expirera dans 3 heures</p>
+                </div>
+
+			</div>
+
+		</div>
+
+		<div class="m-5">
+			<a class="text-decoration-none text-light fs-4 fst-italic py-2 px-3 m-5" style="border:solid 2px #73e0ed;background-color:#229296;border-radius:25px;" href="{{ path('app_main_home') }}">
+				<strong>Retour à l'accueil</strong>
+			</a>
+		</div>
+
+	</div>
+
+{% endblock %}

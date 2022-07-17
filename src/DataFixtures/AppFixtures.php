@@ -14,7 +14,7 @@ use App\Entity\Comment;
 class AppFixtures extends Fixture
 {
     // configuration des constantes pour la création des éléments
-    private const MAX_USER = 47;
+    private const MAX_USER = 48;
     private const MAX_POST = 100;
     private const MAX_COMMENT = 20;
 
@@ -47,19 +47,19 @@ class AppFixtures extends Fixture
         $users[] = $admin;
 
         // Création d'un compte ROLE_BLOGGER
-        $blogger = new User();
-        $blogger
-            ->setEmail('b@b.fr')
-            ->setUserName('blogger')
-            ->setPassword($this->hasher->hashPassword($blogger, 'Password1*'))
-            ->setRoles(["ROLE_BLOGGER"])
-        ;
-        // On persiste le Blogger
-        $manager->persist($blogger);
-        // On stocke le blogger dans un tableau pour l'attribuer aux publications
-        $user_post[] = $blogger;
-        // On stocke le blogger dans un tableau pour l'attribuer aux publications
-        $users[] = $blogger;
+        // $blogger = new User();
+        // $blogger
+        //     ->setEmail('b@b.fr')
+        //     ->setUserName('blogger')
+        //     ->setPassword($this->hasher->hashPassword($blogger, 'Password1*'))
+        //     ->setRoles(["ROLE_BLOGGER"])
+        // ;
+        // // On persiste le Blogger
+        // $manager->persist($blogger);
+        // // On stocke le blogger dans un tableau pour l'attribuer aux publications
+        // $user_post[] = $blogger;
+        // // On stocke le blogger dans un tableau pour l'attribuer aux publications
+        // $users[] = $blogger;
 
         // Création d'un compte ROLE_USER
         $user = new User();
