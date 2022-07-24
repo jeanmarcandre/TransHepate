@@ -11,12 +11,25 @@ fos_ck_editor:
                 - { name: "styles", items: ['Bold', 'Italic', 'Underline', 'Strike', 'Blockquote',
                  '-', 'Link', '-', 'RemoveFormat', '-', 'NumberedList', 'BulletedList', '-',
                   'Outdent', 'Indent', '-', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
-                  'JustifyBlock', '-', 'Image', 'Table', '-', 'Styles', 'Format','Font','FontSize',
-                  '-', 'TextColor', 'BGColor', 'Source'] }
+                  'JustifyBlock', '-', 'Image', 'Table', 'Smiley', '-', 'Styles', 'Format','Font','FontSize',
+                  '-', 'TextColor', 'BGColor', 'Source', 'Checkbox', 'Preview'] }
 
         general:
             language: fr       # Langue de l'éditeur
-            toolbar: standard  # type de toolbar (basic / standard / full)
+            # toolbar: standard  # type de toolbar (basic / standard / full)
             uicolor: "#adb5bd" # Couleur de fond de l'éditeur
             height: 300px      # hauteur de l'éditeur
-            width: 800px    # largeur de l'éditeur
+            width: 800px       # largeur de l'éditeur
+
+        my_config:
+            toolbar:
+                - { name: "styles", items: ['Bold', 'Italic', 'Underline', 'Strike', 'Blockquote',
+                 '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+                  'JustifyBlock', '-', 'Smiley', '-', 'Styles', 'Format','Font','FontSize',
+                  '-', 'TextColor', 'BGColor'] }
+
+            language: fr       # Langue de l'éditeur
+            # toolbar: basic     # type de toolbar (basic / standard / full)
+            uicolor: "#adb5bd" # Couleur de fond de l'éditeur
+            height: 300px      # hauteur de l'éditeur
+            width: 800px       # largeur de l'éditeur

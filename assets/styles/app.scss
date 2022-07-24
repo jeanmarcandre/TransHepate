@@ -96,16 +96,18 @@ body main {
 }
 
 .dropdown-item {
-  color: white;
+  font-size: 22px;
+  color: black;
   font-weight: bold;
 }
 
 .nav-link, .dropdown-item:hover {
   background-color: rgb(140, 230, 254);
+  color: #fff;
 }
 
 .text-color {
-  color: #053436!important;
+  color: white!important;
   font-weight: bold;
 
 }
@@ -163,7 +165,7 @@ body main {
 }
 
 ul li {
-  color: #0d4111!important;
+  color: black!important;
 }
 
 h5 div a:hover {
@@ -283,10 +285,12 @@ header {
 
 .dropdown-menu {
   background-color: rgb(116, 230, 84);
+  color: #11494c;
 }
 
 .dropdown-menu:hover {
-  background-color: rgb(9, 90, 9);
+  background-color: rgb(116, 230, 84);
+  color: #11494c;
 }
 
 .entete {
@@ -382,13 +386,13 @@ header {
 
 /*---------------------------- CAPTCHA  ---------------------------*/
 
-#container-g-recaptcha .g-recaptcha {
-  transform: scale(0.65)!important;
-  -webkit-transform: scale(0.65)!important;
-  transform-origin: 0 0!important;
-  -webkit-transform-origin: 0 0!important;
-  overflow:hidden /* contexte de formatage */
-}
+// #container-g-recaptcha .g-recaptcha {
+//   transform: scale(0.65)!important;
+//   -webkit-transform: scale(0.65)!important;
+//   transform-origin: 0 0!important;
+//   -webkit-transform-origin: 0 0!important;
+//   overflow:hidden /* contexte de formatage */
+// }
 
 /*---------------------------- CKEDITOR  ---------------------------*/
 

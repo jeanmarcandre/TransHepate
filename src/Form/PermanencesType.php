@@ -14,10 +14,10 @@ class PermanencesType extends AbstractType
     {
         $builder
             ->add('content', CKEditorType::class, [
-                'label' => '',
+                'config_name' => 'main_config',
+                'label' => 'Définissez son contenu',
                 'purify_html' => true,
                 'help' => '',
-                'required' => true
         ])
         ;
     }
@@ -26,6 +26,7 @@ class PermanencesType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Permanences::class,
+            'required' => false,
         ]);
     }
 }
