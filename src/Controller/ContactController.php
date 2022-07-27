@@ -49,18 +49,21 @@ class ContactController extends AbstractController
                     $email
                     ->from($contact->getEmail())
                     ->to('contact.transhepate.bfc@gmail.com')
-                    ->from('jeanmarc.symfony@gmail.com')
+                    ->from('contact@association-transhepate-bfc.org')
                     // ->to('jean.marc.monin21@gmail.com')
                     ->subject('vous avez reçu un email de Contact de ' . $contact->getName())
 
-                    ->text('Son nom : ' . $contact->getName()
+                    ->text('Son IP : '.$_SERVER['REMOTE_ADDR']
+                        . \PHP_EOL
+                        .'Son nom : ' . $contact->getName()
                         . \PHP_EOL
                         . 'Son adresse email : ' . $contact->getEmail()
-                        // . \PHP_EOL
-                        // . 'Son téléphone : ' . $phone
                         . \PHP_EOL
                         . 'Son message : ' . $contact->getContent(), 'text/plain')
-                    ->html('<p>See Twig integration for better HTML integration!</p>');
+                    ->html('Son IP : '.$_SERVER['REMOTE_ADDR'].'<br>'
+                    . 'Son nom : ' . $contact->getName().'<br>'
+                    . 'Son adresse email : ' . $contact->getEmail().'<br>'
+                    . 'Son message : ' . $contact->getContent());
 
             // Envoi de l'email
             $mailer->send($email);
@@ -70,7 +73,7 @@ class ContactController extends AbstractController
             }
 
         return $this->renderForm('main/contact.html.twig', [
-            'form' => $form->createView()
+            'form' => $form
         ]);
     }
 }

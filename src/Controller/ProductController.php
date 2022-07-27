@@ -38,6 +38,7 @@ class ProductController extends AbstractController
                 $entityManager = $doctrine->getManager();
                 $entityManager->persist($product);
                 $entityManager->flush();
+                return $this->redirectToRoute('app_main_home');
                 }
             }
 
@@ -45,7 +46,6 @@ class ProductController extends AbstractController
             'form' => $form,
         ]);
 
-        return $this->redirectToRoute('app_main_home');
     }
 
     #[Route('/{id}', name: 'app_product_delete', methods: ['POST'])]

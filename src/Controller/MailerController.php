@@ -18,14 +18,18 @@ class MailerController extends AbstractController
     {
         $email = (new Email())
             ->from('hello@example.com')
-            ->to('you@example.com')
-            //->cc('cc@example.com')
+            ->to('jean.marc.monin21@gmail.com')
+            ->cc('contact.transhepate.bfc@gmail.com')
             //->bcc('bcc@example.com')
             //->replyTo('fabien@example.com')
             //->priority(Email::PRIORITY_HIGH)
             ->subject('Time for Symfony Mailer!')
             ->text('Lorem ipsum')
-            ->html('<p>Lorem ipsum...</p>');
+            ->html('<p>Lorem ipsum...</p>')
+
+            // attach a file stream
+            ->text(fopen('/path/to/emails/user_signup.txt', 'r'))
+            ->html(fopen('/path/to/emails/user_signup.html', 'r'));
 
         $mailer->send($email);
 

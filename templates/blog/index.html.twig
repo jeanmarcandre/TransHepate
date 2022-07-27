@@ -18,11 +18,11 @@
 
                 <div>
                     <div class="col-12 ps-5">
-                        <p class="fs-5 text-left fst-italic text-dark">Nombre total d'articles : {{ posts_paginate.getTotalItemCount }}</p>
+                        <p class="fs-4 text-left fst-italic text-dark">Nombre total d'articles : {{ posts_paginate.getTotalItemCount }}</p>
                     </div>
                     <div class="col-12 ps-5 mb-3 right">
-                        <a class="fs-5 my-4 px-3 py-1 text-light fst-italic text-decoration-none" style="background-color:#229296;border:solid 2px #229296;border-radius:25px;"
-                        href="{{ path('app_blog_new_post') }}">Créer un nouvel article</a>
+                        <a class="fs-4 my-4 px-3 py-1 text-light fst-italic text-decoration-none" style="background-color:#229296;border:solid 2px #229296;border-radius:15px;"
+                        href="{{ path('app_blog_new_post') }}"><strong>Créer un nouvel article</strong></a>
                     </div>
                 </div>
 
@@ -30,7 +30,7 @@
                 <div class="container-sm">
                     <div class="col-12 text-center">
                         <form class="d-flex" method="GET" action="{{ path('app_main_search') }}">
-                            <input class="form-control me-2" name="search" type="search" placeholder="Trouver une publication" aria-label="Search">
+                            <input class="form-control me-2 fs-5 fst-italic" name="search" type="search" placeholder="Trouver une publication" aria-label="Search">
                             <button class="btn btn-sm btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
@@ -52,8 +52,8 @@
                 {### MENU DE DROITE ###}
 
                 {% if app.user %}
-                  <li class="container nav-item dropdown">
-                      <a  class="nav-link dropdown-toggle text-capitalize"
+                  <li class="container nav-item dropdown fs-3 fst-italic">
+                    <strong><a  class="nav-link2 dropdown-toggle text-capitalize px-5 py-2 text-decoration-none"  style="border-radius:15px;boreder:solid 2px #229296"
                           href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           {% if is_granted('ROLE_ADMIN') %}
                             <i class="fa-solid fa-lg fa-user-shield pe-2"></i>
@@ -61,17 +61,19 @@
                             <i class="fa-regular fa-lg fa-user pe-2"></i>
                           {% endif %}
                           {{ app.user.username }}
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3" aria-labelledby="navbarDarkDropdownMenuLink">
+                      </a></strong>
+                      <div>
+                      <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3" style="background-color:#229296;border-radius:25px;border:solid 2px #229296;" aria-labelledby="navbarDarkDropdownMenuLink">
                       {# Menu de l'interface d'administration #}
                       {# {% if is_granted('ROLE_ADMIN') %}
                         <li><a class="dropdown-item mb-2" href="{{ path('app_admin_home') }}"><i class="fa-solid fa-lg fa-gears pe-3"></i>Administration</a></li>
                         <li><hr class="dropdown-divider"></li>
                       {% endif %} #}
-                        <li><a class="dropdown-item mb-2" href="{{ path('app_main_user_show') }}"><i class="fa-solid fa-lg fa-house-user pe-3"></i>Mon profil</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{ path('app_main_logout') }}"><i class="fas fa-lg fa-sign-out-alt pe-3"></i>Me déconnecter</a></li>
+                        <li><a class="dropdown-item mb-2 fs-5"  style="border-radius:25px;border:solid 2px #229296;" href="{{ path('app_main_user_show') }}"><i class="fa-solid fa-lg fa-house-user pe-3"></i>Mon profil</a></li>
+                        {# <li><hr class="dropdown-divider"></li> #}
+                        <li><a class="dropdown-item fs-5"  style="border-radius:25px;border:solid 2px #229296;" href="{{ path('app_main_logout') }}"><i class="fas fa-lg fa-sign-out-alt pe-3"></i>Me déconnecter</a></li>
                       </ul>
+                      </div>
                   </li>
                 {% else %}
                   <a class="nav-link" href="{{ path('app_main_login') }}"><i class="fas fa-lg fa-sign-in-alt pe-2"></i>Connexion</a>

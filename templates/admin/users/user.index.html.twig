@@ -17,10 +17,10 @@
                 <p class="fs-3 fst-italic text-center text-dark text-title-h1"><strong>Nombre total d'utilisateurs de notre blog : {{ users.getTotalItemCount }}</strong></p>
             </div>
 
-            <table class="table table-hover table-responsive-lg text-center my-4">
+            <table class="table table-hover table-responsive-lg text-center fs-5 my-4">
 
                 <thead>
-                    <tr class="bg-dark text-title-h2">
+                    <tr class="text-title-h2" style="background-color:#11494c;">
                         <th {% if users.isSorted('utilisateurs.username') %} class="sorted" {% endif %}>
                             {{ knp_pagination_sortable(users, 'NOM D\'UTILISATEUR', 'utilisateurs.username') }}
                         </th>

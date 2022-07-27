@@ -1,6 +1,6 @@
 /* IMPORTS */
-$table-hover-bg-factor: .20;
-$table-hover-bg: rgba(#bff, $table-hover-bg-factor);
+$table-hover-bg-factor: .5;
+$table-hover-bg: rgba(rgba(125, 125, 125, 0.5), $table-hover-bg-factor);
 
 @import "app.scss";
 
@@ -12,7 +12,7 @@ $table-hover-bg: rgba(#bff, $table-hover-bg-factor);
 
 #main-admin thead th.sorted a, #main-admin thead th a.sortable {
   text-decoration: none!important;
-  color: #ffb!important;
+  color: rgb(25, 129, 208)!important;
 }
 
 #main-admin tr[data-href]:hover {
