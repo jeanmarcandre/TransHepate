@@ -11,9 +11,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/', name: 'app_emails')]
 class MailerController extends AbstractController
 {
-    /**
-     * @Route("/email")
-     */
+    #[Route('/email', name: 'email')]
+    
     public function sendEmail(MailerInterface $mailer): Void
     {
         $email = (new Email())
@@ -36,12 +35,12 @@ class MailerController extends AbstractController
         // ...
     }
 
-     /**** INSCRIPTION ****/
-     #[Route(path: '/register', name: 'register')]
-     public function register(): Response
-     {
- 
-         // Cette page appellera la vue template/main/adhesion.html.twig
-         return $this->render('emails/register.html.twig', []);
-     }
+    /**** INSCRIPTION ****/
+    #[Route(path: '/register', name: 'register')]
+    public function register(): Response
+    {
+
+        // Cette page appellera la vue template/main/adhesion.html.twig
+        return $this->render('emails/register.html.twig', []);
+    }
 }

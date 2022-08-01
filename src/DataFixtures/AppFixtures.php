@@ -30,10 +30,17 @@ class AppFixtures extends Fixture
 
         // Instance de Faker en localisation Française
         $faker = Faker\Factory::create('fr_FR');
-
+        $lettre = ['a', 'b', 'c', 'd', 'e'];
+        $chiffre = [1, 2, 3, 4, 5];
+        $random_tab =[...$lettre, ...$chiffre];
+        $token = '';
+        for ($i=0; $i < 100 ; $i++) {
+            $token .= strval($random_tab[rand(0, count($random_tab) -1)]);
+        }
         // Création d'un compte ROLE_ADMIN
         $admin = new User();
         $admin
+            ->setResetToken($token)
             ->setEmail('a@a.fr')
             ->setUserName('admin')
             ->setPassword($this->hasher->hashPassword($admin, 'Password1*'))
@@ -63,27 +70,32 @@ class AppFixtures extends Fixture
 
         // Création d'un compte ROLE_USER
         $user = new User();
+        $token = '';
+        for ($i=0; $i < 100 ; $i++) {
+            $token .= strval($random_tab[rand(0, count($random_tab) -1)]);
+        }
         $user
             ->setEmail('c@c.fr')
             ->setUserName('user')
             ->setPassword($this->hasher->hashPassword($user, 'Password1*'))
+            ->setResetToken($token)
         ;
         // On persiste l'utilisateur
         $manager->persist($user);
 
-        // creation de MAX_USER compte aléatoires ROLE_USER
-        for($i=0; $i<self::MAX_USER; $i++) {
-            $user = new User();
-            $user
-                ->setEmail( $faker->email )
-                ->setUsername( $faker->userName )
-                ->setPassword($this->hasher->hashPassword($user, 'Password1*'))
-            ;
-            // On persiste l'utilisateur
-            $manager->persist($user);
-            // on stocke l'utilisateur dans un tableau pour l'utiliser pour les commentaires
-            $users[] = $user;
-        }
+        // // creation de MAX_USER compte aléatoires ROLE_USER
+        // for($i=0; $i<self::MAX_USER; $i++) {
+        //     $user = new User();
+        //     $user
+        //         ->setEmail( $faker->email )
+        //         ->setUsername( $faker->userName )
+        //         ->setPassword($this->hasher->hashPassword($user, 'Password1*'))
+        //     ;
+        //     // On persiste l'utilisateur
+        //     $manager->persist($user);
+        //     // on stocke l'utilisateur dans un tableau pour l'utiliser pour les commentaires
+        //     $users[] = $user;
+        // }
 
         // Création de MAX_POST Publications avec des données aléatoires et des commentaires (entre MAX_COMMENT par publication)
         for ($i=0; $i<self::MAX_POST; $i++) {

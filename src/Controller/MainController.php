@@ -8,10 +8,10 @@ use App\Entity\User;
 
 // Import Post
 use App\Entity\Actions;
-use App\Entity\Permanences;
-// Imports Register
-use App\Form\PermanencesType;
 use App\Form\ActionsType;
+// Imports Register
+use App\Entity\Permanences;
+use App\Form\PermanencesType;
 use App\Form\RegistrationFormType;
 // Import Google Recaptcha
 use App\Repository\PostRepository;
@@ -22,15 +22,17 @@ use App\Repository\UserRepository;
 // EMAIL
 use App\Repository\ActionsRepository;
 // use Symfony\Component\Form\FormError;
-use App\Repository\PermanencesRepository;
 use App\Repository\ProductRepository;
+use App\Repository\PermanencesRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use App\Form\ResetPasswordRequestFormType;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\DependencyInjection\Loader\Configurator\form;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
@@ -40,7 +42,7 @@ class MainController extends AbstractController
 {
 
     /***   ACCUEIL  ***/
-    #[Route(path: '/', name: 'home')]
+    #[Route('/', name: 'home')]
     public function home(PostRepository $postRepository, ProductRepository $productRepository, ActionsRepository $actionsRepository): Response
     {
             // $affichageactions = $actionsRepository->find()->getContent();
@@ -67,7 +69,7 @@ class MainController extends AbstractController
     }
 
     /**** PAGE CONTACT ****/
-    #[Route(path: '/transhepatebfc', name: 'transhepatebfc')]
+    #[Route('/transhepatebfc', name: 'transhepatebfc')]
     public function transhepatebfc(PermanencesRepository $permanencesRepository): Response
     {
         $tableaupermanences = $permanencesRepository->find(1)->getContent();
@@ -82,7 +84,7 @@ class MainController extends AbstractController
 
 
     /**** MENTIONS LEGALES ****/
-    #[Route(path: '/mentions_legales', name: 'mentions_legales')]
+    #[Route('/mentions_legales', name: 'mentions_legales')]
     public function mentions_legales(): Response
     {
 
@@ -91,7 +93,7 @@ class MainController extends AbstractController
     }
 
     /**** HELLOASSO ****/
-    #[Route(path: '/helloasso', name: 'helloasso')]
+    #[Route('/helloasso', name: 'helloasso')]
     public function helloasso(): Response
     {
 
@@ -100,7 +102,7 @@ class MainController extends AbstractController
     }
 
     /**** ADHESIONS ****/
-    #[Route(path: '/adhesion', name: 'adhesion')]
+    #[Route('/adhesion', name: 'adhesion')]
     public function adhesion(): Response
     {
 
@@ -109,7 +111,7 @@ class MainController extends AbstractController
     }
 
     /**** BENEVOLAT ****/
-    #[Route(path: '/benevole', name: 'benevole')]
+    #[Route('/benevole', name: 'benevole')]
     public function benevole(): Response
     {
 
@@ -118,7 +120,7 @@ class MainController extends AbstractController
     }
 
     /****  CONNEXION  ****/
-    #[Route(path: '/connexion', name: 'login')]
+    #[Route('/connexion', name: 'login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
@@ -134,14 +136,25 @@ class MainController extends AbstractController
         return $this->render('main/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
-    #[Route(path: '/deconnexion', name: 'logout')]
+    #[Route('/deconnexion', name: 'logout')]
     public function logout(): void
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 
+    #[Route('/oubli-pass', name:'forgotten_password')]
+    public function forgottenPassword(): Response
+    {
+
+        $form = $this->createForm(ResetPasswordRequestFormType::class);
+
+        return $this->renderForm('security/reset_password_request.html.twig', [
+            'requestPassForm' => $form
+        ]);
+    }
+
     /****  INSCRIPTION  ****/
-    #[Route(path: '/inscription', name: 'register')]
+    #[Route('/inscription', name: 'register')]
     public function register(
         Request $request,
         UserPasswordHasherInterface $userPasswordHasher,
@@ -190,7 +203,7 @@ class MainController extends AbstractController
     }
 
     /****  RECHERCHE  ****/
-    #[Route(path: '/recherche', name: 'search', methods: ['GET'])]
+    #[Route('/recherche', name: 'search', methods: ['GET'])]
     public function search(Request $request, PostRepository $postRepository, PaginatorInterface $paginator): Response
     {
         // Récupération du numéro de la page demangée

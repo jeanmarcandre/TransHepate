@@ -158,14 +158,12 @@
 											<i class="fas fa-sign-in-alt"></i>
 										</a>
 									{% endif %}
+										{# <div class="dropdown-divider"></div> #}
+										<a class="dropdown-item" href="{{ path('app_newsletter_register') }}">Newsletter</a>
 									{% if is_granted('ROLE_ADMIN') %}
 										{# <div class="dropdown-divider"></div> #}
 										<a class="dropdown-item" href="{{ path('app_admin_home') }}">Tableau d'administration</a>
 									{% endif %}
-									{# {% if is_granted('ROLE_ADMIN') %}
-										{# <div class="dropdown-divider"></div> #}
-										{# <a class="dropdown-item" href="{{ path('app_main_actions') }}">Nos Actions</a> #}
-									{# {% endif %} #}
 									{% if is_granted('ROLE_ADMIN') %}
 										{# <div class="dropdown-divider"></div> #}
 										<a class="dropdown-item" href="{{ path('app_product_new') }}">Nos Brochures</a>

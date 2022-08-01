@@ -4,7 +4,7 @@
     action="{{ path('app_product_delete', {'id': product.id}) }}"
     onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce fichier PDF ?');">
 
-    <input type="hidden" name="_token" value="{{ csrf_token('delete_product' ~ product.brochureFilename) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
 
     <button class="btn btn-md btn-warning {{ size|default('') }}">{{ button_label|default('Supprimer') }}<i class="fas fa-trash-alt ps-2"></i></button>
 

@@ -21,7 +21,7 @@
                         <p class="fs-4 text-left fst-italic text-dark">Nombre total d'articles : {{ posts_paginate.getTotalItemCount }}</p>
                     </div>
                     <div class="col-12 ps-5 mb-3 right">
-                        <a class="fs-4 my-4 px-3 py-1 text-light fst-italic text-decoration-none" style="background-color:#229296;border:solid 2px #229296;border-radius:15px;"
+                        <a class="fs-4 my-4 px-3 py-2 fst-italic text-decoration-none nav-link2" style="border-radius:15px;"
                         href="{{ path('app_blog_new_post') }}"><strong>Créer un nouvel article</strong></a>
                     </div>
                 </div>
@@ -33,6 +33,7 @@
                             <input class="form-control me-2 fs-5 fst-italic" name="search" type="search" placeholder="Trouver une publication" aria-label="Search">
                             <button class="btn btn-sm btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
                         </form>
+                        <p class="text-muted fst-italic fs-6">taper un mot clé pour lancer une recherche dans tous les articles</p>
                     </div>
                 </div>
 
@@ -76,7 +77,7 @@
                       </div>
                   </li>
                 {% else %}
-                  <a class="nav-link" href="{{ path('app_main_login') }}"><i class="fas fa-lg fa-sign-in-alt pe-2"></i>Connexion</a>
+                  <a class="nav-link2 text-capitalize px-5 py-2 text-decoration-none fs-4 fst-italic" style="border-radius:15px;" href="{{ path('app_main_login') }}"><i class="fas fa-lg fa-sign-in-alt pe-2"></i><strong>Connexion</strong></a>
                 {% endif %}
 
               </li>

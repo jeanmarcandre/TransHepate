@@ -42,13 +42,15 @@
                 </div>
 
                 <div class="mb-4">
-                    <button class="mt-3 text-light" style="font-size:1.5rem;background-color: rgb(9, 90, 9);
-                        border:solid 2px #229296;border-radius:25px;" type="submit">Valider
+                    <button class="mt-3 px-4 text-light fst-italic" style="font-size:1.5rem;background-color: rgb(9, 90, 9);
+                        border:solid 2px #229296;border-radius:25px;" type="submit"><strong>Valider</strong>
                     </button>
                     <a href="{{ path('app_blog_index') }}" class="mx-4 my-4 px-5 py-1 text-light fst-italic"
                         style="color:lightgrey;font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">
                         <strong>Retour à la liste</strong>
                     </a>
+                    <a href="{{ path('app_main_forgotten_password') }}" class="mx-4 my-4 px-5 py-1 btn btn-warning fst-italic"
+                    style="color:lightgrey;font-size:1.5rem; border:solid 2px #11494C; border-radius:50px;"><strong>Mot de passe oublié</strong></a>
                 </div>
 
                 <span class="fs-5 fst-italic"><strong>Si vous n'avez pas encore de compte, vous pouvez en créer un en cliquant sur ce bouton: </strong></span><a href="{{  path('app_main_register') }}" class="m-3 px-3 py-1 text-light"

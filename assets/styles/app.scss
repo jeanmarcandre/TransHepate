@@ -107,23 +107,39 @@ body main {
 }
 
 .text-color {
-  color: white!important;
+  color: white;
   font-weight: bold;
 
 }
 
 .nav-link2 {
   background-color: #178E94;
-  color: #fff;
+  color: black;
 }
 
 .nav-link2:hover {
   background-color: #3fb618;
-  color: #fff;
+  color: black!important;
 }
 
 .carousel-item {
   background-color: #229296;
+}
+
+.style-form {
+  color: #f9fafc!important;
+  font-size: 1.3rem;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.style-form2 {
+  color: black!important;
+  background-color: white;
+  font-size: 1.3rem!important;
+  font-style: oblique;
+  font-weight: bold;
+  border-radius: 10px;
 }
 
 .client_details {
@@ -144,6 +160,15 @@ body main {
   right: 0;
   width: 100%;
 }
+
+// a .regionale:hover {
+//   text-decoration: none;
+// }
+
+.regionale:hover {
+  color: #d3f6ae!important;
+}
+
 
 .img {
   display: flex;

@@ -16,9 +16,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProductController extends AbstractController
 {
-    /**
-     * @Route("/product/new", name="app_product_new", methods={"GET", "POST"})
-     */
+     #[Route('/product/new', name:'app_product_new', methods:['GET', 'POST'])]
+
     public function new(Request $request, FileUploader $fileUploader, ManagerRegistry $doctrine, ProductRepository $productRepository): Response
     {
         $product = new Product();

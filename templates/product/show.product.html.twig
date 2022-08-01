@@ -87,7 +87,7 @@
                             {# Si l'utilisateur est admin, Affichage de la suppression du commentaire #}
                             {% if is_granted('ROLE_ADMIN') %}
                                 <div class="card-footer d-flex d-row justify-content-end p-1">
-                                    {{ include('blog/_delete_form.comment.html.twig') }}
+                                    {{ include('product/_delete_form_product.html.twig') }}
                                 </div>
                             {% endif %}
 
