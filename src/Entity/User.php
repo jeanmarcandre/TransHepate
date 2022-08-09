@@ -37,6 +37,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string')]
     private $password;
 
+    #[Assert\Type('string')]
     #[ORM\Column(type: 'string', length: 100)]
     private $resetToken;
 

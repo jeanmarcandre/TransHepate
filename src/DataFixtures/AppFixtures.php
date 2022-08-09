@@ -54,19 +54,24 @@ class AppFixtures extends Fixture
         $users[] = $admin;
 
         // Création d'un compte ROLE_BLOGGER
-        // $blogger = new User();
-        // $blogger
-        //     ->setEmail('b@b.fr')
-        //     ->setUserName('blogger')
-        //     ->setPassword($this->hasher->hashPassword($blogger, 'Password1*'))
-        //     ->setRoles(["ROLE_BLOGGER"])
-        // ;
-        // // On persiste le Blogger
-        // $manager->persist($blogger);
-        // // On stocke le blogger dans un tableau pour l'attribuer aux publications
-        // $user_post[] = $blogger;
-        // // On stocke le blogger dans un tableau pour l'attribuer aux publications
-        // $users[] = $blogger;
+        $blogger = new User();
+        $token = '';
+        for ($i=0; $i < 100 ; $i++) {
+            $token .= strval($random_tab[rand(0, count($random_tab) -1)]);
+        }
+        $blogger
+            ->setEmail('b@b.fr')
+            ->setUserName('blogger')
+            ->setPassword($this->hasher->hashPassword($blogger, 'Password1*'))
+            ->setRoles(["ROLE_BLOGGER"])
+            ->setResetToken($token)
+        ;
+        // On persiste le Blogger
+        $manager->persist($blogger);
+        // On stocke le blogger dans un tableau pour l'attribuer aux publications
+        $user_post[] = $blogger;
+        // On stocke le blogger dans un tableau pour l'attribuer aux publications
+        $users[] = $blogger;
 
         // Création d'un compte ROLE_USER
         $user = new User();
@@ -83,19 +88,19 @@ class AppFixtures extends Fixture
         // On persiste l'utilisateur
         $manager->persist($user);
 
-        // // creation de MAX_USER compte aléatoires ROLE_USER
-        // for($i=0; $i<self::MAX_USER; $i++) {
-        //     $user = new User();
-        //     $user
-        //         ->setEmail( $faker->email )
-        //         ->setUsername( $faker->userName )
-        //         ->setPassword($this->hasher->hashPassword($user, 'Password1*'))
-        //     ;
-        //     // On persiste l'utilisateur
-        //     $manager->persist($user);
-        //     // on stocke l'utilisateur dans un tableau pour l'utiliser pour les commentaires
-        //     $users[] = $user;
-        // }
+        // creation de MAX_USER compte aléatoires ROLE_USER
+        for($i=0; $i<self::MAX_USER; $i++) {
+            $user = new User();
+            $user
+                ->setEmail( $faker->email )
+                ->setUsername( $faker->userName )
+                ->setPassword($this->hasher->hashPassword($user, 'Password1*'))
+            ;
+            // On persiste l'utilisateur
+            $manager->persist($user);
+            // on stocke l'utilisateur dans un tableau pour l'utiliser pour les commentaires
+            $users[] = $user;
+        }
 
         // Création de MAX_POST Publications avec des données aléatoires et des commentaires (entre MAX_COMMENT par publication)
         for ($i=0; $i<self::MAX_POST; $i++) {

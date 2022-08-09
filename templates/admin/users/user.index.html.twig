@@ -9,15 +9,15 @@
 
 <div class="container">
 
-    <div class="" style="border:solid 25px #229296;border-radius:50px;">
+    <div class="" style="border:solid 25px #229296;border-radius:50px;margin-bottom:200px;">
 
-        <div class="col-12 col-lg-12 bg-light" style="border:solid 5px light;border-radius:25px;">
+        <div class="col-12 col-lg-12 bg-light px-2 px-lg-5" style="border:solid 5px light;border-radius:25px;">
 
             <div class="col-12">
                 <p class="fs-3 fst-italic text-center text-dark text-title-h1"><strong>Nombre total d'utilisateurs de notre blog : {{ users.getTotalItemCount }}</strong></p>
             </div>
 
-            <table class="table table-hover table-responsive-lg text-center fs-5 my-4">
+            <table class="table table-hover table-responsive-lg text-center fs-5">
 
                 <thead>
                     <tr class="text-title-h2" style="background-color:#11494c;">
@@ -66,7 +66,7 @@
             </table>
 
             {# On affiche le menu de pagination #}
-            <div class="row mt-4 mb-4">
+            <div class="row mt-4">
                 <div class="col-12 text-center">
                     <div class="d-inline-block">
                         {{ knp_pagination_render(users) }}
