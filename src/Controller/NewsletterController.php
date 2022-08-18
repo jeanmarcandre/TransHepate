@@ -28,7 +28,7 @@ class NewsletterController extends AbstractController
         $form = $this->createForm(NewsletterType::class, $newsletter);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {}
 
         $newsletter->setEmail($form->get('email')->getData());
         $entityManager = $doctrine->getManager();
@@ -43,7 +43,7 @@ class NewsletterController extends AbstractController
 
         $newsletterRepository->add($newsletter);
         $this->addFlash('success', 'la Newsletter à bien été envoyée');
-        }
+
 
         return $this->renderForm('newsletter/newsletter.html.twig', [
             'form' => $form,

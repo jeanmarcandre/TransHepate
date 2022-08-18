@@ -111,6 +111,19 @@
         </div>
     </div>
 
+            {# NEWSLETTER #}
+
+    <div style="background-color: rgb(0,137,45);" class="green text-center">
+        <a target="_top" href="https://flamingtext.com/" ><img src="https://blog.flamingtext.com/blog/2022/08/14/flamingtext_com_1660475205_644879598.gif" border="0" alt="Logo Design by FlamingText.com" title="Logo Design by FlamingText.com"></a>
+{# <br/>Logo Design by <a href="https://flamingtext.com/" >FlamingText.com</a> #}
+        <p class="text-light fst-italic fs-5 text-center">Pour vous tenir informer de nos dernières actions !</p>
+        <div class="d-grid gap-2 col-1 mx-auto">
+            <a class="btn btn-outline-success text-light fs-5 fst-italic text-uppercase my-4" type="button" style="color: #0b8b2e;border-radius:15px;font-weight: bold;" href="{{ path('app_main_newsletter') }}">Je m'abonne à la newsletter</a>
+        </div>
+    </div>
+    {# <iframe class="mj-w-res-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/8c6V/NLj" width="100%"></iframe>
+    <script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js"></script> #}
+
 
             {# LISTE DES ASSOCIATIONS REGIONALES #}
 
@@ -539,14 +552,10 @@
 
             {# NOS MISSIONS #}
 
-    <div id="features_section" class="mb-5 content_section white_section bg-color1">
-        <div class="title_banner upper centered">
-            <p class="text-light fst-italic fs-2 text-uppercase text-center">
-            <span class="line">
-                <i class="fa-solid fa-user-doctor"></i>
-            </span>
-            <strong>Nos missions</strong>
-            </p>
+    <div id="features_section" class="mb-5 content_section white_section">
+        <div class="text-center" style="background-color: #11494C;">
+            <a target="_top" href="https://flamingtext.com/" ><img src="https://blog.flamingtext.com/blog/2022/08/14/flamingtext_com_1660473796_644879594.gif" border="0" alt="Logo Design by FlamingText.com" title="Logo Design by FlamingText.com"></a>
+            {# <br/>Logo Design by <a href="https://flamingtext.com/" >FlamingText.com</a> #}
         </div>
         <div class="container icons_spacer">
             <div class="row icon_boxes_con style2 upper_title solid_icon clearfix">
@@ -644,10 +653,8 @@
 
     <div>
         <div class="text-center" style="background-color: rgb(140, 230, 254);">
-            <div class="fs-2 pt-4 fst-italic text-center text-uppercase" style="color:#11494C;">
-                <i class="fa-solid fa-book-open"></i>
-                <strong>Nos brochures</strong>
-            </div>
+            <a target="_top" href="https://flamingtext.com/" ><img src="https://blog.flamingtext.com/blog/2022/08/14/flamingtext_com_1660471150_644879588.gif" border="0" alt="Logo Design by FlamingText.com" title="Logo Design by FlamingText.com"></a>
+{# <br/>Logo Design by <a href="https://flamingtext.com/" >FlamingText.com</a> #}
             <div class="d-flex flex-row">
                 <div class="col-sm-3">
                     <div class="card m-5 p-1" style="border:solid 5px #66dbbe; border-radius:25px 25px 0 0;">
@@ -704,10 +711,9 @@
             {# NOS ACTIONS #}
 
     <div class="mt-5 text-center" style="height:10rem;">
-        <span class="fs-2 px-3 py-3 fst-italic bg-light"
-            style="color:rgb(0,137,45);border:solid 5px rgb(0,137,45);border-radius:25px;">
-            <strong>Nos Actions</strong>
-        </span>
+        <a target="_top" href="https://flamingtext.com/" ><img src="https://blog.flamingtext.com/blog/2022/08/14/flamingtext_com_1660497453_644879604.png" border="0" alt="Logo Design by FlamingText.com" title="Logo Design by FlamingText.com"></a>
+{# <br/>Logo Design by <a href="https://flamingtext.com/" >FlamingText.com</a> #}
+
     </div>
     {% for product in products %}
     <div>
@@ -720,17 +726,20 @@
                             <div class="text-center mx-auto" style=";">
                                 {# {{ affichage|raw }} #}
 
-                                {# <a href="{{ asset('uploads/brochures/' ~ product.brochureFilename) }}">View brochure</a> #}
+                                <a href="{{ asset('uploads/brochures/' ~ product.brochureFilename) }}"
+                                class="my-4 btn btn-success fs-4 fst-italic"
+                                style="border-radius:25px;border:solid 2px rgb(0,137,45);"
+                                target="_blank">Voir en plein écran</a>
                                 <iframe id="inlineFrameExample"
-                                    {# title="Inline Frame Example" #}
+                                    title="Inline Frame Example"
                                     width="900"
                                     height="1200"
                                     src="{{ asset('uploads/brochures/' ~ product.brochureFilename) }}">
-                                    {# {% if is_granted('ROLE_ADMIN') %}
+                                    {% if is_granted('ROLE_ADMIN') %}
                                         <div class="card-footer d-flex d-row justify-content-end p-1">
                                             {{ include('product/_delete_form_product.html.twig') }}
                                         </div>
-                                    {% endif %} #}
+                                    {% endif %}
                                 </iframe>
                                     {% if is_granted('ROLE_ADMIN') %}
                                         <div class="card-footer d-flex d-row justify-content-center p-1">
@@ -763,23 +772,6 @@
                 <a class="btn btn-outline-success text-light fst-italic fs-5 text-uppercase my-4"
                 type="button" style="color: rgb(0,137,45);border-radius:10px;font-weight: bold;"
                 href="{{ path('app_main_benevole') }}">Je deviens bénévole</a>
-            </div>
-        </div>
-
-                {# NEWSLETTER #}
-
-        <div style="background-color: rgb(140, 230, 254);" class="green">
-            <p class="text-dark fs-2 pt-4 fst-italic text-uppercase text-center" id="blog-heading">
-                <i class="bi bi-mailbox"></i>
-                <strong>Inscrivez vous pour recevoir notre Newsletter</strong>
-            </p>
-            <div class="d-grid gap-2 col-1 mx-auto">
-                {# <a class="btn btn-outline-success text-light fst-italic fs-5 text-uppercase my-4"
-                type="button" style="color: rgb(0,137,45);border-radius:10px;font-weight: bold;"</a> #}
-                <a class="btn btn-outline-success text-dark fst-italic fs-5 text-uppercase my-4"
-                type="button" style="color: rgb(0,137,45);border-radius:10px;font-weight: bold;"
-                href="{{ path('app_newsletter_register') }}">Newsletter</a>
-                {{ include('newsletter/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
             </div>
         </div>
 

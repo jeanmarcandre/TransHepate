@@ -1,24 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Newsletter
+{% block title %}Newsletter{% endblock %}
+
+{% block stylesheets %}
+	 {# inclus le block CSS commun #}
+	 {{ parent() }}
+	 {# Insertion du fichier JS dans le block stylesheets #}
+	 {# La documentation de Recaptcha préconise en effet d'intégrer ce fichier JS dans le head #}
+	 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 {% endblock %}
 
 {% block body %}
 
-	<div class="container-xl">
+	<div class="mt-5 text-center">
+        <span class="bg-light fs-2 px-3 py-3 fst-italic text-uppercase"
+            style="color:rgb(0,137,45);border:solid 5px #229296;border-radius:25px;">
+            <strong>Newsletter</strong>
+        </span>
+    </div>
 
-		<div class="m-5" style="border:solid 25px #229296;border-radius:50px;">
+	<div class="container-sm">
 
-			<div class="col-12 col-lg-12 bg-light px-lg-5" style="border:solid 25px light;border-radius:25px;">
-				<div class="text-center fs-2 fst-italic" style="width: 800px;color:rgb(9, 90, 9);">
-					<p class="">
-						<strong>Newsletter</strong>
-					</p>
+		<div class="mt-5" style="border:solid 25px #73e0ed;border-radius:50px;">
+
+			<section class="content_section">
+				<div class="bg-light" style="border-radius:25px;">
+					<iframe
+						class="mj-w-res-iframe d-block"
+						style="background-color:#73e0ed;border-radius:25px 25px 0 0;"
+						frameborder="0"
+						scrolling="no"
+						marginheight="0"
+						marginwidth="0"
+						src="https://app.mailjet.com/widget/iframe/8c6V/NLp"
+						width="100%">
+					</iframe>
+					{# Affichage du recaptcha #}
+					{# <div id="container-g-recaptcha" class="row m-0 p-0"> #}
+
+                        {# La clé publique est récupérée en paramètre dans le fichier config/packages/twig.yaml #}
+                        {# <div class="g-recaptcha col-12" style="background-color:#73e0ed;" data-sitekey="{{ google_recaptcha_site_key }}" data-theme="light" data-size="normal"></div> #}
+
+                        {# <div class="col-6 pt-2">
+                            {# Affichage des erreurs générales du formulaire et donc du Google Recaptcha #}
+                            {# {{ form_errors }} #}
+                        {# </div> #}
+                    {# </div> #}
+					<script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js"></script>
 				</div>
-
-				{{ include('newsletter/_form.html.twig', {'button_label': 'Envoyer'}) }}
-
-			</div>
+			</section>
 
 		</div>
 

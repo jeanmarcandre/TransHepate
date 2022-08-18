@@ -7,20 +7,23 @@
 
 {# Affichage du nombre total (attribut apporté par knp_paginator) #}
 
+<div class="my-5 text-center">
+    <span class="fs-3 px-3 py-1 fst-italic text-light text-uppercase"
+        style="border:solid 5px #73e0ed;border-radius:25px;background-color:#229296">
+        <strong>Nombre total d'utilisateurs de notre blog : {{ users.getTotalItemCount }}</strong>
+    </span>
+</div>
+
 <div class="container">
 
-    <div class="" style="border:solid 25px #229296;border-radius:50px;margin-bottom:200px;">
+    <div class="mb-5" style="border:solid 25px #229296;border-radius:25px;">
 
-        <div class="col-12 col-lg-12 bg-light px-2 px-lg-5" style="border:solid 5px light;border-radius:25px;">
-
-            <div class="col-12">
-                <p class="fs-3 fst-italic text-center text-dark text-title-h1"><strong>Nombre total d'utilisateurs de notre blog : {{ users.getTotalItemCount }}</strong></p>
-            </div>
+        <div class="col-12 col-lg-12 bg-light" style="border:solid 5px light;border-radius:5px;">
 
             <table class="table table-hover table-responsive-lg text-center fs-5">
 
                 <thead>
-                    <tr class="text-title-h2" style="background-color:#11494c;">
+                    <tr class="text-title-h2" style="background-color:#b1b1b1;">
                         <th {% if users.isSorted('utilisateurs.username') %} class="sorted" {% endif %}>
                             {{ knp_pagination_sortable(users, 'NOM D\'UTILISATEUR', 'utilisateurs.username') }}
                         </th>

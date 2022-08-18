@@ -4,18 +4,25 @@
 
 {% block body %}
 
-    <div class="container" style="width: 1400px;height:1000px;border-radius:25px;border:solid 20px #229296;">
+    <div class="container">
 
-        <div class="text-dark bg-light my-5 p-4 d-block w-100">
+    <div class="my-5 text-center">
+        <span class="fs-2 px-3 py-1 fst-italic text-light text-uppercase"
+            style="border:solid 5px #73e0ed;border-radius:25px;background-color:#229296">
+            <strong>Modifier cette publication</strong>
+        </span>
+    </div>
 
-            <h1 class="mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;color:rgb(9, 90, 9);">
-            <strong>Modifier cette publication</strong></h1>
+        <div class="text-dark bg-light my-5 p-4 d-block w-100" style="width: 1000px;height:800px;border-radius:25px;border:solid 25px #229296;">
 
-            {{ include('blog/_form.html.twig', {'button_label': 'Sauvegarder cette publicationn'}) }}
+            {# <h1 class="mx-auto fs-2 text-uppercase fst-italic" style="width: 400px;color:rgb(9, 90, 9);">
+            <strong>Modifier cette publication</strong></h1> #}
+
+            {{ include('blog/_form.html.twig', {'button_label': 'Sauvegarder cette publication'}) }}
 
             {{ include('blog/_delete_form.post.html.twig', {'button_label': 'Supprimer cette publication' ,'size': 'w-100 mb-4'}) }}
 
-            <a href="{{ path('app_blog_show_post', {'slug': post.slug}) }}" class="btn btn-outline-light w-100 mb-3">Annuler</a>
+            <a href="{{ path('app_blog_show_post', {'slug': post.slug}) }}" class="btn btn-danger fs-5 w-10 mx-5 mt-5" style="border:solid 3px black; border-radius:25px;"><strong>Annuler</strong></a>
 
         </div>
 

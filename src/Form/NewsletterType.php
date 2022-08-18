@@ -2,19 +2,33 @@
 
 namespace App\Form;
 
-use App\Entity\Newsletter;
 use Symfony\Component\Form\AbstractType;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
 /* TYPES */
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 class NewsletterType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('prenom', TextType::class, [
+                'label' => 'Votre Prenom  *',
+                'constraints' => [
+                    new NotBlank(['message' => 'Merci de renseigner votre Prénom']),
+                ],
+            ])
+
+            ->add('nom', TextType::class, [
+                'label' => 'Votre Nom  *',
+                'constraints' => [
+                    new NotBlank(['message' => 'Merci de renseigner votre Nom']),
+                ],
+            ])
+
             ->add('email', EmailType::class, [
                 'label' => 'Votre email  *',
                 'constraints' => [
@@ -34,7 +48,7 @@ class NewsletterType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Newsletter::class,
+            // 'data_class' => Newsletter::class,
             'required' => false,
         ]);
     }

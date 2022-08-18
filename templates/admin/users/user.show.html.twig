@@ -6,11 +6,16 @@
 
 <div class="container" style="background-color:#11494C;">
 
+    <div class="my-5 text-center">
+        <span class="fs-2 px-3 py-1 fst-italic text-light text-uppercase"
+            style="border:solid 5px #73e0ed;border-radius:25px;background-color:#229296">
+            <strong>Utilisateur</strong>
+        </span>
+    </div>
+
         <div class="my-5" style="border:solid 25px #229296;border-radius:50px;">
 
-            <div class="bg-light px-lg-5" style="border:solid 15px light;border-radius:25px;">
-
-                <p class="text-decoration-underline fs-1 fst-italic" style="color:#11494C;"><strong>Utilisateur</strong></p>
+            <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 15px light;border-radius:25px;">
 
                 <table class="table fs-5 fst-italic" style="color:#11494C;">
                     <tbody>
@@ -41,24 +46,13 @@
                     </tbody>
                 </table>
 
-                <div class="container-lg text-center">
-                    <a href="{{ path('app_blog_index') }}" class="text-uppercase px-4 py-1 m-5 text-light fst-italic fs-4
-                    text-decoration-none" style="background-color:#178E94;border:3px solid #11494C;border-radius:25px;"><strong>retour à l'accueil</strong></a>
-                </div>
-
-                {% for comment in user.comments %}
-
-                    {# {{ dump(comment.content) }} #}
-
-                {% endfor %}
-
                 {% if is_granted('ROLE_ADMIN') %}
-
-                <a href="{{ path('app_admin_user_index') }}" class="text-uppercase p-2 m-4 text-light
-                text-decoration-none" style="background-color:#178E94;border:3px solid #11494C;border-radius:25px;">retour à la liste</a>
 
                 <a href="{{ path('app_admin_edit', {'id': user.id}) }}" class="text-uppercase p-2 m-4
                 text-light text-decoration-none" style="background-color:#178E94;border:3px solid #11494C;border-radius:25px;">éditer le profil</a>
+
+                <a href="{{ path('app_admin_user_index') }}" class="text-uppercase p-2 m-4 text-light
+                text-decoration-none" style="background-color:#178E94;border:3px solid #11494C;border-radius:25px;">retour à la liste</a>
 
                 {{ include('admin/_delete_form.html.twig') }}
 
@@ -66,6 +60,11 @@
 
             </div>
 
+        </div>
+
+        <div class="container-lg text-center">
+            <a href="{{ path('app_blog_index') }}" class="text-uppercase px-4 py-1 m-5 text-light fst-italic fs-4
+            text-decoration-none" style="background-color:#178E94;border:3px solid #73e0ed;border-radius:25px;"><strong>retour à l'accueil</strong></a>
         </div>
 
 </div>

@@ -2,13 +2,13 @@
 
 {% block title %}Contact{% endblock %}
 
-{# {% block stylesheets %} #}
+{% block stylesheets %}
 	 {# inclus le block CSS commun #}
-	 {#{{ parent() }} #}
+	 {{ parent() }}
 	 {# Insertion du fichier JS dans le block stylesheets #}
-	 {# La documentation de Recaptcha préconise en effet d'intégrer ce fichier JS dans le head
-	 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-{% endblock %}#}
+	 {# La documentation de Recaptcha préconise en effet d'intégrer ce fichier JS dans le head #}
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
 
 {% block body %}
 
@@ -32,17 +32,24 @@
                     {# Affichage du champ Message #}
                     {{ form_row(form.content) }}
 
-                    {# Affichage du recaptcha
-                    <div id="container-g-recaptcha" class="row m-0 p-0">
+                    {# Affichage du recaptcha #}
+                    {# <div id="container-g-recaptcha" class="row ms-5 ps-5 py-3 my-3"> #}
 
                         {# La clé publique est récupérée en paramètre dans le fichier config/packages/twig.yaml #}
                         {# <div class="g-recaptcha col-6" data-sitekey="{{ google_recaptcha_site_key }}" data-theme="dark" data-size="normal"></div> #}
 
-                        <div class="col-6 pt-2">
+                        {# <div class="col-6 pt-2"> #}
                             {# Affichage des erreurs générales du formulaire et donc du Google Recaptcha #}
-                            {{ form_errors(form) }}
-                        </div>
+                            {# {{ form_errors(form) }} #}
+                        {# </div> #}
                     {# </div> #}
+                    {# <form action="?" method="POST">
+                        <div class="g-recaptcha ms-5 ps-5" data-sitekey="6LfiqiMgAAAAAE3Oa654dAydbEN4lUnCwVx_KIsh"></div>
+                        <br/>
+                        {# <input type="submit" value="Submit"> #}
+                    {# </form> #}
+
+                    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
                     <div>
                         <p class="ms-5 ps-5 fs-5 text-muted">"j'ai lu et accepte la politique de confidentialité de ce site"</p></br>
@@ -69,11 +76,10 @@
                 <div>
                     <img src="{{ asset('build/jeluidoitlavie.jpg') }}" class="img-fluid d-block w-100" alt="jeluidoitlavie">
                 </div>
+
+                {{ form_end(form) }}
             </div>
         </div>
     </div>
-
-
-    {{ form_end(form) }}
 
 {% endblock %}

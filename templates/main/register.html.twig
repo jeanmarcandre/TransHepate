@@ -14,14 +14,18 @@
 
     <div class="container px-5 mt-5">
 
+    <div class="my-5 text-center">
+        <span class="fs-2 px-3 py-1 fst-italic text-light text-uppercase"
+            style="border:solid 5px #73e0ed;border-radius:25px;background-color:#229296">
+            <strong>Inscrivez-vous</strong>
+        </span>
+    </div>
+
         <div class="text-dark bg-light my-5 p-4 d-block w-100" style="border-radius:25px;border:solid 25px #229296">
 
-            <div style="border-radius:15px;">
+            {# <div style="border-radius:15px;"> #}
 
-            <h1 class="mb-3 font-weight-normal mx-auto fs-2 text-uppercase fst-italic text-center"
-            style="width: 500px;color: rgb(9, 90, 9);"><strong>Inscrivez-vous:</strong></h1>
-
-            <div class="fs-6" style="color: rgb(9, 90, 9);"><strong>
+            <div class="fs-6" style="color: #095a09;border:solid 15px light;border-radius:25px;"><strong>
 
                 {{ form_start(registrationForm) }}
 
@@ -31,6 +35,18 @@
 
                     {{ form_row(registrationForm.plainPassword, {
                     label: 'Mot de passe'}) }}</strong>
+
+                    {# Affichage du recaptcha #}
+                    {# <div id="container-g-recaptcha" class="row ms-5 ps-5 py-3 my-3"> #}
+
+                        {# La clé publique est récupérée en paramètre dans le fichier config/packages/twig.yaml #}
+                        {# <div class="g-recaptcha col-6" data-sitekey="{{ google_recaptcha_site_key }}" data-theme="dark" data-size="normal"></div> #}
+
+                        {# <div class="col-6 pt-2"> #}
+                            {# Affichage des erreurs générales du formulaire et donc du Google Recaptcha #}
+                            {# {{ form_errors(form) }} #}
+                        {# </div> #}
+                    {# </div> #}
 
                     <button type="submit" class="mx-4 my-3 px-3 text-light fst-italic"
                     style="color:lightgrey;font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">

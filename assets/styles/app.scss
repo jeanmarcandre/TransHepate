@@ -9,8 +9,8 @@
 
 // $body-bg: #0e1e2e !default;
 
-$navbar-dark-color:       rgba(#fff, .90) !default;
-$navbar-dark-hover-color: #ffb !default;
+// $navbar-dark-color:       rgba(#fff, .90) !default;
+// $navbar-dark-hover-color: #ffb !default;
 
 // // Components
 // $border-radius:    5px !default;
@@ -48,8 +48,6 @@ $navbar-dark-hover-color: #ffb !default;
 
 body {
   background-color: #11494C!important;
-  // height: 100%;
-  // overflow-x: hidden;
 }
 
 .textarea {
@@ -69,7 +67,7 @@ body {
 
 #inlineFrameExample{
   border-radius: 50px;
-  border: solid 25px (rgb(0,137,45));
+  border: solid 25px #00892d;
   opacity:.8;
 }
 
@@ -81,6 +79,11 @@ body main {
 //   width: auto;
 //   height: auto;
 // }
+
+.color:hover {
+  color: #ffb!important;
+  border-radius: 15px;
+}
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
@@ -205,6 +208,7 @@ ul li {
 
 h5 div a:hover {
   background-color: #97fa3b!important;
+  color: #fff!important;
 }
 
 div .text-decoration-none:hover {
@@ -256,7 +260,7 @@ div .text-decoration-none:hover {
 }
 
 .icon-circle {
-  background-color: rgb(24, 42, 30);
+  background-color: rgb(16, 180, 71);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -404,7 +408,7 @@ header {
 
  .page-item .page-link {
     background-color: #b6e3e5!important;
-    border:solid 2px lightslategrey!important;
+    border:solid 2px rgba(0, 0, 0, 0.328)!important;
     border-radius: 10px;
     color: black;
     font-size: 16px;
@@ -413,7 +417,7 @@ header {
 }
 
 .page-item .page-link:hover {
-    background-color: lightslategrey!important;
+    background-color: rgba(0, 0, 0, 0.328)!important;
 }
 
 .page-item .page-link:focus, .page-item .page-link.focus {

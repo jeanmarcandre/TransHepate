@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use \Mailjet\Resources;
+use App\Form\NewsletterType;
 use Symfony\Component\Mime\Email;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -43,4 +46,48 @@ class MailerController extends AbstractController
         // Cette page appellera la vue template/main/adhesion.html.twig
         return $this->render('emails/register.html.twig', []);
     }
+
+    /**** NEWSLETTER ****/
+    // #[Route('/newsletter', name: 'newsletter')]
+
+    // public function newsletter(Request $request): Response
+    // {
+    //     $mj = new \Mailjet\Client(getenv('MJ_APIKEY_PUBLIC'), getenv('MJ_APIKEY_PRIVATE'),true,['version' => 'v3.1']);
+    //     $form = $this->createForm(NewsletterType::class);
+    //     $form->handleRequest($request);
+
+    //     /****  Première vérification à la soummission du formulaire pour vérifier si le Google Recaptcha est correctement validé  ****/
+    //     if ($form->isSubmitted() && $form->isValid()) {
+    //         $prenom = $form->get('prenom')->getData();
+    //         $nom = $form->get('nom')->getData();
+    //             $body = [
+    //               'Messages' => [
+    //                 [
+    //                   'From' => [
+    //                     'Email' => "contact@association-transhepate-bfc.org",
+    //                     'Name' => "test"
+    //                   ],
+    //                   'To' => [
+    //                     [
+    //                       'Email' => "jean.marc.monin@gmail.com",
+    //                       'Name' => "passenger 1"
+    //                     ]
+    //                   ],
+    //                   'TemplateID' => 4123204,
+    //                   'TemplateLanguage' => true,
+    //                 //   'Subject' => "[[data:prénom:""]][[data:nom:""]]",
+    //                   'Variables' => ['prenom'=> $prenom, 'nom'=> $nom]
+    //                 ]
+    //               ]
+    //             ];
+    //             $response = $mj->post(Resources::$Email, ['body' => $body]);
+    //             // dd($response->getData());
+
+
+    //     }
+    //     return $this->renderForm('newsletter/newsletter.html.twig', [
+    //         'form' => $form
+    //     ]);
+    // }
+
 }

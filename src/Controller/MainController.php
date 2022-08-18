@@ -12,16 +12,15 @@ use App\Form\ActionsType;
 // Imports Register
 use App\Entity\Permanences;
 use App\Form\PermanencesType;
-use Doctrine\ORM\EntityManager;
 // Import Google Recaptcha
 use App\Service\SendMailService;
-// use App\Recaptcha\RecaptchaValidator;
 
 // PAGINATOR
 use App\Form\RegistrationFormType;
 // EMAIL
+use App\Recaptcha\RecaptchaValidator;
 use App\Repository\PostRepository;
-// use Symfony\Component\Form\FormError;
+use Symfony\Component\Form\FormError;
 use App\Repository\UserRepository;
 use App\Form\ResetPasswordFormType;
 use App\Repository\ActionsRepository;
@@ -37,10 +36,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\DependencyInjection\Loader\Configurator\form;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
+use Symfony\Flex\Recipe;
 
 #[Route('/', name: 'app_main_')]
 class MainController extends AbstractController
@@ -85,7 +84,13 @@ class MainController extends AbstractController
         ]);
     }
 
-
+    /**** REGLES DU BLOG ****/
+    #[Route('/regles_blog', name: 'regles_blog')]
+    public function regles_blog(): Response
+    {
+        // Cette page appellera la vue template/blog/regles_blog.html.twig
+        return $this->render('blog/regles_blog.html.twig', []);
+    }
 
 
     /**** MENTIONS LEGALES ****/
@@ -115,6 +120,15 @@ class MainController extends AbstractController
         return $this->render('main/adhesion.html.twig', []);
     }
 
+    /**** NEWSLETTER ****/
+    #[Route('/newsletter', name: 'newsletter')]
+    public function newsletter(): Response
+    {
+
+        // Cette page appellera la vue template/main/newsletter.html.twig
+        return $this->render('newsletter/newsletter.html.twig', []);
+    }
+
     /**** BENEVOLAT ****/
     #[Route('/benevole', name: 'benevole')]
     public function benevole(): Response
@@ -130,7 +144,7 @@ class MainController extends AbstractController
     {
         if ($this->getUser()) {
             $this->addFlash('warning', 'Vous êtes déjà connecté');
-            return $this->redirectToRoute('app_main_home');
+            return $this->redirectToRoute('app_blog_index');
         }
 
         // get the login error if there is one
@@ -246,6 +260,7 @@ class MainController extends AbstractController
     /****  INSCRIPTION  ****/
     #[Route('/inscription', name: 'register')]
     public function register(
+        // RecaptchaValidator $recaptchaValidator,
         Request $request,
         UserPasswordHasherInterface $userPasswordHasher,
         UserRepository $userRepository,
@@ -260,16 +275,16 @@ class MainController extends AbstractController
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()) {
+        /****  Première vérification à la soummission du formulaire pour vérifier si le Google Recaptcha est correctement validé  ****/
+        if ($form->isSubmitted() && $form->isValid()) {
 
             // $recaptchaResponse = $request->request->get('g-recaptcha-response', null);
             // dd ($recaptchaResponse);
-            // if ($recaptchaResponse == null || !$recaptcha->verify( $recaptchaResponse, $request->server->get('REMOTE_ADDR') )){
+            // if (!$recaptchaValidator->verify( $recaptchaResponse, $request->server->get('REMOTE_ADDR') )){
 
-            //     $form->addError(new FormError('Le Captcha doit être validé !'));
+                // $form->addError(new FormError('Le Captcha doit être validé !'));
             // }
-
-            if ($form->isValid()) {
+            // else {
 
                 // encode the plain password
                 $token = $tokenGenerator->generateToken();
@@ -288,7 +303,7 @@ class MainController extends AbstractController
 
                 return $this->redirectToRoute('app_main_login');
             }
-        }
+        // }
 
         return $this->renderForm('main/register.html.twig', [
             'registrationForm' => $form,
