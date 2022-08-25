@@ -32,24 +32,8 @@
                     {# Affichage du champ Message #}
                     {{ form_row(form.content) }}
 
-                    {# Affichage du recaptcha #}
-                    {# <div id="container-g-recaptcha" class="row ms-5 ps-5 py-3 my-3"> #}
-
-                        {# La clé publique est récupérée en paramètre dans le fichier config/packages/twig.yaml #}
-                        {# <div class="g-recaptcha col-6" data-sitekey="{{ google_recaptcha_site_key }}" data-theme="dark" data-size="normal"></div> #}
-
-                        {# <div class="col-6 pt-2"> #}
-                            {# Affichage des erreurs générales du formulaire et donc du Google Recaptcha #}
-                            {# {{ form_errors(form) }} #}
-                        {# </div> #}
-                    {# </div> #}
-                    {# <form action="?" method="POST">
-                        <div class="g-recaptcha ms-5 ps-5" data-sitekey="6LfiqiMgAAAAAE3Oa654dAydbEN4lUnCwVx_KIsh"></div>
-                        <br/>
-                        {# <input type="submit" value="Submit"> #}
-                    {# </form> #}
-
-                    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+                    {{ form_row(form.captcha) }}
+                    {{ form_errors(form.captcha) }}
 
                     <div>
                         <p class="ms-5 ps-5 fs-5 text-muted">"j'ai lu et accepte la politique de confidentialité de ce site"</p></br>

@@ -53,7 +53,7 @@ class MainController extends AbstractController
             // dd ($affichageactions);
             // Cette page appellera la vue template/main/nos_actions.html.twig
             $product = $productRepository->findAll();
-            $lastProduct = array_slice($product,count($product)-2);
+            $lastProduct = array_slice($product,count($product)-3);
 
 
         return $this->render('main/home.html.twig', [
@@ -277,6 +277,13 @@ class MainController extends AbstractController
 
         /****  Première vérification à la soummission du formulaire pour vérifier si le Google Recaptcha est correctement validé  ****/
         if ($form->isSubmitted() && $form->isValid()) {
+            // dd('Formulaire valide c\'est super !');
+
+            if(!empty($response) && !is_null($response))
+            {
+                $data = json_decode($response);
+                if($data->success);
+            }
 
             // $recaptchaResponse = $request->request->get('g-recaptcha-response', null);
             // dd ($recaptchaResponse);

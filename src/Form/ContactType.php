@@ -12,11 +12,10 @@ use Symfony\Component\Validator\Constraints\Length;
 /* CONSTRAINTS */
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-
+use VictorPrdh\RecaptchaBundle\Form\ReCaptchaType;
 
 class ContactType extends AbstractType
 {
@@ -58,6 +57,8 @@ class ContactType extends AbstractType
                     ]),
                 ],
             ])
+
+            ->add('captcha', ReCaptchaType::class)
         ;
     }
 

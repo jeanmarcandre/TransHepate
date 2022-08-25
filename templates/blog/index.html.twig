@@ -6,12 +6,12 @@
 
     <div class="container">
 
-    <div class="my-5 text-center">
-        <span class="fs-2 px-3 py-1 fst-italic text-light text-uppercase"
-            style="border:solid 5px #73e0ed;border-radius:25px;background-color:#229296">
-            <strong>Nos Derniers Articles</strong>
-        </span>
-    </div>
+        <div class="my-5 text-center">
+            <span class="fs-2 px-3 py-1 fst-italic text-light text-uppercase"
+                style="border:solid 5px #73e0ed;border-radius:25px;background-color:#229296">
+                <strong>Nos Derniers Articles</strong>
+            </span>
+        </div>
 
         <div class="mt-5"  style="border:solid 25px #229296;border-radius:50px;">
 
@@ -50,41 +50,51 @@
                     </div>
                 </div>
 
-                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-              <li class="nav-item">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item">
 
-                {### MENU DE DROITE ###}
+                    {### MENU DE DROITE ###}
 
-                {% if app.user %}
-                  <li class="container nav-item dropdown fs-3 fst-italic">
-                    <strong><a  class="nav-link2 dropdown-toggle text-capitalize px-5 py-2 text-decoration-none"  style="border-radius:15px;boreder:solid 2px #229296"
-                          href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          {% if is_granted('ROLE_ADMIN') %}
-                            <i class="fa-solid fa-lg fa-user-shield pe-2"></i>
-                          {% else %}
-                            <i class="fa-regular fa-lg fa-user pe-2"></i>
-                          {% endif %}
-                          {{ app.user.username }}
-                      </a></strong>
-                      <div>
-                      <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3" style="background-color:#229296;border-radius:25px;border:solid 2px #229296;" aria-labelledby="navbarDarkDropdownMenuLink">
-                      {# Menu de l'interface d'administration #}
-                      {# {% if is_granted('ROLE_ADMIN') %}
-                        <li><a class="dropdown-item mb-2" href="{{ path('app_admin_home') }}"><i class="fa-solid fa-lg fa-gears pe-3"></i>Administration</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                      {% endif %} #}
-                        <li><a class="dropdown-item mb-2 fs-5"  style="border-radius:25px;border:solid 2px #229296;" href="{{ path('app_main_user_show') }}"><i class="fa-solid fa-lg fa-house-user pe-3"></i>Mon profil</a></li>
-                        {# <li><hr class="dropdown-divider"></li> #}
-                        <li><a class="dropdown-item fs-5"  style="border-radius:25px;border:solid 2px #229296;" href="{{ path('app_main_logout') }}"><i class="fas fa-lg fa-sign-out-alt pe-3"></i>Me déconnecter</a></li>
-                      </ul>
-                      </div>
-                  </li>
-                {% else %}
-                  <a class="nav-link2 text-capitalize px-5 py-2 text-decoration-none fs-4 fst-italic" style="border-radius:15px;" href="{{ path('app_main_login') }}"><i class="fas fa-lg fa-sign-in-alt pe-2"></i><strong>Connexion</strong></a>
-                {% endif %}
+                    {% if app.user %}
+                        <li class="container nav-item dropdown fs-3 fst-italic">
+                            <strong><a  class="nav-link2 dropdown-toggle text-capitalize px-5 py-2 text-decoration-none"  style="border-radius:15px;boreder:solid 2px #229296"
+                            href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <i class="fa-solid fa-lg fa-user-shield pe-2"></i>
+                            {% else %}
+                                <i class="fa-regular fa-lg fa-user pe-2"></i>
+                            {% endif %}
+                            {{ app.user.username }}
+                            </a></strong>
+                            <div>
+                                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3"
+                                    style="background-color:#229296;border-radius:25px;border:solid 2px #229296;"
+                                    aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <li>
+                                        <a class="dropdown-item mb-2 fs-4 text-black"
+                                            style="border-radius:25px;border:solid 2px #229296;"
+                                            href="{{ path('app_main_user_show') }}">
+                                            <i class="fa-solid fa-lg fa-house-user pe-3"></i>
+                                            <strong>Mon profil</strong>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item fs-4 text-black"
+                                            style="border-radius:25px;border:solid 2px #229296;"
+                                            href="{{ path('app_main_logout') }}">
+                                            <i class="fas fa-lg fa-sign-out-alt pe-3"></i>
+                                            <strong>Me déconnecter</strong>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    {% else %}
+                    <a class="nav-link2 text-capitalize px-5 py-2 text-decoration-none fs-4 fst-italic" style="border-radius:15px;" href="{{ path('app_main_login') }}"><i class="fas fa-lg fa-sign-in-alt pe-2"></i><strong>Connexion</strong></a>
+                    {% endif %}
 
-              </li>
-            </ul>
+                    </li>
+                </ul>
 
                 {### AFFICHAGE DES PUBLICATIONS ###}
 

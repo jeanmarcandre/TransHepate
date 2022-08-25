@@ -15,48 +15,56 @@
 
         <div class="my-5" style="border:solid 25px #229296;border-radius:50px;">
 
-            <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 15px light;border-radius:25px;">
+            <div class="container bg-light" style="border-radius:25px; height:210px;">
 
-                <table class="table fs-5 fst-italic" style="color:#11494C;">
-                    <tbody>
-                        <tr>
-                            <th>Email : </th>
-                            <td>{{ user.email }}</td>
-                        </tr>
-                        <tr>
-                            <th>Nom :</th>
-                            <td>{{ user.username }}</td>
-                        </tr>
-                        <tr>
-                            <th>Roles :</th>
-                            {% if (user.roles|json_encode == '["ROLE_USER"]') %}
-                            <td>utilisateur</td>
-                            {% else %}
-                            <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                            {% endif %}
-                        </tr>
-                        <tr>
-                            <th>Créé-le :</th>
-                            <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                        </tr>
-                        <tr>
-                            <th>Modifié-le :</th>
-                            <td>{{ user.updatedAt ? user.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div>
 
-                {% if is_granted('ROLE_ADMIN') %}
+                    <table class="container-sm fs-5 fst-italic px-5" style="color:#000;">
+                        <tbody class="border-end-5"><br>
+                            <tr class="space">
+                                <th>Email : </th>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            <tr class="space">
+                                <th>Nom :</th>
+                                <td>{{ user.username }}</td>
+                            </tr>
+                            <tr class="space">
+                                <th>Roles :</th>
+                                {% if (user.roles|json_encode == '["ROLE_USER"]') %}
+                                <td>utilisateur</td>
+                                {% else %}
+                                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                                {% endif %}
+                            </tr>
+                            <tr class="space">
+                                <th>Créé-le :</th>
+                                <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                            </tr>
+                            <tr class="space">
+                                <th>Modifié-le :</th>
+                                <td>{{ user.updatedAt ? user.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <a href="{{ path('app_admin_edit', {'id': user.id}) }}" class="text-uppercase p-2 m-4
-                text-light text-decoration-none" style="background-color:#178E94;border:3px solid #11494C;border-radius:25px;">éditer le profil</a>
+                    {% if is_granted('ROLE_ADMIN') %}
 
-                <a href="{{ path('app_admin_user_index') }}" class="text-uppercase p-2 m-4 text-light
-                text-decoration-none" style="background-color:#178E94;border:3px solid #11494C;border-radius:25px;">retour à la liste</a>
+                    <div class="container mt-4">
 
-                {{ include('admin/_delete_form.html.twig') }}
+                    <a href="{{ path('app_admin_edit', {'id': user.id}) }}" class="text-uppercase p-2 m-4
+                    text-light text-decoration-none" style="background-color:#178E94;border:3px solid #11494C;border-radius:25px;">éditer le profil</a>
 
-                {% endif %}
+                    <a href="{{ path('app_admin_user_index') }}" class="text-uppercase p-2 m-4 text-light
+                    text-decoration-none" style="background-color:#178E94;border:3px solid #11494C;border-radius:25px;">retour à la liste</a>
+
+                    {{ include('admin/_delete_form.html.twig') }}
+
+                    {% endif %}
+
+                    </div>
+
+                </div>
 
             </div>
 

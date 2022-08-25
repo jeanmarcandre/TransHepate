@@ -2,13 +2,12 @@
 
 namespace App\Controller;
 
+use Mailjet\Config;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use Symfony\Component\Mime\Email;
-use App\Recaptcha\RecaptchaValidator;
 use Symfony\Component\Form\FormError;
 use Doctrine\Persistence\ManagerRegistry;
-use Mailjet\Config;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,24 +30,21 @@ class ContactController extends AbstractController
         // RecaptchaValidator $recaptchaValidator
         ): Response
     {
-        // $datagoogle_recaptcha = getenv('GOOGLE_RECAPTCHA_SITE_KEY');
-
-
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
         /****  Première vérification à la soummission du formulaire pour vérifier si le Google Recaptcha est correctement validé  ****/
         if ($form->isSubmitted() && $form->isValid()) {
+            // dd('Formulaire valide c\'est super !');
 
-            // $recaptchaResponse = $request->request->get('g-recaptcha-response', null);
-            // dd ($recaptchaResponse);
-            // if (!$recaptchaValidator->verify( $recaptchaResponse, $request->server->get('REMOTE_ADDR') )){
+            if(!empty($response) && !is_null($response))
+            {
+                $data = json_decode($response);
+                if($data->success);
+            }
 
-                // $form->addError(new FormError('Le Captcha doit être validé !'));
-            // }
-            // else {
-
+                {
                 // Récupération des données dans le formulaire sous-forme de tableau
                 $contact->setContent($form->get('content')->getData());
                 $contact->setName($form->get('name')->getData());
@@ -85,10 +81,9 @@ class ContactController extends AbstractController
             return $this->redirectToRoute('app_main_transhepatebfc', [], Response::HTTP_SEE_OTHER);
             }
 
-        // }
+        }
         return $this->renderForm('main/contact.html.twig', [
             'form' => $form,
-            // 'google_recaptcha_site_key' => $datagoogle_recaptcha
         ]);
     }
 }
