@@ -6,16 +6,15 @@
 
     <div class="container">
 
-    <div class="my-5 text-center">
-        <span class="fs-2 px-3 py-1 fst-italic text-light text-uppercase"
-            style="border:solid 5px #73e0ed;border-radius:25px;background-color:#229296">
-            <strong>Veuillez-vous connecter</strong>
-        </span>
-    </div>
+        <div class="titre">
+            <span class="titre2">
+                <strong>Veuillez-vous connecter</strong>
+            </span>
+        </div>
 
-        <div class="mt-5"  style="border:solid 25px #229296;border-radius:50px;margin-bottom:100px;">
+        <div class="cadre">
 
-            <div class="col-12 col-lg-12 bg-light px-2 px-lg-5" style="border:solid 5px light;border-radius:25px;">
+            <div class="cadre2">
 
 
                 <form method="post" class="text-dark bg-light p-4 d-block w-100">
@@ -29,9 +28,9 @@
                 </div>
                 {% endif %}
 
-                <label for="inputEmail" class="fs-4 fst-italic"><strong>Email</strong></label>
+                <label for="inputEmail" class="formulaire"><strong>Email *</strong></label>
                 <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-                <label for="inputPassword" class="fs-4 fst-italic"><strong>Mot de passe</strong></label>
+                <label for="inputPassword" class="formulaire"><strong>Mot de passe *</strong></label>
                 <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
                 <input type="hidden" name="_csrf_token"
@@ -42,33 +41,32 @@
                 See https://symfony.com/doc/current/security/remember_me.html #}
 
                 <div class="checkbox mb-3">
-                    <label>
+                    <label class="text-muted fs-5">
                         <input type="checkbox" name="_remember_me"> Se souvenir de moi
                     </label>
+                    <p class="text-muted fs-5">(* champs obligatoires )</p>
                 </div>
 
                 <div class="mb-4">
-                    <button class="mt-3 px-4 text-light fst-italic" style="font-size:1.5rem;background-color: rgb(9, 90, 9);
-                        border:solid 2px #229296;border-radius:25px;" type="submit"><strong>Valider</strong>
+                    <button class="inscription-valid btn btn-success" type="submit"><strong>Valider</strong>
                     </button>
-                    <a href="{{ path('app_main_forgotten_password') }}" class="mx-4 my-4 px-5 py-1 btn btn-warning fst-italic"
-                    style="color:lightgrey;font-size:1.5rem; border:solid 3px #229296; border-radius:50px;"><strong>Mot de passe oublié</strong></a>
+                    <a href="{{ path('app_main_forgotten_password') }}"
+                      class="inscription-oubli btn btn-warning"><strong>Mot de passe oublié</strong>
+                    </a>
                 </div>
 
-                <span class="fs-5 fst-italic">
+                <span class="formulaire">
                     <strong>Si vous n'avez pas encore de compte, vous pouvez en créer un en cliquant sur ce bouton: </strong>
                 </span>
-                <a href="{{  path('app_main_register') }}" class="m-3 px-3 py-1 text-light text-decoration-none fst-italic"
-                    style="font-size:1.5rem;background-color: #11494C;border-radius:50px; border:solid 2px #229296;">
-                    <strong>cliquez-ici</strong>
+                <a href="{{  path('app_main_register') }}" class="inscription-login btn btn-primary">
+                    <strong>Inscription</strong>
                 </a>
 
             </div>
 
         </div>
 
-        <a href="{{ path('app_blog_index') }}" class="px-3 py-2 mb-5 text-light fst-italic text-decoration-none fs-4"
-            style="color:lightgrey;background-color:#229296;border-radius:50px;border:solid 3px #73e0ed;">
+        <a href="{{ path('app_blog_index') }}" class="bouton-RaL btn btn">
             <strong>Retour à la liste</strong>
         </a>
 

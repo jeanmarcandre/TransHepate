@@ -20,31 +20,18 @@
 {% if is_granted('ROLE_ADMIN') %}
 <nav class="navbar navbar-expand-lg py-0 mt-5" style="background-color:#11494c;">
   <div class="container-lg">
-        <a class="navbar-brand text-title-h1 fs-3 color p-2" href="{{ path('app_admin_home') }}"><i class="fa-solid fa-gear pe-2 fs-3"></i><strong>Administration</strong></a>
+        <a class="navbar-brand inscription-login" href="{{ path('app_admin_home') }}"><i class="fa-solid fa-gear pe-2 fs-3"></i><strong>Administration</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar" aria-controls="adminNavbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="adminNavbar">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            {# <li class="nav-item"> #}
-              <a class="navbar-brand text-title-h1 fs-3 color p-2" href="{{ path('app_admin_user_index') }}"><i class="fa-solid fa-users-gear pe-2"></i><strong>Utilisateurs</strong></a>
+          {# <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> #}
+              <a class="navbar-brand inscription-login" href="{{ path('app_admin_user_index') }}"><i class="fa-solid fa-users-gear pe-2"></i><strong>Utilisateurs</strong></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar" aria-controls="adminNavbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
-            {# </li> #}
-            {# <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-regular fa-paste pe-2"></i>Publications</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-regular fa-comments pe-2"></i>Commentaires</a>
-            </li> #}
-          </ul>
-
-          {# <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> #}
+          {# </ul> #}
         </div>
   </div>
 </nav>

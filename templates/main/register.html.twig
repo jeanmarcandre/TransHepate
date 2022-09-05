@@ -12,20 +12,17 @@
 
 {% block body %}
 
-    <div class="container px-5 mt-5">
+    <div class="container">
 
-    <div class="my-5 text-center">
-        <span class="fs-2 px-3 py-1 fst-italic text-light text-uppercase"
-            style="border:solid 5px #73e0ed;border-radius:25px;background-color:#229296">
-            <strong>Inscrivez-vous</strong>
-        </span>
-    </div>
+        <div class="titre">
+            <span class="titre2">
+                <strong>Inscrivez-vous</strong>
+            </span>
+        </div>
 
-        <div class="text-dark bg-light my-5 p-4 d-block w-100" style="border-radius:25px;border:solid 25px #229296">
+        <div class="cadre">
 
-            {# <div style="border-radius:15px;"> #}
-
-            <div class="fs-6" style="color: #095a09;border:solid 15px light;border-radius:25px;"><strong>
+            <div class="cadre2"><strong>
 
                 {{ form_start(registrationForm) }}
 
@@ -36,18 +33,18 @@
                     {{ form_row(registrationForm.plainPassword, {
                     label: 'Mot de passe'}) }}</strong>
 
+                    <p class="text-muted fs-5">(* champs obligatoires )</p>
+
                     {{ form_row(registrationForm.captcha) }}
                     {{ form_errors(registrationForm.captcha) }}
 
-                    <button type="submit" class="mx-4 my-3 px-3 text-light fst-italic"
-                    style="color:lightgrey;font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">
+                    <button class="inscription-valid btn btn" type="submit">
                     <strong>Valider</strong>
                     </button>
 
                 {{ form_end(registrationForm) }}
 
-                <a href="{{ path('app_blog_index') }}" class="text-decoration-none mx-4 my-4 px-2 py-1 text-light fst-italic"
-                    style="color:lightgrey;font-size:1.5rem;background-color:#229296;border-radius:50px;border:solid 2px #11494C;">
+                <a href="{{ path('app_blog_index') }}" class="bouton-RaL btn btn">
                     <strong>Retour à la liste</strong>
                 </a>
 

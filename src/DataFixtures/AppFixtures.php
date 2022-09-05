@@ -89,18 +89,18 @@ class AppFixtures extends Fixture
         $manager->persist($user);
 
         // creation de MAX_USER compte aléatoires ROLE_USER
-        for($i=0; $i<self::MAX_USER; $i++) {
-            $user = new User();
-            $user
-                ->setEmail( $faker->email )
-                ->setUsername( $faker->userName )
-                ->setPassword($this->hasher->hashPassword($user, 'Password1*'))
-            ;
-            // On persiste l'utilisateur
-            $manager->persist($user);
-            // on stocke l'utilisateur dans un tableau pour l'utiliser pour les commentaires
-            $users[] = $user;
-        }
+        // for($i=0; $i<self::MAX_USER; $i++) {
+        //     $user = new User();
+        //     $user
+        //         ->setEmail( $faker->email )
+        //         ->setUsername( $faker->userName )
+        //         ->setPassword($this->hasher->hashPassword($user, 'Password1*'))
+        //     ;
+        //     // On persiste l'utilisateur
+        //     $manager->persist($user);
+        //     // on stocke l'utilisateur dans un tableau pour l'utiliser pour les commentaires
+        //     $users[] = $user;
+        // }
 
         // Création de MAX_POST Publications avec des données aléatoires et des commentaires (entre MAX_COMMENT par publication)
         for ($i=0; $i<self::MAX_POST; $i++) {

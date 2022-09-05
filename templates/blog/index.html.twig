@@ -6,37 +6,35 @@
 
     <div class="container">
 
-        <div class="my-5 text-center">
-            <span class="fs-2 px-3 py-1 fst-italic text-light text-uppercase"
-                style="border:solid 5px #73e0ed;border-radius:25px;background-color:#229296">
+        <div class="titre">
+            <span class="titre2">
                 <strong>Nos Derniers Articles</strong>
             </span>
         </div>
 
-        <div class="mt-5"  style="border:solid 25px #229296;border-radius:50px;">
+        <div class="cadre">
 
-            <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
+            <div class="cadre2">
 
                 {# Affichage du nombre total de publications (attibut apporté par knp_paginator) #}
 
                 <div>
                     <div class="col-12 ps-5">
-                        <p class="fs-4 text-left fst-italic text-dark">Nombre total d'articles : {{ posts_paginate.getTotalItemCount }}</p>
+                        <p class="formulaire">Nombre total d'articles : {{ posts_paginate.getTotalItemCount }}</p>
                     </div>
-                    <div class="col-12 ps-5 mb-3 right">
-                        <a class="fs-4 my-4 px-3 py-2 fst-italic text-decoration-none nav-link2" style="border-radius:15px;"
-                        href="{{ path('app_blog_new_post') }}"><strong>Créer un nouvel article</strong></a>
-                    </div>
+                    {# <div class="col-12 ps-5 mb-3 right"> #}
+                        <a href="{{ path('app_blog_new_post') }}" class="inscription-login"><strong>Créer un nouvel article</strong></a>
+                    {# </div> #}
                 </div>
 
                 {# Formulaire de recherche #}
                 <div class="container-sm">
-                    <div class="col-12 text-center">
+                    <div class="col-12">
                         <form class="d-flex" method="GET" action="{{ path('app_main_search') }}">
-                            <input class="form-control me-2 fs-5 fst-italic" name="search" type="search" placeholder="Trouver une publication" aria-label="Search">
+                            <input class="form-control m-3 fs-5 fst-italic" name="search" type="search" placeholder="Trouver une publication" aria-label="Search">
                             <button class="btn btn-sm btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
                         </form>
-                        <p class="text-muted fst-italic fs-6">taper un mot clé pour lancer une recherche dans tous les articles</p>
+                        <p class="formulaire">taper un mot clé pour lancer une recherche dans tous les articles</p>
                     </div>
                 </div>
 
@@ -50,14 +48,14 @@
                     </div>
                 </div>
 
-                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <ul class="navbar-nav">
                     <li class="nav-item">
 
                     {### MENU DE DROITE ###}
 
                     {% if app.user %}
-                        <li class="container nav-item dropdown fs-3 fst-italic">
-                            <strong><a  class="nav-link2 dropdown-toggle text-capitalize px-5 py-2 text-decoration-none"  style="border-radius:15px;boreder:solid 2px #229296"
+                        <li class="container nav-item dropdown">
+                            <strong><a  class="inscription-login dropdown-toggle"
                             href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {% if is_granted('ROLE_ADMIN') %}
                                 <i class="fa-solid fa-lg fa-user-shield pe-2"></i>
@@ -67,20 +65,17 @@
                             {{ app.user.username }}
                             </a></strong>
                             <div>
-                                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3"
-                                    style="background-color:#229296;border-radius:25px;border:solid 2px #229296;"
+                                <ul class="dropdown-menu inscription-login"
                                     aria-labelledby="navbarDarkDropdownMenuLink">
                                     <li>
-                                        <a class="dropdown-item mb-2 fs-4 text-black"
-                                            style="border-radius:25px;border:solid 2px #229296;"
+                                        <a class="dropdown-item inscription-login"
                                             href="{{ path('app_main_user_show') }}">
                                             <i class="fa-solid fa-lg fa-house-user pe-3"></i>
                                             <strong>Mon profil</strong>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item fs-4 text-black"
-                                            style="border-radius:25px;border:solid 2px #229296;"
+                                        <a class="dropdown-item inscription-login"
                                             href="{{ path('app_main_logout') }}">
                                             <i class="fas fa-lg fa-sign-out-alt pe-3"></i>
                                             <strong>Me déconnecter</strong>
@@ -90,7 +85,7 @@
                             </div>
                         </li>
                     {% else %}
-                    <a class="nav-link2 text-capitalize px-5 py-2 text-decoration-none fs-4 fst-italic" style="border-radius:15px;" href="{{ path('app_main_login') }}"><i class="fas fa-lg fa-sign-in-alt pe-2"></i><strong>Connexion</strong></a>
+                    <a class="inscription-login" href="{{ path('app_main_login') }}"><i class="fas fa-lg fa-sign-in-alt pe-2"></i><strong>Connexion</strong></a>
                     {% endif %}
 
                     </li>

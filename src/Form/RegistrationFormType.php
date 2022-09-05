@@ -26,6 +26,7 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
+                'label' => 'Veuillez entrer votre adresse Mail *',
                 'invalid_message' => 'Cet email n\'est pas valide.',
                 'constraints' => [
                     new NotBlank([

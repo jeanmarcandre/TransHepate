@@ -45,7 +45,7 @@ class CommentRepository extends ServiceEntityRepository
         }
     }
 
-    // Count the total number of Comments
+    // Count the total number of Posts
     public function countNumberComments(): ?int
     {
         return $this->createQueryBuilder('c')

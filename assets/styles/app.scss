@@ -334,6 +334,151 @@ header {
 
 /* MON SCSS */
 
+		/* --------- BUTTONS -----------*/
+    /*--------partie login----------*/
+
+.inscription-login {
+  color: #fff;
+  background-color: #11494C;
+  font-size:1.5rem;
+  border-radius:25px;
+  border:solid 3px #229296;
+  margin: 2rem;
+  padding: .5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.inscription-login:hover {
+  color:#000000!important;
+  background-color: #229296!important;
+  border-radius:50px!important;
+  border:solid 3px #000000!important;
+}
+
+.inscription-valid {
+  color: #fff;
+  background-color: #095a09;
+  font-size:1.5rem;
+  border-radius:25px;
+  border:solid 3px #229296;
+  margin: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+.inscription-valid:hover {
+  color:#000000;
+  background-color: #229296;
+  border-radius:50px!important;
+  border:solid 3px #000000!important;
+}
+
+.inscription-oubli {
+  color: #fff;
+  font-size:1.5rem;
+  border-radius:50px;
+  border:solid 3px #229296;
+}
+
+.inscription-oubli:hover {
+  color:#000000!important;
+  background-color: #229296!important;
+  border-radius:50px!important;
+  border:solid 3px #000000!important;
+}
+
+.bouton-RaL {
+  color: #fff;
+  background-color: #229296;
+  font-size:1.5rem;
+  border-radius:50px;
+  border:solid 3px #73e0ed;
+  margin: 15px;
+  padding-top: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+.bouton-RaL:hover {
+  color:#000000!important;
+  background-color: #229296!important;
+  border-radius:50px!important;
+  border:solid 3px #000000!important;
+}
+
+/*-----------------------------------*/
+
+/*----------TITRE ET CADRE----------*/
+
+.titre {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.titre2 {
+  color: #73e0ed;
+  font-size: 2rem;
+  padding: .5rem 2rem .5rem 2rem;
+  font-style: italic;
+  text-transform: uppercase;
+  border: solid 5px #73e0ed;
+  border-radius: 25px;
+  background-color: #229296;
+}
+
+.cadre {
+  background-color: #ffffff;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: left;
+  border: solid 25px #229296;
+  border-radius: 50px;
+  padding: 30px;
+}
+
+.cadre2 {
+  background-color: #fff;
+  border: solid 5px #fff;
+  border-radius: 25px;
+}
+
+.formulaire {
+  font-size: 1.25rem;
+  font-style: italic;
+  text-decoration: none;
+  padding-left: 2rem;
+}
+
+.formulaire:hover {
+  background-color: #ffb!important;
+}
+
+/*----------------------------------*/
+/*---------REGLES BLOG--------------*/
+
+.entourage-ext {
+  color: black;
+  border: solid 25px #229296;
+  border-radius: 50px;
+  background-color: #fff;
+  margin: 3rem 0 3rem 0;
+  padding: 3rem;
+  font-size: 18px;
+  text-align: left;
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/*----------------------------------*/
+
 .space {
   height: 10px;
 }
@@ -467,4 +612,3 @@ color: darkblue;
   background-color: #ced4da!important;
   border-bottom-color: black!important;
 }
-
