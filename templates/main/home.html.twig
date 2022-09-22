@@ -53,10 +53,10 @@
                 <img id="tournesol" src="{{ asset('build/tournesol.jpg') }}" class="img-fluid rounded-start" alt="TRANSHEPATE" style="height:360px; width: 800px;">
             </div>
             <div class="col-md-8">
-                <div class="card-body fst-italic text-uppercase mx-5">
-                    <p class="card-text mt-5 fs-3"><strong>Ne restez pas seul avec vos questions</strong></p>
-                    <p class="card-text mt-5 fs-3 mx-5"><strong>Vos doutes vos peurs</strong></p>
-                    <p class="card-text mt-5 fs-3"><strong>Nous pouvons peut-être vous aider</strong></p>
+                <div>
+                    <p class="card-text-tournesol">Ne restez pas seul avec vos questions</p>
+                    <p class="card-text-tournesol">Vos doutes vos peurs</p>
+                    <p class="card-text-tournesol bas">Nous pouvons peut-être vous aider</p>
                 </div>
             </div>
         </div>
@@ -65,45 +65,44 @@
             {# TRANSHEPATE EN CHIFFRES #}
 
     <div class="bandeau row col-12">
-        <div class="title_banner upper centered mb-0 text-center" style="background: #11494c;">
+        <div class="title_banner upper centered text-center">
             <a target="_top" href="https://flamingtext.com/" ><img src="https://blog.flamingtext.com/blog/2022/08/28/flamingtext_com_1661677100_865928256.gif" border="0" alt="Logo Design by FlamingText.com" title="Logo Design by FlamingText.com"></a>
-			{#<br/>Logo Design by <a href="https://flamingtext.com/" >FlamingText.com</a>#}
         </div>
 
-        <div class="row text-light">
+        <div class="donnees row text-light">
             <div class="col-md-3">
                 <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="300">
                     <div class="card-body text-center" style="background: #11494c;">
-                        <span class="icon fs-2"><i class="fa fa-heart"></i class="::after"></span></br>
-                        <span class="value fs-4" data-speed="4000" data-from="0" data-to="35">35</span>
-                        <p class="card-text fs-5 fst-italic">années d'existence</p>
+                        <span class="icone"><i class="fa fa-heart"></i class="::after"></span></br>
+                        <span class="value" data-speed="4000" data-from="0" data-to="35">35</span>
+                        <p class="value2">années d'existence</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="600">
                     <div class="card-body text-center" style="background: #11494c;">
-                        <span class="icon fs-2"><i class="fa fa-address-book"></i></span></br>
-                        <span class="value fs-4" data-speed="4000" data-from="0" data-to="1100">1100</span>
-                        <p class="card-text fs-5 fst-italic">Adhérents</p>
+                        <span class="icone"><i class="fa fa-address-book"></i></span></br>
+                        <span class="value" data-speed="4000" data-from="0" data-to="1100">1100</span>
+                        <p class="value2">Adhérents</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="300">
                     <div class="card-body text-center" style="background: #11494c;">
-                        <span class="icon fs-2"><i class="fa fa-hands-helping"></i></span></br>
-                        <span class="value fs-4" data-speed="4000" data-from="0" data-to="185">185</span>
-                        <p class="card-text fs-5 fst-italic">Bénévoles</p>
+                        <span class="icone"><i class="fa fa-hands-helping"></i></span></br>
+                        <span class="value" data-speed="4000" data-from="0" data-to="185">185</span>
+                        <p class="value2">Bénévoles</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="counter animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="300">
                     <div class="card-body text-center" style="background: #11494c;">
-                        <span class="kyma_owl_n fs-2"><i class="fa fa-map-marker"></i></span></br>
-                        <span class="value fs-4" data-speed="4000" data-from="0" data-to="12">12</span>
-                        <p class="card-text fs-5 fst-italic">Antennes régionales</p>
+                        <span class="icone"><i class="fa fa-map-marker"></i></span></br>
+                        <span class="value" data-speed="4000" data-from="0" data-to="12">12</span>
+                        <p class="value2">Antennes régionales</p>
                     </div>
                 </div>
             </div>
@@ -112,31 +111,30 @@
 
             {# NEWSLETTER #}
 
-    <div style="background-color: rgb(0,137,45);" class="green text-center">
+    <div class="green">
         <a target="_top" href="https://flamingtext.com/" ><img src="https://blog.flamingtext.com/blog/2022/08/28/flamingtext_com_1661677390_865928257.gif" border="0" alt="Logo Design by FlamingText.com" title="Logo Design by FlamingText.com"></a>
-		{# <br/>Logo Design by <a href="https://flamingtext.com/" >FlamingText.com</a> #}
-        <p class="text-light fst-italic fs-5 text-center">Pour vous tenir informer de nos dernières actions !</p>
-        <div class="d-grid gap-2 col-1 mx-auto">
-            <a class="btn btn-outline-success text-light fs-5 fst-italic text-uppercase my-4" type="button" style="color: #0b8b2e;border-radius:15px;font-weight: bold;" href="{{ path('app_main_newsletter') }}">Je m'abonne à la newsletter</a>
+        <p class="green2">Pour vous tenir informer de nos dernières actions !</p>
+        <div class="soutient">
+            <a class="soutient btn btn-outline-success" href="{{ path('app_main_newsletter') }}">Je m'abonne à la newsletter</a>
         </div>
     </div>
 
             {# LISTE DES ASSOCIATIONS REGIONALES #}
 
-    <div style="background-color:rgb(140, 230, 254);">
-        <div class="container" style="background-color:rgb(140, 230, 254);">
+    <div style="background-color:#8ce6fe;">
+        <div class="container">
             <div class="content row_spacer">
                 <div class="title_banner upper centered mb-0">
-                    <p class="fst-italic fs-2 text-uppercase text-center" style="color:#11494C;">
+                    <p class="regionales">
                         <i class="fa-solid fa-people-group"></i>
-                        <strong>Nos associations régionales</strong>
+                        Nos associations régionales
                     </p>
                 </div>
 
                 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
 
                     <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="3000" style="background-color:rgb(140, 230, 254);">
+                        <div class="carousel-item active" data-bs-interval="3000" style="background-color:#8ce6fe;">
                             <div class="owl-wrapper-outer autoheight" style="height: 520px">
                                 <div class="owl-wrapper" style="width: 4992px; left: 0px; display: block; transition: all 800ms ease 0s;">
                                     <div class="carousel-caption d-none d-md-block">
@@ -562,7 +560,7 @@
                             <i class="fa-solid fa-lg fa-lightbulb pe-3" style="height:32px; width:22px;"></i>
                         </card>
                         <div class="service_box_con text-light" style="background:#11494c;">
-                            <H6 class="mt-4"><strong>FAIRE PRENDRE CONSCIENCE</strong></H6>
+                            <H6 class="mission-titre mt-4"><strong>FAIRE PRENDRE CONSCIENCE</strong></H6>
                             <span class="desc">De l'importance du don d'organes, en liaison avec d'autres associations ou organismes
                                                 poursuivant le même but afin de réduire sensiblement les refus.
                             </span>
@@ -575,7 +573,7 @@
                             <i class="fa-solid fa-lg fa-comments pe-3" style="height:32px; width:22px;"></i>
                         </card>
                         <div class="service_box_con text-light" style="background:#11494c;">
-                            <H6 class="mt-4"><strong>SOUTENIR, ECHANGER ET ECOUTER</strong></H6>
+                            <H6 class="mission-titre mt-4"><strong>SOUTENIR, ECHANGER ET ECOUTER</strong></H6>
                             <p class="desc">Apporter un soutien aux transplantés, futurs transplantés et insuffisants
                                                 hépatiques ainsi qu'a leurs proches.</p>
                         </div>
@@ -587,7 +585,7 @@
                             <i class="fa-solid fa-lg fa-bell pe-3" style="height:32px; width:22px;"></i>
                         </card>
                         <div class="service_box_con text-light" style="background:#11494c;">
-                        <H6 class="mt-4"><strong>SENSIBILISER L'OPINION</strong></H6>
+                        <H6 class="mission-titre mt-4"><strong>SENSIBILISER L'OPINION</strong></H6>
                         <p class="desc">Aux risques de l'insuffisance hépatique grave et à la solution apportée par la
                                             transplantation du foie comme ultime recours.</p>
                     </div>
@@ -599,7 +597,7 @@
                             <i class="fa-solid fa-lg fa-hands-helping pe-3" style="height:32px; width:22px;"></i>
                         </card>
                         <div class="service_box_con text-light" style="background:#11494c;">
-                            <H6 class="mt-4"><strong>SOUTENIR ET AIDER LA RECHERCHE</strong></H6>
+                            <H6 class="mission-titre mt-4"><strong>SOUTENIR ET AIDER LA RECHERCHE</strong></H6>
                             <p class="desc">Sur les pathologies hépatique et les problèmes liés à la greffe de foie.
                                                 Nous soutenons la recherche essentiellement à l'aide des dons versés à Transhépate.</p>
                         </div>
@@ -611,7 +609,7 @@
                             <i class="fa-solid fa-lg fa-bullhorn pe-3" style="height:32px; width:22px;"></i>
                         </card>
                         <div class="service_box_con text-light" style="background:#11494c;">
-                            <H6 class="mt-4"><strong>TEMOIGNER</strong></H6>
+                            <H6 class="mission-titre mt-4"><strong>TEMOIGNER</strong></H6>
                             <p class="desc">Par notre vécu de personnes transplantées, de la qualité de vie que procure une greffe hépatique.</p>
                         </div>
                     </div>
@@ -622,7 +620,7 @@
                             <i class="fa-solid fa-lg fa-user-nurse pe-3" style="height:32px; width:22px;"></i>
                         </card>
                         <div class="service_box_con text-light" style="background:#11494c;">
-                            <H6 class="mt-4"><strong>ASSURER UNE DIFFUSION</strong></H6>
+                            <H6 class="mission-titre mt-4"><strong>ASSURER UNE DIFFUSION</strong></H6>
                             <p class="desc">Aussi large que possible d'une information sur toutes les maladies hépatiques sévères.</p>
                         </div>
                     </div>
@@ -633,61 +631,48 @@
 
             {# FAIRE UN DON #}
 
-        <div style="background-color: rgb(0,137,45);" class="green">
+        <div class="green">
             <p class="text-light pt-4 fst-italic fs-2 text-uppercase text-center">
             <span class="line">
                 <i class="fa-solid fa-hand-holding-dollar"></i>
             </span>
             <strong>Faire un don à transhépate bfc</strong>
             </p>
-            <p class="text-light fst-italic fs-5 text-center">Aidez-nous à soutenir la recherche sur les pathologies hépatiques et les problèmes liés à la greffe du foie !</p>
+            <p class="green2">Aidez-nous à soutenir la recherche sur les pathologies hépatiques et les problèmes liés à la greffe du foie !</p>
             <div class="d-grid gap-2 col-1 mx-auto">
-                <a class="btn btn-outline-success text-light fs-5 fst-italic text-uppercase my-4" type="button" style="color: #0b8b2e;border-radius:15px;font-weight: bold;" href="{{ path('app_main_helloasso') }}">Je donne</a>
+                <a class="soutient btn btn-outline-success" href="{{ path('app_main_helloasso') }}">Je donne</a>
             </div>
         </div>
 
             {# NOS BROCHURES #}
 
     <div>
-        <div class="text-center" style="background-color: rgb(140, 230, 254);">
+        <div class="text-c">
             <a target="_top" href="https://flamingtext.com/" ><img src="https://blog.flamingtext.com/blog/2022/08/28/flamingtext_com_1661677919_865928261.gif" border="0" alt="Logo Design by FlamingText.com" title="Logo Design by FlamingText.com"></a>
 			{#<br/>Logo Design by <a href="https://flamingtext.com/" >FlamingText.com</a>#}
-            <div class="d-flex flex-row">
-                <div class="col-sm-3">
-                    <div class="card m-5 p-1" style="border:solid 5px #66dbbe; border-radius:25px 25px 0 0;">
-                        <div class="card-body" style="background-color:#b0e8af;border-radius:15px;">
+            <div class="container-fluid text-center">
+                <div class="row mx-5 text-center">
+                        <div class="card-body4 col-7 col-sm-5">
                             <a href="{{ asset('Brochures/Guide-du-futur-transplanté2.pdf') }}" target="_blank">
-                            <img width="150" height="200" src="{{ asset('Brochures/Guide-du-futur-transplanté-211x300.jpg') }}" class="img-responsive" style="border-radius:15px 15px 0 0;"></a>
-                            <p class="text-dark fs-5 fst-italic text-center bg-#66dbbe p-1 mt-3"><strong>Le guide du futur transplanté</strong></p>
+                            <img src="{{ asset('Brochures/Guide-du-futur-transplanté-211x300.jpg') }}" class="img-responsive"></a>
+                            <p class="card-text2">Le guide du futur transplanté hépatique</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card m-5 p-1" style="border:solid 5px #66dbbe; border-radius:25px 25px 0 0;">
-                        <div class="card-body" style="background-color:#b0e8af;border-radius:15px;">
+                        <div class="card-body4 col-7 col-sm-5">
                             <a href="{{ asset('Brochures/Brochure-transhepate.bfc.pdf') }}" target="_blank">
-                            <img width="150" height="200" src="{{ asset('Brochures/Vivre-lattente-de-la-greffe-en-toute-sérénité-1-223x300.jpg') }}" class="img-responsive" style="border-radius:15px 15px 0 0;"></a>
-                            <p class="text-dark fs-5 fst-italic text-center bg-#66dbbe p-1 mt-3"><strong>Attendre la greffe en toute sérénité</strong></p>
+                            <img src="{{ asset('Brochures/Vivre-lattente-de-la-greffe-en-toute-sérénité-1-223x300.jpg') }}" class="img-responsive"></a>
+                            <p class="card-text2">Attendre la greffe en toute sérénité</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card m-5 p-1" style="border:solid 5px #66dbbe; border-radius:25px 25px 0 0;">
-                        <div class="card-body" style="background-color:#b0e8af;border-radius:15px;">
+                        <div class="w-100 d-none d-md-block m-5"></div>
+                        <div class="card-body4 col-7 col-sm-5">
                             <a href="{{ asset('Brochures/La-greffe-vue-par-les-enfants.pdf') }}" target="_blank">
-                            <img width="150" height="180" src="{{ asset('Brochures/outilspedagogiques_vdef-1-184x300.jpg') }}" class="img-responsive" style="border-radius:15px 15px 0 0;"></a>
-                            <p class="text-dark fs-5 fst-italic text-center bg-#66dbbe p-1 mt-3"><strong>Le don d'organe expliqué aux enfants</strong></p>
+                            <img src="{{ asset('Brochures/outilspedagogiques_vdef-1-184x300.jpg') }}" class="img-responsive"></a>
+                            <p class="card-text2">Le don d'organe expliqué aux enfants</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card m-5 p-1" style="border:solid 5px #66dbbe; border-radius:25px 25px 0 0;">
-                        <div class="card-body" style="background-color:#b0e8af;border-radius:15px;">
+                        <div class="card-body4 col-7 col-sm-5">
                             <a href="{{ asset('Brochures/attente-greffe.pdf') }}" target="_blank">
-                            <img width="150" height="200" src="{{ asset('Brochures/attente-greffe-1-207x300.jpg') }}" class="img-responsive" style="border-radius:15px 15px 0 0;"></a>
-                            <p class="text-dark fs-5 fst-italic text-center bg-#66dbbe p-1 mt-3"><strong>La greffe vécue par les proches</strong></p>
+                            <img src="{{ asset('Brochures/attente-greffe-1-207x300.jpg') }}" class="img-responsive"></a>
+                            <p class="card-text2">La greffe vécue par les proches</p>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -695,13 +680,13 @@
 
             {# ADHERER #}
 
-        <div style="background-color: rgb(0,137,45);" class="green">
+        <div class="green">
             <p class="text-light pt-4 fs-2 fst-italic text-uppercase text-center" id="blog-heading">
                 <i class="fa fa-edit"></i>
                 <strong>Adhésion à transhépate bfc</strong>
             </p>
             <div class="d-grid gap-2 col-1 mx-auto">
-                <a class="btn btn-outline-success text-light fst-italic fs-5 text-uppercase my-4" type="button" style="color: rgb(0,137,45);border-radius:10px;font-weight: bold;" href="{{ path('app_main_adhesion') }}">J'adhère</a>
+                <a class="soutient btn btn-outline-success" href="{{ path('app_main_adhesion') }}">J'adhère</a>
             </div>
         </div>
 
@@ -723,8 +708,7 @@
                                 {# {{ affichage|raw }} #}
 
                                 <a href="{{ asset('uploads/brochures/' ~ product.brochureFilename) }}"
-                                class="my-4 btn btn-success fs-4 fst-italic"
-                                style="border-radius:25px;border:solid 2px rgb(0,137,45);"
+                                class="inscription-valid"
                                 target="_blank">Voir en plein écran</a>
                                 <iframe id="inlineFrameExample"
                                     width="900"
@@ -755,13 +739,13 @@
 
                 {# DEVENIR BENEVOLE #}
 
-        <div style="background-color: rgb(0,137,45);" class="green">
+        <div class="green">
             <p class="text-light fs-2 pt-4 fst-italic text-uppercase text-center" id="blog-heading">
                 <i class="fa fa-handshake-angle"></i>
                 <strong>Devenez Bénévole à transhépate bfc</strong>
             </p>
             <div class="d-grid gap-2 col-1 mx-auto">
-                <a class="btn btn-outline-success text-light fst-italic fs-5 text-uppercase my-4" type="button" style="color: rgb(0,137,45);border-radius:10px;font-weight: bold;" href="{{ path('app_main_benevole') }}">Je deviens bénévole</a>
+                <a class="soutient btn btn-outline-success" href="{{ path('app_main_benevole') }}">Je deviens bénévole</a>
             </div>
         </div>
 

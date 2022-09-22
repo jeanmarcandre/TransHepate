@@ -21,7 +21,7 @@ class PostType extends AbstractType
             ])
 
             ->add('content', CKEditorType::class, [
-                'config_name' => 'my_config',
+                'config_name' => 'config_phone',
                 'label' => 'Définissez son contenu ',
                 'purify_html' => true,
                 'help' => '',

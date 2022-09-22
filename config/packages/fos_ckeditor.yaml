@@ -33,3 +33,15 @@ fos_ck_editor:
             uicolor: "#adb5bd" # Couleur de fond de l'éditeur
             height: 300px      # hauteur de l'éditeur
             width: 800px       # largeur de l'éditeur
+
+        config_phone:
+            toolbar:
+                - { name: "styles", items: ['Bold', 'Italic', 'Underline', 'Strike', 'Blockquote',
+                 '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+                  'JustifyBlock', '-', 'Smiley', '-', 'Styles', 'Format','Font','FontSize',
+                  '-', 'TextColor', 'BGColor'] }
+
+            language: fr       # Langue de l'éditeur
+            uicolor: "#adb5bd" # Couleur de fond de l'éditeur
+            height: 300px      # hauteur de l'éditeur
+            width: 600px       # largeur de l'éditeur

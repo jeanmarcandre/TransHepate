@@ -4,18 +4,17 @@
 
 {% block body %}
 
-    <div class="my-5 text-center">
-        <span class="fs-3 px-3 py-1 fst-italic text-light text-uppercase"
-            style="border:solid 5px #73e0ed;border-radius:25px;background-color:#229296;">
+    <div class="titre">
+        <span class="titre2">
             <strong>Ajouter une nouvelle brochure</strong>
         </span>
     </div>
 
     <div class="container-xl" style="height:500px;">
 
-		<div class="m-5" style="border:solid 15px #229296;border-radius:25px;">
+		<div class="cadre">
 
-			<div class="col-12 col-lg-12 bg-light px-lg-5" style="height:100px;border:solid 25px light;border-radius:10px;">
+			<div class="cadre2">
 
                 {% if is_granted('ROLE_ADMIN') %}
                     {{ form_start(form) }}
@@ -32,7 +31,7 @@
 		</div>
 
         <div class="m-5">
-            <a class="text-decoration-none text-light fs-4 fst-italic py-2 px-3 m-5" style="border:solid 2px #73e0ed;background-color:#229296;border-radius:25px;" href="{{ path('app_main_home') }}">
+            <a class="bouton-RaL" href="{{ path('app_main_home') }}">
                 <strong>Retour à l'accueil</strong>
             </a>
         </div>

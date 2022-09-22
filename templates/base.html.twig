@@ -36,7 +36,6 @@
 				}
 				a:hover {
 					background-color: green;
-					/* padding: 5px; */
 					border-radius: 10px;
 				}
 				span .navbar {
@@ -91,12 +90,12 @@
 			<div class="card" style="background-color:#11494C;">
 				<div class="row g-0">
 					<div class="col-md-4">
-						<img id="ecusson-bfc" src="{{ asset('build/ecusson-bfc2.jpeg') }}" alt="TRANSHEPATE" class="mx-5" style="height:120px; width: 120px; margin-left: 20px;">
+						<img id="ecusson-bfc" src="{{ asset('build/ecusson-bfc2.jpeg') }}" alt="TRANSHEPATE" class="ecusson mx-5" style="height:120px; width: 120px; margin-left: 20px;">
 					</div>
 					<div class="col-md-8">
-						<div class="card-body">
-							<p class="card-text fs-4 fst-italic text-uppercase text-white">fédération régionale des malades et transplantés hépatiques</p>
-							<p class="card-text fs-4 fst-italic text-uppercase text-white mx-5">Région Bourgogne Franche Comté</p>
+						<div class="card-body3">
+							<p>fédération régionale des malades et transplantés hépatiques</p>
+							<p>Région Bourgogne Franche Comté</p>
 						</div>
 					</div>
 				</div>
@@ -105,13 +104,19 @@
 			<nav class="navbar navbar-expand-lg" style="background-color:#8ce6fe;">
 				<div class="container-fluid">
 					<a href="{{ path('app_main_home') }}">
-						<img id="logoimg" src="{{ asset('build/logoimg.jpg') }}" alt="TRANSHEPATE" class="" style="border-radius:5px;height:40px; width: 200px;">
+						<img id="logoimg" src="{{ asset('build/logoimgC.png') }}" alt="TRANSHEPATE">
 						<p class="accueil ms-5 mt-1 mb-0"></p>
 					</a>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
-						<i class="fa fa-list">
+					<button class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarColor01"
+						aria-controls="navbarColor01"
+						aria-expanded="true"
+						aria-label="Toggle navigation">
+						{# <i class="fa fa-list">
 							<strong>menu</strong>
-						</i>
+						</i> #}
 						<span class="navbar-toggler-icon"></span>
 					</button>
 
@@ -238,7 +243,7 @@
 			class="container-fluid flex-shrink-0">
 
 			{# Container pour les messages flash #}
-			<div id="messages" class="container p-0 m-0 mx-auto">
+			{# <div id="messages" class="container p-0 m-0 mx-auto">
 				<div class="row p-0 m-0">
 					{% for label, messages in app.flashes %}
 						{% for message in messages %}
@@ -246,7 +251,7 @@
 						{% endfor %}
 					{% endfor %}
 				</div>
-			</div>
+			</div> #}
 
 			{# BLOCK PRINCIPAL #}
 			{% block body %}{% endblock %}
@@ -259,7 +264,7 @@
 		<footer class="row">
 			<div class="col-sm-6">
 				<div>
-					<div class="card-body" style="text-align:center">
+					<div class="card-body2">
 						<a class="text-center text-warning" href="{{ path('app_main_mentions_legales') }}">&copy; Transhépate.bfc 2022 - Mentions légales et RGPD</a>
 						{# <p class="text-center text-warning">&copy; Transhépate.bfc 2022 - Mentions légales et RGPD</p> #}
 					</div>
@@ -267,8 +272,8 @@
 			</div>
 			<div class="col-sm-6">
 				<div>
-					<div class="card-body" style="text-align:center">
-						<a class="btn btn-outline-warning text-uppercase" href="https://www.service-public.fr/particuliers/vosdroits/F183" target="_blank">le don d'organes</a>
+					<div class="card-body2">
+						<a class="don btn btn-outline-warning fs-4" href="https://www.service-public.fr/particuliers/vosdroits/F183" target="_blank">le don d'organes</a>
 					</div>
 				</div>
 			</div>

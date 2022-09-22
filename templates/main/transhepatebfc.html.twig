@@ -4,36 +4,38 @@
 
 {% block body %}
 
-<div class="mt-5 ms-5">
-    <div class="row">
-        <div class="col-8">
-            <div class="row top-25 w-100"  style="border:solid 25px #229296;border-radius:50px;">
-                <div class="col-12 col-lg-12 bg-light px-2 px-lg-1 py-0 my-0" style="text-align: center;border:solid 5px light;border-radius:25px;">
-                    <div class="container w-75">
-                        <div class="fs-1 fst-italic my-3" style="text-align: center; color:#11494C;"><strong>Association Transhépate Bourgogne-Franche-Comté</strong></div>
-                    </div>
-                    <div class="px-5">
-                        <div class="m-auto p-auto" style="text-align: center">
-                            <ul class="list-group list-group-flush fs-5 text-uppercase text-dark text-wrap" style="list-style-type:none;">
-                                <div class="d-grid gap-2 col-3,5 mx-auto mb-4 mt-0">
-                                    <a class="contact btn btn-success fs-3 fst-italic" href="{{ path('app_main_contact') }}" style="width:280px ;border: solid 4px #229296; border-radius:50px;"><strong>Nous contacter</strong></a>
-                                </div>
+<div>
+
+    <div class="titre">
+        <span class="titre2">
+            Association transhépate bourgogne-franche-comté
+        </span>
+    </div>
+
+    <div class="row ms-5">
+        <div class="col-8 cadre5">
+            <div class="row cadre">
+                <div class="cadre2">
+                    <div class="px-3">
+                        <div class="text-center">
+                            <ul class="list-group list-group-flush text-uppercase text-dark text-wrap" style="list-style-type:none;">
+                                <a class="inscription-valid btn btn-success" href="{{ path('app_main_contact') }}">N o u s - c o n t a c t e r</a>
 
                                 <li>
-                                    <div class="row m-5" style="border:solid 4px #11494C; border-radius:25px;color:#11494C;">
-                                        <div class="col-6 border-end border-5"><strong>
-                                            Siège social :</strong>
-                                            <p class="my-2 p-2 fs-6 fst-italic" style="color:#11494C;"><strong>CHU de Besançon</br>Maison des Familles</br>3 Boulevard Alexandre Flemming</br>25000 Besançon</strong></p>
+                                    <div class="row cadre3">
+                                        <div class="col-6">
+                                            <span class="cadre4">Siège social :</span>
+                                            <p>CHU de Besançon</br>Maison des Familles</br>3 Boulevard Alexandre Flemming</br>25000 Besançon</p>
                                         </div>
-                                        <div class="col-6"><strong>
-                                            Siège de gestion :</strong>
-                                            <p class="my-2 p-2 fs-6 fst-italic" style="color:#11494C;"><strong>16, rue Marcel Sembat</br>21600 Longvic</strong></p>
+                                        <div class="col-6 separate">
+                                            <span class="cadre4">Siège de gestion :</span>
+                                            <p>16, rue Marcel Sembat</br>21600 Longvic</p>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="row m-2 mb-4"  style="border:solid 5px #11494C;border-radius:25px;">
-                                        <p class="fs-2 text-dark fst-italic"><strong>Nos Permanences :</strong></p>
+                                    <div class="row cadre3">
+                                        <p class="nos-perm">Nos Permanences :</p>
                                         <div>
                                             <div class="text-capitalize">
                                                 {{ tableau|raw }}
@@ -41,12 +43,12 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="color-#11494C"><strong>Centre de greffe :</strong></br><a class="my-5 p-2 fs-3 fst-italic" style="color:#11494C;" href="https://www.chu-besancon.fr/offre-de-soins/les-services-et-activites/chirurgie-viscerale-digestive-et-cancerologique
-                                -unite-de-transplantation-hepatique/transplantation-hepatique.html" target="_blank"><strong>Chu de Besançon</strong></a></li>
+                                <li class="cadre4">Centre de greffe :</br><a class="cadre4" href="https://www.chu-besancon.fr/offre-de-soins/les-services-et-activites/chirurgie-viscerale-digestive-et-cancerologique
+                                -unite-de-transplantation-hepatique/transplantation-hepatique.html" target="_blank">Chu de Besançon</a></li>
                             </ul>
-                        </div class="container">
+                        </div class="">
                             <div class=" mt-4">
-                                <img src="{{ asset('build/tous-ensemble.jpg') }}" class="img-fluid d-block w-100 mb-5" style="border-radius:25px; border:solid 5px;" alt="tous-ensemble">
+                                <img src="{{ asset('build/tous-ensemble3.jpg') }}" class="img-fluid d-block w-100 mb-5" style="border-radius:25px; border:solid 5px;" alt="tous-ensemble">
                             </div>
                         <div>
 
@@ -55,66 +57,70 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
-            <div class="card-header text-center text-light">
-                <h2 class="fst-italic"><strong>Le Bureau</strong></h2>
+        <div class="col-4 cadre6">
+            <div class="card-header">
+                Le Bureau
             </div>
-            <div class="col-12 col-lg-12 bg-light py-0 my-0" style="border:solid 15px #229296;border-radius:25px;">
-                <div class="text-center" style="border-radius:25px;">
-                    <div class="card-body">
-                        <h4 class="card-title text-decoration-underline">Le Président</h4>
-                        <p class="card-text fs-5 fst-italic text-success">Mr.Armand FAGES</br><span class="text-dark">
-                        armand.fages@bbox.fr</br>Tèl : 06 08 78 31 63<hr></span></p>
+            <div class="cadre">
+                <div class="cadre2">
+                    <div class="">
+                        <div class="card-body">
+                            <h4 class="card-title">Le Président</h4>
+                            <p class="card-text">Mr.Armand FAGES<br>
+                            armand.fages@bbox.fr</br>Tèl : 06 08 78 31 63<hr></p>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="card-body">
+                            <p class="card-title">La trésorière</p>
+                            <p class="card-text">Mme.Sylviane LOISON<br>
+                            sylviane2526@yahoo.fr</br>Tèl : 06 24 37 01 38<hr></p>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="card-body">
+                            <p class="card-title">La secrétaire</p>
+                            <p class="card-text">Mme.Michelle HEYMES<br>
+                            michelle.heymes@hotmail.com</br>Tèl : 03 84 76 26 65<hr></p>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="card-body">
+                            <p class="card-title">La secrétaire adjointe</p>
+                            <p class="card-text">Mme.Dominique PATOIT<br>
+                            dominiquepatoit@orange.fr</br>Tèl : 06 87 44 06 76<hr></p>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="card-body">
+                            <p class="card-title">Référent Franche-Comté</p>
+                            <p class="card-text">Mr.René HEYMES<br>
+                            michelle.heymes@hotmail.com</br>Tèl : 03 84 76 26 65<hr></p>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="card-body">
+                            <p class="card-title">Nos très aimables bénévoles<br></p>
+                            <p class="card-text">
+                                Mr.Pascal CASAGRANDE<br>
+                                Mr.Bernard MAIRE<br>
+                                Mme.Roselyne MOINE<br>
+                                Mme.Léonise RACON<hr><hr>
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="text-center">
+                <div class="">
                     <div class="card-body">
-                        <h4 class="card-title text-decoration-underline">La trésorière</h4>
-                        <p class="card-text fs-5 fst-italic text-success">Mme.Sylviane LOISON</br><span class="text-dark">
-                        sylviane2526@yahoo.fr</br>Tèl : 06 24 37 01 38<hr></span></p>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <div class="card-body">
-                        <h4 class="card-title text-decoration-underline">La secrétaire</h4>
-                        <p class="card-text fs-5 fst-italic text-success">Mme.Michelle HEYMES</br><span class="text-dark">
-                        michelle.heymes@hotmail.com</br>Tèl : 03 84 76 26 65<hr></span></p>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <div class="card-body">
-                        <h4 class="card-title text-decoration-underline">La secrétaire adjointe</h4>
-                        <p class="card-text fs-5 fst-italic text-success">Mme.Dominique PATOIT</br><span class="text-dark">
-                        dominiquepatoit@orange.fr</br>Tèl : 06 87 44 06 76<hr></span></p>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <div class="card-body">
-                        <h4 class="card-title text-decoration-underline">Référent Franche-Comté</h4>
-                        <p class="card-text fs-5 fst-italic text-success">Mr.René HEYMES</br><span class="text-dark">
-                        michelle.heymes@hotmail.com</br>Tèl : 03 84 76 26 65<hr></span></p>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <div class="card-body">
-                        <h4 class="card-title text-decoration-underline">Nos très aimables bénévoles</h4>
-                        <p class="card-text fs-5 fst-italic text-success">Mr.Pascal CASAGRANDE</br><span class="text-dark">
-                        <p class="card-text fs-5 fst-italic text-success">Mr.Bernard MAIRE</br><span class="text-dark">
-                        <p class="card-text fs-5 fst-italic text-success">Mme.Roselyne MOINE</br><span class="text-dark">
-                        <p class="card-text fs-5 fst-italic text-success">Mme.Léonise RACON<hr><hr><span class="text-dark">
-                    </div>
-                </div>
-
-                <div>
-                    <div class="card-body">
-                        <h4 class="card-title text-center fst-italic"><strong>A-propos</strong></h4>
-                        <p class="text-lg-start card-text fst-italic">
-                            Création de l'association<strong><span class="fs-6 text-success"> transhépate Bourgogne Franche-Comté</strong></span></br>Créé le 14 février 1989 sous l'impulsion du <strong>Professeur Gillet
+                        <p class="card-title">A-propos</p>
+                        <p class="td">
+                            Création de l'association<strong><span class="fs-4 text-success"> transhépate Bourgogne Franche-Comté</strong></span></br>Créé le 14 février 1989 sous l'impulsion du <strong>Professeur Gillet
                             transplanteur, Docteur Miguet, les patients Roger Defrasne, Daniel Vouge et Marie Françoise Masson.</strong></br>
                             Après accord avec la fédération nationale nous adoptons le sigle <span class="text-success"><strong>transhépate</strong></span>.</br>
                             Parmis les buts de l'association, repose en premier lieu l'aide aux patients en attente de greffe, et surtout pour ceux inscrits
@@ -129,7 +135,14 @@
                     </div>
                 </div>
             </div>
+             <div class="text-center">
+            <a class="bouton-RaL"
+                href="{{ path('app_main_home') }}">
+                <strong>Retour à l'accueil</strong>
+            </a>
         </div>
+        </div>
+
     </div>
 </div>
 

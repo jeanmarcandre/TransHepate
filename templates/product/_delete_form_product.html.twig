@@ -6,6 +6,6 @@
 
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
 
-    <button class="btn btn-md btn-warning {{ size|default('') }}">{{ button_label|default('Supprimer') }}<i class="fas fa-trash-alt ps-2"></i></button>
+    <button class="inscription-oubli btn btn-warning {{ size|default('') }}">{{ button_label|default('Supprimer') }}<i class="fas fa-trash-alt ps-2"></i></button>
 
 </form>

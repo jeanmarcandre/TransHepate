@@ -48,10 +48,9 @@
                 </div>
 
                 <div class="mb-4">
-                    <button class="inscription-valid btn btn-success" type="submit"><strong>Valider</strong>
-                    </button>
+                    <button class="inscription-valid btn btn-success" type="submit">Valider</button>
                     <a href="{{ path('app_main_forgotten_password') }}"
-                      class="inscription-oubli btn btn-warning"><strong>Mot de passe oublié</strong>
+                      class="inscription-oubli btn btn-warning">Mot de passe oublié
                     </a>
                 </div>
 
@@ -59,17 +58,15 @@
                     <strong>Si vous n'avez pas encore de compte, vous pouvez en créer un en cliquant sur ce bouton: </strong>
                 </span>
                 <a href="{{  path('app_main_register') }}" class="inscription-login btn btn-primary">
-                    <strong>Inscription</strong>
+                    Inscription
+                </a>
+                <a href="{{ path('app_blog_index') }}" class="bouton-RaL btn btn">
+                Retour à l'accueil du Blog
                 </a>
 
             </div>
 
         </div>
-
-        <a href="{{ path('app_blog_index') }}" class="bouton-RaL btn btn">
-            <strong>Retour à la liste</strong>
-        </a>
-
     </div>
 
 {% endblock %}

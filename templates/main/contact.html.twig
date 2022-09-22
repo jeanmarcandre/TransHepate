@@ -12,12 +12,22 @@
 
 {% block body %}
 
-    <div class="container mt-5">
-        <div class="row"  style="border:solid 25px #229296;border-radius:50px;">
-            <div class="col-12 col-lg-12 bg-light px-2 px-lg-5 py-0 my-0" style="border:solid 5px light;border-radius:25px;">
+    <div class="container">
 
-                <h1 class="text-center mt-1" style="color:#11494C;"><span class="fs-1 fst-italic "><strong>Contactez-nous</strong></span></br>
-                <span class="fs-4 fst-italic ">contact.transhepate.bfc@gmail.com</span></h1>
+        <div class="titre">
+            <span class="titre2">
+                contactez-nous
+            </span>
+        </div>
+
+        <div class="titre">
+            <span class="titre3">
+                contact.transhepate.bfc@gmail.com
+            </span>
+        </div>
+
+        <div class="cadre">
+            <div class="cadre2">
 
                 {{ form_start(form) }}
 
@@ -36,23 +46,22 @@
                     {{ form_errors(form.captcha) }}
 
                     <div>
-                        <p class="ms-5 ps-5 fs-5 text-muted">"j'ai lu et accepte la politique de confidentialité de ce site"</p></br>
-                        <p class="ms-5 ps-5 fs-5 fst-italic text-muted">Seules les données déposées volontairement par l'internaute
+                        <p class="formulaire">"j'ai lu et accepte la politique de confidentialité de ce site"</p></br>
+                        <p class="formulaire">Seules les données déposées volontairement par l'internaute
                             via le formulaire de contact seront conservées pendant 3 mois et sont uniquement destinées au traitement
-                            des demandes formulées. Ces données ne seront jamais communiquées à des tiers et sont accessibles
-                            uniquement par le président et les bénévoles habilités.
+                            des demandes formulées.<br> Ces données ne seront jamais communiquées à des tiers et sont accessibles
+                            uniquement par le président et les bénévoles habilités.<br>
                             Conformément à la loi "informatique et libertés", vous disposez d’un droit d’accès,
-                            de modification et/ou de suppression des données vous concernant à tout moment.
-                            Pour exercer ce droit d'accès, adresser un courrier recommandé à l'attention du président :
-                            Transhépate Bourgogne-Franche-Comté, 16 rue Marcel Sembat 21600 LONGVIC  / cf. Mentions légales et RGPD
+                            de modification et/ou de suppression des données vous concernant à tout moment.<br>
+                            Pour exercer ce droit d'accès, adresser un courrier recommandé à l'attention du président :<br>
+                            Transhépate Bourgogne-Franche-Comté, 16 rue Marcel Sembat 21600 LONGVIC  <br>/ cf. Mentions légales et RGPD
                         </p>
                     </div>
                     <div class="mt-2">
-                        <button class="btn btn-success fs-5 fst-italic my-4 ms-5 py-1"
-                        style="border:solid 3px #11494C; border-radius:25px;"><strong>Envoyer mon message</strong></button>
+                        <button class="btn btn-success inscription-valid">Envoyer mon message</button>
                         <p class="">
-                            <a class="text-decoration-none ms-5 px-5 py-1 text-light fs-5 fst-italic" style="background-color:#229296;border-radius:25px;border:solid 3px #11494C" 
-                            href="{{ path('app_main_transhepatebfc') }}"><strong>Retour à la page contact</strong></a>
+                            <a class="bouton-RaL"
+                            href="{{ path('app_main_transhepatebfc') }}">Retour à la page contact</a>
                         </p>
                     </div>
                 </div>

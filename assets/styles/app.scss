@@ -50,6 +50,13 @@ body {
   background-color: #11494C!important;
 }
 
+// .card-brochure {
+//   margin: auto!important;
+//   padding: auto!important;
+//   border: solid 5px #66dbbe!important;
+//   border-radius:25px 25px 0 0!important;
+// }
+
 .textarea {
   float: center!important;
   height: auto!important;
@@ -62,15 +69,17 @@ body {
 }
 
 .green {
-  opacity:.8;
+  opacity:.8!important;
+  background-color: #00892d!important;
+  text-align: center!important;
 }
 
-// #accueilimg {
+// .accueil {
 //   background: url("/build/accueil2.png") no-repeat;
 //   display: inline-block;
 // }
 
-// #accueilimg:hover {
+// .accueil:hover {
 //   background: url("/build/accueil3.png") no-repeat;
 // }
 
@@ -122,6 +131,17 @@ body main {
   color: white;
   font-weight: bold;
 
+}
+
+.text-c {
+  text-align: center!important;
+  background-color: #8ce6fe;
+}
+
+.link2:hover {
+  background-color: #73e0ed!important;
+  // font-size: 2rem!important;
+  font-style: normal!important;
 }
 
 .nav-link2 {
@@ -215,10 +235,10 @@ ul li {
   color: black!important;
 }
 
-h5 div a:hover {
-  background-color: #97fa3b!important;
-  color: #fff!important;
-}
+// h5 div a:hover {
+//   background-color: #d7f7ba!important;
+//   color: #fff!important;
+// }
 
 div .text-decoration-none:hover {
   color: whitesmoke!important;
@@ -233,7 +253,7 @@ div .text-decoration-none:hover {
   position: relative;
 }
 .white_section {
-  color: #ffffffb3;
+  color: #ffffff;
 }
 
 .title_banner {
@@ -270,6 +290,7 @@ div .text-decoration-none:hover {
 
 .icon-circle {
   background-color: #10b447;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -347,6 +368,7 @@ header {
   padding: .5rem;
   text-decoration: none;
   font-weight: bold;
+  text-transform: lowercase;
 }
 
 .inscription-login:hover {
@@ -358,55 +380,57 @@ header {
 
 .inscription-valid {
   color: #fff;
+  text-align: center;
   background-color: #095a09;
   font-size:1.5rem;
   border-radius:25px;
   border:solid 3px #229296;
   margin: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-right: 10px;
+  padding: 8px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .inscription-valid:hover {
   color:#000000;
   background-color: #229296;
-  border-radius:50px!important;
+  border-radius:25px!important;
   border:solid 3px #000000!important;
 }
 
 .inscription-oubli {
-  color: #fff;
-  font-size:1.5rem;
-  border-radius:50px;
-  border:solid 3px #229296;
+  color: #fff!important;
+  font-size:1.5rem!important;
+  border-radius:25px!important;
+  border:solid 3px #229296!important;
+  font-weight: bold!important;
 }
 
 .inscription-oubli:hover {
   color:#000000!important;
   background-color: #229296!important;
-  border-radius:50px!important;
+  border-radius:25px!important;
   border:solid 3px #000000!important;
 }
 
 .bouton-RaL {
-  color: #fff;
-  background-color: #229296;
-  font-size:1.5rem;
-  border-radius:50px;
-  border:solid 3px #73e0ed;
-  margin: 15px;
-  padding-top: 10px;
-  padding-right: 10px;
-  text-decoration: none;
+  text-align: center;
+  color: #fff!important;
+  background-color: #229296!important;
+  font-size:1.5rem!important;
+  border-radius:25px!important;
+  border:solid 3px #73e0ed!important;
+  margin: 2rem!important;
+  padding:.5rem!important;
+  text-decoration: none!important;
+  font-weight: bold!important;
 }
 
 .bouton-RaL:hover {
   color:#000000!important;
+  font-size: 1.5rem!important;
   background-color: #229296!important;
-  border-radius:50px!important;
+  border-radius:25px!important;
   border:solid 3px #000000!important;
 }
 
@@ -415,36 +439,87 @@ header {
 /*----------TITRE ET CADRE----------*/
 
 .titre {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  text-align: center;
+  margin-top: 3rem!important;
+  margin-bottom: 3rem!important;
+  text-align: center!important;
 }
 
 .titre2 {
-  color: #73e0ed;
-  font-size: 2rem;
-  padding: .5rem 2rem .5rem 2rem;
-  font-style: italic;
-  text-transform: uppercase;
-  border: solid 5px #73e0ed;
-  border-radius: 25px;
-  background-color: #229296;
+  color: #73e0ed!important;
+  font-size: 2rem!important;
+  padding: .5rem 2rem .5rem 2rem!important;
+  font-style: italic!important;
+  text-transform: uppercase!important;
+  background-color:#73e0ed!important;
+  border-radius: 25px!important;
+  background-color: #229296!important;
+}
+
+.titre3 {
+  color: black!important;
+  font-size: 1.2rem!important;
+  padding: .5rem 2rem .5rem 2rem!important;
+  font-style: italic!important;
+  text-transform: lowercase!important;
+  background-color:#73e0ed!important;
+  border-radius: 25px!important;
+  background-color: #229296!important;
+  font-weight: bold!important;
 }
 
 .cadre {
-  background-color: #ffffff;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  text-align: left;
-  border: solid 25px #229296;
-  border-radius: 50px;
-  padding: 30px;
+  text-align: center!important;
+  background-color: #ffffff!important;
+  margin-top: 3rem!important;
+  margin-bottom: 5rem!important;
+  text-align: left!important;
+  border: solid 25px #229296!important;
+  border-radius: 50px!important;
+  padding: 30px!important;
 }
 
 .cadre2 {
-  background-color: #fff;
-  border: solid 5px #fff;
-  border-radius: 25px;
+  text-align: center!important;
+  background-color: #fff!important;
+  border-radius: 25px!important;
+}
+
+.cadre3 {
+  border: solid 4px #11494C!important;
+  border-radius: 25px!important;
+  color: #11494C!important;
+  margin: 2rem!important;
+  font-weight: bold!important;
+  font-size: 1rem!important;
+  text-transform: lowercase!important;
+}
+
+.cadre4 {
+  color: #11494C!important;
+  padding-top: 1rem!important;
+  font-weight: bold!important;
+  text-decoration: underline!important;
+  font-size: 1.2rem!important;
+  font-style: italic!important;
+}
+
+.cadre7 {
+  size: 500px!important;
+}
+
+article {
+  column-count: 1;
+  column-gap: normal;
+}
+
+.separate {
+  border-left: solid 4px #11494C;
+}
+
+.nos-perm {
+  font-size: 1.75rem;
+  color: black;
+  font-style: italic;
 }
 
 .formulaire {
@@ -458,23 +533,404 @@ header {
   background-color: #ffb!important;
 }
 
+/*-------MENTIONS-LEGALES---------*/
+
+.rgpd {
+  font-size: 2rem;
+  text-decoration: underline;
+  color: #229296;
+  font-weight: bold;
+}
+
+.rgpd-text {
+  font-size: 1.5rem;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.logoM {
+  margin-bottom: 2rem;
+  text-align: center;
+  height: 240px;
+  width: 340px;
+  border-radius: 25px;
+  background-color: #11494C;
+  box-shadow: 12px -8px 8px #072a2c;
+  border-top:solid 2px #ffb;
+  border-right:solid 3px #ffb;
+}
+
+.logoM2 {
+  font-family: 'Times New Roman', Times, serif!important;
+  font-size: 2rem!important;
+  color: #fff!important;
+  font-style: italic!important;
+  font-weight: bold!important;
+  text-align: center!important;
+  text-shadow: 1px -1px 2px #ddd!important;
+}
+
+.soutient {
+  color: #ffffff!important;
+  font-style: italic!important;
+  font-size: 2rem!important;
+  text-transform: uppercase!important;
+  background-color: #00892d!important;
+  border-radius: 10px!important;
+  font-weight: bold!important;
+  margin-bottom: 2rem!important;
+}
+
+.green2 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-style: italic;
+}
+
+.infos {
+  color: #ffb!important;
+  font-size: 2rem!important;
+  font-style: italic!important;
+}
+
+.card-info {
+  background-color: #11494c!important;
+  text-align: center!important;
+  color: #ffb!important;
+  font-size: 2rem!important;
+  font-weight: bold!important;
+}
+
+.card-text-tournesol {
+  text-align: center!important;
+  text-transform: capitalize!important;
+  font-style: italic!important;
+  font-weight: bold!important;
+  margin-top: 3rem!important;
+  margin-bottom: 3rem!important;
+  font-size: 1.7rem!important;
+  color: #11494C!important;
+}
+
+.card-text2 {
+  margin-left: 1rem!important;
+  margin-right: 1rem!important;
+  padding: 1rem!important;
+  font-style: italic !important;
+  text-transform: capitalize !important;
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  color: #11494C !important;
+}
+
+.regionales {
+  background-color: #8ce6fe!important;
+  font-style: italic!important;
+  font-size: 2rem;
+  text-transform: uppercase!important;
+  text-align: center!important;
+  color: #11494C!important;
+  font-weight: bold!important;
+}
+
+.benevolat1 {
+  color: #229296;
+  font-size: 1.5rem;
+}
+.benevolat2 {
+  color: black;
+  font-size: .8rem;
+}
+
+.card-body {
+  text-align: center!important;
+  color: black!important;
+  font-size: 1rem!important;
+  font-weight: bold!important;
+}
+
+.card-body2 {
+  text-align: center!important;
+  color: darkorange!important;
+  font-size: 2rem!important;
+  font-weight: bold!important;
+  margin-top: 5rem;
+}
+
+.card-body3 {
+  margin-left: auto!important;
+  text-align: left!important;
+  color: #ffffff!important;
+  font-size: 1.5rem!important;
+  font-weight: bold!important;
+  font-style: italic!important;
+  text-transform: uppercase!important;
+}
+
+.card-body4 {
+  margin-left: 1rem!important;
+  margin-right: 1rem!important;
+  margin-top: 2rem!important;
+  margin-bottom: 2rem!important;
+  background-color:#8ce6fe!important;
+  border-radius: 15px!important;
+  color: #000000!important;
+  // font-size: 1.5rem!important;
+  // font-style: italic!important;
+}
+
+.img-responsive {
+  min-height: 300px;
+  min-width: 200px;
+  border-radius: 15px 15px 0 0!important;
+  padding: 0!important;
+  margin: 0!important;
+}
+
+.don {
+  font-size: 3rem!important;
+  }
+
+#logoimg {
+  height: 60px!important;
+  width: 200px!important;
+  border-radius: 5px!important;
+}
+
+.value {
+  color: #ffb;
+  font-size: 2rem;
+}
+
+.value2 {
+  color: #ffb;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.icone {
+  font-size: 3rem;
+  color: #ffb;
+}
+
+@media screen and (max-width: 800px)
+{
+  .card-title {
+    font-size: 2.5rem!important;
+    font-weight: bold!important;
+  }
+  .card-text {
+    font-size: 2rem!important;
+  }
+  .img-responsive {
+    max-height: 300px!important;
+    max-width: 200px!important;
+    padding: 0!important;
+    margin: 0!important;
+  }
+  .cadre5 {
+    width: 800px;
+  }
+  .cadre6 {
+    width: 800px;
+  }
+  .cadre7 {
+    size: 500px!important;
+  }
+  .rgpd {
+    font-weight: bold!important;
+    font-size: 2rem!important;
+  }
+  .rgpd-text {
+    font-weight: bold!important;
+    font-size: 1.5rem!important;
+  }
+  .container {
+    min-width: 860px!important;
+    min-height: 420px!important;
+  }
+  .container .logoM {
+    min-width: 430px!important;
+    min-height: 210px!important;
+  }
+  .logoM2 {
+    font-size: 3rem!important;
+  }
+  .bouton-RaL {
+    font-weight: bold!important;
+    font-size:2.5rem!important;
+    margin-top: 2rem!important;
+    margin-bottom: 0!important;
+  }
+  .bouton-RaL:hover {
+    font-size: 2.5rem!important;
+  }
+  .titre2 {
+    font-size: 3rem;
+  }
+  .card-text-tournesol {
+    text-align: center!important;
+    font-size: 2.5rem!important;
+    // margin-left: auto!important;
+  }
+  #logoimg {
+    height: 60px!important;
+    width: 200px!important;
+  }
+  .accueil {
+    height: 60px!important;
+    width: 300px!important;
+  }
+  .ecusson {
+    height:240px!important;
+    width: 240px!important;
+    margin-left: 20px!important;
+  }
+  .nav-link {
+    font-size: 2rem!important;
+  }
+  .dropdown-item {
+    font-size: 2rem!important;
+  }
+  .card-body {
+    font-size: 2.5rem!important;
+  }
+  .card-body2 {
+    font-size: 2.5rem!important;
+  }
+  .card-body4 {
+    font-size: 2rem!important;
+  }
+  .don {
+    font-size: 3rem!important;
+  }
+  .icon_boxes_con.style2.solid_icon .service_box .icon {
+    height: 65px;
+    line-height: 65px;
+    width: 65px;
+  }
+  .icon-circle {
+    width: 65px;
+    height: 65px;
+  }
+  .mission-titre {
+    font-size: 2rem;
+  }.desc {
+    font-size: 1.75rem;
+  }
+  #tournesol {
+    height: 360px;
+    width: 800px;
+  }
+  .donnees {
+    color: #ffffff;
+    font-size: 2rem;
+  }
+  .value {
+    color: #ffb;
+    font-size: 3rem;
+  }
+  .icone {
+    font-size: 3rem;
+    color: #ffb;
+  }
+  .soutient {
+    font-size: 3rem;
+    color: #ffffff;
+  }
+  .green2 {
+    font-size: 2rem;
+  }
+  .benevolat1 {
+    color: #229296;
+    font-size: 2.2rem;
+  }
+  .benevolat2 {
+    color: black;
+    font-size: 1.7rem;
+  }
+  #messages, #loginMessages {
+    position: absolute!important;
+    text-transform: uppercase!important;
+    font-weight: bold!important;
+    text-align: center!important;
+    top: 60px!important;
+    right: 0!important;
+    left: 0!important;
+    z-index: 920!important;
+    opacity: 0.85!important;
+  }
+  #messages .alert {
+  width: 100ww!important;
+  padding: 0.5rem 0.5rem!important;
+  margin-bottom: 0!important;
+  border: none!important;
+  border-radius: 0!important;
+  }
+  .counter_a .counter .icon:after {
+  content: "";
+  display: block;
+  height: 65px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 65px;
+  opacity: 0;
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  }
+  .entourage-ext {
+    font-size: 2rem!important;
+    font-weight: bold!important;
+  }
+  .underline {
+    text-decoration: underline!important;
+    font-weight: bold!important;
+    font-size: 2rem!important;
+  }
+  .transhepate {
+    font-size: 2.2rem!important;
+    color: #095a09!important;
+    text-transform: uppercase!important;
+    font-weight: bold!important;
+  }
+  .td {
+    font-size: 2rem!important;
+  }
+}
+
 /*----------------------------------*/
 /*---------REGLES BLOG--------------*/
 
 .entourage-ext {
-  color: black;
-  border: solid 25px #229296;
-  border-radius: 50px;
-  background-color: #fff;
-  margin: 3rem 0 3rem 0;
-  padding: 3rem;
-  font-size: 18px;
-  text-align: left;
-  font-style: italic;
+  color: black!important;
+  border: solid 25px #229296!important;
+  border-radius: 50px!important;
+  background-color: #fff!important;
+  margin: 3rem 0 3rem 0!important;
+  padding: 3rem!important;
+  font-size: 1.5rem!important;
+  text-align: left!important;
+  font-style: italic!important;
+  font-weight: bold!important;
 }
 
 .underline {
-  text-decoration: underline;
+  text-decoration: underline!important;
+  font-weight: bold!important;
+  font-size: 2rem!important;
+  color: #229296!important;
+}
+
+.transhepate {
+  font-size: 2rem!important;
+  color: #095a09!important;
+  text-transform: uppercase!important;
+  font-weight: bold!important;
 }
 
 /*----------------------------------*/
@@ -511,6 +967,36 @@ header {
 
 .text-muted {
   font-size: 1.2rem!important;
+}
+
+/*---------NOS PERMANENCES------------*/
+
+.card-header {
+  text-decoration: underline!important;
+  text-align: center!important;
+  color: #ffffff!important;
+  font-style: italic!important;
+  font-size: 2rem!important;
+  font-weight: bold!important;
+}
+.card-title {
+  text-decoration: underline!important;
+  color: black!important;
+  font-size: 1.5rem!important;
+  font-weight: bold!important;
+}
+.card-text {
+  font-size: 1.25rem!important;
+  font-style: italic!important;
+  color: #000000!important;
+  text-align: center!important;
+}
+
+.td {
+  font-size: 1.5rem!important;
+  color: #000000;
+  column-gap: normal;
+  font-style: italic;
 }
 
 /* --------- NOS BROCHURES -----------*/
