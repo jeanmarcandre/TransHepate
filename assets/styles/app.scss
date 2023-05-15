@@ -74,15 +74,6 @@ body {
   text-align: center!important;
 }
 
-// .accueil {
-//   background: url("/build/accueil2.png") no-repeat;
-//   display: inline-block;
-// }
-
-// .accueil:hover {
-//   background: url("/build/accueil3.png") no-repeat;
-// }
-
 #inlineFrameExample{
   border-radius: 50px;
   border: solid 25px #00892d;
@@ -257,7 +248,7 @@ div .text-decoration-none:hover {
 }
 
 .title_banner {
-  padding: 24px 0 25px;
+  // padding: 24px 0 25px;
   position: relative;
   margin-bottom: 5px;
 }
@@ -773,7 +764,6 @@ article {
   .card-text-tournesol {
     text-align: center!important;
     font-size: 2.5rem!important;
-    // margin-left: auto!important;
   }
   #logoimg {
     height: 60px!important;
@@ -799,6 +789,12 @@ article {
   }
   .card-body2 {
     font-size: 2.5rem!important;
+  }
+  .card-body3 {
+    font-size: 2rem!important;
+    margin-top: 1.5rem!important;
+    margin-bottom: 1.5rem!important;
+    text-transform: capitalize!important;
   }
   .card-body4 {
     font-size: 2rem!important;
@@ -831,6 +827,10 @@ article {
   .value {
     color: #ffb;
     font-size: 3rem;
+  }
+  .value2 {
+    color: #ffb;
+    font-size: 2rem;
   }
   .icone {
     font-size: 3rem;

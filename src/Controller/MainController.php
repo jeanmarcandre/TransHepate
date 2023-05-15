@@ -53,11 +53,11 @@ class MainController extends AbstractController
             // dd ($affichageactions);
             // Cette page appellera la vue template/main/nos_actions.html.twig
             $product = $productRepository->findAll();
-            $lastProduct = array_slice($product,count($product)-3);
+            $lastProduct = array_slice($product,count($product)-10);
 
 
         return $this->render('main/home.html.twig', [
-            'posts' => $postRepository->findBy([], ['createdAt' => 'desc']),
+            'posts' => $postRepository->findBy([], ['createdAt' => 'asc']),
             // 'affichage' => $affichageactions,
             'products' => $lastProduct
         ]);
@@ -381,8 +381,8 @@ class MainController extends AbstractController
     #[Route('/actions', name: 'actions', methods: ['GET', 'POST'])]
     public function Actions(Request $request, ActionsRepository $actionsRepository, ManagerRegistry $doctrine): Response
     {
-        if ($actionsRepository->find(1)) {
-            $actions = $actionsRepository->find(1);
+        if ($actionsRepository->find(10)) {
+            $actions = $actionsRepository->find(10);
         } else {
             $actions = new Actions();
         }
